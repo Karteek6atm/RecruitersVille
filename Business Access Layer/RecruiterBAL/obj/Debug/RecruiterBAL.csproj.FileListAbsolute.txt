@@ -39,3 +39,13 @@ D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\RecruiterBAL
 D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterDAL.dll
 D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\RecruiterBAL\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
 D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterBAL.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterBAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterDAL.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\RecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\obj\Debug\RecruiterBAL.csprojResolveAssemblyReference.cache
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\obj\Debug\RecruiterBAL.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\obj\Debug\RecruiterBAL.pdb
