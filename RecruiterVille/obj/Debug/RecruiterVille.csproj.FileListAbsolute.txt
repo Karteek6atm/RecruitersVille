@@ -1,0 +1,469 @@
+D:\Karteek\RecruiterVille\RecruiterVille\bin\ApplicationInsights.config
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\csc.exe
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\System.Collections.Immutable.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\System.Reflection.Metadata.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\vbc.exe
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe
+D:\Karteek\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe.config
+D:\Karteek\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll.config
+D:\Karteek\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\RecruiterVille.pdb
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\EntityFramework.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Web.Infrastructure.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Owin.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Http.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Razor.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\WebGrease.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Razor.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.pdb
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Http.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\EntityFramework.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Karteek\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
+D:\Karteek\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.dll
+D:\Karteek\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\RecruiterVille\RecruiterVille\bin\IRecruiterBAL.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\RecruiterBE.dll
+D:\Karteek\RecruiterVille\RecruiterVille\bin\IRecruiterBAL.pdb
+D:\Karteek\RecruiterVille\RecruiterVille\bin\RecruiterBE.pdb
+D:\Karteek\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\ApplicationInsights.config
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\csc.exe
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\System.Collections.Immutable.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\System.Reflection.Metadata.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\vbc.exe
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe.config
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll.config
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\RecruiterVille.pdb
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\EntityFramework.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\IRecruiterBAL.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Web.Infrastructure.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Owin.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\RecruiterBE.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Http.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Razor.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\WebGrease.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\IRecruiterBAL.pdb
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\RecruiterBE.pdb
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Razor.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.pdb
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Http.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\EntityFramework.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.dll
+D:\Karteek\Projects\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\ApplicationInsights.config
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\csc.exe
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\System.Collections.Immutable.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\System.Reflection.Metadata.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\vbc.exe
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe.config
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll.config
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\RecruiterVille.pdb
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\IRecruiterBAL.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Web.Infrastructure.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Owin.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\RecruiterBE.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Razor.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\WebGrease.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\IRecruiterBAL.pdb
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\RecruiterBE.pdb
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Razor.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.pdb
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.dll
+D:\Karteek\personal\New folder\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\ApplicationInsights.config
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\csc.exe
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\System.Collections.Immutable.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\System.Reflection.Metadata.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\vbc.exe
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe.config
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll.config
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterVille.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Web.Infrastructure.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Owin.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Razor.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\WebGrease.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.Web.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.ApplicationInsights.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Helpers.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Mvc.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Optimization.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Razor.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Deployment.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.WebPages.Razor.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Antlr3.Runtime.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Newtonsoft.Json.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Net.Http.Formatting.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\System.Web.Http.WebHost.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\EntityFramework.SqlServer.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterBAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterBAL.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterDAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\RecruiterVille\bin\RecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\ApplicationInsights.config
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\csc.exe
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\System.Collections.Immutable.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\System.Reflection.Metadata.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\vbc.exe
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\roslyn\VBCSCompiler.exe.config
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterVille.dll.config
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterVille.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Antlr3.Runtime.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\EntityFramework.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\EntityFramework.SqlServer.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.Web.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.ApplicationInsights.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Web.Infrastructure.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Newtonsoft.Json.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Owin.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterBAL.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Net.Http.Formatting.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Helpers.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.WebHost.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Mvc.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Optimization.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Razor.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.Deployment.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.Razor.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\WebGrease.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterDAL.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterBAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.DependencyCollector.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.Web.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.ApplicationInsights.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Helpers.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Mvc.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Optimization.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Razor.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.Deployment.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.Razor.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Antlr3.Runtime.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Newtonsoft.Json.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Net.Http.Formatting.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.WebHost.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\EntityFramework.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\EntityFramework.SqlServer.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Google.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.pdb

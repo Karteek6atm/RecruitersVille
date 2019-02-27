@@ -1,0 +1,21 @@
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\IRecruiterDAL.dll
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\IRecruiterDAL.pdb
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.dll
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.pdb
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.csprojResolveAssemblyReference.cache
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\IRecruiterDAL.dll
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\IRecruiterDAL.pdb
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.csprojResolveAssemblyReference.cache
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.dll
+D:\Karteek\personal\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\IRecruiterDAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\IRecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.csprojResolveAssemblyReference.cache
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Data Access Layer\IRecruiterDAL\obj\Debug\IRecruiterDAL.pdb

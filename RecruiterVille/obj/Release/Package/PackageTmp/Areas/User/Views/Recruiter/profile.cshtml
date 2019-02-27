@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0)">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="active">Profile</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Profile</h1>
+        <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+        <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+    </div>
+</div><!--/.row-->
+
+<div class="panel panel-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body tabs">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#pilltab1" data-toggle="tab">Personal </a></li>
+                        <li><a href="#pilltab2" data-toggle="tab">Company </a></li>
+                        <li><a href="#pilltab3" data-toggle="tab">Change Password</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="pilltab1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Personal Details</div>
+                                <div class="panel-body">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Full name</label>
+                                            <input class="form-control" placeholder="" id="textuserfullname" name="userfullname" type="text" onblur="validatetextbox(this)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>EmailId</label>
+                                            <input class="form-control" placeholder="" id="textuseremailid" name="useremailid" type="text" onblur="validateemailid(this)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Contact number</label>
+                                            <input class="form-control" placeholder="" id="textusercontact" name="usercontact" type="text" onblur="validatephonenumber(this)">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pilltab2">
+                        <h4>Company Details</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
+                    </div>
+                    <div class="tab-pane fade" id="pilltab3">
+                        <h4>Change Password</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.panel-->
+    </div>
+</div><!--/.row-->
+</div>
+
+

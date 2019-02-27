@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Welcome to  </title>
+
+    <!-- fav icon-->
+    <link rel="shortcut icon" type="image/png" href="images/ .ico" />
+    <!-- bootstrap  CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Asewome Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Slick slider CSS -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <!-- Custom CSS  -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- #Fixed top bar >>social icons & Login Register  navbar-fixed-top-->
+    <nav class="navbar navbar-inverse menutop">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#"> </a>
+            </div>
+            <div class="" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right login-bar">
+                    <li><a href="#"><i class="fa fa-facebook s-icon"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin s-icon"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter s-icon"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-p s-icon"></i></a></li>
+                    <li class="left-devider"><a href="register.html" class="account-btn"><span class="hidemob">Register</span> <i class="fa fa-user-plus s-icon2"></i></a></li>
+                    <li class="left-devider"><a href="login.html" class="account-btn"><span class="hidemob">Login</span> <i class="fa fa-sign-out s-icon2"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Ends  Fixed top bar -->
+
+    <!-- >>Navigation navbar-fixed-top-->
+    <nav class="navbar navbar-default  menu-nav" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Logo -->
+                <a href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
+            </div>
+            <!-- Collect the nav links for toggling -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                 <li class="active"><a href="salesforceservices.html"> Home</a></li>
+                    <li><a href="expertise.html"> About Us    </a></li>
+                    <li><a href="csr.html"> Price</a></li>
+                    <li><a href="careers.html"> Careers</a></li>
+                    <li><a href="contact.html"> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15221.485871064368!2d78.44677429999999!3d17.489772300000002!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550075263537" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section>
+
+	<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="alert alert-success hidden" id="contactSuccess">
+                    <strong>Success!</strong> Your message has been sent to us.
+                </div>
+
+                <div class="alert alert-danger hidden" id="contactError">
+                    <strong>Error!</strong> There was an error sending your message.
+                </div>
+
+                <h2 class="mb-sm mt-sm"><strong>Contact</strong> Us</h2>
+                <form id="contactForm" action="php/contact-form.php" method="POST">
+                    <div class="row">
+                        <div class="form-group clearfix">
+                            <div class="col-md-6">
+                                <label>Your name *</label>
+                                <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Your email address *</label>
+                                <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group clearfix">
+                            <div class="col-md-12">
+                                <label>Subject</label>
+                                <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group clearfix">
+                            <div class="col-md-12">
+                                <label>Message *</label>
+                                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" value="Send Message" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+
+                <h4 class="heading-primary mt-lg">Get in <strong>Touch</strong></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <hr>
+
+                <h4 class="heading-primary">The <strong>Office</strong></h4>
+                <ul class="list list-icons list-icons-style-3 mt-xlg">
+                    <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>
+                    <li><i class="fa fa-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>
+                    <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+                </ul>
+
+                <hr>
+
+                <h4 class="heading-primary">Business <strong>Hours</strong></h4>
+                <ul class="list list-icons list-dark mt-xlg">
+                    <li><i class="fa fa-clock-o"></i> Monday - Friday 9am to 5pm</li>
+                    <li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
+                    <li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <section class="call-to-action call-to-action-default with-button-arrow call-to-action-in-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="call-to-action-content">
+                        <h3>Porto is <strong>everything</strong> you need to create an <strong>awesome</strong>  !</h3>
+                        <p>The <strong>#1 Selling</strong>  you need to create an   </p>
+                    </div>
+                    <div class="call-to-action-btn">
+                        <a href=" " target="_blank" class="btn btn-lg btn-primary"> Now!</a><span class="arrow hlb hidden-xs hidden-sm hidden-md" data-appear-animation="rotateInUpLeft" style="top: -12px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+      
+                                <section class="footer">
+                                        <div class="container">
+                                          <div class="row">
+                                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">   <i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i> <i class="fa fa-linkedin"></i> <i class="fa fa-google-plus"></i> <i class="fa fa-pinterest"></i></div>
+                                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">  
+                                                  <h2>Subscribe<p>Newsletter</p></h2>
+                                                  
+                                                  <form>
+                                                  <input placeholder="Email Address" type="email">
+                                                  <button><img title="" alt="" src="images/mail-footer.png"> </button>
+                                                  </form></div>
+                                              <div class="col-lg-12"><hr></div>
+                                              
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">  
+                                                <h3>About</h3>
+                                           <ul>
+                                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i>  Vision</a></li>
+                                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i> Mission</a></li>
+                                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i>  Clients</a></li>
+                                                <li><a href="contact.html"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                                              </ul>
+                                             </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                                              <h3>Product</h3>
+                                              <ul>
+                                                <li><a href="product.html"><i class="fa fa-angle-double-right"></i>  WG- Water gold</a></li>
+                                                <li><a href="product.html"><i class="fa fa-angle-double-right"></i>  Rebate Instant</a></li>
+                                                <li><a href="product.html"><i class="fa fa-angle-double-right"></i>   CRM </a></li>
+ 
+                                              </ul>
+                                            </div>
+                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                                              <h3>  Services</h3>
+                                              <ul>
+                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i> Utility services</a></li>
+                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>  Business services </a></li>
+                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>  IT Staff Augmentation</a></li>
+                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>  Outsourcing </a></li>
+                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>    Quality Assurance  </a></li>
+                                         
+                                              </ul>
+                                            </div>
+                                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                                              <h3>Subjects</h3>
+                                             <ul>
+                                                <li><a href="expertise.html"><i class="fa fa-angle-double-right"></i>  Expertise    </a></li>
+                                                <li><a href="csr.html"><i class="fa fa-angle-double-right"></i> CSR</a></li>
+                                                <li><a href="careers.html"><i class="fa fa-angle-double-right"></i>   Careers</a></li>
+                                          
+                                              </ul>
+                                             
+                                            </div> <div class="col-lg-12"><hr></div>
+                                             <section class="bottomFooter">
+                                           <div class="col-lg-12 text-center">Copyright &copy; 2019    ,  <a href="#">All right reserved Inc. </a> </div>
+                                       </section>
+                                          </div>
+                                        </div>
+                                      </section>   
+                                       
+
+
+
+<!-- jQuery 1.3-->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script type="text/javascript" src="js/slick.min.js"></script>
+<!-- validate.js -->
+<script src="js/jquery.validate.min.js"></script>
+<!-- custom script -->
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+ 
+
+<!-- Owl Carousel Assets -->
+<script src="js/owl.carousel.js"></script>
+    <script>
+   $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
+    </script>
+
+
+    <!-- >>javascript-->
+    <script type="text/javascript">
+        //slick slider (partners section)
+        if ($('.sponsor-slider').length) {
+            $('.sponsor-slider').slick({
+                centerMode: true,
+                centerPadding: '30px',
+                slidesToShow: 4,
+                autoplay: false,
+
+                arrows: false,
+                dots: true,
+                responsive: [{
+                    breakpoint: 992,
+                    settings: {
+                        arrows: false,
+                        dots: true,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 2
+                    }
+            }, {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        dots: true,
+                        centerMode: true,
+                        centerPadding: '10px',
+                        slidesToShow: 1
+                    }
+            }]
+            });
+        }
+
+        //slick slider (partners section)
+        if ($('.videoslider').length) {
+            $('.videoslider').slick({
+                centerMode: true,
+                infinite: true,
+                centerPadding: '0px',
+                slidesToShow: 4,
+
+                autoplay: false,
+
+                arrows: false,
+                dots: false,
+                responsive: [{
+                    breakpoint: 992,
+                    settings: {
+                        arrows: false,
+                        dots: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+            }, {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        dots: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+            }]
+            });
+        }
+        //slick prev next
+        $(".prev-button-slick").click(function () {
+            $(".videoslider").slick('slickPrev');
+        });
+        $(".next-button-slick").click(function () {
+            $(".videoslider").slick('slickNext');
+        });
+        
+        //navbar menu hides when click in mobile
+       $(document).ready(function () {
+          $(".navbar-nav li a").click(function(event) {
+          $(".navbar-collapse").collapse('hide');
+          });
+        });
+    </script>
+
+
+</body>
+
+</html>

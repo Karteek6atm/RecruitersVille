@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruiterVille", "RecruiterVille\RecruiterVille.csproj", "{35903663-546A-4222-98A6-830833A156ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Main Project", "1. Main Project", "{5FC03B11-58A7-4B3A-807D-9D21A74535A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business Access Layer", "2. Business Access Layer", "{D66A72B1-B8A8-4D6F-9592-E147DDFF7622}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Access Layer", "3. Data Access Layer", "{3603B841-8C88-4DD7-BCDB-DC1F79DBD855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Business Entities", "4. Business Entities", "{47AC7306-40F1-4BB5-88BA-DF4BDB563E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruiterBAL", "Business Access Layer\RecruiterBAL\RecruiterBAL.csproj", "{38C01CC4-F8A3-4117-BCD0-9C0D10787A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruiterDAL", "Data Access Layer\RecruiterDAL\RecruiterDAL.csproj", "{BAD9929C-A123-455C-96C2-A13CA91171CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruiterBE", "Business Entities\RecruiterBE\RecruiterBE.csproj", "{6379988D-E4F5-495B-BFAC-1C957D446A43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35903663-546A-4222-98A6-830833A156ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35903663-546A-4222-98A6-830833A156ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35903663-546A-4222-98A6-830833A156ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35903663-546A-4222-98A6-830833A156ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C01CC4-F8A3-4117-BCD0-9C0D10787A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C01CC4-F8A3-4117-BCD0-9C0D10787A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C01CC4-F8A3-4117-BCD0-9C0D10787A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C01CC4-F8A3-4117-BCD0-9C0D10787A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD9929C-A123-455C-96C2-A13CA91171CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD9929C-A123-455C-96C2-A13CA91171CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD9929C-A123-455C-96C2-A13CA91171CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD9929C-A123-455C-96C2-A13CA91171CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35903663-546A-4222-98A6-830833A156ED} = {5FC03B11-58A7-4B3A-807D-9D21A74535A5}
+		{38C01CC4-F8A3-4117-BCD0-9C0D10787A79} = {D66A72B1-B8A8-4D6F-9592-E147DDFF7622}
+		{BAD9929C-A123-455C-96C2-A13CA91171CF} = {3603B841-8C88-4DD7-BCDB-DC1F79DBD855}
+		{6379988D-E4F5-495B-BFAC-1C957D446A43} = {47AC7306-40F1-4BB5-88BA-DF4BDB563E61}
+	EndGlobalSection
+EndGlobal

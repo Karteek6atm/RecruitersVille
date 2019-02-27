@@ -1,0 +1,27 @@
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterBAL.dll
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterBAL.pdb
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.dll
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.pdb
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterDAL.dll
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterDAL.pdb
+D:\Karteek\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.csprojResolveAssemblyReference.cache
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterBAL.dll
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterBAL.pdb
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterDAL.dll
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterDAL.pdb
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.csprojResolveAssemblyReference.cache
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.dll
+D:\Karteek\personal\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterBAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterBAL.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterDAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\bin\Debug\IRecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.csprojResolveAssemblyReference.cache
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.dll
+D:\Karteek\Projects\New folder\RecruiterVille\Business Access Layer\IRecruiterBAL\obj\Debug\IRecruiterBAL.pdb
