@@ -81,6 +81,22 @@ function Register() {
     if (isvalid) {
         showloading();
 
+        var packagename = $('#hiddenpackagename').val();
+        var packageid = 0;
+
+        if (packagename.toLowerCase() == "entreprise") {
+            packageid = 4;
+        }
+        else if (packagename.toLowerCase() == "premium") {
+            packageid = 3;
+        }
+        else if (packagename.toLowerCase() == "platinum") {
+            packageid = 2;
+        }
+        else {
+            packageid = 1;
+        }
+        
         var input = [];
         input = {
             fullname: textfullname.val().trim(),
@@ -89,7 +105,7 @@ function Register() {
             contactnumber: textcontactnumber.val().trim(),
             password: textpassword.val().trim(),
             aboutme: textaboutme.val().trim(),
-            packageid: 1
+            packageid: packageid
         };
         
         $.ajax({

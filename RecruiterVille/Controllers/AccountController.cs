@@ -11,6 +11,7 @@ using RecruiterBE.Responses;
 using RecruiterBE.Requests;
 using RecruiterVille.CommonClasses;
 using RecruiterBAL;
+using System.Collections.Generic;
 
 namespace RecruiterVille.Controllers
 {
@@ -19,6 +20,7 @@ namespace RecruiterVille.Controllers
         #region Members
 
         LoginBal _LoginBal = new LoginBal();        
+        PackagesBal _PackagesBal = new PackagesBal();        
         ManageSessions objManageSessions = new ManageSessions();
         
         #endregion
@@ -44,12 +46,13 @@ namespace RecruiterVille.Controllers
             }
         }
 
-        public ActionResult register()
+        public ActionResult register(string param1)
         {
             try
             {
                 if (Session["UserLogin"] == null)
                 {
+                    ViewBag.Packagename = param1;
                     return View();
                 }
                 else
@@ -224,6 +227,21 @@ namespace RecruiterVille.Controllers
                 StatusId = objsaveresponse.StatusId,
                 StatusMessage = objsaveresponse.StatusMessage
             });
+        }
+
+        [HttpPost]
+        public JsonResult GetPackages(PackagesRequestModal objrequestmodal)
+        {
+            List<PackagesList> objPackagesList = new List<PackagesList>();
+            try
+            {
+                objPackagesList = _PackagesBal.GetPackages(objrequestmodal.currency);
+            }
+            catch (Exception ex)
+            {
+               
+            }
+            return Json(objPackagesList);
         }
 
         #endregion
