@@ -41,4 +41,9 @@ namespace RecruiterVille.Models
         public string verificationcode { get; set; }
         public string password { get; set; }
     }
+
+    public class PackagesRequestModal
+    {
+        public string currency { get; set; }
+    }
 }

@@ -19,7 +19,7 @@ namespace RecruiterBAL
         #endregion
 
         #region Methods
-
+         
         public LoginResponse UserLogin(LoginRequest objrequest)
         {
             objrequest.password = CommonMethods.Encrypt(objrequest.password);
