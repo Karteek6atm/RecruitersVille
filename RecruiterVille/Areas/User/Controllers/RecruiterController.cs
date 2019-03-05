@@ -89,6 +89,25 @@ namespace RecruiterVille.Areas.User.Controllers
             }
         }
 
+        public ActionResult permissions()
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         public ActionResult vendors()
         {
             try

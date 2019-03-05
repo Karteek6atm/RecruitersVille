@@ -59,6 +59,17 @@ namespace RecruiterVille.Areas.User
             );
 
             context.MapRoute(
+                name: "permissions",
+                url: "user/permissions/{param1}",
+                defaults: new
+                {
+                    controller = "recruiter",
+                    action = "permissions",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
                 "User_default",
                 "User/{controller}/{action}/{param1}",
                 new { controller = "company", action = "dashboard", param1 = UrlParameter.Optional }

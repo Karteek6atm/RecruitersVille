@@ -52,6 +52,7 @@ namespace RecruiterDAL
                     objLoginResponse.PackageId = (int)reader["PackageId"];
                     objLoginResponse.EmailId = (string)reader["EmailId"];
                     objLoginResponse.ContactNumber = (string)reader["ContactNumber"];
+                    objLoginResponse.IsFirstLogin = (bool)reader["IsFirstLogin"];
                 }
             }
             catch (Exception ex)

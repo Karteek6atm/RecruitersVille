@@ -31,7 +31,12 @@
             dataType: "json",
             success: function (data) {
                 if (data.StatusId == 1) {
-                    window.location = "/user/dashboard";
+                    if (data.IsFirstLogin) {
+                        window.location = "/user/profile";
+                    }
+                    else {
+                        window.location = "/user/dashboard";
+                    }
                 }
                 else {
                     showwarningalert(data.StatusMessage);
