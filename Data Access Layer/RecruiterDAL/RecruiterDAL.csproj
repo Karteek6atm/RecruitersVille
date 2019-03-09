@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="PackagesDal.cs" />
     <Compile Include="LoginDal.cs" />
+    <Compile Include="ProfileDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,8 +8,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using Microsoft.ApplicationBlocks.Data;
 using System.Data;
-using RecruiterBE.Requests;
 using RecruiterBE;
+using RecruiterBE.Requests;
 
 namespace RecruiterDAL
 {
@@ -30,7 +30,7 @@ namespace RecruiterDAL
                                         };
             SqlDataReader reader = null;
             LoginResponse objLoginResponse = new LoginResponse();
-
+            
             try
             {
                 reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_UserLogin", sqlparams);
@@ -66,7 +66,7 @@ namespace RecruiterDAL
             }
             return objLoginResponse;
         }
-
+        
         public RegistrationResponse UserRegistration(RegistrationRequest objrequest)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@FullName", SqlDbType.VarChar, 50) { Value = objrequest.fullname },

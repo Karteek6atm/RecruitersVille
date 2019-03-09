@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="PackagesBal.cs" />
     <Compile Include="LoginBal.cs" />
+    <Compile Include="ProfileBal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
