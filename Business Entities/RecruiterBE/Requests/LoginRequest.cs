@@ -34,4 +34,12 @@ namespace RecruiterBE.Requests
         public string verificationcode { get; set; }
         public string password { get; set; }
     }
+
+    public class ContactUsRequest
+    {
+        public string Name { get; set; }
+        public string EmailId { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
+    }
 }

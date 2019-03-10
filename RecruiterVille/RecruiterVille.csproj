@@ -300,6 +300,7 @@
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\application\common.js" />
+    <Content Include="Scripts\application\contactus.js" />
     <Content Include="Scripts\application\login.js" />
     <Content Include="Scripts\application\packages.js" />
     <Content Include="Scripts\application\register.js" />
@@ -376,6 +377,7 @@
     <Content Include="tables\data1.json" />
     <Content Include="tables\data2.json" />
     <Content Include="Views\Account\packages.cshtml" />
+    <Content Include="Views\Account\contactus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\images\" />

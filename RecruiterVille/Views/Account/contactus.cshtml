@@ -1,9 +1,15 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Recruiter Ville - Packages</title>
+    <title>Recruiter Ville - Contact us</title>
     <link rel="shortcut icon" type="image/png" href="images/ .ico" />
     <!-- bootstrap  CSS -->
     <!-- Font Asewome Icons -->
@@ -11,7 +17,7 @@
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
 
-    @Styles.Render("~/content/packages")
+    @Styles.Render("~/content/contactus")
 </head>
 <body>
     <!-- #Fixed top bar >>social icons & Login Register  navbar-fixed-top-->
@@ -52,52 +58,130 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.html"> Home</a></li>
                     <li><a href="#"> About Us    </a></li>
-                    <li class="active"><a href="/packages"> Price</a></li>
+                    <li><a href="/packages"> Price</a></li>
                     <li><a href="#"> Careers</a></li>
-                    <li><a href="/contactus"> Contact</a></li>
+                    <li class="active"><a href="/contactus"> Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- #Ends Navigation  -->
     <section class="page-header">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <ul class="breadcrumb">
                         <li><a href="/index.html">Home</a></li>
-                        <li class="active">Pricing</li>
+                        <li class="active">Contact Us</li>
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Pricing Tables</h1>
+                    <h1>Contact Us</h1>
                 </div>
             </div>
         </div>
     </section>
 
+    <section>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15221.485871064368!2d78.44677429999999!3d17.489772300000002!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550075263537" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h2 class="mb-none"><strong>Pricing</strong> Table  </h2>
-                <p>You can configure your pricing table using the grid system in order to make it <span class="alternative-font">responsive</span> for small devices.</p>
+            <div class="col-md-6">
 
-                <hr class="tall">
+                <div class="alert alert-success hidden" id="contactSuccess">
+                    <strong>Success!</strong> Your message has been sent to us.
+                </div>
+
+                <div class="alert alert-danger hidden" id="contactError">
+                    <strong>Error!</strong> There was an error sending your message.
+                </div>
+
+                <h2 class="mb-sm mt-sm"><strong>Contact</strong> Us</h2>
+                <div class="row">
+                    <div class="form-group clearfix">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Your Name <span style="color:red">*</span></label>
+                                <input type="text" maxlength="100" class="form-control" name="name" id="textname" onblur="return validatetextbox(this)">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Your EmailId <span style="color:red">*</span></label>
+                                <input type="email" maxlength="100" class="form-control" name="email" id="textemailid" onblur="return validateemailid(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group clearfix">
+                        <div class="col-md-12">
+                            <label>Subject <span style="color:red">*</span></label>
+                            <input type="text" maxlength="100" class="form-control" name="subject" id="textsubject" onblur="return validatetextbox(this)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group clearfix">
+                        <div class="col-md-12">
+                            <label>Message <span style="color:red">*</span></label>
+                            <textarea maxlength="5000" rows="10" class="form-control" name="message" id="textmessage" onblur="return validatetextbox(this)"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-primary btn-lg mb-xlg" href="javascript:void(0)" onclick="SendContactMessage()">Send Message</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="pricing-table" id="divpackages">
-               
+            <div class="col-md-6">
+
+                <h4 class="heading-primary mt-lg">Get in <strong>Touch</strong></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <hr>
+
+                <h4 class="heading-primary">The <strong>Office</strong></h4>
+                <ul class="list list-icons list-icons-style-3 mt-xlg">
+                    <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>
+                    <li><i class="fa fa-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>
+                    <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+                </ul>
+
+                <hr>
+
+                <h4 class="heading-primary">Business <strong>Hours</strong></h4>
+                <ul class="list list-icons list-dark mt-xlg">
+                    <li><i class="fa fa-clock-o"></i> Monday - Friday 9am to 5pm</li>
+                    <li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
+                    <li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+                </ul>
+
             </div>
 
         </div>
 
     </div>
 
-
+    <section class="call-to-action call-to-action-default with-button-arrow call-to-action-in-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="call-to-action-content">
+                        <h3>Porto is <strong>everything</strong> you need to create an <strong>awesome</strong>  !</h3>
+                        <p>The <strong>#1 Selling</strong>  you need to create an   </p>
+                    </div>
+                    <div class="call-to-action-btn">
+                        <a href="" target="_blank" class="btn btn-lg btn-primary"> Now!</a><span class="arrow hlb hidden-xs hidden-sm hidden-md" data-appear-animation="rotateInUpLeft" style="top: -12px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="footer">
@@ -159,8 +243,6 @@
             </div>
         </div>
     </section>
-
-    @Scripts.Render("~/bundles/packages")
-
+    @Scripts.Render("~/bundles/contactus")
 </body>
 </html>

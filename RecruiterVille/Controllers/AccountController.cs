@@ -77,6 +77,11 @@ namespace RecruiterVille.Controllers
             return View();
         }
 
+        public ActionResult contactus()
+        {
+            return View();
+        }
+
         #endregion
 
         #region Actions 
@@ -242,6 +247,26 @@ namespace RecruiterVille.Controllers
                
             }
             return Json(objPackagesList);
+        }
+
+        [HttpPost]
+        public ActionResult SendContactUsRequest(ContactUsRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objresponse = _LoginBal.InsertContactRequest(objrequest);
+            }
+            catch (Exception ex)
+            {
+                objresponse.StatusId = 0;
+                objresponse.StatusMessage = "Oops!! unable to process your request";
+            }
+            return Json(new
+            {
+                StatusId = objresponse.StatusId,
+                StatusMessage = objresponse.StatusMessage
+            });
         }
 
         #endregion

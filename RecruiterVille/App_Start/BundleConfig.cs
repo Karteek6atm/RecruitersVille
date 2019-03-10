@@ -61,6 +61,17 @@ namespace RecruiterVille
                       "~/app/js/bootstrap.min.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/packages.js"));
+
+            //Contactus Section
+            bundles.Add(new StyleBundle("~/content/contactus").Include(
+                      "~/css/bootstrap.min.css",
+                      "~/css/style.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/contactus").Include(
+                      "~/app/js/jquery-1.11.1.min.js",
+                      "~/app/js/bootstrap.min.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/contactus.js"));
         }
     }
 }

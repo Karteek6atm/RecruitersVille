@@ -199,6 +199,38 @@ namespace RecruiterDAL
             return objSaveResponse;
         }
 
+        public SaveResponse InsertContactRequest(ContactUsRequest objrequest)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@Name", SqlDbType.VarChar, 100) { Value = objrequest.Name },
+                                            new SqlParameter("@EmailId", SqlDbType.VarChar, 100) { Value = objrequest.EmailId },
+                                            new SqlParameter("@Subject", SqlDbType.VarChar, 100) { Value = objrequest.Subject },
+                                            new SqlParameter("@Message", SqlDbType.VarChar, -1) { Value = objrequest.Message }
+                                        };
+            SqlDataReader reader = null;
+            SaveResponse objresponse = new SaveResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_InsertContactRequest", sqlparams);
+
+                while (reader.Read())
+                {
+                    objresponse.StatusId = (int)reader["StatusId"];
+                    objresponse.StatusMessage = (string)reader["StatusMessage"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objresponse;
+        }
+
         #endregion
     }
 }
