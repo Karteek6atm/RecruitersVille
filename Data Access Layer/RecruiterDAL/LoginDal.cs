@@ -8,8 +8,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using Microsoft.ApplicationBlocks.Data;
 using System.Data;
-using RecruiterBE.Requests;
 using RecruiterBE;
+using RecruiterBE.Requests;
 
 namespace RecruiterDAL
 {
@@ -30,7 +30,7 @@ namespace RecruiterDAL
                                         };
             SqlDataReader reader = null;
             LoginResponse objLoginResponse = new LoginResponse();
-
+            
             try
             {
                 reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_UserLogin", sqlparams);
@@ -52,6 +52,7 @@ namespace RecruiterDAL
                     objLoginResponse.PackageId = (int)reader["PackageId"];
                     objLoginResponse.EmailId = (string)reader["EmailId"];
                     objLoginResponse.ContactNumber = (string)reader["ContactNumber"];
+                    objLoginResponse.IsFirstLogin = (bool)reader["IsFirstLogin"];
                 }
             }
             catch (Exception ex)
@@ -65,7 +66,7 @@ namespace RecruiterDAL
             }
             return objLoginResponse;
         }
-
+        
         public RegistrationResponse UserRegistration(RegistrationRequest objrequest)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@FullName", SqlDbType.VarChar, 50) { Value = objrequest.fullname },
@@ -196,6 +197,38 @@ namespace RecruiterDAL
                     con.Close();
             }
             return objSaveResponse;
+        }
+
+        public SaveResponse InsertContactRequest(ContactUsRequest objrequest)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@Name", SqlDbType.VarChar, 100) { Value = objrequest.Name },
+                                            new SqlParameter("@EmailId", SqlDbType.VarChar, 100) { Value = objrequest.EmailId },
+                                            new SqlParameter("@Subject", SqlDbType.VarChar, 100) { Value = objrequest.Subject },
+                                            new SqlParameter("@Message", SqlDbType.VarChar, -1) { Value = objrequest.Message }
+                                        };
+            SqlDataReader reader = null;
+            SaveResponse objresponse = new SaveResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_InsertContactRequest", sqlparams);
+
+                while (reader.Read())
+                {
+                    objresponse.StatusId = (int)reader["StatusId"];
+                    objresponse.StatusMessage = (string)reader["StatusMessage"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objresponse;
         }
 
         #endregion

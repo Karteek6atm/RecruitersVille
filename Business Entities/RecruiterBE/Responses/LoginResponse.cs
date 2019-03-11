@@ -23,6 +23,7 @@ namespace RecruiterBE.Responses
         public string CompanyLogoPath { get; set; }
         public int PackageId { get; set; }
         public int UserId { get; set; }
+        public bool IsFirstLogin { get; set; }
     }
     
     public class RegistrationResponse

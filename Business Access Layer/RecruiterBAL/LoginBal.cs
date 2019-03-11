@@ -7,6 +7,7 @@ using RecruiterBE.Responses;
 using RecruiterDAL;
 using RecruiterBE.Requests;
 using RecruiterBE;
+using System.Configuration;
 
 namespace RecruiterBAL
 {
@@ -90,6 +91,27 @@ namespace RecruiterBAL
         {
             objrequest.password = CommonMethods.Encrypt(objrequest.password);
             return _LoginDal.UpdateForgotPassword(objrequest);
+        }
+
+        public SaveResponse InsertContactRequest(ContactUsRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objresponse = _LoginDal.InsertContactRequest(objrequest);
+
+                if (objresponse.StatusId == 1)
+                {
+                    string contactusadminemail = ConfigurationSettings.AppSettings["ContactusRequestToEmailId"].ToString(); 
+                    SendEmail.SendContactusEmailToAdmin(contactusadminemail, objrequest);
+                    SendEmail.SendContactusEmailToUser(objrequest.EmailId, objrequest.Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
         }
 
         #endregion

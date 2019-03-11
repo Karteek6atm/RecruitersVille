@@ -48,6 +48,17 @@ namespace RecruiterVille
            );
 
             routes.MapRoute(
+               name: "contactus",
+               url: "contactus/{param1}",
+               defaults: new
+               {
+                   controller = "account",
+                   action = "contactus",
+                   param1 = UrlParameter.Optional
+               }
+           );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{param1}",
                 defaults: new { controller = "account", action = "login", param1 = UrlParameter.Optional }
