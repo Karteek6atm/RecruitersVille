@@ -1202,10 +1202,7 @@ html .heading-primary, html .lnk-primary, html .text-color-primary {
 .call-to-action.call-to-action-default {
     background: #f2f2f2;
 }
-.call-to-action {
-    position: relative;
-    clear: both;
-    min-height: 125px;
-    padding-left: 25px;
-    padding-right: 25px;
-}
+.call-to-action {    position: relative;clear: both;min-height: 125px;padding-left: 25px;padding-right: 25px;}
+h2.mb-none {color:#fff;margin: 10px 0 40px;}
+.feature-box {float: left;width: 100%;}
+ 
