@@ -1,5 +1,0 @@
-D:\Karteek\Projects\New folder\RecruiterVille\Business Entities\RecruiterBE\bin\Release\RecruiterBE.dll
-D:\Karteek\Projects\New folder\RecruiterVille\Business Entities\RecruiterBE\bin\Release\RecruiterBE.pdb
-D:\Karteek\Projects\New folder\RecruiterVille\Business Entities\RecruiterBE\obj\Release\RecruiterBE.csprojResolveAssemblyReference.cache
-D:\Karteek\Projects\New folder\RecruiterVille\Business Entities\RecruiterBE\obj\Release\RecruiterBE.dll
-D:\Karteek\Projects\New folder\RecruiterVille\Business Entities\RecruiterBE\obj\Release\RecruiterBE.pdb
