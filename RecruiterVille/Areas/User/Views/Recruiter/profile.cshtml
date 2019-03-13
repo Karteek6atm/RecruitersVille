@@ -16,8 +16,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Profile</h1>
-        <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+         <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
         <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
     </div>
 </div><!--/.row-->
@@ -38,73 +37,76 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Personal Details</div>
                                 <div class="panel-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Full name <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textuserfullname" name="userfullname" type="text" onblur="validatetextbox(this)" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>EmailId <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textuseremailid" name="useremailid" type="text" onblur="validateemailid(this)" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Contact number <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textusercontact" name="usercontact" type="text" onblur="validatephonenumber(this)" />
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>About me <span class="mandatory">*</span></label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutme" name="useraboutme"></textarea>
-                                        </div>
-                                    </div>
+                                  
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Profile Picture <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="fileprofilepicture" name="userprofilepicture" type="file" accept="images" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Street </label>
                                             <input class="form-control" placeholder="" id="textuserstreet" name="userstreet" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>City </label>
                                             <input class="form-control" placeholder="" id="textusercity" name="usercity" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>State </label>
                                             <input class="form-control" placeholder="" id="textuserstate" name="userstate" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Country </label>
                                             <input class="form-control" placeholder="" id="textusercountry" name="usercountry" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Zipcode </label>
                                             <input class="form-control" placeholder="" id="textuserzipcode" name="userzipcode" maxlength="8" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Landmark </label>
                                             <input class="form-control" placeholder="" id="textuserlandmark" name="userlandmark" type="text" />
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePersonalDetails()">Update</a>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>About me <span class="mandatory">*</span></label>
+                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutme" name="useraboutme"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePersonalDetails()">Update</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -112,61 +114,64 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Company Details</div>
                                 <div class="panel-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Company name <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textcompanyname" name="companyname" type="text" onblur="validatetextbox(this)" />
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>About Company <span class="mandatory">*</span></label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutcompany" name="companyaboutme"></textarea>
-                                        </div>
-                                    </div>
+                                  
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Company Logo <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="filecompanylogo" name="companylogo" type="file" accept="images" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Street </label>
                                             <input class="form-control" placeholder="" id="textcompanystreet" name="companystreet" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>City </label>
                                             <input class="form-control" placeholder="" id="textcompanycity" name="companycity" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>State </label>
                                             <input class="form-control" placeholder="" id="textcompanystate" name="companystate" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Country </label>
                                             <input class="form-control" placeholder="" id="textcompanycountry" name="companycountry" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Zipcode </label>
                                             <input class="form-control" placeholder="" id="textcompanyzipcode" name="companyzipcode" maxlength="8" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Landmark </label>
                                             <input class="form-control" placeholder="" id="textcompanylandmark" name="companylandmark" type="text" />
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdateCompanyDetails()">Update</a>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>About Company <span class="mandatory">*</span></label>
+                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutcompany" name="companyaboutme"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdateCompanyDetails()">Update</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -174,25 +179,20 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Professional Details</div>
                                 <div class="panel-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Company name </label>
                                             <input class="form-control" placeholder="" id="textprofessionalcompanyname" name="professionalcompanyname" type="text" disabled />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Designation <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textprofessionaldesignation" name="professionaldesignation" type="text" onblur="validatetextbox(this)" />
-                                        </div>
-                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Work Start Date with this Company <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textprofessionalworkstartedate" name="professionalworkstartedate" type="text" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Experience <span class="mandatory">*</span></label>
                                             <select class="form-control" id="selectprofessionalexperience" name="professionalexperience">
@@ -200,7 +200,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Hiring Level <span class="mandatory">*</span></label>
                                             <select class="form-control" id="selectprofessionalhiringlevel" multiple name="professionalhiringlevel">
@@ -208,7 +208,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Industries <span class="mandatory">*</span></label>
                                             <select class="form-control" id="selectprofessionalindustries" multiple name="professionalindustries">
@@ -216,7 +216,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Functional Areas <span class="mandatory">*</span></label>
                                             <select class="form-control" id="selectprofessionalfunctionalareas" multiple name="professionalfunctionalareas">
@@ -224,7 +224,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Skills & Technologies <span class="mandatory">*</span></label>
                                             <select class="form-control" id="selectprofessionalskills" multiple name="professionalskills">
@@ -232,19 +232,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutprofessional" name="professionalaboutme"></textarea>
-                                        </div>
-                                    </div>
+                                  
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Achievements</label>
                                             <textarea rows="4" class="form-control" placeholder="" id="textprofessionalachievements" name="professionalachievements"></textarea>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdateProfessionalDetails()">Update</a>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Designation <span class="mandatory">*</span></label>
+                                            <input class="form-control" placeholder="" id="textprofessionaldesignation" name="professionaldesignation" type="text" onblur="validatetextbox(this)" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutprofessional" name="professionalaboutme"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdateProfessionalDetails()">Update</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -252,25 +261,27 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Change Password</div>
                                 <div class="panel-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Old Password <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textoldpassword" name="oldpassword" type="password" onblur="validateoldpassword(this)" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>New Password <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textnewpassword" name="newpassword" type="password" onblur="validatenewpassword(this)" />
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Confirm Password <span class="mandatory">*</span></label>
                                             <input class="form-control" placeholder="" id="textconfirmpassword" name="confirmpassword" type="password" onblur="validateconfirmpassword(this)" />
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePassword()">Update</a>
+                                    <div class="col-md-12">
+                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePassword()">Update</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

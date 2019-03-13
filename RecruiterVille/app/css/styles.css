@@ -869,7 +869,9 @@ a.label:hover, a.label:focus {
   padding: 10px 15px 10px 15px;
   background: #e9ecf2;
   margin: 0; }
+label{font-weight: 500;
 
+font-size: 12px;}
 h1.page-header {
   margin-top: 20px;
   border-bottom: 0; }
