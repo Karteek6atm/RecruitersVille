@@ -1,293 +1,349 @@
-﻿
+﻿@using RecruiterBE.Responses;
+
 @{
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-<div class="row">
-    <ol class="breadcrumb">
-        <li>
-            <a href="javascript:void(0)">
-                <em class="fa fa-home"></em>
-            </a>
-        </li>
-        <li class="active">Profile</li>
-    </ol>
-</div><!--/.row-->
+@Styles.Render("~/content/profile")
 
-<div class="row">
-    <div class="col-lg-12">
-         <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
-        <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
-    </div>
-</div><!--/.row-->
+@if (ViewBag.Masters != null)
+{
+    ProfileMastersResponse objprofilemastersresponse = new ProfileMastersResponse();
+    objprofilemastersresponse = ViewBag.Masters;
+    List<ExperiencesResponse> Experiences = objprofilemastersresponse.Experiences;
+    List<HiringForResponse> HiringFor = objprofilemastersresponse.HiringFor;
+    List<IndustriesResponse> Industries = objprofilemastersresponse.Industries;
+    List<SubIndustriesResponse> SubIndustries = objprofilemastersresponse.SubIndustries;
+    List<TechnologiesResponse> Technologies = objprofilemastersresponse.Technologies;
 
-<div class="panel panel-container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-body tabs">
-                    <ul class="nav nav-pills">
-                        <li class="active"><a href="#pilltab1" data-toggle="tab">Personal Details</a></li>
-                        <li><a href="#pilltab2" data-toggle="tab">Company Details</a></li>
-                        <li><a href="#pilltab3" data-toggle="tab">Professional Details</a></li>
-                        <li><a href="#pilltab4" data-toggle="tab">Change Password</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade in active" id="pilltab1">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Personal Details</div>
-                                <div class="panel-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Full name <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textuserfullname" name="userfullname" type="text" onblur="validatetextbox(this)" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>EmailId <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textuseremailid" name="useremailid" type="text" onblur="validateemailid(this)" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Contact number <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textusercontact" name="usercontact" type="text" onblur="validatephonenumber(this)" />
-                                        </div>
-                                    </div>
-                                  
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Profile Picture <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="fileprofilepicture" name="userprofilepicture" type="file" accept="images" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Street </label>
-                                            <input class="form-control" placeholder="" id="textuserstreet" name="userstreet" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>City </label>
-                                            <input class="form-control" placeholder="" id="textusercity" name="usercity" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>State </label>
-                                            <input class="form-control" placeholder="" id="textuserstate" name="userstate" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Country </label>
-                                            <input class="form-control" placeholder="" id="textusercountry" name="usercountry" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Zipcode </label>
-                                            <input class="form-control" placeholder="" id="textuserzipcode" name="userzipcode" maxlength="8" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Landmark </label>
-                                            <input class="form-control" placeholder="" id="textuserlandmark" name="userlandmark" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>About me <span class="mandatory">*</span></label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutme" name="useraboutme"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePersonalDetails()">Update</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pilltab2">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Company Details</div>
-                                <div class="panel-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Company name <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textcompanyname" name="companyname" type="text" onblur="validatetextbox(this)" />
-                                        </div>
-                                    </div>
-                                  
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Company Logo <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="filecompanylogo" name="companylogo" type="file" accept="images" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Street </label>
-                                            <input class="form-control" placeholder="" id="textcompanystreet" name="companystreet" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>City </label>
-                                            <input class="form-control" placeholder="" id="textcompanycity" name="companycity" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>State </label>
-                                            <input class="form-control" placeholder="" id="textcompanystate" name="companystate" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Country </label>
-                                            <input class="form-control" placeholder="" id="textcompanycountry" name="companycountry" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Zipcode </label>
-                                            <input class="form-control" placeholder="" id="textcompanyzipcode" name="companyzipcode" maxlength="8" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Landmark </label>
-                                            <input class="form-control" placeholder="" id="textcompanylandmark" name="companylandmark" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>About Company <span class="mandatory">*</span></label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutcompany" name="companyaboutme"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdateCompanyDetails()">Update</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pilltab3">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Professional Details</div>
-                                <div class="panel-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Company name </label>
-                                            <input class="form-control" placeholder="" id="textprofessionalcompanyname" name="professionalcompanyname" type="text" disabled />
-                                        </div>
-                                    </div>
+        <ol class="breadcrumb">
+            <li>
+                <a href="javascript:void(0)">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Profile</li>
+        </ol>
+    </div><!--/.row-->
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Work Start Date with this Company <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textprofessionalworkstartedate" name="professionalworkstartedate" type="text" />
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+            <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+            <input type="hidden" id="hiddenroleid" value="@ViewBag.RoleId" />
+        </div>
+    </div><!--/.row-->
+
+    <div class="panel panel-container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body tabs">
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#pilltab1" data-toggle="tab">Personal Details</a></li>
+                            @if (ViewBag.RoleId == 1)
+                            {
+                                <li><a href="#pilltab2" data-toggle="tab">Company Details</a></li>
+                            }
+                            <li><a href="#pilltab3" data-toggle="tab">Professional Details</a></li>
+                            <li><a href="#pilltab4" data-toggle="tab">Change Password</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="pilltab1">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Personal Details</div>
+                                    <input type="hidden" id="hiddenuserid" value="" />
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Full name <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textuserfullname" name="userfullname" type="text" onblur="validatetextbox(this)" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Experience <span class="mandatory">*</span></label>
-                                            <select class="form-control" id="selectprofessionalexperience" name="professionalexperience">
-                                                <option value="0">Select Experience</option>
-                                            </select>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>EmailId <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textuseremailid" name="useremailid" type="text" onblur="validateemailid(this)" disabled />
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Contact number <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textusercontact" name="usercontact" type="text" onblur="validatephonenumber(this)" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Hiring Level <span class="mandatory">*</span></label>
-                                            <select class="form-control" id="selectprofessionalhiringlevel" multiple name="professionalhiringlevel">
-                                                <option value="0">Select Hiring Level</option>
-                                            </select>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Profile Picture <span class="mandatory">*</span></label>
+                                                <input type="hidden" id="hiddenprofilepic" value="" />
+                                                <input class="form-control" placeholder="" id="fileprofilepicture" name="userprofilepicture" type="file" accept="images" onchange="uploaduserprofilepic()" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Industries <span class="mandatory">*</span></label>
-                                            <select class="form-control" id="selectprofessionalindustries" multiple name="professionalindustries">
-                                                <option value="0">Select Industries</option>
-                                            </select>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Street </label>
+                                                <input class="form-control" placeholder="" id="textuserstreet" name="userstreet" type="text" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Functional Areas <span class="mandatory">*</span></label>
-                                            <select class="form-control" id="selectprofessionalfunctionalareas" multiple name="professionalfunctionalareas">
-                                                <option value="0">Select Functional Areas</option>
-                                            </select>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>City </label>
+                                                <input class="form-control" placeholder="" id="textusercity" name="usercity" type="text" />
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>State </label>
+                                                <input class="form-control" placeholder="" id="textuserstate" name="userstate" type="text" />
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Country </label>
+                                                <input class="form-control" placeholder="" id="textusercountry" name="usercountry" type="text" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Skills & Technologies <span class="mandatory">*</span></label>
-                                            <select class="form-control" id="selectprofessionalskills" multiple name="professionalskills">
-                                                <option value="0">Select Skills & Technologies</option>
-                                            </select>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Zipcode </label>
+                                                <input class="form-control" placeholder="" id="textuserzipcode" name="userzipcode" maxlength="8" type="text" />
+                                            </div>
                                         </div>
-                                    </div>
-                                  
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Achievements</label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textprofessionalachievements" name="professionalachievements"></textarea>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Landmark </label>
+                                                <input class="form-control" placeholder="" id="textuserlandmark" name="userlandmark" type="text" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Designation <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textprofessionaldesignation" name="professionaldesignation" type="text" onblur="validatetextbox(this)" />
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>About me <span class="mandatory">*</span></label>
+                                                <textarea rows="4" class="form-control" placeholder="" id="textaboutme" name="useraboutme"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea rows="4" class="form-control" placeholder="" id="textaboutprofessional" name="professionalaboutme"></textarea>
+                                        <div class="col-lg-6">
+                                            <a href="javascript:void(0)" class="btn btn-primary" onclick="updatepersonaldetails()">Update</a>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdateProfessionalDetails()">Update</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pilltab4">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Change Password</div>
-                                <div class="panel-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Old Password <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textoldpassword" name="oldpassword" type="password" onblur="validateoldpassword(this)" />
+                            <div class="tab-pane fade" id="pilltab2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Company Details</div>
+                                    <input type="hidden" id="hiddencompanyid" value="" />
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Company name <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textcompanyname" name="companyname" type="text" onblur="validatetextbox(this)" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Company Logo <span class="mandatory">*</span></label>
+                                                <input type="hidden" id="hiddencompanylogo" value="" />
+                                                <input class="form-control" placeholder="" id="filecompanylogo" name="companylogo" type="file" accept="images" onchange="uploadcompanylogo()" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Street </label>
+                                                <input class="form-control" placeholder="" id="textcompanystreet" name="companystreet" type="text" />
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>City </label>
+                                                <input class="form-control" placeholder="" id="textcompanycity" name="companycity" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>State </label>
+                                                <input class="form-control" placeholder="" id="textcompanystate" name="companystate" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Country </label>
+                                                <input class="form-control" placeholder="" id="textcompanycountry" name="companycountry" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Zipcode </label>
+                                                <input class="form-control" placeholder="" id="textcompanyzipcode" name="companyzipcode" maxlength="8" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"> 
+                                            <div class="form-group">
+                                                <label>Landmark </label>
+                                                <input class="form-control" placeholder="" id="textcompanylandmark" name="companylandmark" type="text" />
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>About Company <span class="mandatory">*</span></label>
+                                                <textarea rows="4" class="form-control" placeholder="" id="textaboutcompany" name="companyaboutme"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="javascript:void(0)" class="btn btn-primary" id="acompanyupdate" onclick="updatecompanydetails()">Update</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>New Password <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textnewpassword" name="newpassword" type="password" onblur="validatenewpassword(this)" />
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pilltab3">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Professional Details</div>
+                                    <input type="hidden" id="hiddenprofessionalid" value="" />
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Company name </label>
+                                                <input class="form-control" placeholder="" value="@ViewBag.CompanyName" id="textprofessionalcompanyname" name="professionalcompanyname" type="text" disabled />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Work Start Date with this Company <span class="mandatory">*</span></label>
+                                                <input class="form-control datepicker" placeholder="" id="textprofessionalworkstartedate" name="professionalworkstartedate" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Experience <span class="mandatory">*</span></label>
+                                                <select class="form-control" id="selectprofessionalexperience" name="professionalexperience">
+                                                    <option value="0">Select Experience</option>
+                                                    @foreach (ExperiencesResponse experience in Experiences)
+                                                    {
+                                                    <option value="@experience.ExperienceId">@experience.ExperienceName</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>  
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Hiring Level <span class="mandatory">*</span></label>
+                                                <select class="form-control multiple-select" id="selectprofessionalhiringlevel" multiple name="professionalhiringlevel">
+                                                    @foreach (HiringForResponse hiring in HiringFor)
+                                                    {
+                                                    <option value="@hiring.HiringForId">@hiring.HiringForName</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Industries <span class="mandatory">*</span></label>
+                                                <select class="form-control multiple-select" id="selectprofessionalindustries" multiple name="professionalindustries">
+                                                    @foreach (IndustriesResponse industry in Industries)
+                                                    {
+                                                    <option value="@industry.IndustryId">@industry.IndustryName</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Functional Areas <span class="mandatory">*</span></label>
+                                                <select class="form-control multiple-select" id="selectprofessionalfunctionalareas" multiple name="professionalfunctionalareas">
+                                                    @foreach (SubIndustriesResponse subindustry in SubIndustries)
+                                                    {
+                                                    <option value="@subindustry.SubIndustryId">@subindustry.SubIndustryName</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>  
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Skills & Technologies <span class="mandatory">*</span></label>
+                                                <select class="form-control multiple-select" id="selectprofessionalskills" multiple name="professionalskills">
+                                                    @foreach (TechnologiesResponse technology in Technologies)
+                                                    {
+                                                    <option value="@technology.TechnologyId">@technology.TechnologyName</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Achievements</label>
+                                                <textarea rows="4" class="form-control" placeholder="" id="textprofessionalachievements" name="professionalachievements"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Designation <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textprofessionaldesignation" name="professionaldesignation" type="text" onblur="validatetextbox(this)" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea rows="4" class="form-control" placeholder="" id="textaboutprofessional" name="professionalaboutme"></textarea>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <a href="javascript:void(0)" class="btn btn-primary" onclick="updateprofessionaldetails()">Update</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Confirm Password <span class="mandatory">*</span></label>
-                                            <input class="form-control" placeholder="" id="textconfirmpassword" name="confirmpassword" type="password" onblur="validateconfirmpassword(this)" />
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pilltab4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Change Password</div>
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Old Password <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textoldpassword" name="oldpassword" type="password" onblur="validateoldpassword(this)" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePassword()">Update</a>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>New Password <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textnewpassword" name="newpassword" type="password" onblur="validatenewpassword(this)" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Confirm Password <span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="textconfirmpassword" name="confirmpassword" type="password" onblur="validateconfirmpassword(this)" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePassword()">Update</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div><!--/.panel-->
-    </div>
-</div><!--/.row-->
+            </div><!--/.panel-->
+        </div>
+    </div><!--/.row-->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    @Scripts.Render("~/bundles/profile")
+    <script type="text/javascript">
+        (function ($) {
+            $(function () {
+                $('.multiple-select').fSelect();
+            });
+            getprofiledetails();
+        })(jQuery);
+    </script>
+}

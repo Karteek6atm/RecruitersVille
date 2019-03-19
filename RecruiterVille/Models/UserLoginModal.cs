@@ -46,4 +46,9 @@ namespace RecruiterVille.Models
     {
         public string currency { get; set; }
     }
+
+    public class ImageUploadModal
+    {
+        public string imagepath { get; set; }
+    }
 }
