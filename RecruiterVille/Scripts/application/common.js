@@ -68,6 +68,19 @@ function validatetextbox(obj) {
     }
 }
 
+function validatedropdown(obj) {
+    $(obj).closest('.form-group').removeClass("has-success");
+    $(obj).closest('.form-group').removeClass("has-error");
+    if ($(obj).val().trim() == "0") {
+        $(obj).closest('.form-group').addClass("has-error");
+        return false;
+    }
+    else {
+        $(obj).closest('.form-group').addClass("has-success");
+        return true;
+    }
+}
+
 function validateemailid(obj) {
     $(obj).closest('.form-group').removeClass("has-success");
     $(obj).closest('.form-group').removeClass("has-error");
@@ -155,4 +168,35 @@ function checkpasswordcriteria(obj) {
         $(obj).closest('.form-group').addClass("has-error");
         return false;
     }
+}
+
+function validateimage(obj) {
+    $(obj).closest('.form-group').removeClass("has-success");
+    $(obj).closest('.form-group').removeClass("has-error");
+    var fileextensions = ['jpeg', 'jpg', 'png', 'bmp'];
+
+    if ($(obj).val().trim() == "") {
+        $(obj).closest('.form-group').addClass("has-error");
+        return false;
+    }
+    else if ($.inArray($(obj).val().trim().split('.').pop().toLowerCase(), fileextensions) == -1) {
+        $(obj).closest('.form-group').addClass("has-error");
+        return false;
+    }
+    else {
+        $(obj).closest('.form-group').addClass("has-success");
+        return true;
+    }
+}
+
+function getmultiselectedvalues(obj) {
+    var options = $(obj).find('option:selected');
+    var selectedvalues = '';
+
+    for (var i = 0; i < options.length; i++) {
+        var value = $(options[i]).val();
+        selectedvalues = (selectedvalues == "") ? value : selectedvalues + ',' + value;
+    }
+
+    return selectedvalues;
 }
