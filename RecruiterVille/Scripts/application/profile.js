@@ -46,7 +46,7 @@
 
                 if (professionaldetails != null) {
                     $('#hiddenprofessionalid').val(professionaldetails.UserProfessionId);
-                    $('#textprofessionalcompanyname').val(professionaldetails.CompanyName);
+                    //$('#textprofessionalcompanyname').val(professionaldetails.CompanyName);
                     $('#textprofessionalworkstartedate').val(professionaldetails.CurrentCompanyWorkStartDate);
                     $('#selectprofessionalexperience').val(professionaldetails.Experience);
                     $('#textprofessionalachievements').val(professionaldetails.Achievements);
@@ -96,12 +96,11 @@
                             $(professionalskills[i]).attr('selected', true);
                         }
                     }
-
-                    $('.multiple-select').fSelect();
                 }
             }
 
             hideloading();
+            $('.multiple-select').fSelect();
         },
         error: function (xhr) {
             hideloading();
@@ -191,7 +190,7 @@ function updatepersonaldetails() {
         isvalid = false;
     }
     if (validatetextbox(hiddenprofilepic) == false) {
-        $(fileprofilepicture).closest('.form-group').removeClass("has-error");
+        //$(hiddenprofilepic).closest('.form-group').removeClass("has-error");
         isvalid = false;
     }
 
@@ -200,7 +199,6 @@ function updatepersonaldetails() {
 
         var input = [];
         input = {
-            UserLoginId: loginid,
             FullName: textuserfullname.val().trim(),
             ContactNumber: textusercontact.val().trim(),
             AboutMe: textaboutme.val().trim(),
@@ -221,6 +219,10 @@ function updatepersonaldetails() {
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
+
+                    if (hiddenprofilepic.val().trim() != "") {
+                        $('#imgprofilepic').attr("src", hiddenprofilepic.val().trim());
+                    }
                 }
                 else {
                     showwarningalert(data.StatusMessage);
@@ -252,7 +254,7 @@ function updatecompanydetails() {
     var textcompanyzipcode = $("#textcompanyzipcode");
     var textcompanylandmark = $("#textcompanylandmark");
     var textaboutcompany = $("#textaboutcompany");
-         
+
     var isvalid = true;
 
     if (validatetextbox(textcompanyname) == false) {
@@ -262,7 +264,7 @@ function updatecompanydetails() {
         isvalid = false;
     }
     if (validatetextbox(hiddencompanylogo) == false) {
-        $(filecompanylogo).closest('.form-group').removeClass("has-error");
+        //$(hiddencompanylogo).closest('.form-group').addClass("has-error");
         isvalid = false;
     }
 
@@ -271,7 +273,6 @@ function updatecompanydetails() {
 
         var input = [];
         input = {
-            UserLoginId: loginid,
             CompanyId: companyid,
             CompanyName: textcompanyname.val().trim(),
             AboutCompany: textaboutcompany.val().trim(),
@@ -283,7 +284,7 @@ function updatecompanydetails() {
             Country: textcompanycountry.val().trim(),
             Zipcode: textcompanyzipcode.val().trim()
         };
-        
+
         $.ajax({
             type: "POST",
             data: (input),
@@ -292,6 +293,8 @@ function updatecompanydetails() {
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
+
+                    $("#textprofessionalcompanyname").val(textcompanyname.val().trim());
                 }
                 else {
                     showwarningalert(data.StatusMessage);
@@ -321,7 +324,7 @@ function updateprofessionaldetails() {
     var textprofessionalachievements = $("#textprofessionalachievements");
     var textprofessionaldesignation = $("#textprofessionaldesignation");
     var textaboutprofessional = $("#textaboutprofessional");
-    
+
     var isvalid = true;
     var professionalhiringlevel = getmultiselectedvalues(selectprofessionalhiringlevel);
     var professionalindustries = getmultiselectedvalues(selectprofessionalindustries);
@@ -376,10 +379,9 @@ function updateprofessionaldetails() {
 
     if (isvalid) {
         showloading();
-        
+
         var input = [];
         input = {
-            UserLoginId: loginid,
             Designation: textprofessionaldesignation.val().trim(),
             CurrentCompanyWorkStartDate: textprofessionalworkstartedate.val().trim(),
             Experience: selectprofessionalexperience.val().trim(),
@@ -399,6 +401,98 @@ function updateprofessionaldetails() {
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
+                }
+                else {
+                    showwarningalert(data.StatusMessage);
+                }
+                hideloading();
+            },
+            error: function (xhr) {
+                hideloading();
+                showerroralert(xhr.responseText);
+            }
+        });
+    }
+    else {
+        return false;
+    }
+}
+
+function validatepassword(obj) {
+    if (validatetextbox(obj) == false) {
+        return false;
+    }
+    else if (checkpasswordcriteria(obj) == false) {
+        return false;
+    }
+}
+
+function validateconfirmpassword(obj) {
+    var textpassword = $("#textnewpassword");
+    var isvalid = true;
+
+    $(textpassword).closest('.form-group').removeClass("has-success");
+    $(textpassword).closest('.form-group').removeClass("has-error");
+    $(obj).closest('.form-group').removeClass("has-success");
+    $(obj).closest('.form-group').removeClass("has-error");
+
+    if (validatepassword(textpassword) == false) {
+        isvalid = false;
+    }
+    if (validatepassword(obj) == false) {
+        isvalid = false;
+    }
+    if ($(textpassword).val().trim() != $(obj).val().trim()) {
+        $(textpassword).closest('.form-group').addClass("has-error");
+        $(obj).closest('.form-group').addClass("has-error");
+        isvalid = false;
+    }
+    else {
+        $(textpassword).closest('.form-group').addClass("has-success");
+        $(obj).closest('.form-group').addClass("has-success");
+        isvalid = true;
+    }
+    return isvalid;
+}
+
+function updatepassword() {
+    hideallalerts();
+    var loginid = $("#hiddenloginid").val();
+    var textoldpassword = $("#textoldpassword");
+    var textnewpassword = $("#textnewpassword");
+    var textconfirmpassword = $("#textconfirmpassword");
+
+    var isvalid = true;
+
+    if (validatetextbox(textoldpassword) == false) {
+        isvalid = false;
+    }
+    if (validatepassword(textnewpassword) == false) {
+        isvalid = false;
+    }
+    if (validateconfirmpassword(textconfirmpassword) == false) {
+        isvalid = false;
+    }
+
+    if (isvalid) {
+        showloading();
+
+        var input = [];
+        input = {
+            OldPassword: textoldpassword.val().trim(),
+            NewPassword: textnewpassword.val().trim()
+        };
+
+        $.ajax({
+            type: "POST",
+            data: (input),
+            url: "/recruiter/updateuserpassword",
+            dataType: "json",
+            success: function (data) {
+                if (data.StatusId == 1) {
+                    showsuccessalert(data.StatusMessage);
+
+                    window.location = "/account/logout";
                 }
                 else {
                     showwarningalert(data.StatusMessage);

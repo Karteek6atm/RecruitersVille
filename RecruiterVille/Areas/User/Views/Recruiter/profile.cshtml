@@ -72,7 +72,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>EmailId <span class="mandatory">*</span></label>
-                                                <input class="form-control" placeholder="" id="textuseremailid" name="useremailid" type="text" onblur="validateemailid(this)" disabled />
+                                                <input class="form-control" placeholder="" id="textuseremailid" name="useremailid" type="text" disabled />
                                             </div>
                                         </div> 
                                         <div class="col-md-6">
@@ -309,13 +309,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Old Password <span class="mandatory">*</span></label>
-                                                <input class="form-control" placeholder="" id="textoldpassword" name="oldpassword" type="password" onblur="validateoldpassword(this)" />
+                                                <input class="form-control" placeholder="" id="textoldpassword" name="oldpassword" type="password" onblur="validatetextbox(this)" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>New Password <span class="mandatory">*</span></label>
-                                                <input class="form-control" placeholder="" id="textnewpassword" name="newpassword" type="password" onblur="validatenewpassword(this)" />
+                                                <input class="form-control" placeholder="" id="textnewpassword" name="newpassword" type="password" onblur="validatepassword(this)" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -325,7 +325,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <a href="javascript:void(0)" class="btn btn-primary" onclick="UpdatePassword()">Update</a>
+                                            <a href="javascript:void(0)" class="btn btn-primary" onclick="updatepassword()">Update</a>
                                         </div>
                                     </div>
                                 </div>
@@ -340,9 +340,9 @@
     @Scripts.Render("~/bundles/profile")
     <script type="text/javascript">
         (function ($) {
-            $(function () {
-                $('.multiple-select').fSelect();
-            });
+            //$(function () {
+            //    $('.multiple-select').fSelect();
+            //});
             getprofiledetails();
         })(jQuery);
     </script>

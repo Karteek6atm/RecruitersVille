@@ -1,4 +1,5 @@
 ﻿using RecruiterBAL;
+using RecruiterBE;
 using RecruiterBE.Requests;
 using RecruiterBE.Responses;
 using RecruiterVille.CommonClasses;
@@ -237,7 +238,14 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objresponse = _ProfileBal.UpdateUserPersonalDetails(objrequest);
+
+                    if(objresponse.StatusId == 1)
+                    {
+                        response.ProfilePicPath = objrequest.ProfilePicPath;
+                    }
                 }
             }
             catch (Exception ex)
@@ -255,7 +263,15 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+                    objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
                     objresponse = _ProfileBal.UpdateCompanyDetails(objrequest);
+
+                    if (objresponse.StatusId == 1)
+                    {
+                        response.CompanyLogoPath = objrequest.CompanyLogoPath;
+                    }
                 }
             }
             catch (Exception ex)
@@ -273,6 +289,8 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objresponse = _ProfileBal.UpdateUserProfessionalDetails(objrequest);
                 }
             }
@@ -291,6 +309,8 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objresponse = _ProfileBal.UpdateUserPassword(objrequest);
                 }
             }
