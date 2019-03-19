@@ -806,9 +806,9 @@ ul li{line-height: 32px;}
     margin: 0;
     padding: 50px 0;
 }
-.tall{color: #777777}
+.tall{color: #fff}
 p.tall {    margin-bottom: 20px;}
- 
+ p{line-height: 26px;}
 .counters .counter {
 	text-align: center;padding: 40px 0;
 }
