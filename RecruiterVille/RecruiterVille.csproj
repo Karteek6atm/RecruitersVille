@@ -308,6 +308,7 @@
     <Content Include="Scripts\application\packages.js" />
     <Content Include="Scripts\application\profile.js" />
     <Content Include="Scripts\application\register.js" />
+    <Content Include="Scripts\application\users.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

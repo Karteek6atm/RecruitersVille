@@ -21,6 +21,7 @@ namespace RecruiterVille.Areas.User.Controllers
         #region Members
 
         ProfileBal _ProfileBal = new ProfileBal();
+        UserBal _UserBal = new UserBal();
         ManageSessions objManageSessions = new ManageSessions();
 
         #endregion
@@ -98,6 +99,12 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    UserMasterResponse objusermasterresponse = new UserMasterResponse();
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objusermasterresponse = _UserBal.GetMastersForUsers(response.CompanyId);
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.Masters = objusermasterresponse;
                     return View();
                 }
                 else
@@ -152,7 +159,9 @@ namespace RecruiterVille.Areas.User.Controllers
         #endregion
 
         #region Actions 
-        
+
+        #region Profile
+
         [HttpGet]
         public JsonResult GetProfileDetails()
         {
@@ -320,6 +329,31 @@ namespace RecruiterVille.Areas.User.Controllers
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
+
+        #endregion
+
+        #region Users 
+
+        [HttpGet]
+        public JsonResult GetUsersList()
+        {
+            List<UserResponse> objresponse = new List<UserResponse>();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objresponse = _UserBal.GetUsersList(response.CompanyId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
 
         #endregion
     }

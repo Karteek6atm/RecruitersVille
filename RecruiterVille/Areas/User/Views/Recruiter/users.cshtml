@@ -1,8 +1,98 @@
-﻿
+﻿@using RecruiterBE.Responses;
+
 @{
-    ViewBag.Title = "users";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>users</h2>
+@Styles.Render("~/content/users")
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 
+@if (ViewBag.Masters != null)
+{
+    UserMasterResponse objusermasterresponse = ViewBag.Masters;
+    List<RolesResponse> Roles = objusermasterresponse.Roles;
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="javascript:void(0)">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Users</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+            <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+        </div>
+    </div><!--/.row-->
+
+    <div class="panel panel-container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Users</div>
+                        <div class="col-lg-6 pull-right">
+                            <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewuser()">Add New User</a>
+                        </div>
+                        <input type="hidden" id="hiddenselecteduserid" value="" />
+                        <div class="panel-body">
+                            <div class="col-lg-12">
+                               <table class="table">
+                                   <thead>
+                                       <tr>
+                                           <th>
+                                               S.No.
+                                           </th>
+                                           <th>
+                                               User name
+                                           </th>
+                                           <th>
+                                               EmailId
+                                           </th>
+                                           <th>
+                                               Contact Number
+                                           </th>
+                                           <th>
+                                               Role Name
+                                           </th>
+                                           <th>
+                                               Designation
+                                           </th>
+                                           <th>
+                                               Address
+                                           </th>
+                                           <th>
+                                               Actions
+                                           </th>
+                                       </tr>
+                                   </thead>
+                                   <tbody id="tbodyusers">
+                                   </tbody>
+                               </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.panel-->
+        </div>
+    </div><!--/.row-->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    @Scripts.Render("~/bundles/users")
+    <script type="text/javascript">
+        (function ($) {
+            getuserslist();
+        })(jQuery);
+    </script>
+}
