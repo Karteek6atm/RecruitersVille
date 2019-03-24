@@ -103,12 +103,12 @@ namespace RecruiterBAL
             return objUserResponse;
         }
 
-        public SaveResponse InsertAndUpdateUserDetails(UserRequest objrequest)
+        public UserDetailsResponse GetUserDetailsById(int userid)
         {
-            SaveResponse objresponse = new SaveResponse();
+            UserDetailsResponse objresponse = new UserDetailsResponse();
             try
             {
-                objresponse = _UserDal.InsertAndUpdateUserDetails(objrequest);
+                objresponse = _UserDal.GetUserDetailsById(userid);
             }
             catch (Exception ex)
             {
@@ -116,7 +116,42 @@ namespace RecruiterBAL
             }
             return objresponse;
         }
-        
+
+        public UserSaveResponse InsertAndUpdateUserDetails(UserRequest objrequest)
+        {
+            UserSaveResponse objresponse = new UserSaveResponse();
+            try
+            {
+                string password = CommonMethods.GenerateUserPassword();
+                objrequest.Password = CommonMethods.Encrypt(password);
+                objresponse = _UserDal.InsertAndUpdateUserDetails(objrequest);
+
+                if(objresponse.StatusId == 1 && objresponse.IsNewUser)
+                {
+                    SendEmail.SendUserCreationEmail(objrequest.EmailId, objrequest.FullName, objresponse.AdminName, objresponse.CompanyName, password);
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public SaveResponse DeleteUserDetails(int userloginid, int userid)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objresponse = _UserDal.DeleteUserDetails(userloginid, userid);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
         #endregion
     }
 }

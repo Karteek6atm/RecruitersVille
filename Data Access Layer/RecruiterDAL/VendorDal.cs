@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace RecruiterDAL
 {
-    public class UserDal
+    public class VendorDal
     {
         #region Members
 
@@ -22,7 +22,7 @@ namespace RecruiterDAL
 
         #region Methods
 
-        public DataSet GetUsersList(int companyid)
+        public DataSet GetVendorsList(int companyid)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
                                         };
@@ -30,7 +30,7 @@ namespace RecruiterDAL
 
             try
             {
-                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetUsersList", sqlparams);
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetVendorsList", sqlparams);
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace RecruiterDAL
             return dsData;
         }
 
-        public DataSet GetMastersForUsers(int companyid)
+        public DataSet GetMastersForVendors(int companyid)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
                                         };
@@ -52,7 +52,7 @@ namespace RecruiterDAL
 
             try
             {
-                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetMastersForUsers", sqlparams);
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetMastersForVendors", sqlparams);
             }
             catch (Exception ex)
             {
@@ -66,33 +66,33 @@ namespace RecruiterDAL
             return dsData;
         }
 
-        public UserDetailsResponse GetUserDetailsById(int userid)
+        public VendorDetailsResponse GetVendorDetailsById(int vendorid)
         {
-            SqlParameter[] sqlparams = { new SqlParameter("@UserId", SqlDbType.Int) { Value = userid }
+            SqlParameter[] sqlparams = { new SqlParameter("@VendorId", SqlDbType.Int) { Value = vendorid }
                                         };
             SqlDataReader reader = null;
-            UserDetailsResponse objresponse = new UserDetailsResponse();
+            VendorDetailsResponse objresponse = new VendorDetailsResponse();
 
             try
             {
-                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_GetUserDetailsById", sqlparams);
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_GetVendorDetailsById", sqlparams);
 
                 while (reader.Read())
                 {
-                    objresponse.AboutMe = (string)reader["AboutMe"];
+                    objresponse.Description = (string)reader["Description"];
                     objresponse.City = (string)reader["City"];
                     objresponse.ContactNumber = (string)reader["ContactNumber"];
                     objresponse.Country = (string)reader["Country"];
-                    objresponse.Designation = (string)reader["Designation"];
+                    objresponse.IsEmployer = (bool)reader["IsEmployer"];
                     objresponse.EmailId = (string)reader["EmailId"];
-                    objresponse.FullName = (string)reader["FullName"];
+                    objresponse.VendorName = (string)reader["VendorName"];
                     objresponse.Landmark = (string)reader["Landmark"];
-                    objresponse.ProfilePicPath = (string)reader["ProfilePicPath"];
-                    objresponse.RoleId = (int)reader["RoleId"];
+                    objresponse.VendorLogoPath = (string)reader["VendorLogoPath"];
+                    objresponse.TechnologyIds = (string)reader["TechnologyIds"];
                     objresponse.State = (string)reader["State"];
                     objresponse.Street = (string)reader["Street"];
-                    objresponse.UserId = (int)reader["UserId"];
-                    objresponse.Zipcode = (string)reader["Zipcode"];
+                    objresponse.VendorId = (int)reader["VendorId"];
+                    objresponse.Zipcode = (string)reader["Zipcode"];                    
                 }
             }
             catch (Exception ex)
@@ -107,18 +107,18 @@ namespace RecruiterDAL
             return objresponse;
         }
 
-        public UserSaveResponse InsertAndUpdateUserDetails(UserRequest objrequest)
+        public VendorSaveResponse InsertAndUpdateVendorDetails(VendorRequest objrequest)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@UserLoginId", SqlDbType.Int) { Value = objrequest.UserLoginId },
                                             new SqlParameter("@CompanyId", SqlDbType.Int) { Value = objrequest.CompanyId },
-                                            new SqlParameter("@UserId", SqlDbType.Int) { Value = objrequest.UserId },
-                                            new SqlParameter("@FullName", SqlDbType.VarChar, 50) { Value = objrequest.FullName },
+                                            new SqlParameter("@VendorId", SqlDbType.Int) { Value = objrequest.VendorId },
+                                            new SqlParameter("@VendorName", SqlDbType.VarChar, 50) { Value = objrequest.VendorName },
                                             new SqlParameter("@EmailId", SqlDbType.VarChar, 50) { Value = objrequest.EmailId },
                                             new SqlParameter("@ContactNumber", SqlDbType.VarChar, 20) { Value = objrequest.ContactNumber },
-                                            new SqlParameter("@AboutMe", SqlDbType.VarChar, 500) { Value = objrequest.AboutMe },
-                                            new SqlParameter("@ProfilePicPath", SqlDbType.VarChar, 1000) { Value = objrequest.ProfilePicPath },
-                                            new SqlParameter("@RoleId", SqlDbType.Int) { Value = objrequest.RoleId },
-                                            new SqlParameter("@Password", SqlDbType.VarChar, 500) { Value = objrequest.Password },
+                                            new SqlParameter("@Description", SqlDbType.VarChar, 500) { Value = objrequest.Description },
+                                            new SqlParameter("@VendorLogoPath", SqlDbType.VarChar, 1000) { Value = objrequest.VendorLogoPath },
+                                            new SqlParameter("@IsEmployer", SqlDbType.Bit) { Value = objrequest.IsEmployer },
+                                            new SqlParameter("@Technologies", SqlDbType.VarChar, -1) { Value = objrequest.Technologies },
                                             new SqlParameter("@Street", SqlDbType.VarChar, 200) { Value = objrequest.Street },
                                             new SqlParameter("@Landmark", SqlDbType.VarChar, 200) { Value = objrequest.Landmark },
                                             new SqlParameter("@City", SqlDbType.VarChar, 100) { Value = objrequest.City },
@@ -128,17 +128,17 @@ namespace RecruiterDAL
                                         };
             
             SqlDataReader reader = null;
-            UserSaveResponse objSaveResponse = new UserSaveResponse();
+            VendorSaveResponse objSaveResponse = new VendorSaveResponse();
 
             try
             {
-                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_InsertAndUpdateUserDetails", sqlparams);
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_InsertAndUpdateVendorDetails", sqlparams);
 
                 while (reader.Read())
                 {
                     objSaveResponse.StatusId = (int)reader["StatusId"];
                     objSaveResponse.StatusMessage = (string)reader["StatusMessage"];
-                    objSaveResponse.IsNewUser = (bool)reader["IsNewUser"];
+                    objSaveResponse.IsNewVendor = (bool)reader["IsNewVendor"];
                     objSaveResponse.AdminName = (string)reader["AdminName"];
                     objSaveResponse.CompanyName = (string)reader["CompanyName"];
                 }
@@ -155,10 +155,10 @@ namespace RecruiterDAL
             return objSaveResponse;
         }
 
-        public SaveResponse DeleteUserDetails(int userloginid, int userid)
+        public SaveResponse DeleteVendorDetails(int userloginid, int vendorid)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@UserLoginId", SqlDbType.Int) { Value = userloginid },
-                                            new SqlParameter("@UserId", SqlDbType.Int) { Value = userid }
+                                            new SqlParameter("@VendorId", SqlDbType.Int) { Value = vendorid }
                                         };
 
             SqlDataReader reader = null;
@@ -166,7 +166,7 @@ namespace RecruiterDAL
 
             try
             {
-                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_DeleteUserDetails", sqlparams);
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_DeleteVendorDetails", sqlparams);
 
                 while (reader.Read())
                 {

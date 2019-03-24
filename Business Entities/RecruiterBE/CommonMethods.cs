@@ -21,6 +21,34 @@ namespace RecruiterBE
         private const string encryptKey = "R@cru!t@rV!ll@#2019$";
         private const int keysize = 256;
 
+        #region Unique Codes & Random Strings
+
+        public static string GenerateUserPassword()
+        {
+            string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string small_alphabets = "abcdefghijklmnopqrstuvwxyz";
+            string numbers = "1234567890";
+            int length = 8;
+            string password = string.Empty;
+
+            string characters = numbers + alphabets + small_alphabets + numbers;
+            
+            for (int i = 0; i < length; i++)
+            {
+                string character = string.Empty;
+                do
+                {
+                    int index = new Random().Next(0, characters.Length);
+                    character = characters.ToCharArray()[index].ToString();
+                } while (password.IndexOf(character) != -1);
+                password += character;
+            }
+
+            return password;
+        }
+
+        #endregion
+
         #region Encryption & Decryption
 
         public static string Encrypt(string Text)

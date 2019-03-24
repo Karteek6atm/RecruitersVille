@@ -22,6 +22,7 @@ namespace RecruiterVille.Areas.User.Controllers
 
         ProfileBal _ProfileBal = new ProfileBal();
         UserBal _UserBal = new UserBal();
+        VendorBal _VendorBal = new VendorBal();
         ManageSessions objManageSessions = new ManageSessions();
 
         #endregion
@@ -143,6 +144,12 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    VendorMasterResponse objvendormasterresponse = new VendorMasterResponse();
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objvendormasterresponse = _VendorBal.GetMastersForVendors(response.CompanyId);
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.Masters = objvendormasterresponse;
                     return View();
                 }
                 else
@@ -176,7 +183,7 @@ namespace RecruiterVille.Areas.User.Controllers
             }
             catch (Exception ex)
             {
-                
+
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
@@ -251,7 +258,7 @@ namespace RecruiterVille.Areas.User.Controllers
                     objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objresponse = _ProfileBal.UpdateUserPersonalDetails(objrequest);
 
-                    if(objresponse.StatusId == 1)
+                    if (objresponse.StatusId == 1)
                     {
                         response.ProfilePicPath = objrequest.ProfilePicPath;
                     }
@@ -344,6 +351,147 @@ namespace RecruiterVille.Areas.User.Controllers
                 {
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
                     objresponse = _UserBal.GetUsersList(response.CompanyId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult InsertAndUpdateUserDetails(UserRequest objrequest)
+        {
+            UserSaveResponse objresponse = new UserSaveResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+                    objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+                    objresponse = _UserBal.InsertAndUpdateUserDetails(objrequest);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetUserDetailsById(int param1) // param1 = userid
+        {
+            UserDetailsResponse objresponse = new UserDetailsResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    objresponse = _UserBal.GetUserDetailsById(param1);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult DeleteUserDetails(int param1) // param1 = userid
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    int userloginid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+                    objresponse = _UserBal.DeleteUserDetails(userloginid, param1);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
+
+        #region Vendors 
+
+        [HttpGet]
+        public JsonResult GetVendorsList()
+        {
+            List<VendorResponse> objresponse = new List<VendorResponse>();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objresponse = _VendorBal.GetVendorsList(response.CompanyId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult InsertAndUpdateVendorDetails(VendorRequest objrequest)
+        {
+            VendorSaveResponse objresponse = new VendorSaveResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+                    objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+                    objresponse = _VendorBal.InsertAndUpdateVendorDetails(objrequest);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetVendorDetailsById(int param1) // param1 = vendorid
+        {
+            VendorDetailsResponse objresponse = new VendorDetailsResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    objresponse = _VendorBal.GetVendorDetailsById(param1);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult DeleteVendorDetails(int param1) // param1 = vendorid
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    int userloginid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+                    objresponse = _VendorBal.DeleteVendorDetails(userloginid, param1);
                 }
             }
             catch (Exception ex)

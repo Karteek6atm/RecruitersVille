@@ -44,11 +44,13 @@
     <Compile Include="CommonMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\LoginRequest.cs" />
+    <Compile Include="Requests\VendorRequest.cs" />
     <Compile Include="Requests\UserRequest.cs" />
     <Compile Include="Requests\ProfileRequest.cs" />
     <Compile Include="Responses\LoginResponse.cs" />
     <Compile Include="Responses\MastersResponse.cs" />
     <Compile Include="Responses\PackagesResponse.cs" />
+    <Compile Include="Responses\VendorResponse.cs" />
     <Compile Include="Responses\UserResponse.cs" />
     <Compile Include="Responses\ProfileResponse.cs" />
     <Compile Include="Responses\SaveResponse.cs" />

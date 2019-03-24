@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace RecruiterBE.Requests
 {
-    public class UserRequest
+    public class VendorRequest
     {
         public int UserLoginId { get; set; }
         public int CompanyId { get; set; }
-        public int UserId { get; set; }
-        public string FullName { get; set; }
+        public int VendorId { get; set; }
+        public string VendorName { get; set; }
         public string EmailId { get; set; }
         public string ContactNumber { get; set; }
-        public string AboutMe { get; set; }
-        public string ProfilePicPath { get; set; }
-        public int RoleId { get; set; }
-        public string Password { get; set; }
+        public bool IsEmployer { get; set; }
+        public string Description { get; set; }
+        public string VendorLogoPath { get; set; }
         public string Street { get; set; }
         public string Landmark { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
         public string Zipcode { get; set; }
+        public string Technologies { get; set; }
     }
 }

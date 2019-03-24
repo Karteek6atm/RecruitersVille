@@ -6,58 +6,50 @@ using System.Threading.Tasks;
 
 namespace RecruiterBE.Responses
 {
-    public class UserResponse
+    public class VendorResponse
     {
-        public int UserId { get; set; }
-        public string FullName { get; set; }
+        public int VendorId { get; set; }
+        public string VendorName { get; set; }
         public string EmailId { get; set; }
         public string ContactNumber { get; set; }
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public bool IsEmployer { get; set; }
         public string Street { get; set; }
         public string Landmark { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
         public string Zipcode { get; set; }
-        public string Designation { get; set; }
-        public string CurrentCompanyWorkStartDate { get; set; }
-        public int ExperienceId { get; set; }
-        public string ExperienceName { get; set; }
-        public string HiringForNames { get; set; }
-        public string IndustryNames { get; set; }
-        public string SubIndustryNames { get; set; }
         public string TechnologyNames { get; set; }
     }
-
-    public class UserDetailsResponse
+    
+    public class VendorDetailsResponse
     {
-        public int UserId { get; set; }
-        public string FullName { get; set; }
+        public int VendorId { get; set; }
+        public string VendorName { get; set; }
         public string EmailId { get; set; }
         public string ContactNumber { get; set; }
-        public int RoleId { get; set; }
-        public string AboutMe { get; set; }
-        public string ProfilePicPath { get; set; }
+        public bool IsEmployer { get; set; }
         public string Street { get; set; }
         public string Landmark { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
         public string Zipcode { get; set; }
-        public string Designation { get; set; }
+        public string Description { get; set; }
+        public string VendorLogoPath { get; set; }
+        public string TechnologyIds { get; set; }
     }
 
-    public class UserMasterResponse
+    public class VendorMasterResponse
     {
-        public List<RolesResponse> Roles { get; set; }
+        public List<TechnologiesResponse> Technologies { get; set; }
     }
 
-    public class UserSaveResponse
+    public class VendorSaveResponse
     {
         public int StatusId { get; set; }
         public string StatusMessage { get; set; }
-        public bool IsNewUser { get; set; }
+        public bool IsNewVendor { get; set; }
         public string AdminName { get; set; }
         public string CompanyName { get; set; }
     }
