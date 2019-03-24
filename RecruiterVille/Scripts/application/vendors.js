@@ -85,7 +85,7 @@ function clearfields() {
         $(technologiesoptions[i]).attr('selected', false);
     }
 
-    $('.multiple-select').fSelect();
+    $('.multiple-select').fSelect('reload');
 
     $('.has-error').removeClass("has-error");
     $('.has-success').removeClass("has-success");
@@ -103,6 +103,8 @@ function editvendor(obj) {
             dataType: "json",
             success: function (data) {
                 if (data != null) {
+                    //$(".multiple-select").fSelect('destroy');
+
                     $("#hiddenselectedvendorid").val(vendorid);
                     $('#textvendoremailid').attr('disabled', 'disabled');
 
@@ -136,7 +138,7 @@ function editvendor(obj) {
                         }
                     }
 
-                    $('.multiple-select').fSelect();
+                    $('.multiple-select').fSelect('reload');
                     $('#modalvendorcreation').modal();
                 }
 
