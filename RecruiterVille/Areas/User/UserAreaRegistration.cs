@@ -70,6 +70,28 @@ namespace RecruiterVille.Areas.User
             );
 
             context.MapRoute(
+                name: "myjobs",
+                url: "job/myjobs/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "myjobs",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "newjob",
+                url: "job/newjob/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "newjob",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
                 "User_default",
                 "User/{controller}/{action}/{param1}",
                 new { controller = "company", action = "dashboard", param1 = UrlParameter.Optional }

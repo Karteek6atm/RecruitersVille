@@ -207,6 +207,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\SuperUser\SuperUserAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\JobController.cs" />
     <Compile Include="Areas\User\Controllers\RecruiterController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="CommonClasses\ManageSessions.cs" />
@@ -351,6 +352,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\User\Views\Recruiter\permissions.cshtml" />
+    <Content Include="Areas\User\Views\Job\newjob.cshtml" />
+    <Content Include="Areas\User\Views\Job\myjobs.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
