@@ -27,7 +27,7 @@
                                     '<td>' + data[i].RoleName + '</td>' +
                                     '<td>' + data[i].Designation + '</td>' +
                                     '<td>' + address + '</td>' +
-                                    '<td><a href="javascript:void(0)" id="aedituser" onclick="edituser(this)">Edit</a> &nbsp; <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)">Delete</a></td>');
+                                    '<td><a href="javascript:void(0)" id="aedituser" onclick="edituser(this)"> <i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)"><i class="fa fa-trash-o"></i> Delete</a></td>');
 
                         $('#tbodyusers').append(tr);
                     }

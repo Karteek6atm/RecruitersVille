@@ -29,7 +29,7 @@
         </div>
     </div><!--/.row-->
 
-    <div class="panel panel-container">
+    <div class="panel">
         <div class="row">
             <div class="col-lg-12">
                 <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
@@ -40,16 +40,11 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Users</div>
-                        <div class="col-lg-6 pull-right">
-                            <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewvendor()">Add New Vendor</a>
-                        </div>
+                        <div class="panel-heading">Users <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewvendor()">Add New Vendor</a></div>
                         <input type="hidden" id="hiddenselectedvendorid" value="" />
                         <div class="panel-body">
-                            <div class="col-lg-12">
-                                <table class="table">
+                                <table class="new-tble scrol-tble">
                                     <thead>
                                         <tr>
                                             <th>
@@ -80,10 +75,10 @@
                                     </thead>
                                     <tbody id="tbodyvendors"></tbody>
                                 </table>
-                            </div>
+                            
                         </div>
                     </div>
-                </div>
+             
             </div><!--/.panel-->
         </div>
     </div><!--/.row-->
