@@ -29,7 +29,7 @@
                                     '<td>' + isemployer + '</td>' +
                                     '<td>' + data[i].TechnologyNames + '</td>' +
                                     '<td>' + address + '</td>' +
-                                    '<td><a href="javascript:void(0)" id="aeditvendor" onclick="editvendor(this)">Edit</a> &nbsp; <a href="javascript:void(0)" id="adeletevendor" onclick="deletevendor(this)">Delete</a></td>');
+                                    '<td><a href="javascript:void(0)" id="aeditvendor" onclick="editvendor(this)"><i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="adeletevendor" onclick="deletevendor(this)"><i class="fa fa-trash-o"></i> Delete</a></td>');
 
                         $('#tbodyvendors').append(tr);
                     }
