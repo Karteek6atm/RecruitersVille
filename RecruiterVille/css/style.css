@@ -1547,3 +1547,284 @@ h3 .heilet-text {
 .book-email-phone > span {
 	padding: 0 18px 0 0;
 }
+.left-side {
+	background: #fff none repeat scroll 0 0;
+	float: left;
+    margin:20px 0;
+	width: 100%;
+    box-shadow: 0px 0px 16px #dddddd;
+}
+.collapsebtn span.collapsearrow {
+	background: #d3d3d3 url(../images/collapsearrow.png) 6px -12px no-repeat;
+	float: right;
+	height: 20px;
+	transition: all 0.3s ease 0s;
+	width: 20px;
+	border-radius: 100%;
+}
+.collapsebtn.collapsed span.collapsearrow {
+	background: #d3d3d3 url(../images/collapsearrow.png) 6px 7px no-repeat;
+	float: right;
+	height: 20px;
+	transition: all 0.3s ease 0s;
+	width: 20px;
+	border-radius: 100%;
+}
+.collapsebtn {
+	background: #fff none repeat scroll 0 0;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-color: #f3f3f3;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 12px;
+	text-align: left;
+	width: 100%;
+	color: #253a50;
+}
+/*left panel search-list*/
+.search-list ul {
+	margin: 0;
+	padding: 0;
+}
+.search-list ul li {
+ 	color: #555555;
+	float: left;
+	font-weight: lighter;
+	list-style: outside none none;
+	padding: 13px 16px;
+	width: 100%;
+}
+.search-list {
+	float: left;
+	padding: 10px 0;
+	position: relative;
+	width: 100%;
+}
+.search-list ul li img {
+	float: left;
+	height: 103px;
+	margin-right: 12px;
+	width: 110px;
+}
+.search-list li h3 {
+	color: #253a50;
+	font-size: 18px;
+	margin: 0;
+	font-weight: lighter;
+}
+.search-list li small {
+	color: #8c8c8c;
+	display: table;
+	font-size: 13px;
+}
+.search-list li p {
+	color: #253a50;
+	margin: 3px 0 0;
+}
+.search-list select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url(../images/selec-searct.jpg) right no-repeat;
+	height: 37px;
+	border: 1px solid #efefef;
+	padding: 0 10px;
+	color: ##8e98a1;
+	font-size: 14px;
+}
+.search-list ul li .side-label i {
+	color: #ffc000;
+	padding: 0 8px 0 0;
+}
+.search-list ul li .side-label .fa-star-o {
+	color: #d3d3d3;
+}
+.search-list li input {
+	height: 42px;
+}
+.si {
+	font-size: 14px !important;
+	position: absolute !important;
+	right: 15px;
+	top: 26px;
+}
+.search-list ul li article {
+	color: #a5a5a5;
+	float: right;
+	font-size: 16px;
+	padding: 0;
+}
+.view-all {
+	color: #8cc183;
+	float: left;
+	padding: 8px 12px 0;
+	font-weight: 600;
+}
+.agent-view {
+	background: #fff none repeat scroll 0 0;
+	margin: 3em 0;
+}
+.agent-view .fave {
+	border: 12px solid #f1f3f7;
+	height: 338px !important;
+	width: 507px !important;
+}
+.search-list ul li span {
+	color: #000;
+	font-size: 13px;
+	padding: 0 8px;
+	position: relative;
+}
+.search-list ul li .view-all {
+	padding: 8px 0 0;
+}
+.search-list ul li .badge {
+	background: #edf2f6;
+	border: 0 none;
+	border-radius: 100px;
+	color: #cbd3d9;
+	float: right;
+	font-size: 14px;
+	font-weight: bold;
+	margin: -2px;
+	padding: 6px 11px;
+}
+.search-list ul li:hover span, .search-list ul li:hover a {
+	color: #ffc000;
+}
+.search-list ul li:hover .badge {
+	background: #ffc000;
+	color: #fff;
+}
+.any {
+	color: #ffc000 !important;
+	font-weight: bold !important;
+}
+.any + .badge {
+	background: #b3c0bb !important;
+	color: #fff !important
+}
+/* Check Box START*/
+.checkbox-custom {
+	opacity: 0;
+	position: absolute;
+}
+.checkbox-custom, .checkbox-custom-label {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px;
+	cursor: pointer;
+    width:100%;
+	font-weight: 300;
+}
+.checkbox-custom-label {
+	position: relative;
+}
+.checkbox-custom + .checkbox-custom-label:before {
+	content: '';
+	background: #edf2f6;
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	text-align: center;
+}
+.checkbox-custom:checked + .checkbox-custom-label:before {
+	content: "\f00c";
+	font-family: 'FontAwesome';
+	background: #ffc000;
+	color: #fff;
+	font-size: 12px;
+	line-height: 20px;
+}
+/* Check Box END*/
+
+
+input[type="checkbox"], input[type="radio"] {
+	line-height: normal;
+	margin: 4px 0 0;
+	width: auto;
+}
+/* Radio Buttons */
+
+/*Radios*/
+input[type="checkbox"], input[type="radio"] {
+	position: absolute;
+	left: -9999px;
+}
+.side-label {
+	cursor: pointer;
+	display: block;
+	float: left;
+	font-weight: lighter;
+	line-height: 19px;
+	margin: 0;
+	padding-left: 30px;
+	position: relative;
+}
+.side-label::before, .side-label::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+input[type="radio"] + .side-label::before, input[type="radio"] + .side-label::after {
+	border-radius: 50%;
+}
+.side-label::before {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #d1d3d7;
+}
+input:focus + .side-label::before {
+	border-color: #ffc000;
+}
+.side-label::after {
+	display: none;
+	width: 12px;
+	height: 12px;
+	margin: 4px;
+	background-color: #ffc000;
+}
+input:checked + .side-label::after {
+	display: block;
+}
+.how-other-disclosure {
+	display: none;
+	margin: 10px 0 0 35px;
+}
+#how-other:checked ~ .how-other-disclosure {
+	display: block;
+}
+.blocked {
+	margin-top: 40px;
+	color: rgba(255, 255, 255, .3);
+	text-align: center;
+}
+#permitted:checked ~ .blocked {
+	display: none;
+}
+#permitted:checked ~ button {
+	display: block;
+}
+/*Slider Week Range*/
+.slder-week {
+	padding: 30px 19px;
+	width: 100%;
+}
+/*Slider Week Range*/
+/*left panel search-list*/
+input[type="text"], input[type="password"], select, input[type="email"], input[type="tel"] {
+    border: 1px solid #ececec;
+    box-shadow: 0 3px 4px #ededed inset;
+    color: #000;
+    float: left;
+    font-size: 13px;
+    height: 50px;
+    padding: 10px;
+    width: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
