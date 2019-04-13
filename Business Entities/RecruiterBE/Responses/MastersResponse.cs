@@ -45,4 +45,46 @@ namespace RecruiterBE.Responses
         public int RoleId { get; set; }
         public string RoleName { get; set; }
     }
+
+    public class PayTypesResponse
+    {
+        public int TypeId { get; set; }
+        public string TypeName { get; set; }
+    }
+
+    public class CurrenciesResponse
+    {
+        public int CurrencyId { get; set; }
+        public string CurrencyName { get; set; }
+    }
+
+    public class DurationTypesResponse
+    {
+        public int DurationId { get; set; }
+        public string DurationName { get; set; }
+    }
+
+    public class TravelRequirementsResponse
+    {
+        public int RequirementId { get; set; }
+        public string RequirementName { get; set; }
+    }
+
+    public class ApplicationMethodsResponse
+    {
+        public int MethodId { get; set; }
+        public string MethodName { get; set; }
+    }
+
+    public class JobTypesResponse
+    {
+        public int TypeId { get; set; }
+        public string TypeName { get; set; }
+    }
+
+    public class LocationsResponse
+    {
+        public int LocationId { get; set; }
+        public string LocationName { get; set; }
+    }
 }

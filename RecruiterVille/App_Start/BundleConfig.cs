@@ -99,7 +99,7 @@ namespace RecruiterVille
                       "~/app/js/fSelect.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/users.js"));
-
+            
             //Vendor Section
             bundles.Add(new StyleBundle("~/content/vendors").Include(
                       "~/app/css/fSelect.css"));
@@ -108,6 +108,15 @@ namespace RecruiterVille
                       "~/app/js/fSelect.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/vendors.js"));
+
+            //myjobs Section
+            bundles.Add(new StyleBundle("~/content/myjobs").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/myjobs").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/myjobs.js"));
         }
     }
 }

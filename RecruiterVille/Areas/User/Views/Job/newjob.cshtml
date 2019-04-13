@@ -1,8 +1,73 @@
-﻿
+﻿@using RecruiterBE.Responses;
+
 @{
-    ViewBag.Title = "newjob";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>newjob</h2>
+@Styles.Render("~/content/vendors")
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 
+@if (ViewBag.Masters != null)
+{
+    JobMastersResponse objjobmastersresponse = ViewBag.Masters;
+    List<PayTypesResponse> PayTypes = objjobmastersresponse.PayTypes;
+    List<CurrenciesResponse> Currencies = objjobmastersresponse.Currencies;
+    List<DurationTypesResponse> DurationTypes = objjobmastersresponse.DurationTypes;
+    List<TravelRequirementsResponse> TravelRequirements = objjobmastersresponse.TravelRequirements;
+    List<ApplicationMethodsResponse> ApplicationMethods = objjobmastersresponse.ApplicationMethods;
+    List<IndustriesResponse> Industries = objjobmastersresponse.Industries;
+    List<SubIndustriesResponse> SubIndustries = objjobmastersresponse.SubIndustries;
+    List<TechnologiesResponse> Technologies = objjobmastersresponse.Technologies;
+    List<JobTypesResponse> JobTypes = objjobmastersresponse.JobTypes;
+    List<LocationsResponse> Locations = objjobmastersresponse.Locations;
+
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="javascript:void(0)">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Vendors</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+            <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+        </div>
+    </div><!--/.row-->
+
+    <div class="panel">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Users <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewvendor()">Add New Vendor</a></div>
+                    <input type="hidden" id="hiddenselectedvendorid" value="" />
+                    <div class="panel-body">
+                        
+
+                    </div>
+                </div>
+            </div><!--/.panel-->
+        </div>
+    </div><!--/.row-->
+        
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    @Scripts.Render("~/bundles/vendors")
+    <script type="text/javascript">
+        (function ($) {
+            $('.multiple-select').fSelect();
+            getvendorslist();
+        })(jQuery);
+    </script>
+}

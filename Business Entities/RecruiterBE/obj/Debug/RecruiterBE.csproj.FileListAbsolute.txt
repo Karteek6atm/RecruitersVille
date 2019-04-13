@@ -1,10 +1,9 @@
-D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.dll
-D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.pdb
-D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache
-D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.dll
-D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.pdb
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.dll
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.pdb
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.dll
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.pdb

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="PackagesDal.cs" />
     <Compile Include="LoginDal.cs" />
+    <Compile Include="JobDal.cs" />
     <Compile Include="ProfileDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VendorDal.cs" />
