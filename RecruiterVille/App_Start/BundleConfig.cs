@@ -117,6 +117,51 @@ namespace RecruiterVille
                       "~/app/js/fSelect.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/myjobs.js"));
+
+            //newjob Section
+            bundles.Add(new StyleBundle("~/content/newjob").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/newjob").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/newjob.js"));
+
+            //editjob Section
+            bundles.Add(new StyleBundle("~/content/editjob").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/editjob").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/editjob.js"));
+
+            //jobtemplates Section
+            bundles.Add(new StyleBundle("~/content/jobtemplates").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jobtemplates").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/jobtemplates.js"));
+
+            //newtemplate Section
+            bundles.Add(new StyleBundle("~/content/newtemplate").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/newtemplate").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/newtemplate.js"));
+
+            //editjobtemplate Section
+            bundles.Add(new StyleBundle("~/content/editjobtemplate").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/editjobtemplate").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/editjobtemplate.js"));
         }
     }
 }

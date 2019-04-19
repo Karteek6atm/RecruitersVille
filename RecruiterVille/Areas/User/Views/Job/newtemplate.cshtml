@@ -4,7 +4,7 @@
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-@Styles.Render("~/content/newjob")
+@Styles.Render("~/content/newtemplate")
 <link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 <link href="/app/css/datepicker.css" rel="stylesheet" />
 
@@ -30,11 +30,11 @@
                 </a>
             </li>
             <li>
-                <a id="amyjobslist" href="/job/myjobs">
-                    My Jobs
+                <a id="ajobtemplateslist" href="/job/jobtemplates">
+                    Job Templates
                 </a>
             </li>
-            <li class="active">New Job</li>
+            <li class="active">New Job Template</li>
         </ol>
     </div><!--/.row-->
 
@@ -61,22 +61,14 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    <label>Template Name <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="texttemplatename" type="text" onblur="validatetextbox(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
                                     <label>Job Title <span class="mandatory">*</span></label>
                                     <input class="form-control" placeholder="" id="textjobtitle" type="text" onblur="validatetextbox(this)" />
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Company Job Id </label>
-                                    <input class="form-control" placeholder="" id="textcompanyjobid" type="text" />
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>
-                                        <input name="remember" type="checkbox" id="checkastemplate" value="Save as Template? ">Save as Template?
-                                    </label>
-                                    <input class="form-control" style="display:block" placeholder="Template Name" id="texttemplatename" type="text" onblur="validatetextbox(this)" />
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -155,7 +147,7 @@
                                     <label>Experience <span class="mandatory">*</span></label>
                                     <input class="form-control" placeholder="Min Exp" id="textminexp" type="text" onblur="validateminexp(this)" />
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
@@ -208,24 +200,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Post From Date </label>
-                                    <input class="form-control datepicker" placeholder="" id="textpostfromdate" type="text" onblur="validatepostfromdate(this)" />
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Post To Date </label>
-                                    <input class="form-control datepicker" placeholder="" id="textposttodate" type="text" onblur="validateposttodate(this)" />
-                                </div>
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Application Method <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectapplicationmethod" onchange="changeapplicationmethod(this)" onblur="validatedropdown(this)">
+                                    <label>Application Method </label>
+                                    <select class="form-control" id="selectapplicationmethod" onchange="changeapplicationmethod(this)">
                                         <option value="0">Select Application Method</option>
                                         @foreach (ApplicationMethodsResponse method in ApplicationMethods)
                                         {
@@ -273,8 +253,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <a href="javascript:void(0)" class="btn btn-default pull-right" onclick="resetfields()">Reset</a>
-                                <a href="javascript:void(0)" class="btn btn-info pull-right" onclick="savejobdetails(0)">Save As Draft</a>
-                                <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="savejobdetails(1)">Save & Publish</a>
+                                <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="savejobtemplatedetails()">Save</a>
                             </div>
                         </div>
                     </div>
@@ -285,7 +264,7 @@
 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/app/js/bootstrap-datepicker.js"></script>
-    @Scripts.Render("~/bundles/newjob")
+    @Scripts.Render("~/bundles/newtemplate")
     <script type="text/javascript">
         $(document).ready(function () {
             $('.multiple-select').fSelect();

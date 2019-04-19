@@ -92,6 +92,72 @@ namespace RecruiterVille.Areas.User
             );
 
             context.MapRoute(
+                name: "editjob",
+                url: "job/editjob/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "editjob",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "viewjob",
+                url: "job/viewjob/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "viewjob",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "jobtemplates",
+                url: "job/jobtemplates/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "jobtemplates",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "newtemplate",
+                url: "job/newtemplate/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "newtemplate",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "editjobtemplate",
+                url: "job/editjobtemplate/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "editjobtemplate",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "viewjobtemplate",
+                url: "job/viewjobtemplate/{param1}",
+                defaults: new
+                {
+                    controller = "job",
+                    action = "viewjobtemplate",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
                 "User_default",
                 "User/{controller}/{action}/{param1}",
                 new { controller = "company", action = "dashboard", param1 = UrlParameter.Optional }

@@ -3,7 +3,7 @@
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-@Styles.Render("~/content/myjobs")
+@Styles.Render("~/content/jobtemplates")
 <link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 
 <div class="row">
@@ -13,7 +13,7 @@
                 <em class="fa fa-home"></em>
             </a>
         </li>
-        <li class="active">Jobs</li>
+        <li class="active">Job Templates</li>
     </ol>
 </div><!--/.row-->
 
@@ -36,8 +36,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Jobs <a href="/job/newjob" class="btn btn-primary pull-right">Add New Job</a></div>
-                <input type="hidden" id="hiddenselectedjobid" value="" />
+                <div class="panel-heading">Job Templates <a href="/job/newtemplate" class="btn btn-primary pull-right" >Add New Job Template</a></div>
+                <input type="hidden" id="hiddenselectedjobtemplateid" value="" />
                 <div class="panel-body">
                     <table class="new-tble scrol-tble">
                         <thead>
@@ -46,10 +46,10 @@
                                     S.No.
                                 </th>
                                 <th>
-                                    Job Title
+                                    Template Name
                                 </th>
                                 <th>
-                                    Company Job Id
+                                    Job Title
                                 </th>
                                 <th>
                                     Pay
@@ -67,17 +67,14 @@
                                     Technologies
                                 </th>
                                 <th>
-                                    Status
-                                </th>
-                                <th>
                                     Actions
                                 </th>
                             </tr>
                         </thead>
                         <tbody id="tbodyjobs">
                             <tr>
-                                <td colspan="10">
-                                    No jobs found.
+                                <td colspan="9">
+                                    No job templates found.
                                 </td>
                             </tr>
                         </tbody>
@@ -88,12 +85,12 @@
         </div><!--/.panel-->
     </div>
 </div><!--/.row-->
-<div class="modal fade" id="modalchangestatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modaldeletejobtemplate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:500px;">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Change Job Status </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closemodalchangestatus">
+                <h5 class="modal-title">Delete Job Template </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closemodaldeletejobtemplate">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -101,32 +98,24 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Job Status <span class="mandatory">*</span></label>
-                            <select class="form-control" id="selectjobstatus" onblur="validatedropdown(this)">
-                                <option value="0">Select Job Status</option>                               
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
                             <label>Comments <span class="mandatory">*</span></label>
-                            <textarea rows="4" class="form-control" placeholder="" id="textstatuscomments" onblur="validatetextbox(this)"></textarea>
+                            <textarea rows="4" class="form-control" placeholder="" id="textcomments" onblur="validatetextbox(this)"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="changejobstatusconfirm()">Update Status</button>
+                <button type="button" class="btn btn-primary" onclick="deleteconfirm()">Delete</button>
             </div>
         </div>
     </div>
 </div>
 
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-@Scripts.Render("~/bundles/myjobs")
+@Scripts.Render("~/bundles/jobtemplates")
 <script type="text/javascript">
     $(document).ready(function () {
-        getjobslist();
+        getjobtemplateslist();
     });
 </script>

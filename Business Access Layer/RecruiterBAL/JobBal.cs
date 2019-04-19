@@ -27,10 +27,10 @@ namespace RecruiterBAL
             try
             {
                 DataSet dsData = new DataSet();
-                
+
                 int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
                 int userloginid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(struserloginid));
-                
+
                 dsData = _JobDal.GetMastersForJob(companyid, userloginid);
 
                 if (dsData != null)
@@ -135,7 +135,214 @@ namespace RecruiterBAL
             }
             return objJobMastersResponse;
         }
-        
+
+        public JobSaveResponse InsertAndUpdateJobDetails(JobRequest objrequest)
+        {
+            JobSaveResponse objresponse = new JobSaveResponse();
+            try
+            {
+                objresponse = _JobDal.InsertAndUpdateJobDetails(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public SaveResponse ChangeJobStatus(JobChangeStatusRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objresponse = _JobDal.ChangeJobStatus(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public JobSaveResponse InsertAndUpdateJobTempateDetails(JobRequest objrequest)
+        {
+            JobSaveResponse objresponse = new JobSaveResponse();
+            try
+            {
+                objresponse = _JobDal.InsertAndUpdateJobTempateDetails(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public SaveResponse DeleteJobTemplate(JobChangeStatusRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objresponse = _JobDal.DeleteJobTemplate(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public List<JobResponse> GetJobsList(string strcompanyid)
+        {
+            List<JobResponse> objJobResponse = new List<JobResponse>();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
+
+                dsData = _JobDal.GetJobsList(companyid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        objJobResponse = dsData.Tables[0].AsEnumerable().
+                                        Select(x => new JobResponse
+                                        {
+                                            CompanyJobId = x.Field<string>("CompanyJobId"),
+                                            IndustryId = x.Field<int>("IndustryId"),
+                                            IndustryName = x.Field<string>("IndustryName"),
+                                            JobDuration = x.Field<int>("JobDuration"),
+                                            MaxExp = x.Field<int>("MaxExp"),
+                                            MinExp = x.Field<int>("MinExp"),
+                                            JobDurationTypeId = x.Field<int>("JobDurationTypeId"),
+                                            JobDurationTypeName = x.Field<string>("JobDurationTypeName"),
+                                            JobId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("JobId"))),
+                                            JobLocation = x.Field<string>("JobLocation"),
+                                            JobTitle = x.Field<string>("JobTitle"),
+                                            MaxPayRate = x.Field<int>("MaxPayRate"),
+                                            MinPayRate = x.Field<int>("MinPayRate"),
+                                            PayCurrencyId = x.Field<int>("PayCurrencyId"),
+                                            PayCurrencySign = x.Field<string>("PayCurrencySign"),
+                                            PayTypeId = x.Field<int>("PayTypeId"),
+                                            PayTypeName = x.Field<string>("PayTypeName"),
+                                            TechnologyNames = x.Field<string>("TechnologyNames"),
+                                            JobStatusId = x.Field<int>("JobStatusId"),
+                                            JobStatusName = x.Field<string>("JobStatusName")
+                                        }).ToList(); 
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objJobResponse;
+        }
+
+        public List<JobTemplateResponse> GetJobTemplatesList(string strcompanyid)
+        {
+            List<JobTemplateResponse> objJobResponse = new List<JobTemplateResponse>();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
+
+                dsData = _JobDal.GetJobTemplatesList(companyid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        objJobResponse = dsData.Tables[0].AsEnumerable().
+                                        Select(x => new JobTemplateResponse
+                                        {
+                                            IndustryId = x.Field<int>("IndustryId"),
+                                            IndustryName = x.Field<string>("IndustryName"),
+                                            JobDuration = x.Field<int>("JobDuration"),
+                                            MaxExp = x.Field<int>("MaxExp"),
+                                            MinExp = x.Field<int>("MinExp"),
+                                            JobDurationTypeId = x.Field<int>("JobDurationTypeId"),
+                                            JobDurationTypeName = x.Field<string>("JobDurationTypeName"),
+                                            JobTemplateId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("JobTemplateId"))),
+                                            TemplateName = x.Field<string>("TemplateName"),
+                                            JobTitle = x.Field<string>("JobTitle"),
+                                            MaxPayRate = x.Field<int>("MaxPayRate"),
+                                            MinPayRate = x.Field<int>("MinPayRate"),
+                                            PayCurrencyId = x.Field<int>("PayCurrencyId"),
+                                            PayCurrencySign = x.Field<string>("PayCurrencySign"),
+                                            PayTypeId = x.Field<int>("PayTypeId"),
+                                            PayTypeName = x.Field<string>("PayTypeName"),
+                                            TechnologyNames = x.Field<string>("TechnologyNames")
+                                        }).ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objJobResponse;
+        }
+
+        public JobDetailsForEditResponse GetJobDetailsByIdForEdit(JobDetailsRequest objrequest)
+        {
+            JobDetailsForEditResponse objresponse = new JobDetailsForEditResponse();
+            try
+            {
+                objresponse = _JobDal.GetJobDetailsByIdForEdit(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public JobDetailsForViewResponse GetJobDetailsByIdForView(JobDetailsRequest objrequest)
+        {
+            JobDetailsForViewResponse objresponse = new JobDetailsForViewResponse();
+            try
+            {
+                objresponse = _JobDal.GetJobDetailsByIdForView(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public JobDetailsForEditResponse GetJobTemplateDetailsByIdForEdit(JobDetailsRequest objrequest)
+        {
+            JobDetailsForEditResponse objresponse = new JobDetailsForEditResponse();
+            try
+            {
+                objresponse = _JobDal.GetJobTemplateDetailsByIdForEdit(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public JobDetailsForViewResponse GetJobTemplateDetailsByIdForView(JobDetailsRequest objrequest)
+        {
+            JobDetailsForViewResponse objresponse = new JobDetailsForViewResponse();
+            try
+            {
+                objresponse = _JobDal.GetJobTemplateDetailsByIdForView(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
         #endregion
     }
 }

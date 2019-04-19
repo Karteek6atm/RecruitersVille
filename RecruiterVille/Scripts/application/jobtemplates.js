@@ -1,10 +1,10 @@
-﻿function getjobslist() {
+﻿function getjobtemplateslist() {
     showloading();
     $('#tbodyjobs tr').remove();
 
     $.ajax({
         type: "GET",
-        url: "/job/getjobslist",
+        url: "/job/getjobtemplateslist",
         dataType: "json",
         success: function (data) {
             var ishavingjobs = true;
@@ -29,19 +29,18 @@
                         else {
                             experience = data[i].MinExp + ' - ' + data[i].MaxExp + ' Yrs';
                         }
-                         
-                        $(tr).append('<td>' + (i + 1) + '<input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></td>' +
+
+                        $(tr).append('<td>' + (i + 1) + '<input type="hidden" id="hiddenjobtemplateid" value="' + data[i].JobTemplateId + '" /></td>' +
+                                    '<td>' + data[i].TemplateName + '</td>' +
                                     '<td>' + data[i].JobTitle + '</td>' +
-                                    '<td>' + data[i].CompanyJobId + '</td>' +
                                     '<td>' + pay + '</td>' +
                                     '<td>' + duration + '</td>' +
                                     '<td>' + experience + '</td>' +
                                     '<td>' + data[i].IndustryName + '</td>' +
                                     '<td>' + data[i].TechnologyNames + '</td>' +
-                                    '<td><input type="hidden" id="hiddenjobstatusid" value="' + data[i].JobStatusId + '" />' + data[i].JobStatusName + '</td>' +
-                                    '<td><a href="/job/editjob/' + data[i].JobId + '" id="aeditjob"> <i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="achangejobstatus" onclick="changejobstatus(this)"><i class="fa fa-trash-o"></i> Change Status</a>' +
-                                    ' &nbsp; <a href="/job/viewjob/' + data[i].JobId + '" id="aviewjob"><i class="fa fa-eye"></i> View</a></td>');
-
+                                    '<td><a href="/job/editjobtemplate/' + data[i].JobTemplateId + '" id="aeditjobtemplate"> <i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="adeletejobtemplate" onclick="deletejobtemplate(this)"><i class="fa fa-trash-o"></i> Delete</a>'+
+                                    ' &nbsp; <a href="/job/viewjobtemplate/' + data[i].JobTemplateId + '" id="aviewjobtemplate"><i class="fa fa-eye"></i> View</a></td>');
+                       
                         $('#tbodyjobs').append(tr);
                     }
                 }
@@ -55,7 +54,7 @@
 
             if (!ishavingjobs) {
                 var tr = '<tr />';
-                $(tr).append('<td colspan="10">No jobs found.</td>');
+                $(tr).append('<td colspan="9">No job templates found.</td>');
                 $('#tbodyjobs').append(tr);
             }
 
@@ -68,82 +67,43 @@
     });
 }
 
-function changejobstatus(obj) {
-    var jobid = $(obj).closest('tr').find('#hiddenjobid').val();
-    var jobstatusid = parseInt($(obj).closest('tr').find('#hiddenjobstatusid').val());
-    $("#hiddenselectedjobid").val(jobid);
-
-    $("#selectjobstatus").val('0');
+function deletejobtemplate(obj) {
+    var jobtemplateid = $(obj).closest('tr').find('#hiddenjobtemplateid').val();
+    $("#hiddenselectedjobtemplateid").val(jobtemplateid);
     $("#textstatuscomments").val('');
-
-    $('#selectjobstatus').find("option:gt(0)").remove();
-
-    if (jobstatusid == 0) {
-        var options = '<option value="1">Publish</option>'+
-                '<option value="2">Close</option>'+
-                '<option value="3">Hold</option>'+
-                '<option value="4">Delete</option>';
-
-        $("#selectjobstatus").append(options);
-    }
-    else if (jobstatusid == 1) {
-        var options = '<option value="2">Close</option>'+
-                '<option value="3">Hold</option>'+
-                '<option value="4">Delete</option>';
-
-        $("#selectjobstatus").append(options);
-    }
-    else if (jobstatusid == 2) {
-        var options = '<option value="4">Delete</option>';
-
-        $("#selectjobstatus").append(options);
-    }
-    else if (jobstatusid == 3) {
-        var options = '<option value="1">Publish</option>'+
-                '<option value="2">Close</option>'+
-                '<option value="4">Delete</option>';
-
-        $("#selectjobstatus").append(options);
-    }
-
-    $('#modalchangestatus').modal();
+    $('#modaldeletejobtemplate').modal();
 }
 
-function changejobstatusconfirm() {
+function deleteconfirm() {
     hideallalerts();
-    var jobid = $("#hiddenselectedjobid").val();
-    var jobstatus = $("#selectjobstatus");
-    var comments = $("#textstatuscomments");
+    var jobtemplateid = $("#hiddenselectedjobtemplateid").val();
+    var comments = $("#textcomments");
     var isvalid = true;
 
-    if (validatedropdown(jobstatus) == false) {
-        isvalid = false;
-    }
     if (validatetextbox(comments) == false) {
         isvalid = false;
     }
 
-    if (jobid != "" && jobid != "0" && isvalid) {
+    if (jobtemplateid != "" && jobtemplateid != "0" && isvalid) {
         showloading();
 
         var input = [];
         input = {
-            strJobId: jobid,
-            JobStatusId: jobstatus.val(),
+            strJobTemplateId: jobtemplateid,
             Comments: comments.val().trim()
         };
 
         $.ajax({
             type: "POST",
             data: (input),
-            url: "/job/changejobstatus",
+            url: "/job/deletejobtemplate",
             dataType: "json",
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
-                    $("#hiddenselectedjobid").val('0');
-                    $('#closemodalchangestatus').click();
-                    getjobslist();
+                    $("#hiddenselectedjobtemplateid").val('0');
+                    $('#closemodaldeletejobtemplate').click();
+                    getjobtemplateslist();
                 }
                 else {
                     showwarningalert(data.StatusMessage);

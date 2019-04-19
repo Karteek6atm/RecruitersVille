@@ -121,6 +121,22 @@ function validatephonenumber(obj) {
     }
 }
 
+function validatedate(obj) {
+    $(obj).closest('.form-group').removeClass("has-success");
+    $(obj).closest('.form-group').removeClass("has-error");
+    var inputtext = $(obj).val().trim();
+    var result = new Date(inputtext);
+
+    if (result == 'Invalid Date') {
+        $(obj).closest('.form-group').addClass("has-error");
+        return false;
+    }
+    else {
+        $(obj).closest('.form-group').addClass("has-success");
+        return true;
+    }
+}
+
 function checkpasswordcriteria(obj) {
     $(obj).closest('.form-group').removeClass("has-success");
     $(obj).closest('.form-group').removeClass("has-error");
