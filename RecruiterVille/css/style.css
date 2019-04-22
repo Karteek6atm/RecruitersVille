@@ -1798,33 +1798,15 @@ input:checked + .side-label::after {
 #how-other:checked ~ .how-other-disclosure {
 	display: block;
 }
-.blocked {
-	margin-top: 40px;
-	color: rgba(255, 255, 255, .3);
-	text-align: center;
-}
-#permitted:checked ~ .blocked {
-	display: none;
-}
-#permitted:checked ~ button {
-	display: block;
-}
+.blocked {	margin-top: 40px;	color: rgba(255, 255, 255, .3);	text-align: center;}
+#permitted:checked ~ .blocked {	display: none;}
+#permitted:checked ~ button {	display: block;}
 /*Slider Week Range*/
-.slder-week {
-	padding: 30px 19px;
-	width: 100%;
-}
+.slder-week {	padding: 30px 19px;	width: 100%;}
 /*Slider Week Range*/
 /*left panel search-list*/
 input[type="text"], input[type="password"], select, input[type="email"], input[type="tel"] {
-    border: 1px solid #ececec;
-    box-shadow: 0 3px 4px #ededed inset;
-    color: #000;
-    float: left;
-    font-size: 13px;
-    height: 50px;
-    padding: 10px;
-    width: 100%;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-}
+border: 1px solid #ececec;   box-shadow: 0 3px 4px #ededed inset;color: #000;float: left;font-size: 13px;height: 50px;
+padding: 10px;width: 100%;-moz-user-select: none;-webkit-user-select: none;}
+.skills span {background: #f7f7f7;padding: 10px;   margin: 0 5px 4px 0px; float:left;}
+.doctor-list-con .btn{margin:10px 0}
