@@ -250,6 +250,7 @@ namespace RecruiterVille.Areas.User.Controllers
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
                     objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+                    objrequest.JobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobId));
                     objresponse = _JobBal.InsertAndUpdateJobDetails(objrequest);
                 }
             }
@@ -292,6 +293,7 @@ namespace RecruiterVille.Areas.User.Controllers
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
                     objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+                    objrequest.JobTemplateId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobTemplateId));
                     objresponse = _JobBal.InsertAndUpdateJobTempateDetails(objrequest);
                 }
             }

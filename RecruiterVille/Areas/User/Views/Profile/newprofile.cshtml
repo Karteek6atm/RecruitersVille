@@ -1,0 +1,209 @@
+﻿@using RecruiterBE.Responses;
+
+@{
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+@Styles.Render("~/content/newprofile")
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
+<link href="/app/css/datepicker.css" rel="stylesheet" />
+
+@*@if (ViewBag.Masters != null)
+    {
+        JobMastersResponse objjobmastersresponse = ViewBag.Masters;
+        List<PayTypesResponse> PayTypes = objjobmastersresponse.PayTypes;
+        List<CurrenciesResponse> Currencies = objjobmastersresponse.Currencies;
+        List<DurationTypesResponse> DurationTypes = objjobmastersresponse.DurationTypes;
+        List<TravelRequirementsResponse> TravelRequirements = objjobmastersresponse.TravelRequirements;
+        List<ApplicationMethodsResponse> ApplicationMethods = objjobmastersresponse.ApplicationMethods;
+        List<IndustriesResponse> Industries = objjobmastersresponse.Industries;
+        List<SubIndustriesResponse> SubIndustries = objjobmastersresponse.SubIndustries;
+        List<TechnologiesResponse> Technologies = objjobmastersresponse.Technologies;
+        List<JobTypesResponse> JobTypes = objjobmastersresponse.JobTypes;
+        List<LocationsResponse> Locations = objjobmastersresponse.Locations;*@
+
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0)">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li>
+            <a id="amyjobslist" href="/job/myjobs">
+                Profiles
+            </a>
+        </li>
+        <li class="active">New Profile</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+        <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+    </div>
+</div><!--/.row-->
+
+<div class="panel">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>First Name <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textfirstname" type="text" onblur="validatetextbox(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Last Name <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textlastname" type="text" onblur="validatetextbox(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>EmailId <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textemailid" type="text" onblur="validateemailid(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Alternate EmailId </label>
+                                <input class="form-control" placeholder="" id="textemailid" type="text" onblur="validateemailid(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Contact Number <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textcontactnumber" type="text" onblur="validateemailid(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Alternate Contact Number </label>
+                                <input class="form-control" placeholder="" id="textalternatecontactnumber" type="text" onblur="validateemailid(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Date of Birth </label>
+                                <input class="form-control datepicker" placeholder="" id="textdob" type="text" onblur="validatepostfromdate(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Gender <span class="mandatory">*</span></label>
+                                <select class="form-control" id="selectpaytype" onblur="validatedropdown(this)">
+                                    <option value="0">Select Gender</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Educational Qualification <span class="mandatory">*</span></label>
+                                <select class="form-control" id="selectpaytype" onblur="validatedropdown(this)">
+                                    <option value="0">Select Qualification</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Experience <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="Years" id="textexpyears" type="text" onblur="validateminexp(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <input class="form-control" placeholder="Months" id="textexpmonths" type="text" onblur="validatemaxexp(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Location <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="Duration" id="textduartion" type="text" onblur="validatetextbox(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Country <span class="mandatory">*</span></label>
+                                <select class="form-control" id="selectduration" onblur="validatedropdown(this)">
+                                    <option value="0">Select Country </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Industry <span class="mandatory">*</span></label>
+                                <select class="form-control" id="selectindustry" onblur="validatedropdown(this)">
+                                    <option value="0">Select Industry</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Skills  <span class="mandatory">*</span></label>
+                                <select class="form-control multiple-select" id="selectskills" multiple>
+                                    <option value="0"> Skills</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Resume <span class="mandatory">*</span></label>
+                                <input type="file" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Description <span class="mandatory">*</span></label>
+                                <textarea rows="10" class="form-control" placeholder="" id="textdescription" onblur="validatetextbox(this)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="divexperiences">
+
+                        </div>
+                        <div class="col-lg-12">
+                            <a href="javascript:void(0)" class="btn btn-danger pull-left" onclick="addnewexperience()">+ Add New</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a href="javascript:void(0)" class="btn btn-default pull-right" onclick="resetfields()">Reset</a>
+                            <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="savejobdetails(1)">Save Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.panel-->
+    </div>
+</div><!--/.row-->
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/app/js/bootstrap-datepicker.js"></script>
+@Scripts.Render("~/bundles/newprofile")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.multiple-select').fSelect();
+        $('.datepicker').datepicker();
+        addnewexperience();
+    });
+</script>
+@*}*@

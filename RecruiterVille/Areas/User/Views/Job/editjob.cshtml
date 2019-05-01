@@ -1,8 +1,287 @@
 ﻿
+@using RecruiterBE.Responses;
+
 @{
-    ViewBag.Title = "editjob";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>editjob</h2>
+@Styles.Render("~/content/editjob")
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
+<link href="/app/css/datepicker.css" rel="stylesheet" />
 
+@if (ViewBag.Masters != null)
+{
+    JobMastersResponse objjobmastersresponse = ViewBag.Masters;
+    List<PayTypesResponse> PayTypes = objjobmastersresponse.PayTypes;
+    List<CurrenciesResponse> Currencies = objjobmastersresponse.Currencies;
+    List<DurationTypesResponse> DurationTypes = objjobmastersresponse.DurationTypes;
+    List<TravelRequirementsResponse> TravelRequirements = objjobmastersresponse.TravelRequirements;
+    List<ApplicationMethodsResponse> ApplicationMethods = objjobmastersresponse.ApplicationMethods;
+    List<IndustriesResponse> Industries = objjobmastersresponse.Industries;
+    List<SubIndustriesResponse> SubIndustries = objjobmastersresponse.SubIndustries;
+    List<TechnologiesResponse> Technologies = objjobmastersresponse.Technologies;
+    List<JobTypesResponse> JobTypes = objjobmastersresponse.JobTypes;
+    List<LocationsResponse> Locations = objjobmastersresponse.Locations;
+
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="javascript:void(0)">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li>
+                <a id="amyjobslist" href="/job/myjobs">
+                    My Jobs
+                </a>
+            </li>
+            <li class="active">Edit Job</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" id="hiddenjobid" value="@ViewBag.JobId" />
+            <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+            <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+        </div>
+    </div><!--/.row-->
+
+    <div class="panel">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Job Title <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="textjobtitle" type="text" onblur="validatetextbox(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Company Job Id </label>
+                                    <input class="form-control" placeholder="" id="textcompanyjobid" type="text" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Job Location <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="textjoblocation" type="text" onblur="validatetextbox(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Pay <span class="mandatory">*</span></label>
+                                    <select class="form-control" id="selectpaycurrency" onblur="validatedropdown(this)">
+                                        <option value="0">Pay Currency</option>
+                                        @foreach (CurrenciesResponse currency in Currencies)
+                                        {
+                                            <option value="@currency.CurrencyId">@currency.CurrencyName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" placeholder="Min Pay" id="textminpayrate" type="text" onblur="validateminpayrate()" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" placeholder="Max Pay" id="textmaxpayrate" type="text" onblur="validatemaxpayrate()" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select class="form-control" id="selectpaytype" onblur="validatedropdown(this)">
+                                        <option value="0">Pay Type</option>
+                                        @foreach (PayTypesResponse type in PayTypes)
+                                        {
+                                            <option value="@type.TypeId">@type.TypeName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Job Types <span class="mandatory">*</span></label>
+                                    <select class="form-control multiple-select" id="selectjobtype" multiple>
+                                        @foreach (JobTypesResponse type in JobTypes)
+                                        {
+                                            <option value="@type.TypeId">@type.TypeName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Duration <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="Duration" id="textduartion" type="text" onblur="validatetextbox(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select class="form-control" id="selectduration" onblur="validatedropdown(this)">
+                                        <option value="0">Duration </option>
+                                        @foreach (DurationTypesResponse duration in DurationTypes)
+                                        {
+                                            <option value="@duration.DurationId">@duration.DurationName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Experience <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="Min Exp" id="textminexp" type="text" onblur="validateminexp(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" placeholder="Max Exp" id="textmaxexp" type="text" onblur="validatemaxexp(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Travel Requirements <span class="mandatory">*</span></label>
+                                    <select class="form-control" id="selecttravelrequirements" onblur="validatedropdown(this)">
+                                        <option value="0">Select Travel Requirement</option>
+                                        @foreach (TravelRequirementsResponse requirement in TravelRequirements)
+                                        {
+                                            <option value="@requirement.RequirementId">@requirement.RequirementName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Industry <span class="mandatory">*</span></label>
+                                    <select class="form-control" id="selectindustry" onblur="validatedropdown(this)">
+                                        <option value="0">Select Industry</option>
+                                        @foreach (IndustriesResponse industry in Industries)
+                                        {
+                                            <option value="@industry.IndustryId">@industry.IndustryName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Sub Industries <span class="mandatory">*</span></label>
+                                    <select class="form-control multiple-select" id="selectsubindustries" multiple>
+                                        @foreach (SubIndustriesResponse subindustry in SubIndustries)
+                                        {
+                                            <option value="@subindustry.SubIndustryId">@subindustry.SubIndustryName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Skills Required <span class="mandatory">*</span></label>
+                                    <select class="form-control multiple-select" id="selectskills" multiple>
+                                        @foreach (TechnologiesResponse technology in Technologies)
+                                        {
+                                            <option value="@technology.TechnologyId">@technology.TechnologyName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Post From Date </label>
+                                    <input class="form-control datepicker" placeholder="" id="textpostfromdate" type="text" onblur="validatepostfromdate(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Post To Date </label>
+                                    <input class="form-control datepicker" placeholder="" id="textposttodate" type="text" onblur="validateposttodate(this)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Application Method <span class="mandatory">*</span></label>
+                                    <select class="form-control" id="selectapplicationmethod" onchange="changeapplicationmethod(this)" onblur="validatedropdown(this)">
+                                        <option value="0">Select Application Method</option>
+                                        @foreach (ApplicationMethodsResponse method in ApplicationMethods)
+                                        {
+                                            <option value="@method.MethodId">@method.MethodName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 emailmethod" style="display:none;">
+                                <div class="form-group">
+                                    <label>To Email <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="texttoemail" type="text" onblur="validateemailid(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 emailmethod" style="display:none;">
+                                <div class="form-group">
+                                    <label>CC Email <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="textccemail" type="text" onblur="validateemailid(this)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 urlmethod" style="display:none;">
+                                <div class="form-group">
+                                    <label>URL <span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="texturl" type="text" onblur="validatetextbox(this)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>
+                                        <input name="remember" type="checkbox" id="checkworkfromhome" value="Work from Home available? ">Work from Home available?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Job Description <span class="mandatory">*</span></label>
+                                    <textarea rows="10" class="form-control" placeholder="" id="textjobdescription" onblur="validatetextbox(this)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="javascript:void(0)" class="btn btn-default pull-right" onclick="resetfields()">Reset</a>
+                                <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="updatejobdetails()">Update Job Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.panel-->
+        </div>
+    </div><!--/.row-->
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/app/js/bootstrap-datepicker.js"></script>
+    @Scripts.Render("~/bundles/editjob")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            getjobdetails();
+        });
+    </script>
+}

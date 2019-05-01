@@ -208,6 +208,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\SuperUser\SuperUserAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\JobController.cs" />
+    <Compile Include="Areas\User\Controllers\ProfileController.cs" />
     <Compile Include="Areas\User\Controllers\RecruiterController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="CommonClasses\ManageSessions.cs" />
@@ -318,6 +319,7 @@
     <Content Include="Scripts\application\login.js" />
     <Content Include="Scripts\application\myjobs.js" />
     <Content Include="Scripts\application\newjob.js" />
+    <Content Include="Scripts\application\newprofile.js" />
     <Content Include="Scripts\application\newtemplate.js" />
     <Content Include="Scripts\application\packages.js" />
     <Content Include="Scripts\application\profile.js" />
@@ -372,6 +374,7 @@
     <Content Include="Areas\User\Views\Job\editjobtemplate.cshtml" />
     <Content Include="Areas\User\Views\Job\viewjob.cshtml" />
     <Content Include="Areas\User\Views\Job\viewjobtemplate.cshtml" />
+    <Content Include="Areas\User\Views\Profile\newprofile.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

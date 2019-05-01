@@ -11,7 +11,9 @@ namespace RecruiterBE.Requests
         public int UserLoginId { get; set; }
         public int CompanyId { get; set; }        
         public int JobId { get; set; }
+        public string strJobId { get; set; }
         public int JobTemplateId { get; set; }
+        public string strJobTemplateId { get; set; }
         public string CompanyJobId { get; set; }
         public string JobTitle { get; set; }
         public string JobLocation { get; set; }
