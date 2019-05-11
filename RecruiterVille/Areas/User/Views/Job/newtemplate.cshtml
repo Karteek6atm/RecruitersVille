@@ -73,8 +73,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Job Location <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="textjoblocation" type="text" onblur="validatetextbox(this)" />
+                                    <label>Job Location </label>
+                                    <input class="form-control" placeholder="" id="textjoblocation" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -191,13 +191,14 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Skills Required <span class="mandatory">*</span></label>
-                                    <select class="form-control multiple-select" id="selectskills" multiple>
+                                    <label>Skills Required (seperate with comma)<span class="mandatory">*</span></label>
+                                    <input class="form-control" placeholder="" id="selectskills" type="text" onblur="validatetextbox(this)" />
+                                    @*<select class="form-control multiple-select" id="selectskills" multiple>
                                         @foreach (TechnologiesResponse technology in Technologies)
                                         {
                                             <option value="@technology.TechnologyId">@technology.TechnologyName</option>
                                         }
-                                    </select>
+                                    </select>*@
                                 </div>
                             </div>
                         </div>

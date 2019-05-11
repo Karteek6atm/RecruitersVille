@@ -34,6 +34,7 @@
                 $("#texturl").val(data.URL);
                 $("#checkworkfromhome")[0].checked =data.IsWFHAvailable;
                 $("#textjobdescription").val(data.JobDescription);
+                $("#selectskills").val(data.SkillIds);
 
                 var jobtypeidsoptions = $('#selectjobtype option');
                 var jobtypeids = data.JobTypeIds.split(',');
@@ -57,16 +58,16 @@
                     }
                 }
 
-                var skillsoptions = $('#selectskills option');
-                var skillids = data.SkillIds.split(',');
+                //var skillsoptions = $('#selectskills option');
+                //var skillids = data.SkillIds.split(',');
 
-                for (var i = 0; i < skillsoptions.length; i++) {
-                    var selectedvalue = skillsoptions[i].value;
+                //for (var i = 0; i < skillsoptions.length; i++) {
+                //    var selectedvalue = skillsoptions[i].value;
 
-                    if ($.inArray(selectedvalue, skillids) > -1) {
-                        $(skillsoptions[i]).attr('selected', true);
-                    }
-                }
+                //    if ($.inArray(selectedvalue, skillids) > -1) {
+                //        $(skillsoptions[i]).attr('selected', true);
+                //    }
+                //}
 
                 $('.multiple-select').fSelect();
             }
@@ -220,15 +221,12 @@ function updatejobtemplatedetails() {
 
     var jobtype = getmultiselectedvalues(selectjobtype);
     var subindustries = getmultiselectedvalues(selectsubindustries);
-    var skills = getmultiselectedvalues(selectskills);
+    //var skills = getmultiselectedvalues(selectskills);
 
     if (validatetextbox(texttemplatename) == false) {
         isvalid = false;
     }
     if (validatetextbox(textjobtitle) == false) {
-        isvalid = false;
-    }
-    if (validatetextbox(textjoblocation) == false) {
         isvalid = false;
     }
     if (validatedropdown(selectpaycurrency) == false) {
@@ -279,15 +277,15 @@ function updatejobtemplatedetails() {
         $(selectsubindustries).closest('.form-group').removeClass("has-error");
         $(selectsubindustries).closest('.form-group').addClass("has-success");
     }
-    if (skills == "") {
-        $(selectskills).closest('.form-group').addClass("has-error");
-        $(selectskills).closest('.form-group').removeClass("has-success");
-        isvalid = false;
-    }
-    else {
-        $(selectskills).closest('.form-group').removeClass("has-error");
-        $(selectskills).closest('.form-group').addClass("has-success");
-    }
+    //if (skills == "") {
+    //    $(selectskills).closest('.form-group').addClass("has-error");
+    //    $(selectskills).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selectskills).closest('.form-group').removeClass("has-error");
+    //    $(selectskills).closest('.form-group').addClass("has-success");
+    //}
     if (selectapplicationmethod.val() != 0) {
         if (selectapplicationmethod.val() == 1) {
             if (validateemailid(texttoemail) == false) {
@@ -304,6 +302,9 @@ function updatejobtemplatedetails() {
         }
     }
     if (validatetextbox(textjobdescription) == false) {
+        isvalid = false;
+    }
+    if (validatetextbox(selectskills) == false) {
         isvalid = false;
     }
 
@@ -333,7 +334,7 @@ function updatejobtemplatedetails() {
             ApplicationToEmailId: texttoemail.val().trim(),
             ApplicationCcEmailId: textccemail.val().trim(),
             ApplicationURL: texturl.val().trim(),
-            SkillIds: skills,
+            SkillIds: selectskills.val().trim(),
             SubIndustryIds: subindustries,
             JobTypeIds: jobtype
         };

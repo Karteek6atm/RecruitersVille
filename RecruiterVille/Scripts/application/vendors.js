@@ -78,14 +78,15 @@ function clearfields() {
     $('#textvendorzipcode').val('');
     $('#textvendorlandmark').val('');
     $('#textdescription').val('');
+    $('#selecttechnologies').val('');
 
-    var technologiesoptions = $('#selecttechnologies option');
+    //var technologiesoptions = $('#selecttechnologies option');
 
-    for (var i = 0; i < technologiesoptions.length; i++) {
-        $(technologiesoptions[i]).attr('selected', false);
-    }
+    //for (var i = 0; i < technologiesoptions.length; i++) {
+    //    $(technologiesoptions[i]).attr('selected', false);
+    //}
 
-    $('.multiple-select').fSelect('reload');
+    //$('.multiple-select').fSelect('reload');
 
     $('.has-error').removeClass("has-error");
     $('.has-success').removeClass("has-success");
@@ -126,19 +127,20 @@ function editvendor(obj) {
                     $('#textvendorzipcode').val(data.Zipcode);
                     $('#textvendorlandmark').val(data.Landmark);
                     $('#textdescription').val(data.Description);
+                    $('#selecttechnologies').val(data.TechnologyIds);
 
-                    var technologiesoptions = $('#selecttechnologies option');
-                    var technologyids = data.TechnologyIds.split(',');
+                    //var technologiesoptions = $('#selecttechnologies option');
+                    //var technologyids = data.TechnologyIds.split(',');
 
-                    for (var i = 0; i < technologiesoptions.length; i++) {
-                        var selectedvalue = technologiesoptions[i].value;
+                    //for (var i = 0; i < technologiesoptions.length; i++) {
+                    //    var selectedvalue = technologiesoptions[i].value;
 
-                        if ($.inArray(selectedvalue, technologyids) > -1) {
-                            $(technologiesoptions[i]).attr('selected', true);
-                        }
-                    }
+                    //    if ($.inArray(selectedvalue, technologyids) > -1) {
+                    //        $(technologiesoptions[i]).attr('selected', true);
+                    //    }
+                    //}
 
-                    $('.multiple-select').fSelect('reload');
+                    //$('.multiple-select').fSelect('reload');
                     $('#modalvendorcreation').modal();
                 }
 
@@ -198,7 +200,7 @@ function savevendordetails() {
     
     var isvalid = true;
     var isemployer = false;
-    var technologies = getmultiselectedvalues(selecttechnologies);
+    //var technologies = getmultiselectedvalues(selecttechnologies);
 
     if (validatetextbox(textvendorname) == false) {
         isvalid = false;
@@ -212,15 +214,18 @@ function savevendordetails() {
     if (validatetextbox(hiddenvendorlogo) == false) {
         isvalid = false;
     }
-    if (technologies == "") {
-        $(selecttechnologies).closest('.form-group').addClass("has-error");
-        $(selecttechnologies).closest('.form-group').removeClass("has-success");
+    if (validatetextbox(selecttechnologies) == false) {
         isvalid = false;
     }
-    else {
-        $(selecttechnologies).closest('.form-group').removeClass("has-error");
-        $(selecttechnologies).closest('.form-group').addClass("has-success");
-    }
+    //if (technologies == "") {
+    //    $(selecttechnologies).closest('.form-group').addClass("has-error");
+    //    $(selecttechnologies).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selecttechnologies).closest('.form-group').removeClass("has-error");
+    //    $(selecttechnologies).closest('.form-group').addClass("has-success");
+    //}
     if (radioisemployeryes[0].checked) {
         isemployer = true;
     }
@@ -243,7 +248,7 @@ function savevendordetails() {
             State: textvendorstate.val().trim(),
             Country: textvendorcountry.val().trim(),
             Zipcode: textvendorzipcode.val().trim(),
-            Technologies: technologies
+            Technologies: selecttechnologies.val().trim()
         };
         
         $.ajax({

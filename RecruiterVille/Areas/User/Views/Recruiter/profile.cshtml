@@ -268,13 +268,14 @@
                                         </div>  
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Skills & Technologies <span class="mandatory">*</span></label>
-                                                <select class="form-control multiple-select" id="selectprofessionalskills" multiple name="professionalskills">
+                                                <label>Skills & Technologies (seperate with comma)<span class="mandatory">*</span></label>
+                                                <input class="form-control" placeholder="" id="selectprofessionalskills" name="professionalskills" type="text" onblur="validatetextbox(this)" />
+                                                @*<select class="form-control multiple-select" id="selectprofessionalskills" multiple name="professionalskills">
                                                     @foreach (TechnologiesResponse technology in Technologies)
                                                     {
                                                     <option value="@technology.TechnologyId">@technology.TechnologyName</option>
                                                     }
-                                                </select>
+                                                </select>*@
                                             </div>
                                         </div>
 

@@ -134,15 +134,12 @@ function savejobtemplatedetails() {
 
     var jobtype = getmultiselectedvalues(selectjobtype);
     var subindustries = getmultiselectedvalues(selectsubindustries);
-    var skills = getmultiselectedvalues(selectskills);
+    //var skills = getmultiselectedvalues(selectskills);
 
     if (validatetextbox(texttemplatename) == false) {
         isvalid = false;
     }
     if (validatetextbox(textjobtitle) == false) {
-        isvalid = false;
-    }
-    if (validatetextbox(textjoblocation) == false) {
         isvalid = false;
     }
     if (validatedropdown(selectpaycurrency) == false) {
@@ -193,15 +190,15 @@ function savejobtemplatedetails() {
         $(selectsubindustries).closest('.form-group').removeClass("has-error");
         $(selectsubindustries).closest('.form-group').addClass("has-success");
     }
-    if (skills == "") {
-        $(selectskills).closest('.form-group').addClass("has-error");
-        $(selectskills).closest('.form-group').removeClass("has-success");
-        isvalid = false;
-    }
-    else {
-        $(selectskills).closest('.form-group').removeClass("has-error");
-        $(selectskills).closest('.form-group').addClass("has-success");
-    }
+    //if (skills == "") {
+    //    $(selectskills).closest('.form-group').addClass("has-error");
+    //    $(selectskills).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selectskills).closest('.form-group').removeClass("has-error");
+    //    $(selectskills).closest('.form-group').addClass("has-success");
+    //}
     if (selectapplicationmethod.val() != 0) {
         if (selectapplicationmethod.val() == 1) {
             if (validateemailid(texttoemail) == false) {
@@ -220,13 +217,16 @@ function savejobtemplatedetails() {
     if (validatetextbox(textjobdescription) == false) {
         isvalid = false;
     }
+    if (validatetextbox(selectskills) == false) {
+        isvalid = false;
+    }
 
     if (isvalid) {
         showloading();
 
         var input = [];
         input = {
-            JobTemplateId: 0,
+            strJobTemplateId: "",
             JobTitle: textjobtitle.val().trim(),
             JobLocation: textjoblocation.val().trim(),
             TemplateName: texttemplatename.val().trim(),
@@ -247,7 +247,7 @@ function savejobtemplatedetails() {
             ApplicationToEmailId: texttoemail.val().trim(),
             ApplicationCcEmailId: textccemail.val().trim(),
             ApplicationURL: texturl.val().trim(),
-            SkillIds: skills,
+            SkillIds: selectskills.val().trim(),
             SubIndustryIds: subindustries,
             JobTypeIds: jobtype
         };

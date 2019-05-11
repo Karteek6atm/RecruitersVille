@@ -52,6 +52,7 @@
                     $('#textprofessionalachievements').val(professionaldetails.Achievements);
                     $('#textprofessionaldesignation').val(professionaldetails.Designation);
                     $('#textaboutprofessional').val(professionaldetails.Description);
+                    $('#selectprofessionalskills').val(professionaldetails.TechnologyIds);
 
                     var professionalhiringleveloptions = $('#selectprofessionalhiringlevel option');
                     var professionalhiringlevels = professionaldetails.HiringForIds.split(',');
@@ -86,16 +87,16 @@
                         }
                     }
 
-                    var professionalskills = $('#selectprofessionalskills option');
-                    var technologyids = professionaldetails.TechnologyIds.split(',');
+                    //var professionalskills = $('#selectprofessionalskills option');
+                    //var technologyids = professionaldetails.TechnologyIds.split(',');
 
-                    for (var i = 0; i < professionalskills.length; i++) {
-                        var selectedvalue = professionalskills[i].value;
+                    //for (var i = 0; i < professionalskills.length; i++) {
+                    //    var selectedvalue = professionalskills[i].value;
 
-                        if ($.inArray(selectedvalue, technologyids) > -1) {
-                            $(professionalskills[i]).attr('selected', true);
-                        }
-                    }
+                    //    if ($.inArray(selectedvalue, technologyids) > -1) {
+                    //        $(professionalskills[i]).attr('selected', true);
+                    //    }
+                    //}
                 }
             }
 
@@ -329,7 +330,7 @@ function updateprofessionaldetails() {
     var professionalhiringlevel = getmultiselectedvalues(selectprofessionalhiringlevel);
     var professionalindustries = getmultiselectedvalues(selectprofessionalindustries);
     var professionalfunctionalareas = getmultiselectedvalues(selectprofessionalfunctionalareas);
-    var professionalskills = getmultiselectedvalues(selectprofessionalskills);
+    //var professionalskills = getmultiselectedvalues(selectprofessionalskills);
 
     if (validatetextbox(textprofessionalworkstartedate) == false) {
         isvalid = false;
@@ -338,6 +339,9 @@ function updateprofessionaldetails() {
         isvalid = false;
     }
     if (validatetextbox(textprofessionaldesignation) == false) {
+        isvalid = false;
+    }
+    if (validatetextbox(selectprofessionalskills) == false) {
         isvalid = false;
     }
     if (professionalhiringlevel == "") {
@@ -367,15 +371,15 @@ function updateprofessionaldetails() {
         $(selectprofessionalfunctionalareas).closest('.form-group').removeClass("has-error");
         $(selectprofessionalfunctionalareas).closest('.form-group').addClass("has-success");
     }
-    if (professionalskills == "") {
-        $(selectprofessionalskills).closest('.form-group').addClass("has-error");
-        $(selectprofessionalskills).closest('.form-group').removeClass("has-success");
-        isvalid = false;
-    }
-    else {
-        $(selectprofessionalskills).closest('.form-group').removeClass("has-error");
-        $(selectprofessionalskills).closest('.form-group').addClass("has-success");
-    }
+    //if (professionalskills == "") {
+    //    $(selectprofessionalskills).closest('.form-group').addClass("has-error");
+    //    $(selectprofessionalskills).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selectprofessionalskills).closest('.form-group').removeClass("has-error");
+    //    $(selectprofessionalskills).closest('.form-group').addClass("has-success");
+    //}
 
     if (isvalid) {
         showloading();
@@ -390,7 +394,7 @@ function updateprofessionaldetails() {
             HiringLevels: professionalhiringlevel,
             Industries: professionalindustries,
             FunctionalAreas: professionalfunctionalareas,
-            Skills: professionalskills
+            Skills: selectprofessionalskills.val().trim()
         };
 
         $.ajax({

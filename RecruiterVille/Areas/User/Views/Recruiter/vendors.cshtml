@@ -108,18 +108,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Contact number <span class="mandatory">*</span></label>
-                                <input class="form-control" placeholder="" id="textvendorcontact" name="vendorcontact" type="text" onblur="validatephonenumber(this)" />
+                                <input class="form-control" placeholder="" id="textvendorcontact" maxlength="10" name="vendorcontact" type="text" onblur="validatephonenumber(this)" />
                             </div>
                         </div> 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Technologies <span class="mandatory">*</span></label>
-                                <select class="form-control multiple-select" id="selecttechnologies" multiple name="technologies">
+                                <label>Technologies (seperate with comma)<span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="selecttechnologies" name="technologies" type="text" onblur="validatetextbox(this)" />
+                                @*<select class="form-control multiple-select" id="selecttechnologies" multiple name="technologies">
                                     @foreach (TechnologiesResponse technology in Technologies)
                                     {
                                         <option value="@technology.TechnologyId">@technology.TechnologyName</option>
                                     }
-                                </select>
+                                </select>*@
                             </div>
                         </div>
                         <div class="col-md-6">

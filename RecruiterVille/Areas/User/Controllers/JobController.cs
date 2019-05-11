@@ -250,7 +250,14 @@ namespace RecruiterVille.Areas.User.Controllers
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
                     objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
-                    objrequest.JobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobId));
+                    if (!string.IsNullOrEmpty(objrequest.strJobId))
+                    {
+                        objrequest.JobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobId));
+                    }
+                    else
+                    {
+                        objrequest.JobId = 0;
+                    }
                     objresponse = _JobBal.InsertAndUpdateJobDetails(objrequest);
                 }
             }
@@ -293,7 +300,16 @@ namespace RecruiterVille.Areas.User.Controllers
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
                     objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
-                    objrequest.JobTemplateId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobTemplateId));
+                    if (!string.IsNullOrEmpty(objrequest.strJobTemplateId))
+                    {
+                        objrequest.JobTemplateId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobTemplateId));
+                    }
+                    else
+                    {
+                        objrequest.JobTemplateId = 0;
+                    }
+
+
                     objresponse = _JobBal.InsertAndUpdateJobTempateDetails(objrequest);
                 }
             }

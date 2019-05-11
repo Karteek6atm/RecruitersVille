@@ -194,7 +194,7 @@ function savejobdetails(jobstatus) {
 
     var jobtype = getmultiselectedvalues(selectjobtype);
     var subindustries = getmultiselectedvalues(selectsubindustries);
-    var skills = getmultiselectedvalues(selectskills);
+    //var skills = getmultiselectedvalues(selectskills);
 
     if (validatetextbox(textjobtitle) == false) {
         isvalid = false;
@@ -255,15 +255,15 @@ function savejobdetails(jobstatus) {
         $(selectsubindustries).closest('.form-group').removeClass("has-error");
         $(selectsubindustries).closest('.form-group').addClass("has-success");
     }
-    if (skills == "") {
-        $(selectskills).closest('.form-group').addClass("has-error");
-        $(selectskills).closest('.form-group').removeClass("has-success");
-        isvalid = false;
-    }
-    else {
-        $(selectskills).closest('.form-group').removeClass("has-error");
-        $(selectskills).closest('.form-group').addClass("has-success");
-    }
+    //if (skills == "") {
+    //    $(selectskills).closest('.form-group').addClass("has-error");
+    //    $(selectskills).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selectskills).closest('.form-group').removeClass("has-error");
+    //    $(selectskills).closest('.form-group').addClass("has-success");
+    //}
     if (validatepostfromdate(textpostfromdate) == false) {
         isvalid = false;
     }
@@ -291,6 +291,9 @@ function savejobdetails(jobstatus) {
         }
     }
     if (validatetextbox(textjobdescription) == false) {
+        isvalid = false;
+    }
+    if (validatetextbox(selectskills) == false) {
         isvalid = false;
     }
      
@@ -324,7 +327,7 @@ function savejobdetails(jobstatus) {
             ApplicationToEmailId: texttoemail.val().trim(),
             ApplicationCcEmailId: textccemail.val().trim(),
             ApplicationURL: texturl.val().trim(),
-            SkillIds: skills,
+            SkillIds: selectskills.val().trim(),
             SubIndustryIds: subindustries,
             JobTypeIds: jobtype,
             JobStatus: jobstatus
