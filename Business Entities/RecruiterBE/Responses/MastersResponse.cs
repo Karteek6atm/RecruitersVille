@@ -58,6 +58,12 @@ namespace RecruiterBE.Responses
         public string CurrencyName { get; set; }
     }
 
+    public class CountriesResponse
+    {
+        public int CountryId { get; set; }
+        public string CountryName { get; set; }
+    }
+
     public class DurationTypesResponse
     {
         public int DurationId { get; set; }
@@ -86,5 +92,11 @@ namespace RecruiterBE.Responses
     {
         public int LocationId { get; set; }
         public string LocationName { get; set; }
+    }
+
+    public class EducationalQualificationsResponse
+    {
+        public int QualificationId { get; set; }
+        public string QualificationName { get; set; }
     }
 }

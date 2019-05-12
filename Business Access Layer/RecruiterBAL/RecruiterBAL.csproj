@@ -43,6 +43,7 @@
     <Compile Include="PackagesBal.cs" />
     <Compile Include="LoginBal.cs" />
     <Compile Include="JobBal.cs" />
+    <Compile Include="ResumeBal.cs" />
     <Compile Include="VendorBal.cs" />
     <Compile Include="UserBal.cs" />
     <Compile Include="ProfileBal.cs" />

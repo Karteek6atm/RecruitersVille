@@ -51,4 +51,9 @@ namespace RecruiterVille.Models
     {
         public string imagepath { get; set; }
     }
+
+    public class ResumeUploadModal
+    {
+        public string resumepath { get; set; }
+    }
 }

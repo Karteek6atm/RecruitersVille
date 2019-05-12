@@ -376,6 +376,7 @@
     <Content Include="Areas\User\Views\Job\viewjob.cshtml" />
     <Content Include="Areas\User\Views\Job\viewjobtemplate.cshtml" />
     <Content Include="Areas\User\Views\Profile\newprofile.cshtml" />
+    <Content Include="Areas\User\Views\Profile\myprofiles.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -418,6 +419,7 @@
     <Folder Include="Areas\SuperUser\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="UploadedFiles\CompanyLogos\" />
+    <Folder Include="UploadedFiles\Resumes\" />
     <Folder Include="UploadedFiles\UserImages\" />
   </ItemGroup>
   <ItemGroup>
