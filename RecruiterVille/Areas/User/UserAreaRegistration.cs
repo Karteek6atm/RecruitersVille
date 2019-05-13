@@ -169,6 +169,17 @@ namespace RecruiterVille.Areas.User
             );
 
             context.MapRoute(
+                name: "myprofiles",
+                url: "profile/myprofiles/{param1}",
+                defaults: new
+                {
+                    controller = "profile",
+                    action = "myprofiles",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
                 "User_default",
                 "User/{controller}/{action}/{param1}",
                 new { controller = "company", action = "dashboard", param1 = UrlParameter.Optional }

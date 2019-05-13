@@ -110,7 +110,7 @@ function validatealternativephonenumber(obj) {
 function uploadresume() {
     var fileresume = $('#fileresume');
 
-    if (validateimage(fileresume) == false) {
+    if (validatedocument(fileresume) == false) {
         return false;
     }
     else {
@@ -125,7 +125,7 @@ function uploadresume() {
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    $('#hiddenresumefile').val(data.imagepath);
+                    $('#hiddenresumefile').val(data.resumepath);
                 }
             });
         }
@@ -162,7 +162,7 @@ function validateexpfromdate(obj) {
     return isvalid;
 }
 
-function validateexptodate() {
+function validateexptodate(obj) {
     var textexpfromdate = $(obj).closest('.newexp').find('#textexpfromdate');
     var textexptodate = $(obj).closest('.newexp').find('#textexptodate');
     var checkexpcurrentcompany = $(obj).closest('.newexp').find('#checkexpcurrentcompany');
@@ -254,6 +254,7 @@ function saveprofiledetails() {
     }
     if (validatetextbox(hiddenresumefile) == false) {
         isvalid = false;
+        alert("Please upload resume");
     }
 
     var experiecnes = $('#divexperiences').find('.newexp');
@@ -333,6 +334,7 @@ function saveprofiledetails() {
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
+                    window.location = "/profile/myprofiles";
                 }
                 else {
                     showwarningalert(data.StatusMessage);

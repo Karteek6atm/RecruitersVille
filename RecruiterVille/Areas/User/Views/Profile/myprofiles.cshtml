@@ -1,8 +1,96 @@
 ﻿
 @{
-    ViewBag.Title = "myprofiles";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>myprofiles</h2>
+@*@Styles.Render("~/content/myprofiles")*@
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0)">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="active">Profiles</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+        <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+    </div>
+</div><!--/.row-->
+
+<div class="panel">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Profiles <a href="/profile/newprofile" class="btn btn-primary pull-right">Add New Profile</a></div>
+                <input type="hidden" id="hiddenselectedprofileid" value="" />
+                <div class="panel-body">
+                    <table class="new-tble scrol-tble">
+                        <thead>
+                            <tr>
+                                <th>
+                                    S.No.
+                                </th>
+                                <th>
+                                    Full Name
+                                </th>
+                                <th>
+                                    EmailId
+                                </th>
+                                <th>
+                                    Contact Number
+                                </th>
+                                <th>
+                                    Experience
+                                </th>
+                                <th>
+                                    Industry
+                                </th>
+                                <th>
+                                    Skills
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyprofiles">
+                            <tr>
+                                <td colspan="9">
+                                    No profiles found.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div><!--/.panel-->
+    </div>
+</div><!--/.row-->
+
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+@*@Scripts.Render("~/bundles/myprofiles")*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        //getprofileslist();
+    });
+</script>

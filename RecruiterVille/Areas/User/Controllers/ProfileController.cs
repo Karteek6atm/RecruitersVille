@@ -149,19 +149,22 @@ namespace RecruiterVille.Areas.User.Controllers
                     dtProfileExperiences.Columns.Add("EndDate", typeof(string));
                     dtProfileExperiences.Columns.Add("IsCurrentCompany", typeof(bool));
 
-                    foreach(ProfileExpRequest experience in objrequest.Experiences)
+                    if (objrequest.Experiences != null)
                     {
-                        DataRow dr = dtProfileExperiences.NewRow();
+                        foreach (ProfileExpRequest experience in objrequest.Experiences)
+                        {
+                            DataRow dr = dtProfileExperiences.NewRow();
 
-                        dr["ProfileExperienceId"] = experience.ProfileExperienceId;
-                        dr["CompanyName"] = experience.CompanyName;
-                        dr["Location"] = experience.Location;
-                        dr["Designation"] = experience.Designation;
-                        dr["StartDate"] = experience.StartDate;
-                        dr["EndDate"] = experience.EndDate;
-                        dr["IsCurrentCompany"] = experience.IsCurrentCompany;
+                            dr["ProfileExperienceId"] = experience.ProfileExperienceId;
+                            dr["CompanyName"] = experience.CompanyName;
+                            dr["Location"] = experience.Location;
+                            dr["Designation"] = experience.Designation;
+                            dr["StartDate"] = experience.StartDate;
+                            dr["EndDate"] = experience.EndDate;
+                            dr["IsCurrentCompany"] = experience.IsCurrentCompany;
 
-                        dtProfileExperiences.Rows.Add(dr);
+                            dtProfileExperiences.Rows.Add(dr);
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(objrequest.strProfileId))
