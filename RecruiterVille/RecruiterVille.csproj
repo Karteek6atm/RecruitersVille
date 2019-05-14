@@ -316,9 +316,11 @@
     <Content Include="Scripts\application\contactus.js" />
     <Content Include="Scripts\application\editjob.js" />
     <Content Include="Scripts\application\editjobtemplate.js" />
+    <Content Include="Scripts\application\editprofile.js" />
     <Content Include="Scripts\application\jobtemplates.js" />
     <Content Include="Scripts\application\login.js" />
     <Content Include="Scripts\application\myjobs.js" />
+    <Content Include="Scripts\application\myprofiles.js" />
     <Content Include="Scripts\application\newjob.js" />
     <Content Include="Scripts\application\newprofile.js" />
     <Content Include="Scripts\application\newtemplate.js" />
@@ -327,6 +329,7 @@
     <Content Include="Scripts\application\register.js" />
     <Content Include="Scripts\application\users.js" />
     <Content Include="Scripts\application\vendors.js" />
+    <Content Include="Scripts\application\viewprofile.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -377,6 +380,8 @@
     <Content Include="Areas\User\Views\Job\viewjobtemplate.cshtml" />
     <Content Include="Areas\User\Views\Profile\newprofile.cshtml" />
     <Content Include="Areas\User\Views\Profile\myprofiles.cshtml" />
+    <Content Include="Areas\User\Views\Profile\editprofile.cshtml" />
+    <Content Include="Areas\User\Views\Profile\viewprofile.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

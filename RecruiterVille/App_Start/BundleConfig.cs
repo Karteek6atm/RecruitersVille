@@ -172,6 +172,32 @@ namespace RecruiterVille
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/newprofile.js"));
 
+            //myprofiles Section
+            bundles.Add(new StyleBundle("~/content/myprofiles").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/myprofiles").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/myprofiles.js"));
+
+            //editprofile Section
+            bundles.Add(new StyleBundle("~/content/editprofile").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/editprofile").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/editprofile.js"));
+
+            //viewprofile Section
+            bundles.Add(new StyleBundle("~/content/viewprofile").Include(
+                      "~/app/css/fSelect.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/viewprofile").Include(
+                      "~/app/js/fSelect.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/viewprofile.js"));
         }
     }
 }

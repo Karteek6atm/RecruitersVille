@@ -48,6 +48,10 @@
     $('.datepicker').datepicker();
 }
 
+function deleteexperience(obj) {
+    $(obj).closest('.newexp').remove();
+}
+
 function validateexpmonths() {
     var textexpmonths = $("#textexpmonths");
     var isvalid = true;

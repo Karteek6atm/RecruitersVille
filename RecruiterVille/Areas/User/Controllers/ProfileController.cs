@@ -79,6 +79,59 @@ namespace RecruiterVille.Areas.User.Controllers
             }
         }
 
+        public ActionResult editprofile(string param1)
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    ProfileCreationMastersResponse objProfileMastersResponse = new ProfileCreationMastersResponse();
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objProfileMastersResponse = _ResumeBal.GetMastersForProfileCreation(response.CompanyId, response.UserLoginId);
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.RoleId = response.RoleId;
+                    ViewBag.CompanyName = response.CompanyName;
+                    ViewBag.Masters = objProfileMastersResponse;
+                    ViewBag.ProfileId = param1;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult viewprofile(string param1)
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.RoleId = response.RoleId;
+                    ViewBag.CompanyName = response.CompanyName;
+                    ViewBag.ProfileId = param1;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         [HttpPost]
         public JsonResult UploadResume(HttpPostedFileBase file)
         {

@@ -159,7 +159,7 @@ namespace RecruiterVille.Areas.User
 
             context.MapRoute(
                 name: "newprofile",
-                url: "profile/newprofile/{param1}",
+                url: "profile/new/{param1}",
                 defaults: new
                 {
                     controller = "profile",
@@ -170,11 +170,33 @@ namespace RecruiterVille.Areas.User
 
             context.MapRoute(
                 name: "myprofiles",
-                url: "profile/myprofiles/{param1}",
+                url: "profile/list/{param1}",
                 defaults: new
                 {
                     controller = "profile",
                     action = "myprofiles",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "newprofile",
+                url: "profile/edit/{param1}",
+                defaults: new
+                {
+                    controller = "profile",
+                    action = "editprofile",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
+                name: "viewprofile",
+                url: "profile/view/{param1}",
+                defaults: new
+                {
+                    controller = "profile",
+                    action = "viewprofile",
                     param1 = UrlParameter.Optional
                 }
             );

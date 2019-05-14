@@ -4,7 +4,7 @@
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-@Styles.Render("~/content/newprofile")
+@Styles.Render("~/content/editprofile")
 <link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 <link href="/app/css/datepicker.css" rel="stylesheet" />
 
@@ -28,7 +28,7 @@
                     Profiles
                 </a>
             </li>
-            <li class="active">New Profile</li>
+            <li class="active">Edit Profile</li>
         </ol>
     </div><!--/.row-->
 
@@ -36,6 +36,7 @@
         <div class="col-lg-12">
             <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
             <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+            <input type="hidden" id="hiddenprofileid" value="@ViewBag.ProfileId" />
         </div>
     </div><!--/.row-->
 
@@ -58,7 +59,7 @@
                                     <label>First Name <span class="mandatory">*</span></label>
                                     <input class="form-control" placeholder="" id="textfirstname" type="text" onblur="validatetextbox(this)" />
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Last Name <span class="mandatory">*</span></label>
@@ -142,7 +143,7 @@
                                         }
                                     </select>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Skills Required (seperate with comma)<span class="mandatory">*</span></label>
@@ -163,7 +164,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Description </label>
-                                    <textarea rows="10" class="form-control" placeholder="" id="textdescription" ></textarea>
+                                    <textarea rows="10" class="form-control" placeholder="" id="textdescription"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +179,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <a href="javascript:void(0)" class="btn btn-default pull-right" onclick="resetfields()">Reset</a>
-                                <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="saveprofiledetails()">Save Profile</a>
+                                <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="saveprofiledetails()">Update Profile</a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +190,7 @@
 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/app/js/bootstrap-datepicker.js"></script>
-    @Scripts.Render("~/bundles/newprofile")
+    @Scripts.Render("~/bundles/editprofile")
     <script type="text/javascript">
         $(document).ready(function () {
             $('.multiple-select').fSelect();
