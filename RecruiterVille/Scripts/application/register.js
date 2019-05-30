@@ -2,9 +2,9 @@
     if (validatetextbox(obj) == false) {
         return false;
     }
-    else if (checkpasswordcriteria(obj) == false) {
-        return false;
-    }
+    //else if (checkpasswordcriteria(obj) == false) {
+    //    return false;
+    //}
 }
 
 function validateconfirmpassword(obj) {
