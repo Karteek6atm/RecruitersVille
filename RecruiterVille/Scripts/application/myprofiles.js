@@ -1,9 +1,32 @@
 ﻿function getprofileslist() {
     showloading();
     $('#tbodyprofiles tr').remove();
+    
+    var selectqualification = $("#selectqualification");
+    var selectindustry = $("#selectindustry");
+    var textminexp = $("#textminexp");
+    var textmaxexp = $("#textmaxexp");
+    var textlocation = $("#textlocation");
+    var selectskills = $("#selectskills");
+
+    var industryids = getmultiselectedvalues(selectindustry);
+    var qualificationids = getmultiselectedvalues(selectqualification);
+    var minexp = (textminexp.val() == "") ? 0 : textminexp.val();
+    var maxexp = (textmaxexp.val() == "") ? 0 : textmaxexp.val();
+         
+    var input = [];
+    input = {
+        IndustryIds: industryids,
+        QualificationIds: qualificationids,
+        MinExperience: minexp,
+        MaxExperience: maxexp,
+        Location: textlocation.val().trim(),
+        Skills: selectskills.val().trim()
+    };
 
     $.ajax({
-        type: "GET",
+        type: "POST",
+        data: (input),
         url: "/profile/getprofileslist",
         dataType: "json",
         success: function (data) {
@@ -57,7 +80,7 @@
             }
 
             if (!ishavingprofiles) {
-                var tr = '<tr />';
+                var tr = $('<tr />');
                 $(tr).append('<td colspan="9">No profiles found.</td>');
                 $('#tbodyprofiles').append(tr);
             }

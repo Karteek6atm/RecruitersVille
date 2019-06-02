@@ -59,7 +59,7 @@
                                     <label>First Name <span class="mandatory">*</span></label>
                                     <input class="form-control" placeholder="" id="textfirstname" type="text" onblur="validatetextbox(this)" />
                                 </div>
-                            </div>
+                            </div> 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Last Name <span class="mandatory">*</span></label>
@@ -100,7 +100,7 @@
                                             <option value="@qualification.QualificationId">@qualification.QualificationName</option>
                                         }
                                     </select>
-                                </div>
+                                </div> 
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
@@ -149,7 +149,7 @@
                                     <label>Skills Required (seperate with comma)<span class="mandatory">*</span></label>
                                     <input class="form-control" placeholder="" id="selectskills" type="text" onblur="validatetextbox(this)" />
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -193,9 +193,8 @@
     @Scripts.Render("~/bundles/editprofile")
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.multiple-select').fSelect();
             $('.datepicker').datepicker();
-            //addnewexperience();
+            getprofiledetails();
         });
     </script>
 }

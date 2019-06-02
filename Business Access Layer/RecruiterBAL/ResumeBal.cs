@@ -82,16 +82,14 @@ namespace RecruiterBAL
             return objProfileCreationMastersResponse;
         }
 
-        public List<ResumeResponse> GetProfilesList(string strcompanyid)
+        public List<ResumeResponse> GetProfilesList(ResumeListRequest request)
         {
             List<ResumeResponse> objJobResponse = new List<ResumeResponse>();
             try
             {
                 DataSet dsData = new DataSet();
-
-                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
-
-                dsData = _ResumeDal.GetProfilesList(companyid);
+                
+                dsData = _ResumeDal.GetProfilesList(request);
 
                 if (dsData != null)
                 {
@@ -129,6 +127,67 @@ namespace RecruiterBAL
             try
             {
                 objresponse = _ResumeDal.InsertAndUpdateProfileDetails(objrequest, dtProfileExperiences);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public GetResumeResponse GetProfileDetailsById(int profileid)
+        {
+            GetResumeResponse objresponse = new GetResumeResponse();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                dsData = _ResumeDal.GetProfileDetailsById(profileid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        if (dsData.Tables[0].Rows.Count > 0)
+                        {
+                            DataRow dr = dsData.Tables[0].Rows[0];
+
+                            objresponse.AlternateEmailId = (string)dr["AlternateEmailId"];
+                            objresponse.AlternateMobileNumber = (string)dr["AlternateMobileNumber"];
+                            objresponse.CountryId = (int)dr["CountryId"];
+                            objresponse.CountryName = (string)dr["CountryName"];
+                            objresponse.Description = (string)dr["Description"];
+                            objresponse.EmailId = (string)dr["EmailId"];
+                            objresponse.ExpMonths = (int)dr["ExpMonths"];
+                            objresponse.ExpYears = (int)dr["ExpYears"];
+                            objresponse.FirstName = (string)dr["FirstName"];
+                            objresponse.IndustryId = (int)dr["IndustryId"];
+                            objresponse.IndustryName = (string)dr["IndustryName"];
+                            objresponse.LastName = (string)dr["LastName"];
+                            objresponse.Location = (string)dr["Location"];
+                            objresponse.MobileNumber = (string)dr["MobileNumber"];
+                            objresponse.QualificationId = (int)dr["QualificationId"];
+                            objresponse.QualificationName = (string)dr["QualificationName"];
+                            objresponse.Resume = (string)dr["Resume"];
+                            objresponse.Skills = (string)dr["Skills"];
+
+                            if (dsData.Tables.Count > 1)
+                            {
+                                objresponse.Experiences = dsData.Tables[1].AsEnumerable().
+                                    Select(x => new GetResumeExperiencesResponse
+                                    {
+                                        CompanyName = x.Field<string>("CompanyName"),
+                                        Designation = x.Field<string>("Designation"),
+                                        EndDate = x.Field<string>("EndDate"),
+                                        IsCurrentCompany = x.Field<bool>("IsCurrentCompany"),
+                                        ProfileExperienceId = x.Field<int>("ProfileExperienceId"),
+                                        StartDate = x.Field<string>("StartDate"),
+                                        Location = x.Field<string>("Location")
+                                    }).ToList();
+                            }
+                        }                        
+                    }
+                }
             }
             catch (Exception ex)
             {

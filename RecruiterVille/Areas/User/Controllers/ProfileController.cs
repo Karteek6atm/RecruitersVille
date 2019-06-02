@@ -34,11 +34,14 @@ namespace RecruiterVille.Areas.User.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
+                    ProfileCreationMastersResponse objProfileMastersResponse = new ProfileCreationMastersResponse();
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objProfileMastersResponse = _ResumeBal.GetMastersForProfileCreation(response.CompanyId, response.UserLoginId);
                     ViewBag.LoginId = response.UserLoginId;
                     ViewBag.CompanyId = response.CompanyId;
                     ViewBag.RoleId = response.RoleId;
                     ViewBag.CompanyName = response.CompanyName;
+                    ViewBag.Masters = objProfileMastersResponse;
                     return View();
                 }
                 else
@@ -161,8 +164,8 @@ namespace RecruiterVille.Areas.User.Controllers
 
         #region Actions 
 
-        [HttpGet]
-        public JsonResult GetProfilesList()
+        [HttpPost]
+        public JsonResult GetProfilesList(ResumeListRequest request)
         {
             List<ResumeResponse> objresponse = new List<ResumeResponse>();
             try
@@ -170,7 +173,14 @@ namespace RecruiterVille.Areas.User.Controllers
                 if (Session["UserLogin"] != null)
                 {
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
-                    objresponse = _ResumeBal.GetProfilesList(response.CompanyId);
+                    request.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+
+                    request.IndustryIds = string.IsNullOrEmpty(request.IndustryIds) ? string.Empty : request.IndustryIds;
+                    request.QualificationIds = string.IsNullOrEmpty(request.QualificationIds) ? string.Empty : request.QualificationIds;
+                    request.Location = string.IsNullOrEmpty(request.Location) ? string.Empty : request.Location;
+                    request.Skills = string.IsNullOrEmpty(request.Skills) ? string.Empty : request.Skills;
+
+                    objresponse = _ResumeBal.GetProfilesList(request);
                 }
             }
             catch (Exception ex)
@@ -191,6 +201,15 @@ namespace RecruiterVille.Areas.User.Controllers
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
                     objrequest.UserLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
                     objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+
+                    if (!string.IsNullOrEmpty(objrequest.strProfileId))
+                    {
+                        objrequest.ProfileId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strProfileId));
+                    }
+                    else
+                    {
+                        objrequest.ProfileId = 0;
+                    }
 
                     DataTable dtProfileExperiences = new DataTable();
 
@@ -230,6 +249,25 @@ namespace RecruiterVille.Areas.User.Controllers
                     }
 
                     objresponse = _ResumeBal.InsertAndUpdateProfileDetails(objrequest, dtProfileExperiences);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult GetProfileDetailsById(ResumeDetailsRequest request)
+        {
+            GetResumeResponse objresponse = new GetResumeResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    request.ProfileId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(request.strProfileId));
+                    objresponse = _ResumeBal.GetProfileDetailsById(request.ProfileId);
                 }
             }
             catch (Exception ex)

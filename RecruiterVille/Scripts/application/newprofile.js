@@ -338,7 +338,7 @@ function saveprofiledetails() {
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
-                    window.location = "/profile/myprofiles";
+                    window.location = "/profile/list";
                 }
                 else {
                     showwarningalert(data.StatusMessage);

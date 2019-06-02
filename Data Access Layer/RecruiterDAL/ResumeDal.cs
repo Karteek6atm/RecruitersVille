@@ -45,11 +45,18 @@ namespace RecruiterDAL
             return dsData;
         }
 
-        public DataSet GetProfilesList(int companyid)
+        public DataSet GetProfilesList(ResumeListRequest request)
         {
-            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
+            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = request.CompanyId },
+                                            new SqlParameter("@IndustryIds", SqlDbType.VarChar, -1) { Value = request.IndustryIds },
+                                            new SqlParameter("@QualificationIds", SqlDbType.VarChar, -1) { Value = request.QualificationIds },
+                                            new SqlParameter("@MinExperience", SqlDbType.Int) { Value = request.MinExperience },
+                                            new SqlParameter("@MaxExperience", SqlDbType.Int) { Value = request.MaxExperience },
+                                            new SqlParameter("@Location", SqlDbType.VarChar, 100) { Value = request.Location },
+                                            new SqlParameter("@Skills", SqlDbType.VarChar, -1) { Value = request.Skills }
                                         };
-            DataSet dsData = new DataSet();
+        
+                    DataSet dsData = new DataSet();
 
             try
             {
@@ -113,6 +120,30 @@ namespace RecruiterDAL
                     con.Close();
             }
             return objSaveResponse;
+        }
+
+        public DataSet GetProfileDetailsById(int profileid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@ProfileId", SqlDbType.Int) { Value = profileid }
+                                        };
+
+            DataSet dsData = new DataSet();
+            GetResumeResponse objresponse = new GetResumeResponse();
+
+            try
+            {
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetProfileDetailsById", sqlparams);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return dsData;
         }
 
         #endregion

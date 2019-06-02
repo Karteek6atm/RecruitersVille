@@ -180,7 +180,7 @@ namespace RecruiterVille.Areas.User
             );
 
             context.MapRoute(
-                name: "newprofile",
+                name: "editprofile",
                 url: "profile/edit/{param1}",
                 defaults: new
                 {

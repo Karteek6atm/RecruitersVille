@@ -11,6 +11,23 @@ namespace RecruiterBE.Requests
 
     }
 
+    public class ResumeDetailsRequest
+    {
+        public int ProfileId { get; set; }
+        public string strProfileId { get; set; }
+    }
+
+    public class ResumeListRequest
+    {
+        public int CompanyId { get; set; }
+        public string IndustryIds { get; set; }
+        public string QualificationIds { get; set; }
+        public int MinExperience { get; set; }
+        public int MaxExperience { get; set; }
+        public string Location { get; set; }
+        public string Skills { get; set; }
+    }
+
     public class ProfileSaveRequest
     {
         public int UserLoginId { get; set; }
