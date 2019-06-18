@@ -487,10 +487,10 @@ font-weight: bold;  bottom: 0;   color: #fff;      padding: 20px;    position: a
 .learn-more h1 { color: #fff; font-size: 36px; font-style: italic;    margin-bottom: 20px;}
 .learn-more h4{ color: #fff; font-size: 20px; font-weight: lighter;    margin-bottom: 20px;}
 .learn-more p{ color: #fff; font-size: 15px; font-weight: lighter;    margin-bottom: 20px;}
-.footer {    background:  #06114f ;    float: left;    padding: 50px 0;    width: 100%;}
- .footer h3 {    color: #fff;   font-size: 22px;    font-weight:600;  margin: 10px 0 0px;}
+.footer {    background:  #06114f ;    float: left;    padding: 30px 0;    width: 100%;}
+ .footer h3 {    color: #fff;   font-size: 22px; text-align:center;   font-weight:600;  margin:  0px;}
 .footer ul {   margin: 0;  padding: 12px 0 0;}
-.footer ul li {    color: #fff;    font-size: 13px;    line-height: 30px;    list-style: outside none none;}
+.footer ul li {    color: #fff;   float: left;padding: 0 15px; font-size: 13px;    line-height: 30px;    list-style: outside none none;}
 .footer ul li a {    color: #fff;}
 .footer ul li:hover a {    color: #82c244;}
 .footer input[type="email"] { border: 0 none; color: #acacac; float: left; font-size: 14px; font-style: italic; height: 50px; max-width: 354px; padding: 12px; width: 100%;}
@@ -504,7 +504,7 @@ font-weight: bold;  bottom: 0;   color: #fff;      padding: 20px;    position: a
 .footer ul li i {    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;    color: #82c244;    font-size: 14px;    height: auto;   line-height: 15px;   margin-bottom: 0;    margin-right: 10px;    margin-top: 0;    width: auto;}
 .footer h2 {    color: #fff; float: left; font-size: 24px; font-weight: bold; margin: 0 20px 0 0;} 
 .footer h2 p{ font-size: 13px; font-weight: lighter}
-.footer hr { margin: 40px 0; border-color: #182678; }
+.footer hr { margin: 20px 0; border-color: #182678; }
 .testimonial{    padding: 0 15px;   text-align: center;}
 .testimonial .pic{  height: 126px;   margin-bottom: 10px;    overflow: hidden;    width: 126px;  border-radius: 50%;    display: inline-block;}
 .testimonial .pic img{    width: 100%;   height: auto;}
@@ -1810,3 +1810,4 @@ border: 1px solid #ececec;   box-shadow: 0 3px 4px #ededed inset;color: #000;flo
 padding: 10px;width: 100%;-moz-user-select: none;-webkit-user-select: none;}
 .skills span {background: #f7f7f7;padding: 10px;   margin: 0 5px 4px 0px; float:left;}
 .doctor-list-con .btn{margin:10px 0}
+.footer ul {    margin: 0 auto;    padding: 12px 0 0;    display: table;}
