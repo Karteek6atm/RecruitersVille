@@ -188,3 +188,9 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterDAL.p
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.Model.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.OutputFormatter.Json.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.ResumeProcessor.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.Model.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.OutputFormatter.Json.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.ResumeProcessor.pdb
