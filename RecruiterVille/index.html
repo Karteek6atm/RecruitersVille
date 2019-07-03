@@ -16,6 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Asewome Icons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+ 
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
     <!-- Slick slider CSS -->
@@ -68,9 +69,9 @@
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="nav navbar-nav navbar-right">
                  <li class="active"><a href="/index.html"> Home</a></li>
-                    <li><a href="#"> About Us    </a></li>
+                    <li><a href="about.html"> About Us    </a></li>
                     <li><a href="/packages"> Price</a></li>
-                    <li><a href="#"> Careers</a></li>
+                    <li><a href="job-list.html"> Careers</a></li>
                     <li><a href="/contactus"> Contact</a></li>
                 </ul>
             </div>
@@ -80,76 +81,77 @@
 
     <div id="myCarousel" class="carousel slide banner">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0"  class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+      
         <div class="carousel-inner ">
             <!-- item 1-->
-            <div class="item ">
-                <img src="images/banner1.jpg" alt=".." class="img-responsive" width="100%"  height="100%">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>We offer 1,259 job vacancies right now! </h1>
-                        <p>Find your desire one in a minute </p>
-                    </div>
-                </div>
-            </div>
-            <!-- item 2-->
-            <div class="item active">
-                <img src="images/banner1.jpg" alt=".." class="img-responsive" width="100%"  height="100%">
-                <div class="container">
-                        <div class="carousel-caption">
-                                <h1>We offer 1,259 job vacancies right now! </h1>
-                                <p>Find your desire one in a minute </p>
-                   </div>
-                </div>
-            </div>
             <!-- item 3-->
-            <div class="item">
-                <img src="images/banner1.jpg" alt=".." class="img-responsive" width="100%" height="100%">
+            <div class="item active ">
+                <img src="images/banner3.jpg" alt=".." class="img-responsive" width="100%" height="100%">
                 <div class="container">
-                        <div class="carousel-caption">
-                                <h1>We offer 1,259 job vacancies right now! </h1>
-                                <p>Find your desire one in a minute </p>
+                    <form class="col-sm-8 col-sm-offset-2" id="searchForm">
+                        <h2 class="text-center herotitle center-block"> Find The Job That Fits Your Life </h2>
+                        <p>Each month, more than 7 million jobseekers turn to website in their search for work</p>
+                        <div class="form-group searchbar text-center clearfix">
+                            <ul class="sea clearfix">
+                                <li id="search-inputfield">
+                                    <input type="text" class="searchinput" placeholder="Find Job Here">
+                                </li>
+                                <li>
+                                    <button type="submit" class="searchbtn "><i class="glyphicon glyphicon-search "></i></button>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </form>
+
+                    <div class="allout">
+                        <div class="col-md-3 col-sm-3 col-lg-offset-2">
+                            <div class="cmp-overview">
+                                <div class="cmp-icon">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="cmp-detail">
+                                    <h3>674.058</h3>
+                                    <span>All Resume</span>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="cmp-overview">
+                                <div class="cmp-icon">
+                                    <i class="fa fa-file-word-o" aria-hidden="true"></i>
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="cmp-detail">
+                                    <h3>674.058</h3>
+                                    <span>Total  Company's</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="cmp-overview">
+                                <div class="cmp-icon">
+                                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="cmp-detail">
+                                    <h3>674.058</h3>
+                                    <span>All Employes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
  
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <i class="glyphicon glyphicon glyphicon-menu-left search-glyleft"></i>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-           <i class="glyphicon glyphicon glyphicon-menu-right search-glyright"></i>
-        </a>
+ 
     </div>
     <!-- #Ends Search Slider Carousel -->
  
 
-	<div class="home-intro">
-        <div class="container">
 
-            <div class="row">
-                <div class="col-md-8">
-                    <p>
-                        The fastest way to grow your business with the leader in <em>Technology</em>
-                        <span>Check out our options and features included.</span>
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <div class="get-started">
-                        <a href="#" class="btn btn-lg btn-primary">Get Started Now!</a>
-                        <div class="learn">or <a href="index.html">learn more.</a></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <div class="container">
 
@@ -159,7 +161,7 @@
                     Create and Publish Job Openings
                 </h2>
                 <p class="lead">
-                    Reach out to the ultimate talent across the globe, by posting onto popular job boards, Be assured of sourcing talent, that matches your client's needs.
+                    Reach out to the ultimate talent across the globe, by posting onto popular job boards, <br /> Be assured of sourcing talent, that matches your client's needs.
 
                 </p>
             </div>
@@ -175,57 +177,42 @@
         </div>
     </div>
 
-    <section class="section section-no-background m-none">
+    <div class="product-wrap vison-mins">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <img class="img-responsive mb-lg" src="images/our-office-4.jpg" alt="Office">
-                </div>
-                <div class="col-md-9">
-                    <h2 class="mb-lg">Our <strong>Company</strong></h2>
-                    <p class="lead"><b> Advanced ATS </b>  Parse your applicant resume, Recruitersville will save and provide you the resume if you need it again by ensuring applicant is available in the market</p>
-                    <p class="pera"><b> Search Resumes </b> A Search string lets you search multiple resumes using common keywords or your own criteria. Save specific searches to run in the future <a class="btn-flat btn-xs" href="#">View More <i class="fa fa-arrow-right"></i></a></p>
-                </div>
-            </div>
+        <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6 vm"><br></div>
+        <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6 col-lg-offset-6">
+        <h5>Our Company</h5>
+        <p> <b>Advanced ATS </b>  Parse your applicant resume, Recruitersville will save and provide you the resume if you need it again by ensuring applicant is available in the market</p>
+         <p><b> Search Resumes </b> A Search string lets you search multiple resumes using common keywords or your own criteria. Save specific searches to run in the future <a class="btn-flat btn-xs" href="#">View More <i class="fa fa-arrow-right"></i></a></p>
         </div>
-    </section>
-
-
-    <div class="container">
-
-        <hr class="tall">
-
-        <div class="row">
-            <div class="col-md-4">
-                <img class="img-responsive mt-xl" src="images/layout-styles.png" alt="layout styles" data-appear-animation="fadeInLeft">
-            </div>
-            <div class="col-md-7 col-md-offset-1">
-                <h2 class="mt-xl">Post your Job Openings</h2>
-                <p class="lead">
-                    Cast a wider net by publishing job openings across multiple popular job boards, social media sites from Recruitersville. And direct sourcing, makes reaching talent even more easier.
-                </p>
-                
-            </div>
         </div>
-
-        <hr class="tall">
-
-        <div class="row">
-            <div class="col-md-7">
-                <h2 class="mt-xl">For hiring that works your way.</h2>
-                <p class="lead">
-                    Optimize and streamline your entire recruiting process as Recruitersville has everything you need. Find better candidates                </p>
-                <p class="pera">
-                    As a recruiter, filling most job openings with the best candidates means being present and fluent across multiple sourcing channels. Now, stay updated on all the ways candidates apply for jobs.                </p>
-            </div>
-            <div class="col-md-4 col-md-offset-1 mt-xl">
-                <img class="img-responsive" src="images/style-switcher.png" alt="style switcher" data-appear-animation="fadeInRight">
-            </div>
         </div>
-
-         
-
     </div>
+
+    <div class="product-wrap vison-mins">
+        <div class="container">
+            <div class="row"><div class="col-xs-12 col-lg-6 col-md-6 col-sm-6"><h5>Post your Job Openings</h5>
+                <p class="peragraph">    Cast a wider net by publishing job openings across multiple popular job boards, social media sites from Recruitersville. And direct sourcing, makes reaching talent even more easier.</p></div>
+            <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6 col-lg-offset-6 vm  pjo"><br></div></div>
+        </div>
+    </div>
+
+    <div class="product-wrap vison-mins">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6 vm fwr"><br></div>
+                <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6 col-lg-offset-6">
+                    <h5>For hiring that works your way.</h5>
+<p>Optimize and streamline your entire recruiting process as Recruitersville has everything you need. Find better candidates </p>                    
+<p>As a recruiter, filling most job openings with the best candidates means being present and fluent across multiple sourcing channels. Now, stay updated on all the ways candidates apply for jobs.      </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+ 
     <section class="learn-more">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <h1> Why Are we Different?</h1>
@@ -344,7 +331,7 @@
     
     
 
-                                <section class="testi">
+                                <section class="testi" style="display:none">
                                         <div class="container"> 
                                             <div class="row">  
                                                 <h1 class="hed">  Peoples Say ‘s </h1> 
@@ -403,47 +390,21 @@
                                                   </form></div>
                                               <div class="col-lg-12"><hr></div>
                                               
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">  
-                                                <h3>About</h3>
+                                            <div class="col-lg-12 col-xs-12">  
+                                                <h3>Company Details</h3>
                                            <ul>
-                                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i>  Vision</a></li>
-                                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i> Mission</a></li>
-                                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i>  Clients</a></li>
+                                                <li><a href="index.html"><i class="fa fa-angle-double-right"></i>  Home</a></li>
+                                                <li><a href="about.html"><i class="fa fa-angle-double-right"></i> About Us</a></li>
+                                                <li><a href="/packages"><i class="fa fa-angle-double-right"></i>  Price</a></li>
+                                               <li><a href="job-list.html"><i class="fa fa-angle-double-right"></i>  Careers </a></li>
                                                 <li><a href="/contactus"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                                               <li><a href=""><i class="fa fa-angle-double-right"></i>  Terms & Conditions </a></li>
+                                               <li><a href=""><i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
                                               </ul>
                                              </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
-                                              <h3>Product</h3>
-                                              <ul>
-                                                <li><a href="product.html"><i class="fa fa-angle-double-right"></i>  WG- Water gold</a></li>
-                                                <li><a href="product.html"><i class="fa fa-angle-double-right"></i>  Rebate Instant</a></li>
-                                                <li><a href="product.html"><i class="fa fa-angle-double-right"></i>   CRM </a></li>
- 
-                                              </ul>
-                                            </div>
-                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
-                                              <h3>  Services</h3>
-                                              <ul>
-                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i> Utility services</a></li>
-                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>  Business services </a></li>
-                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>  IT Staff Augmentation</a></li>
-                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>  Outsourcing </a></li>
-                                                <li><a href="services.html"><i class="fa fa-angle-double-right"></i>    Quality Assurance  </a></li>
-                                         
-                                              </ul>
-                                            </div>
-                                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
-                                              <h3>Subjects</h3>
-                                             <ul>
-                                                <li><a href="expertise.html"><i class="fa fa-angle-double-right"></i>  Expertise    </a></li>
-                                                <li><a href="csr.html"><i class="fa fa-angle-double-right"></i> CSR</a></li>
-                                                <li><a href="careers.html"><i class="fa fa-angle-double-right"></i>   Careers</a></li>
-                                          
-                                              </ul>
-                                             
-                                            </div> <div class="col-lg-12"><hr></div>
+                                            <div class="col-lg-12"><hr></div>
                                              <section class="bottomFooter">
-                                           <div class="col-lg-12 text-center">Copyright &copy; 2019    ,  <a href="#">All right reserved Inc. </a> </div>
+                                           <div class="col-lg-12 text-center">Copyright &copy; 2019 Recruitersville    ,  <a href="#">All right reserved Inc. </a> </div>
                                        </section>
                                           </div>
                                         </div>
