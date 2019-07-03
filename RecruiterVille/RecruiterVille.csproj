@@ -279,6 +279,7 @@
     <Content Include="images\client5.jpg" />
     <Content Include="images\client6.jpg" />
     <Content Include="images\collapsearrow.png" />
+    <Content Include="images\drop.png" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\favicon3.ico" />
     <Content Include="images\flight.png" />
@@ -294,10 +295,13 @@
     <Content Include="images\mobile.jpg" />
     <Content Include="images\our-office-4.jpg" />
     <Content Include="images\parallax.jpg" />
+    <Content Include="images\post-job.jpg" />
     <Content Include="images\search-search.png" />
     <Content Include="images\seo-grey.png" />
     <Content Include="images\style-switcher.png" />
     <Content Include="images\test.png" />
+    <Content Include="images\vision-mission.jpg" />
+    <Content Include="images\works-your.jpg" />
     <Content Include="index.html" />
     <Content Include="job-list.html" />
     <Content Include="job-view.html" />
