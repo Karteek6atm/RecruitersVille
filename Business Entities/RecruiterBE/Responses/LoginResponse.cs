@@ -24,6 +24,8 @@ namespace RecruiterBE.Responses
         public int PackageId { get; set; }
         public int UserId { get; set; }
         public bool IsFirstLogin { get; set; }
+        public bool IsSuperUser { get; set; }
+        public int SuperUserLoginId { get; set; }
     }
     
     public class RegistrationResponse
