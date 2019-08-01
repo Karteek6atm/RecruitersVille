@@ -216,6 +216,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\SuperUser\Controllers\SuperUser.cs" />
     <Compile Include="Areas\SuperUser\SuperUserAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\JobController.cs" />
     <Compile Include="Areas\User\Controllers\ProfileController.cs" />
@@ -440,8 +441,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\SuperUser\Controllers\" />
     <Folder Include="Areas\SuperUser\Models\" />
+    <Folder Include="Areas\SuperUser\Views\Shared\" />
+    <Folder Include="Areas\SuperUser\Views\SuperUser\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="UploadedFiles\CompanyLogos\" />
     <Folder Include="UploadedFiles\Resumes\" />
