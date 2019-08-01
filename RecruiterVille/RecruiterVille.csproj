@@ -402,6 +402,7 @@
     <Content Include="Areas\User\Views\Profile\myprofiles.cshtml" />
     <Content Include="Areas\User\Views\Profile\editprofile.cshtml" />
     <Content Include="Areas\User\Views\Profile\viewprofile.cshtml" />
+    <Content Include="Areas\SuperUser\Views\Shared\_SuperUserLayout.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -441,7 +442,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\SuperUser\Controllers\" />
     <Folder Include="Areas\SuperUser\Models\" />
-    <Folder Include="Areas\SuperUser\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="UploadedFiles\CompanyLogos\" />
     <Folder Include="UploadedFiles\Resumes\" />
