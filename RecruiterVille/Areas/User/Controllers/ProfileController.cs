@@ -12,6 +12,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Sharpenter.ResumeParser.OutputFormatter.Json;
+using Sharpenter.ResumeParser.ResumeProcessor;
+using Sharpenter.ResumeParser.Model;
 
 namespace RecruiterVille.Areas.User.Controllers
 {
@@ -151,6 +154,30 @@ namespace RecruiterVille.Areas.User.Controllers
                     var path = Server.MapPath(filepath);
                     objresponse.resumepath = filepath;
                     file.SaveAs(path);
+
+                    //var outputFolder = Path.Combine(Directory.GetCurrentDirectory(), "Output");
+                    //if (Directory.Exists(outputFolder))
+                    //{
+                    //    Directory.Delete(outputFolder, true);
+                    //}
+
+                    //Directory.CreateDirectory(outputFolder);
+
+                    //var processor = new ResumeProcessor(new JsonOutputFormatter());
+
+                    //var files = Directory.GetFiles("Resumes").Select(Path.GetFullPath);
+                    //foreach (var file1 in files)
+                    //{
+                        //var output = processor.Process(filepath);
+
+                        //System.Console.WriteLine(output);
+
+                        //var outputFileName = file1.Substring(file1.LastIndexOf(Path.DirectorySeparatorChar) + 1) + ".txt";
+                        //using (var writer = new StreamWriter(Path.Combine(outputFolder, outputFileName)))
+                        //{
+                        //    writer.Write(output);
+                        //}
+                    //}
                 }
             }
             catch (Exception ex)

@@ -81,6 +81,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sharpenter.ResumeParser.Model">
+      <HintPath>..\..\..\Sharpenter-master\Sharpenter-master\Sharpenter.ResumeParser.Model\bin\Release\Sharpenter.ResumeParser.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sharpenter.ResumeParser.OutputFormatter.Json">
+      <HintPath>..\..\..\Sharpenter-master\Sharpenter-master\Sharpenter.ResumeParser.OutputFormatter.Json\bin\Release\Sharpenter.ResumeParser.OutputFormatter.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sharpenter.ResumeParser.ResumeProcessor">
+      <HintPath>..\..\..\Sharpenter-master\Sharpenter-master\Sharpenter.ResumeParser.ResumeProcessor\bin\Release\Sharpenter.ResumeParser.ResumeProcessor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -144,9 +157,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -393,6 +403,7 @@
     <Content Include="Areas\User\Views\Profile\myprofiles.cshtml" />
     <Content Include="Areas\User\Views\Profile\editprofile.cshtml" />
     <Content Include="Areas\User\Views\Profile\viewprofile.cshtml" />
+    <Content Include="Areas\SuperUser\Views\Shared\_SuperUserLayout.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
