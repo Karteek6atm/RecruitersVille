@@ -36,6 +36,15 @@ namespace RecruiterVille
             bundles.Add(new ScriptBundle("~/bundles/userlayout").Include(
                       "~/app/js/bootstrap.min.js"));
 
+            //Super User Layout Section
+            bundles.Add(new StyleBundle("~/content/superuserlayout").Include(
+                      "~/app/css/bootstrap.min.css",
+                      "~/app/css/font-awesome.min.css",
+                      "~/app/css/styles.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/superuserlayout").Include(
+                      "~/app/js/bootstrap.min.js"));
+
             //Login Section
             bundles.Add(new StyleBundle("~/content/login").Include(
                       "~/app/css/bootstrap.min.css",
@@ -198,6 +207,15 @@ namespace RecruiterVille
                       "~/app/js/fSelect.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/viewprofile.js"));
+
+            // Super User CompaniesList Section
+            bundles.Add(new ScriptBundle("~/bundles/CompaniesList").Include(
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/SuperUserCompaniesList.js"));
+            // Super User ProfileList Section
+            bundles.Add(new ScriptBundle("~/bundles/SuprerProfileList").Include(
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/SuperUserProfileList.js"));
         }
     }
 }

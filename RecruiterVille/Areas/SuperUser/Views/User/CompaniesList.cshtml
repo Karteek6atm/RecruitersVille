@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "CompaniesList";
+    Layout = "~/Areas/SuperUser/Views/Shared/_SuperUserLayout.cshtml";
+}
+
+@Styles.Render("~/content/superuserlayout")
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
+ 
+    
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="javascript:void(0)">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Companies</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+            <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+            <input type="hidden" id="hfCompanyId" value="0" />
+            <input type="hidden" id="hfAction" value="0" />
+
+
+        </div>
+    </div><!--/.row-->
+
+    <div class="panel ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Companies @*<a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewuser()">Add New User</a>*@
+                    </div>
+
+                    <input type="hidden" id="hiddenselecteduserid" value="" />
+                    <div class="panel-body">
+
+                        <table class="new-tble scrol-tble">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        S.No.
+                                    </th>
+                                    <th>
+                                        Company Name
+                                    </th>
+                                    <th>
+                                        Created By
+                                    </th>
+                                    <th>
+                                        Users Count
+                                    </th>
+                                    <th>
+                                        Package Name
+                                    </th>
+                                    <th>
+                                        Active Status
+                                    </th>
+                                   
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyCompaniesList"></tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div><!--/.panel-->
+        </div>
+    </div><!--/.row-->
+ 
+<div class="modal fade" id="modalcompanyuser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModelLabel">Activate Company</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closemodalcompanyuser">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="pActionText">Are you sure do you want to Activate this company?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" id="ButAction" class="btn btn-primary" onclick="CompanyActions()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    @Scripts.Render("~/bundles/superuserlayout")
+    @Scripts.Render("~/bundles/CompaniesList")
+
+
+    <script type="text/javascript">
+        (function ($) {
+            getcompanieslist();
+        })(jQuery);
+    </script> 
+

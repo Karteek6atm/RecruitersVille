@@ -9,12 +9,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Sharpenter.ResumeParser.OutputFormatter.Json;
-using Sharpenter.ResumeParser.ResumeProcessor;
-using Sharpenter.ResumeParser.Model;
 
 namespace RecruiterVille.Areas.User.Controllers
 {
