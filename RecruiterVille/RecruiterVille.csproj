@@ -216,7 +216,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\SuperUser\Controllers\SuperUser.cs" />
+    <Compile Include="Areas\SuperUser\Controllers\UserController.cs" />
     <Compile Include="Areas\SuperUser\SuperUserAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\JobController.cs" />
     <Compile Include="Areas\User\Controllers\ProfileController.cs" />
@@ -348,6 +348,9 @@
     <Content Include="Scripts\application\packages.js" />
     <Content Include="Scripts\application\profile.js" />
     <Content Include="Scripts\application\register.js" />
+    <Content Include="Scripts\application\SuperUserCompaniesList.js" />
+    <Content Include="Scripts\application\SuperUserJobsList.js" />
+    <Content Include="Scripts\application\SuperUserProfileList.js" />
     <Content Include="Scripts\application\users.js" />
     <Content Include="Scripts\application\vendors.js" />
     <Content Include="Scripts\application\viewprofile.js" />
@@ -404,6 +407,9 @@
     <Content Include="Areas\User\Views\Profile\editprofile.cshtml" />
     <Content Include="Areas\User\Views\Profile\viewprofile.cshtml" />
     <Content Include="Areas\SuperUser\Views\Shared\_SuperUserLayout.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\CompaniesList.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\ProfilesList.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\AdminJobsList.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -442,8 +448,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\SuperUser\Models\" />
-    <Folder Include="Areas\SuperUser\Views\Shared\" />
-    <Folder Include="Areas\SuperUser\Views\SuperUser\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="UploadedFiles\CompanyLogos\" />
     <Folder Include="UploadedFiles\Resumes\" />

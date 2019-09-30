@@ -1,6 +1,5 @@
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.dll
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.pdb
-E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.dll
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.pdb
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.dll
@@ -10,3 +9,6 @@ D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.xml
+E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.dll
+E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.xml
+E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache

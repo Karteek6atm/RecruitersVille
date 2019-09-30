@@ -16,3 +16,5 @@ D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\ob
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.pdb
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\Newtonsoft.Json.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\Newtonsoft.Json.xml
+E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Data Access Layer\RecruiterDAL\bin\Debug\Newtonsoft.Json.dll
+E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\Data Access Layer\RecruiterDAL\bin\Debug\Newtonsoft.Json.xml

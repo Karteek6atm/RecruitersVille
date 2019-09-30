@@ -48,6 +48,7 @@
     <Compile Include="LoginBal.cs" />
     <Compile Include="JobBal.cs" />
     <Compile Include="ResumeBal.cs" />
+    <Compile Include="SuperUserBal.cs" />
     <Compile Include="VendorBal.cs" />
     <Compile Include="UserBal.cs" />
     <Compile Include="ProfileBal.cs" />

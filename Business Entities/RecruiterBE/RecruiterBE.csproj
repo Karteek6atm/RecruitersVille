@@ -58,6 +58,7 @@
     <Compile Include="Responses\PackagesResponse.cs" />
     <Compile Include="Responses\JobResponse.cs" />
     <Compile Include="Responses\ResumeResponse.cs" />
+    <Compile Include="Responses\SuperUserResponse.cs" />
     <Compile Include="Responses\VendorResponse.cs" />
     <Compile Include="Responses\UserResponse.cs" />
     <Compile Include="Responses\ProfileResponse.cs" />
