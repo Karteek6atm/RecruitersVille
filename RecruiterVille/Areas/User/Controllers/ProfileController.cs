@@ -151,29 +151,31 @@ namespace RecruiterVille.Areas.User.Controllers
                     objresponse.resumepath = filepath;
                     file.SaveAs(path);
 
-                    //var outputFolder = Path.Combine(Directory.GetCurrentDirectory(), "Output");
-                    //if (Directory.Exists(outputFolder))
-                    //{
-                    //    Directory.Delete(outputFolder, true);
-                    //}
+                    //filepath = Path.GetDirectoryName(path);
 
-                    //Directory.CreateDirectory(outputFolder);
+                    ////var outputFolder = Path.Combine(Directory.GetCurrentDirectory(), "Output");
+                    ////if (Directory.Exists(outputFolder))
+                    ////{
+                    ////    Directory.Delete(outputFolder, true);
+                    ////}
+
+                    ////Directory.CreateDirectory(outputFolder);
 
                     //var processor = new ResumeProcessor(new JsonOutputFormatter());
 
-                    //var files = Directory.GetFiles("Resumes").Select(Path.GetFullPath);
-                    //foreach (var file1 in files)
-                    //{
-                        //var output = processor.Process(filepath);
+                    ////var files = Directory.GetFiles("Resumes").Select(Path.GetFullPath);
+                    ////foreach (var file1 in files)
+                    ////{
+                    //    var output = processor.Process(filepath);
 
-                        //System.Console.WriteLine(output);
+                    //    Console.WriteLine(output);
 
-                        //var outputFileName = file1.Substring(file1.LastIndexOf(Path.DirectorySeparatorChar) + 1) + ".txt";
-                        //using (var writer = new StreamWriter(Path.Combine(outputFolder, outputFileName)))
-                        //{
-                        //    writer.Write(output);
-                        //}
-                    //}
+                    //    //var outputFileName = filepath.Substring(filepath.LastIndexOf(Path.DirectorySeparatorChar) + 1) + ".txt";
+                    //    //using (var writer = new StreamWriter(Path.Combine(outputFolder, outputFileName)))
+                    //    //{
+                    //    //    writer.Write(output);
+                    //    //}
+                    ////}
                 }
             }
             catch (Exception ex)

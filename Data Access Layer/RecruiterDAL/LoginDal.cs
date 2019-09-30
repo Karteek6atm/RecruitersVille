@@ -53,6 +53,8 @@ namespace RecruiterDAL
                     objLoginResponse.EmailId = (string)reader["EmailId"];
                     objLoginResponse.ContactNumber = (string)reader["ContactNumber"];
                     objLoginResponse.IsFirstLogin = (bool)reader["IsFirstLogin"];
+                    objLoginResponse.IsSuperUser = (bool)reader["IsSuperUser"];
+                    objLoginResponse.SuperUserLoginId = (int)reader["SuperUserLoginId"];
                 }
             }
             catch (Exception ex)
