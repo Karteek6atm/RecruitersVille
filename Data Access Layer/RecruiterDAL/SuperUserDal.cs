@@ -96,6 +96,62 @@ namespace RecruiterDAL
             }
             return dsData;
         }
+
+        public DataSet GetJobsList(int companyid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
+                                        };
+            DataSet dsData = new DataSet();
+
+            try
+            {
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetAllJobsList", sqlparams);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return dsData;
+        }
+
+        public SaveAdminResponse ChangeJobAction(JobActions objrequest)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@Action", SqlDbType.Int) { Value = objrequest.Action },
+                 new SqlParameter("@JobId", SqlDbType.Int) { Value = objrequest.Jobid },
+                  new SqlParameter("@ModifiedBy", SqlDbType.Int) { Value = objrequest.ModifiedBy }
+                                        };
+            SaveAdminResponse objresponse = new SaveAdminResponse();
+
+            SqlDataReader reader = null;
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_UpdateJobStatus", sqlparams);
+
+                while (reader.Read())
+                {
+                    objresponse.StatusId = (int)reader["StatusId"];
+                    objresponse.StatusMessage = (string)reader["StatusMessage"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objresponse;
+        }
+
+
         #endregion
 
     }

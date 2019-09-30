@@ -349,6 +349,7 @@
     <Content Include="Scripts\application\profile.js" />
     <Content Include="Scripts\application\register.js" />
     <Content Include="Scripts\application\SuperUserCompaniesList.js" />
+    <Content Include="Scripts\application\SuperUserJobsList.js" />
     <Content Include="Scripts\application\SuperUserProfileList.js" />
     <Content Include="Scripts\application\users.js" />
     <Content Include="Scripts\application\vendors.js" />
@@ -408,6 +409,7 @@
     <Content Include="Areas\SuperUser\Views\Shared\_SuperUserLayout.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\CompaniesList.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\ProfilesList.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\AdminJobsList.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

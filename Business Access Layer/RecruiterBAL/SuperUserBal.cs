@@ -140,6 +140,70 @@ namespace RecruiterBAL
             }
             return objUserResponse;
         }
+
+        public List<JobListResponse> GetJobsList(string strcompanyid)
+        {
+            List<JobListResponse> objJobResponse = new List<JobListResponse>();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
+
+                dsData = _SuperUserDal.GetJobsList(companyid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        objJobResponse = dsData.Tables[0].AsEnumerable().
+                                        Select(x => new JobListResponse
+                                        {
+                                            CompanyJobId = x.Field<string>("CompanyJobId"),
+                                            IndustryId = x.Field<int>("IndustryId"),
+                                            IndustryName = x.Field<string>("IndustryName"),
+                                            JobDuration = x.Field<int>("JobDuration"),
+                                            MaxExp = x.Field<int>("MaxExp"),
+                                            MinExp = x.Field<int>("MinExp"),
+                                            JobDurationTypeId = x.Field<int>("JobDurationTypeId"),
+                                            JobDurationTypeName = x.Field<string>("JobDurationTypeName"),
+                                            JobId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("JobId"))),
+                                            JobLocation = x.Field<string>("JobLocation"),
+                                            JobTitle = x.Field<string>("JobTitle"),
+                                            MaxPayRate = x.Field<int>("MaxPayRate"),
+                                            MinPayRate = x.Field<int>("MinPayRate"),
+                                            PayCurrencyId = x.Field<int>("PayCurrencyId"),
+                                            PayCurrencySign = x.Field<string>("PayCurrencySign"),
+                                            PayTypeId = x.Field<int>("PayTypeId"),
+                                            PayTypeName = x.Field<string>("PayTypeName"),
+                                            TechnologyNames = x.Field<string>("TechnologyNames"),
+                                            JobStatusId = x.Field<int>("JobStatusId"),
+                                            JobStatusName = x.Field<string>("JobStatusName")
+                                        }).ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objJobResponse;
+        }
+
+        public SaveAdminResponse ChangeJobAction(JobActions objrequest)
+        {
+            SaveAdminResponse objresponse = new SaveAdminResponse();
+            try
+            {
+                objresponse = _SuperUserDal.ChangeJobAction(objrequest);
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objresponse;
+        }
         #endregion
     }
 }

@@ -216,6 +216,11 @@ namespace RecruiterVille
             bundles.Add(new ScriptBundle("~/bundles/SuprerProfileList").Include(
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/SuperUserProfileList.js"));
+
+            // Super User CompaniesList Section
+            bundles.Add(new ScriptBundle("~/bundles/JobsList").Include(
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/SuperUserJobsList.js"));
         }
     }
 }
