@@ -244,6 +244,7 @@
     <Content Include="app\css\datepicker3.css" />
     <Content Include="app\css\font-awesome.min.css" />
     <Content Include="app\css\fSelect.css" />
+    <Content Include="app\css\styles-super.css" />
     <Content Include="app\css\styles.css" />
     <Content Include="app\images\login-bg.jpg" />
     <Content Include="app\js\bootstrap-datepicker.js" />

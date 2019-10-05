@@ -45,7 +45,7 @@ namespace RecruiterVille
             bundles.Add(new StyleBundle("~/content/superuserlayout").Include(
                       "~/app/css/bootstrap.min.css",
                       "~/app/css/font-awesome.min.css",
-                      "~/app/css/styles.css"));
+                      "~/app/css/styles-super.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/superuserlayout").Include(
                       "~/app/js/bootstrap.min.js"));
