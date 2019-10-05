@@ -18,7 +18,35 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
         #region Views
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.RoleId = response.RoleId;
+                    ViewBag.CompanyName = response.CompanyName;
+
+                    if (response.IsSuperUser)
+                    {
+                        return View();
+                    }
+                    else
+                    {
+                        Session.Abandon();
+                        return Redirect("/login");
+                    }
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         public ActionResult CompaniesList()
@@ -27,15 +55,21 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
-                   // List<SuperUserResponse> objCompanymastersresponse = new List<SuperUserResponse>();
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
-                  //  objCompanymastersresponse = _SuperUserBal.GetAllCompaniesList(response.UserLoginId);
                     ViewBag.LoginId = response.UserLoginId;
                     ViewBag.CompanyId = response.CompanyId;
                     ViewBag.RoleId = response.RoleId;
                     ViewBag.CompanyName = response.CompanyName;
-                   // ViewBag.Masters = objCompanymastersresponse;
-                    return View();
+
+                    if (response.IsSuperUser)
+                    {
+                        return View();
+                    }
+                    else
+                    {
+                        Session.Abandon();
+                        return Redirect("/login");
+                    }
                 }
                 else
                 {
@@ -54,15 +88,21 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
-                    // List<SuperUserResponse> objCompanymastersresponse = new List<SuperUserResponse>();
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
-                    //  objCompanymastersresponse = _SuperUserBal.GetAllCompaniesList(response.UserLoginId);
                     ViewBag.LoginId = response.UserLoginId;
                     ViewBag.CompanyId = response.CompanyId;
                     ViewBag.RoleId = response.RoleId;
                     ViewBag.CompanyName = response.CompanyName;
-                    // ViewBag.Masters = objCompanymastersresponse;
-                    return View();
+
+                    if (response.IsSuperUser)
+                    {
+                        return View();
+                    }
+                    else
+                    {
+                        Session.Abandon();
+                        return Redirect("/login");
+                    }
                 }
                 else
                 {
@@ -81,15 +121,21 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
             {
                 if (Session["UserLogin"] != null)
                 {
-                    // List<SuperUserResponse> objCompanymastersresponse = new List<SuperUserResponse>();
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
-                    //  objCompanymastersresponse = _SuperUserBal.GetAllCompaniesList(response.UserLoginId);
                     ViewBag.LoginId = response.UserLoginId;
                     ViewBag.CompanyId = response.CompanyId;
                     ViewBag.RoleId = response.RoleId;
                     ViewBag.CompanyName = response.CompanyName;
-                    // ViewBag.Masters = objCompanymastersresponse;
-                    return View();
+
+                    if (response.IsSuperUser)
+                    {
+                        return View();
+                    }
+                    else
+                    {
+                        Session.Abandon();
+                        return Redirect("/login");
+                    }
                 }
                 else
                 {
