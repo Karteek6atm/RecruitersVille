@@ -224,6 +224,7 @@
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="CommonClasses\ManageSessions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -338,7 +339,9 @@
     <Content Include="Scripts\application\editjob.js" />
     <Content Include="Scripts\application\editjobtemplate.js" />
     <Content Include="Scripts\application\editprofile.js" />
+    <Content Include="Scripts\application\jobs.js" />
     <Content Include="Scripts\application\jobtemplates.js" />
+    <Content Include="Scripts\application\jobview.js" />
     <Content Include="Scripts\application\login.js" />
     <Content Include="Scripts\application\myjobs.js" />
     <Content Include="Scripts\application\myprofiles.js" />
@@ -445,6 +448,8 @@
     <Content Include="tables\data2.json" />
     <Content Include="Views\Account\packages.cshtml" />
     <Content Include="Views\Account\contactus.cshtml" />
+    <Content Include="Views\Site\jobs.cshtml" />
+    <Content Include="Views\Site\jobview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Karteek\Publish\RV_03_July_2019</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Karteek\Publish\RV_30_Sep_2019</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="about.html">
@@ -162,6 +162,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="ApplicationInsights.config">
       <publishTime>01/18/2019 20:16:36</publishTime>
     </File>
+    <File Include="Areas/SuperUser/Views/Shared/_SuperUserLayout.cshtml">
+      <publishTime>09/30/2019 22:45:10</publishTime>
+    </File>
+    <File Include="Areas/SuperUser/Views/User/AdminJobsList.cshtml">
+      <publishTime>09/30/2019 22:29:02</publishTime>
+    </File>
+    <File Include="Areas/SuperUser/Views/User/CompaniesList.cshtml">
+      <publishTime>09/30/2019 22:29:02</publishTime>
+    </File>
+    <File Include="Areas/SuperUser/Views/User/Index.cshtml">
+      <publishTime>09/30/2019 22:39:46</publishTime>
+    </File>
+    <File Include="Areas/SuperUser/Views/User/ProfilesList.cshtml">
+      <publishTime>09/30/2019 22:29:02</publishTime>
+    </File>
     <File Include="Areas/SuperUser/Views/web.config">
       <publishTime>01/31/2019 20:41:17</publishTime>
     </File>
@@ -220,7 +235,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/11/2019 23:33:51</publishTime>
     </File>
     <File Include="Areas/User/Views/Shared/_UserLayout.cshtml">
-      <publishTime>06/02/2019 16:30:03</publishTime>
+      <publishTime>09/30/2019 22:48:42</publishTime>
     </File>
     <File Include="Areas/User/Views/web.config">
       <publishTime>01/31/2019 20:40:57</publishTime>
@@ -310,16 +325,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/27/2012 22:30:52</publishTime>
     </File>
     <File Include="bin/RecruiterBAL.dll">
-      <publishTime>07/03/2019 22:31:39</publishTime>
+      <publishTime>09/30/2019 23:00:36</publishTime>
     </File>
     <File Include="bin/RecruiterBE.dll">
-      <publishTime>07/03/2019 22:31:38</publishTime>
+      <publishTime>09/30/2019 23:00:35</publishTime>
     </File>
     <File Include="bin/RecruiterDAL.dll">
-      <publishTime>07/03/2019 22:31:38</publishTime>
+      <publishTime>09/30/2019 23:00:36</publishTime>
     </File>
     <File Include="bin/RecruiterVille.dll">
-      <publishTime>07/03/2019 22:31:43</publishTime>
+      <publishTime>09/30/2019 23:00:40</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/19/2015 05:49:46</publishTime>
@@ -628,7 +643,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/18/2019 20:16:37</publishTime>
     </File>
     <File Include="Scripts/application/common.js">
-      <publishTime>05/13/2019 23:08:11</publishTime>
+      <publishTime>09/30/2019 22:59:56</publishTime>
     </File>
     <File Include="Scripts/application/contactus.js">
       <publishTime>03/10/2019 14:19:29</publishTime>
@@ -671,6 +686,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/application/register.js">
       <publishTime>05/15/2019 21:18:17</publishTime>
+    </File>
+    <File Include="Scripts/application/SuperUserCompaniesList.js">
+      <publishTime>09/30/2019 22:29:02</publishTime>
+    </File>
+    <File Include="Scripts/application/SuperUserJobsList.js">
+      <publishTime>09/30/2019 22:29:02</publishTime>
+    </File>
+    <File Include="Scripts/application/SuperUserProfileList.js">
+      <publishTime>09/30/2019 22:29:02</publishTime>
     </File>
     <File Include="Scripts/application/users.js">
       <publishTime>04/03/2019 22:47:27</publishTime>
@@ -718,7 +742,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/18/2019 20:16:29</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>05/14/2019 23:31:44</publishTime>
+      <publishTime>09/30/2019 22:29:02</publishTime>
     </File>
     <File Include="tables/data1.json">
       <publishTime>10/25/2014 02:02:10</publishTime>
