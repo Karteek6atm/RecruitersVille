@@ -1056,3 +1056,4 @@ p.back-link {
 .scrol-tble { white-space: nowrap; overflow: auto; display: block;}
 .scrol-tble #adeleteuser , #adeletevendor   {color:#f9243f;}
 .scrol-tble td:last-child i{padding-right:5px;}
+.swich a { color: #fff; font-weight: bold; position: relative; top: 18px;}
