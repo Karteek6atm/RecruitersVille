@@ -27,6 +27,11 @@ namespace RecruiterVille
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            //Site Layout Section
+            bundles.Add(new StyleBundle("~/content/sitelayout").Include(
+                      "~/css/bootstrap.min.css",
+                      "~/css/style.css"));
+
             //User Layout Section
             bundles.Add(new StyleBundle("~/content/userlayout").Include(
                       "~/app/css/bootstrap.min.css",
@@ -79,6 +84,20 @@ namespace RecruiterVille
                       "~/app/js/bootstrap.min.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/packages.js"));
+
+            //Jobs Section
+            bundles.Add(new ScriptBundle("~/bundles/jobs").Include(
+                      "~/app/js/jquery-1.11.1.min.js",
+                      "~/app/js/bootstrap.min.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/jobs.js"));
+
+            //Job View Section
+            bundles.Add(new ScriptBundle("~/bundles/jobview").Include(
+                      "~/app/js/jquery-1.11.1.min.js",
+                      "~/app/js/bootstrap.min.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/jobview.js"));
 
             //Contactus Section
             bundles.Add(new StyleBundle("~/content/contactus").Include(

@@ -48,6 +48,28 @@ namespace RecruiterVille
            );
 
             routes.MapRoute(
+                name: "jobs",
+                url: "jobs/{param1}",
+                defaults: new
+                {
+                    controller = "site",
+                    action = "jobs",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            routes.MapRoute(
+                name: "jobview",
+                url: "jobview/{param1}",
+                defaults: new
+                {
+                    controller = "site",
+                    action = "jobview",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            routes.MapRoute(
                name: "contactus",
                url: "contactus/{param1}",
                defaults: new

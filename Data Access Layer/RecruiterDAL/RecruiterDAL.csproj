@@ -54,6 +54,7 @@
     <Compile Include="ProfileDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResumeDal.cs" />
+    <Compile Include="SiteDal.cs" />
     <Compile Include="SuperUserDal.cs" />
     <Compile Include="VendorDal.cs" />
     <Compile Include="UserDal.cs" />

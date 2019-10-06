@@ -50,6 +50,7 @@
     <Compile Include="Requests\LoginRequest.cs" />
     <Compile Include="Requests\JobRequest.cs" />
     <Compile Include="Requests\ResumeRequest.cs" />
+    <Compile Include="Requests\SiteRequest.cs" />
     <Compile Include="Requests\VendorRequest.cs" />
     <Compile Include="Requests\UserRequest.cs" />
     <Compile Include="Requests\ProfileRequest.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Responses\PackagesResponse.cs" />
     <Compile Include="Responses\JobResponse.cs" />
     <Compile Include="Responses\ResumeResponse.cs" />
+    <Compile Include="Responses\SiteResponse.cs" />
     <Compile Include="Responses\SuperUserResponse.cs" />
     <Compile Include="Responses\VendorResponse.cs" />
     <Compile Include="Responses\UserResponse.cs" />
