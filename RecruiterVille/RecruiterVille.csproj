@@ -340,6 +340,7 @@
     <Content Include="Scripts\application\editjob.js" />
     <Content Include="Scripts\application\editjobtemplate.js" />
     <Content Include="Scripts\application\editprofile.js" />
+    <Content Include="Scripts\application\index.js" />
     <Content Include="Scripts\application\jobs.js" />
     <Content Include="Scripts\application\jobtemplates.js" />
     <Content Include="Scripts\application\jobview.js" />

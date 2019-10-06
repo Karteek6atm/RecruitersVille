@@ -1,9 +1,35 @@
-﻿
+﻿@using RecruiterBE.Responses;
+
+
 @{
     ViewBag.Title = "jobview";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (ViewBag.Response != null)
+{
+    SearchJobViewResponse jobdetails = ViewBag.Response;
+
+    string experience = "";
+    string pay = "";
+
+    if (jobdetails.MinPayRate > 0 || jobdetails.MaxPayRate > 0)
+    {
+        pay = "<span><i class='fa fa-money'></i> " + jobdetails.PayCurrencySign + " " + jobdetails.MinPayRate + " - " + jobdetails.MaxPayRate + " </span>";
+    }
+    
+    if (jobdetails.MinExp > 0 && jobdetails.MaxExp > 0)
+    {
+        experience = "<span><i class='fa fa-suitcase'></i> " + jobdetails.MinExp + " to " + jobdetails.MaxExp + " Yrs </span> ";
+    }
+    else if (jobdetails.MinExp > 0)
+    {
+        experience = "<span><i class='fa fa-suitcase'></i> " + jobdetails.MinExp + " Yrs </span> ";
+    }
+    else if (jobdetails.MaxExp > 0)
+    {
+        experience = "<span><i class='fa fa-suitcase'></i> " + jobdetails.MaxExp + " Yrs </span> ";
+    }
 @*<section class="searchBanner inner-search">
     <div class="container">
         <div class="row">
@@ -100,20 +126,22 @@
                 <div class="right-side-doctors-list">
                     <ul>
                         <li>
-                            <div class="doctor-img clearfix"> <img src="images/logo-sample.png" alt="" title="" width="270" height="259"></div>
+                            <div class="doctor-img clearfix"> <img src="/images/logo-sample.png" alt="" title="" width="270" height="259"></div>
                             <div class="doctor-list-con">
-                                <h1> Urgent Requirement for UX Designer role                                      </h1>
-                                <h3>Business arts India Pvt. Ltd</h3>
-                                <p>CSS, HTML, Javascript, User Interface Designing, UX, MVC, Illustrator...</p>
-                                <div class="location-price docto-locatio"> <i class="fa fa-map-marker"></i> Hyderabad, Warangal</div>
+                                <h1> @jobdetails.JobTitle </h1>
+                                <h3>@jobdetails.CompanyName</h3>
+                                <p>@jobdetails.TechnologyNames</p>
+                                <div class="location-price docto-locatio"> <i class="fa fa-map-marker"></i> @jobdetails.JobLocation</div>
                                 <div class="location-price">
-                                    <span><i class="fa fa-suitcase"></i> 3 to 5 yrs</span> <span><i class="fa fa-money"></i>  INR 50,000 - 3,00,000 P.A </span>
-                                </div>
+                                    <div id="divexp">@experience</div>
+                                   <div id="divpay">@pay</div> 
+                            </div>
                                 @*<button type="button" class="btn btn-primary">Login to Apply</button>
                                 <button type="button" class="btn btn-success">Register and Apply </button>*@
                                 <div class="about-doctor">
                                     <strong>Job Description</strong>:
-                                    <p class="more">Dr. Sunitha V Kumar is a Dentist in Bannerghatta Road, Bangalore and has an experience of 21 years in this field. Dr. Sunitha V Kumar practices at Shashi Dental more</p>
+                                    @*<p class="more">@jobdetails.JobDescription</p>*@
+                                    <p class="">@jobdetails.JobDescription</p>
                                 </div>
                                 @*<div class="about-doctor">
                                     <strong>Key Skills</strong>:
@@ -138,6 +166,19 @@
     </div>
 
 </section>
-
+}
 @Scripts.Render("~/bundles/jobview")
 
+<script>
+    $('.topmenu').find('li').removeClass("active");
+    $('#ajobs').addClass("active");
+
+    var container1 = document.createElement('div');
+    container1.innerHTML = $('#divexp').html();
+    $('#divexp').html(container1.innerText);
+    
+    var container2 = document.createElement('div');
+    container2.innerHTML = $('#divpay').html();
+    $('#divpay').html(container2.innerText);
+     
+</script>

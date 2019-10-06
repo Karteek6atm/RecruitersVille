@@ -59,18 +59,18 @@ function searchJobs() {
                         }
 
                         if (data[i].MinExp > 0 && data[i].MaxExp > 0) {
-                            experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MinExp + ' to ' + data[i].MaxExp + ' Yrs' + '</span> <span>';
+                            experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MinExp + ' to ' + data[i].MaxExp + ' Yrs' + '</span> ';
                         }
                         else if (data[i].MinExp > 0) {
-                            experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MinExp + ' Yrs' + '</span> <span>';
+                            experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MinExp + ' Yrs' + '</span> ';
                         }
                         else if (data[i].MaxExp > 0) {
-                            experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MaxExp + ' Yrs' + '</span> <span>';
+                            experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MaxExp + ' Yrs' + '</span> ';
                         }
 
                         $(li).append('<div class="doctor-img clearfix"><img src="/images/logo-sample.png" alt="" title="" width="270" height="259"><input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></div>' +
                                     '<div class="doctor-list-con">' +
-                                    '<h1>' + data[i].JobTitle + '</h1>' +
+                                    '<h1><a target="_blank" href="/jobview/' + data[i].JobId + '">' + data[i].JobTitle + '</a></h1>' +
                                     '<h3>' + data[i].CompanyName + '</h3>' +
                                     '<p>' + data[i].TechnologyNames + '</p>' +
                                     '<div class="location-price docto-locatio"> <i class="fa fa-map-marker"></i> ' + data[i].JobLocation + '</div>' +
@@ -83,11 +83,21 @@ function searchJobs() {
                     }
                 }
                 else {
-                    showwarningalert("No Jobs found");
+                    var li = $('<li />');
+                    $(li).append('<div>' +
+                                   'No Jobs found' +
+                                   '</div>');
+
+                    $('#uljobs').append(li);
                 }
             }
             else {
-                showwarningalert("No Jobs found");
+                var li = $('<li />');
+                $(li).append('<div>' +
+                               'No Jobs found' +
+                               '</div>');
+
+                $('#uljobs').append(li);
             }
             hideloading();
         },

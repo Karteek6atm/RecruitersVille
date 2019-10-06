@@ -211,12 +211,12 @@ function savevendordetails() {
     if (validatephonenumber(textvendorcontact) == false) {
         isvalid = false;
     }
-    if (validatetextbox(hiddenvendorlogo) == false) {
-        isvalid = false;
-    }
-    if (validatetextbox(selecttechnologies) == false) {
-        isvalid = false;
-    }
+    //if (validatetextbox(hiddenvendorlogo) == false) {
+    //    isvalid = false;
+    //}
+    //if (validatetextbox(selecttechnologies) == false) {
+    //    isvalid = false;
+    //}
     //if (technologies == "") {
     //    $(selecttechnologies).closest('.form-group').addClass("has-error");
     //    $(selecttechnologies).closest('.form-group').removeClass("has-success");

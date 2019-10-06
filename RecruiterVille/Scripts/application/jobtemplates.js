@@ -13,21 +13,26 @@
                 if (data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
                         var tr = $('<tr />');
-                        var pay = data[i].PayCurrencySign + ' ' + data[i].MinPayRate + ' - ' + data[i].MaxPayRate + '/' + data[i].PayTypeName;
-                        var duration = data[i].JobDuration + ' ' + data[i].JobDurationTypeName;
+                        var pay = '';
+                        var duration = '';
                         var experience = '';
 
-                        if (data[i].MinExp == 0 && data[i].MaxExp == 0) {
-                            experience = 'Fresher';
+                        if (data[i].MinPayRate > 0 || data[i].MaxPayRate > 0) {
+                            pay = data[i].PayCurrencySign + ' ' + data[i].MinPayRate + ' - ' + data[i].MaxPayRate + '/' + data[i].PayTypeName;
                         }
-                        else if (data[i].MinExp == 0) {
-                            experience = data[i].MaxExp + ' Yrs';
+
+                        if (data[i].JobDuration > 0) {
+                            duration = data[i].JobDuration + ' ' + data[i].JobDurationTypeName;
                         }
-                        else if (data[i].MaxExp == 0) {
+
+                        if (data[i].MinExp > 0 && data[i].MaxExp > 0) {
+                            experience = data[i].MinExp + ' - ' + data[i].MaxExp + ' Yrs';
+                        }
+                        else if (data[i].MinExp > 0) {
                             experience = data[i].MinExp + ' Yrs';
                         }
-                        else {
-                            experience = data[i].MinExp + ' - ' + data[i].MaxExp + ' Yrs';
+                        else if (data[i].MaxExp > 0) {
+                            experience = data[i].MaxExp + ' Yrs';
                         }
 
                         $(tr).append('<td>' + (i + 1) + '<input type="hidden" id="hiddenjobtemplateid" value="' + data[i].JobTemplateId + '" /></td>' +

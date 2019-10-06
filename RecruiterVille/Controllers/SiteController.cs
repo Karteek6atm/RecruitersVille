@@ -26,41 +26,32 @@ namespace RecruiterVille.Controllers
 
         #region Views 
 
-        public ActionResult jobs()
+        public ActionResult jobs(string param1)
         {
-            try
-            {
-                //List<LocationsResponse> objLocationsResponse = new List<LocationsResponse>();
-                //objLocationsResponse = objSiteBal.GetLocations();
-
-                //string[] locations = new string[objLocationsResponse.Count];
-
-                //if (objLocationsResponse.Count > 0)
-                //{
-                //    for (int i = 0; i < objLocationsResponse.Count; i++)
-                //    {
-                //        locations[i] = objLocationsResponse[i].LocationName;
-                //    }
-                //}
-
-                //ViewBag.Locations = locations;
-                return View();
-            }
-            catch
-            {
-                return View();
-            }
+            ViewBag.Search = param1;
+            return View();
         }
 
-        public ActionResult jobview()
+        public ActionResult jobview(string param1)
         {
             try
             {
-                return View();
+                if (!string.IsNullOrEmpty(param1))
+                {
+                    SearchJobViewResponse objresponse = new SearchJobViewResponse();
+                    int jobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(param1));
+                    objresponse = objSiteBal.SearchJobView(jobId);
+                    ViewBag.Response = objresponse;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/jobs");
+                }
             }
             catch
             {
-                return View();
+                return Redirect("/jobs");
             }
         }
 

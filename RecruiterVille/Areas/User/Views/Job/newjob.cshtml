@@ -81,14 +81,14 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Job Location <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="textjoblocation" type="text" onblur="validatetextbox(this)" />
+                                    <label>Job Location </label>
+                                    <input class="form-control" placeholder="" id="textjoblocation" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Pay <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectpaycurrency" onblur="validatedropdown(this)">
+                                    <label>Pay </label>
+                                    <select class="form-control" id="selectpaycurrency" >
                                         <option value="0">Pay Currency</option>
                                         @foreach (CurrenciesResponse currency in Currencies)
                                         {
@@ -112,7 +112,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
-                                    <select class="form-control" id="selectpaytype" onblur="validatedropdown(this)">
+                                    <select class="form-control" id="selectpaytype">
                                         <option value="0">Pay Type</option>
                                         @foreach (PayTypesResponse type in PayTypes)
                                         {
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Job Types <span class="mandatory">*</span></label>
+                                    <label>Job Types </label>
                                     <select class="form-control multiple-select" id="selectjobtype" multiple>
                                         @foreach (JobTypesResponse type in JobTypes)
                                         {
@@ -134,14 +134,14 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Duration <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="Duration" id="textduartion" type="text" onblur="validatetextbox(this)" />
+                                    <label>Duration </label>
+                                    <input class="form-control" placeholder="Duration" id="textduartion" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
-                                    <select class="form-control" id="selectduration" onblur="validatedropdown(this)">
+                                    <select class="form-control" id="selectduration" >
                                         <option value="0">Duration </option>
                                         @foreach (DurationTypesResponse duration in DurationTypes)
                                         {
@@ -152,7 +152,7 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Experience <span class="mandatory">*</span></label>
+                                    <label>Experience </label>
                                     <input class="form-control" placeholder="Min Exp" id="textminexp" type="text" onblur="validateminexp(this)" />
                                 </div>
                             </div> 
@@ -164,8 +164,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Travel Requirements <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selecttravelrequirements" onblur="validatedropdown(this)">
+                                    <label>Travel Requirements </label>
+                                    <select class="form-control" id="selecttravelrequirements" >
                                         <option value="0">Select Travel Requirement</option>
                                         @foreach (TravelRequirementsResponse requirement in TravelRequirements)
                                         {
@@ -176,8 +176,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Industry <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectindustry" onblur="validatedropdown(this)">
+                                    <label>Industry </label>
+                                    <select class="form-control" id="selectindustry" >
                                         <option value="0">Select Industry</option>
                                         @foreach (IndustriesResponse industry in Industries)
                                         {
@@ -188,7 +188,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Sub Industries <span class="mandatory">*</span></label>
+                                    <label>Sub Industries </label>
                                     <select class="form-control multiple-select" id="selectsubindustries" multiple>
                                         @foreach (SubIndustriesResponse subindustry in SubIndustries)
                                         {
@@ -199,8 +199,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Skills Required (seperate with comma)<span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="selectskills" type="text" onblur="validatetextbox(this)" />
+                                    <label>Skills Required (seperate with comma)</label>
+                                    <input class="form-control" placeholder="" id="selectskills" type="text" />
                                     @*<select class="form-control multiple-select" id="selectskills" multiple>
                                         @foreach (TechnologiesResponse technology in Technologies)
                                         {
@@ -225,8 +225,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Application Method <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectapplicationmethod" onchange="changeapplicationmethod(this)" onblur="validatedropdown(this)">
+                                    <label>Application Method </label>
+                                    <select class="form-control" id="selectapplicationmethod" onchange="changeapplicationmethod(this)" >
                                         <option value="0">Select Application Method</option>
                                         @foreach (ApplicationMethodsResponse method in ApplicationMethods)
                                         {
@@ -237,20 +237,20 @@
                             </div>
                             <div class="col-md-4 emailmethod" style="display:none;">
                                 <div class="form-group">
-                                    <label>To Email <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="texttoemail" type="text" onblur="validateemailid(this)" />
+                                    <label>To Email </label>
+                                    <input class="form-control" placeholder="" id="texttoemail" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-4 emailmethod" style="display:none;">
                                 <div class="form-group">
-                                    <label>CC Email <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="textccemail" type="text" onblur="validateemailid(this)" />
+                                    <label>CC Email </label>
+                                    <input class="form-control" placeholder="" id="textccemail" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-4 urlmethod" style="display:none;">
                                 <div class="form-group">
-                                    <label>URL <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="texturl" type="text" onblur="validatetextbox(this)" />
+                                    <label>URL </label>
+                                    <input class="form-control" placeholder="" id="texturl" type="text" />
                                 </div>
                             </div>
                         </div>
