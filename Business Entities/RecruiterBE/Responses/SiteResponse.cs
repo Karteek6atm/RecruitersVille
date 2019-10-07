@@ -18,6 +18,7 @@ namespace RecruiterBE.Responses
         public string JobTitle { get; set; }
         public string CompanyJobId { get; set; }
         public string CompanyName { get; set; }
+        public string CompanyLogo { get; set; }
         public string JobLocation { get; set; }
         public string PayTypeName { get; set; }
         public string PayCurrencySign { get; set; }
@@ -37,6 +38,7 @@ namespace RecruiterBE.Responses
         public string JobTitle { get; set; }
         public string CompanyJobId { get; set; }
         public string CompanyName { get; set; }
+        public string CompanyLogo { get; set; }
         public string JobLocation { get; set; }
         public string PayTypeName { get; set; }
         public string PayCurrencySign { get; set; }

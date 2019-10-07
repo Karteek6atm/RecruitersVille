@@ -12,12 +12,13 @@
 
     string experience = "";
     string pay = "";
+    string companylogo = "/images/logo-sample.png";
 
     if (jobdetails.MinPayRate > 0 || jobdetails.MaxPayRate > 0)
     {
         pay = "<span><i class='fa fa-money'></i> " + jobdetails.PayCurrencySign + " " + jobdetails.MinPayRate + " - " + jobdetails.MaxPayRate + " </span>";
     }
-    
+
     if (jobdetails.MinExp > 0 && jobdetails.MaxExp > 0)
     {
         experience = "<span><i class='fa fa-suitcase'></i> " + jobdetails.MinExp + " to " + jobdetails.MaxExp + " Yrs </span> ";
@@ -29,6 +30,11 @@
     else if (jobdetails.MaxExp > 0)
     {
         experience = "<span><i class='fa fa-suitcase'></i> " + jobdetails.MaxExp + " Yrs </span> ";
+    }
+
+    if (jobdetails.CompanyLogo != "")
+    {
+        companylogo = jobdetails.CompanyLogo;
     }
 @*<section class="searchBanner inner-search">
     <div class="container">
@@ -126,7 +132,7 @@
                 <div class="right-side-doctors-list">
                     <ul>
                         <li>
-                            <div class="doctor-img clearfix"> <img src="/images/logo-sample.png" alt="" title="" width="270" height="259"></div>
+                            <div class="doctor-img clearfix"> <img src="@companylogo" alt="" title="" width="270" height="259"></div>
                             <div class="doctor-list-con">
                                 <h1> @jobdetails.JobTitle </h1>
                                 <h3>@jobdetails.CompanyName</h3>

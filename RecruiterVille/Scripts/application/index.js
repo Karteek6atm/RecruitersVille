@@ -110,16 +110,16 @@
     }
 }
 
-var encode = document.getElementById('encode'),
-    decode = document.getElementById('decode'),
-    output = document.getElementById('output'),
-    input = document.getElementById('input');
+//var encode = document.getElementById('encode'),
+//    decode = document.getElementById('decode'),
+//    output = document.getElementById('output'),
+//    input = document.getElementById('input');
 
-encode.onclick = function () {
-    output.innerHTML = Base64.encode(input.value);
-}
+//encode.onclick = function () {
+//    output.innerHTML = Base64.encode(input.value);
+//}
 
-decode.onclick = function () {
-    var $str = output.innerHTML;
-    output.innerHTML = Base64.decode($str);
-}
+//decode.onclick = function () {
+//    var $str = output.innerHTML;
+//    output.innerHTML = Base64.decode($str);
+//}

@@ -53,6 +53,7 @@ function searchJobs() {
                         var li = $('<li />');
                         var experience = '';
                         var pay = '';
+                        var companylogo = '/images/logo-sample.png';
 
                         if (data[i].MinPayRate > 0 || data[i].MaxPayRate > 0) {
                             pay = '<i class="fa fa-money"></i> ' + data[i].PayCurrencySign + ' ' + data[i].MinPayRate + ' - ' + data[i].MaxPayRate + ' </span>';
@@ -68,7 +69,11 @@ function searchJobs() {
                             experience = '<span><i class="fa fa-suitcase"></i> ' + data[i].MaxExp + ' Yrs' + '</span> ';
                         }
 
-                        $(li).append('<div class="doctor-img clearfix"><img src="/images/logo-sample.png" alt="" title="" width="270" height="259"><input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></div>' +
+                        if (data[i].CompanyLogo != "") {
+                            companylogo = data[i].CompanyLogo;
+                        }
+                        
+                        $(li).append('<div class="doctor-img clearfix"><img src="' + companylogo + '" alt="" title="" width="270" height="259"><input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></div>' +
                                     '<div class="doctor-list-con">' +
                                     '<h1><a target="_blank" href="/jobview/' + data[i].JobId + '">' + data[i].JobTitle + '</a></h1>' +
                                     '<h3>' + data[i].CompanyName + '</h3>' +
