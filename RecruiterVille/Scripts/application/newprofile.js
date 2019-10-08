@@ -56,37 +56,12 @@ function validateexpmonths() {
     var textexpmonths = $("#textexpmonths");
     var isvalid = true;
 
-    if (validatetextbox(textexpmonths) == false) {
-        isvalid = false;
-    }
-    else {
+    if (textexpmonths.val().trim() != "") {
         var months = parseInt(textexpmonths.val());
 
         if (months > 12) {
             isvalid = false;
             $(textexpmonths).closest('.form-group').addClass("has-error");
-        }
-    }
-}
-
-function validatemaxexp() {
-    var textminexp = $("#textminexp");
-    var textmaxexp = $("#textmaxexp");
-    var isvalid = true;
-
-    if (validatetextbox(textmaxexp) == false) {
-        isvalid = false;
-    }
-    else {
-        if (textminexp.val() != "") {
-            var minexp = parseInt(textminexp.val());
-            var maxexp = parseInt(textmaxexp.val());
-
-            if (minexp > maxexp) {
-                isvalid = false;
-                $(textminexp).closest('.form-group').addClass("has-error");
-                $(textmaxexp).closest('.form-group').addClass("has-error");
-            }
         }
     }
 }
@@ -235,24 +210,24 @@ function saveprofiledetails() {
     if (validatealternativephonenumber(textalternatecontactnumber) == false) {
         isvalid = false;
     }
-    if (validatedropdown(selectqualification) == false) {
-        isvalid = false;
-    }
-    if (validatetextbox(textexpyears) == false) {
-        isvalid = false;
-    }
+    //if (validatedropdown(selectqualification) == false) {
+    //    isvalid = false;
+    //}
+    //if (validatetextbox(textexpyears) == false) {
+    //    isvalid = false;
+    //}
     if (validateexpmonths(textexpmonths) == false) {
         isvalid = false;
     }
-    if (validatetextbox(textlocation) == false) {
-        isvalid = false;
-    }
-    if (validatedropdown(selectcountry) == false) {
-        isvalid = false;
-    }
-    if (validatedropdown(selectindustry) == false) {
-        isvalid = false;
-    }
+    //if (validatetextbox(textlocation) == false) {
+    //    isvalid = false;
+    //}
+    //if (validatedropdown(selectcountry) == false) {
+    //    isvalid = false;
+    //}
+    //if (validatedropdown(selectindustry) == false) {
+    //    isvalid = false;
+    //}
     if (validatetextbox(selectskills) == false) {
         isvalid = false;
     }

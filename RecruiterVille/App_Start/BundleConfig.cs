@@ -254,6 +254,8 @@ namespace RecruiterVille
             bundles.Add(new ScriptBundle("~/bundles/JobsList").Include(
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/SuperUserJobsList.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
