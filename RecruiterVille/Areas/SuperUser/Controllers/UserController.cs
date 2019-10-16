@@ -164,7 +164,7 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
                 }
             }
             catch (Exception ex)
-            {base 
+            { 
 
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
