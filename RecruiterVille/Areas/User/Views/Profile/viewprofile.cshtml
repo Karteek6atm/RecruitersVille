@@ -4,5 +4,56 @@
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>viewprofile</h2>
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0)">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="active">Profile View</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Users <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewuser()">Profile List</a>
+            </div>
+
+            <input type="hidden" id="hiddenselecteduserid" value="" />
+            <div class="panel-body">
+                <table class="new-tble scrol-tble">
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td> <label>Naresh Enjapuri</label></td>
+                        </tr>
+                        <tr>
+                            <td>Sallery</td>
+                            <td> <label>Naresh Enjapuri</label></td>
+                        </tr>
+                        <tr>
+                            <td>Company</td>
+                            <td> <label>Naresh Enjapuri</label></td>
+                        </tr>
+                        <tr>
+                            <td>Some</td>
+                            <td> <label>Naresh Enjapuri</label></td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2"><h6>Desiription</h6> <label>Naresh Enjapuri</label></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div><!--/.panel-->
+</div>
+
 
