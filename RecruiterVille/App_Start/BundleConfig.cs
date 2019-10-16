@@ -227,6 +227,20 @@ namespace RecruiterVille
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/viewprofile.js"));
 
+            //View job Section
+            bundles.Add(new ScriptBundle("~/bundles/viewjob").Include(
+                      "~/app/js/jquery-1.11.1.min.js",
+                      "~/app/js/bootstrap.min.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/viewjob.js"));
+
+            //View job template Section
+            bundles.Add(new ScriptBundle("~/bundles/viewjobtemplate").Include(
+                      "~/app/js/jquery-1.11.1.min.js",
+                      "~/app/js/bootstrap.min.js",
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/viewjobtemplate.js"));
+
             // Super User CompaniesList Section
             bundles.Add(new ScriptBundle("~/bundles/CompaniesList").Include(
                       "~/Scripts/application/common.js",
@@ -240,6 +254,8 @@ namespace RecruiterVille
             bundles.Add(new ScriptBundle("~/bundles/JobsList").Include(
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/SuperUserJobsList.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

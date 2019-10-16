@@ -91,8 +91,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Educational Qualification <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectqualification" onblur="validatedropdown(this)">
+                                    <label>Educational Qualification </label>
+                                    <select class="form-control" id="selectqualification">
                                         <option value="0">Select Qualification</option>
                                         @foreach (EducationalQualificationsResponse qualification in EducationalQualifications)
                                         {
@@ -103,8 +103,8 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Experience <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="Years" maxlength="2" id="textexpyears" type="text" onblur="validatetextbox(this)" />
+                                    <label>Experience </label>
+                                    <input class="form-control" placeholder="Years" maxlength="2" id="textexpyears" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -115,14 +115,14 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Location <span class="mandatory">*</span></label>
-                                    <input class="form-control" placeholder="" id="textlocation" type="text" onblur="validatetextbox(this)" />
+                                    <label>Location </label>
+                                    <input class="form-control" placeholder="" id="textlocation" type="text" />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Country <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectcountry" onblur="validatedropdown(this)">
+                                    <label>Country </label>
+                                    <select class="form-control" id="selectcountry" >
                                         <option value="0">Select Country </option>
                                         @foreach (CountriesResponse country in Countries)
                                         {
@@ -133,8 +133,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Industry <span class="mandatory">*</span></label>
-                                    <select class="form-control" id="selectindustry" onblur="validatedropdown(this)">
+                                    <label>Industry </label>
+                                    <select class="form-control" id="selectindustry" >
                                         <option value="0">Select Industry</option>
                                         @foreach (IndustriesResponse industry in Industries)
                                         {

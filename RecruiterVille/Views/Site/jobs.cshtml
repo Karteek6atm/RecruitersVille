@@ -1,4 +1,4 @@
-﻿@using RecruiterBE.Responses;
+﻿
 
 @{
     ViewBag.Title = "jobs";
@@ -12,16 +12,16 @@
             <div class="col-lg-12">
                 <div class="searces">
                     <div class="tab-content clearfix">
-
+                        <input type="hidden" id="hiddensearch" value="@ViewBag.Search" />
                         <div role="tabpanel" class="search-icon row" id="profile">
                             <div class="col-lg-5">
                                 <input type="search" id="textskills" placeholder="All Professionals">
                                 <span> </span>
                             </div>
                             <div class="col-lg-5 example" id="the-basics">
-                                
+
                                 <input type="text" id="textlocation" class="searchinpu typeahead" dir="auto" spellcheck="false" autocomplete="off" placeholder="Location">
-                                
+
                                 <span> </span>
                             </div>
 
@@ -100,22 +100,22 @@
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="right-side-doctors-list">
                     <ul id="uljobs">
-                        
+
 
 
                         @*<li>
-                            <div class="doctor-img clearfix"> <img src="/images/logo-sample.png" alt="" title="" width="270" height="259"></div>
-                            <div class="doctor-list-con">
-                                <h1> Ui/ux Designer and Developers                                     </h1>
-                                <h3>Business arts India Pvt. Ltd</h3>
-                                <p>CSS, HTML, Javascript, User Interface Designing, UX, MVC, Illustrator... </p>
-                                <div class="location-price docto-locatio"><i class="fa fa-map-marker"></i> Hyderabad, Warangal</div>
-                                <div class="location-price">
-                                    <span><i class="fa fa-suitcase"></i> 3 to 5 yrs</span> <span> <i class="fa fa-money"></i> INR 50,000 - 3,00,000 P.A </span>
-                                </div>
+                                <div class="doctor-img clearfix"> <img src="/images/logo-sample.png" alt="" title="" width="270" height="259"></div>
+                                <div class="doctor-list-con">
+                                    <h1> Ui/ux Designer and Developers                                     </h1>
+                                    <h3>Business arts India Pvt. Ltd</h3>
+                                    <p>CSS, HTML, Javascript, User Interface Designing, UX, MVC, Illustrator... </p>
+                                    <div class="location-price docto-locatio"><i class="fa fa-map-marker"></i> Hyderabad, Warangal</div>
+                                    <div class="location-price">
+                                        <span><i class="fa fa-suitcase"></i> 3 to 5 yrs</span> <span> <i class="fa fa-money"></i> INR 50,000 - 3,00,000 P.A </span>
+                                    </div>
 
-                            </div>
-                        </li>*@
+                                </div>
+                            </li>*@
 
                     </ul>
                 </div>
@@ -129,9 +129,17 @@
 @Scripts.Render("~/bundles/jobs")
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script src="~/Scripts/application/index.js"></script>
+<script>
+    $('.topmenu').find('li').removeClass("active");
+    $('#ajobs').addClass("active")
+</script>
 <script>
     $(function () {
+        var search = $("#hiddensearch").val();
+        search = Base64.decode(search);
+        $("#textskills").val(search);
+
         getLocations();
     });
 </script>

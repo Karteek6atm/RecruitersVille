@@ -3,6 +3,10 @@
     ViewBag.Title = "viewjob";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
+
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
+<link href="/app/css/datepicker.css" rel="stylesheet" />
+
 <div class="row">
     <ol class="breadcrumb">
         <li>
@@ -10,7 +14,12 @@
                 <em class="fa fa-home"></em>
             </a>
         </li>
-        <li class="active">Job View</li>
+        <li>
+            <a id="amyjobslist" href="/job/myjobs">
+                My Jobs
+            </a>
+        </li>
+        <li class="active">View Job</li>
     </ol>
 </div><!--/.row-->
 
@@ -19,32 +28,77 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                Users <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewuser()">Job List</a>
+                Users <a href="/job/myjobs" class="btn btn-primary pull-right">Jobs List</a>
             </div>
 
-            <input type="hidden" id="hiddenselecteduserid" value="" />
+            <input type="hidden" id="hiddenselectedjobid" value="@ViewBag.JobId" />
             <div class="panel-body">
                 <table class="new-tble scrol-tble">
                     <tbody>
                         <tr>
-                            <td>Name</td>
-                            <td> <label>Naresh Enjapuri</label></td>
+                            <td>Job Title</td>
+                            <td> <label id="labeljobtitle"></label></td>
                         </tr>
                         <tr>
-                            <td>Sallery</td>
-                            <td> <label>Naresh Enjapuri</label></td>
+                            <td>Company Job Id</td>
+                            <td> <label id="labelcompanyjobid"></label></td>
                         </tr>
                         <tr>
-                            <td>Company</td>
-                            <td> <label>Naresh Enjapuri</label></td>
+                            <td>Job Location</td>
+                            <td> <label id="labeljoblocation"></label></td>
+                        </tr> 
+                        <tr> 
+                            <td>Pay</td>
+                            <td> <label id="labelpay"></label></td>
                         </tr>
                         <tr>
-                            <td>Some</td>
-                            <td> <label>Naresh Enjapuri</label></td>
+                            <td>Duration</td>
+                            <td> <label id="labelduration"></label></td>
                         </tr>
+                        <tr>
+                            <td>Experience</td>
+                            <td> <label id="labelexperience"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Job Types</td>
+                            <td> <label id="labeljobtypes"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Industry</td>
+                            <td> <label id="labelindustry"></label></td>
+                        </tr> 
+                        <tr>
+                            <td>Sub Industries</td>
+                            <td> <label id="labelsubindustries"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Skills</td>
+                            <td> <label id="labelskills"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Travel Allowances</td>
+                            <td> <label id="labeltravelallowances"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Is WFH Available</td>
+                            <td> <label id="labelwfhavailable"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Application Method </td>
+                            <td> <label id="labelapplicationmethod"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Post Dates</td>
+                            <td> <label id="labelpostdates"></label></td>
+                        </tr>
+                        <tr> 
+                            <td>Job Status</td>
+                            <td> <label id="labeljobstatus"></label></td>
+                        </tr>
+                       
                         <tr>
                         
-                            <td colspan="2"><h6>Desiription</h6> <label>Naresh Enjapuri</label></td>
+                            <td colspan="2"><h6>Desiription</h6> <label id="labeljobdescription"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,4 +108,11 @@
 
     </div><!--/.panel-->
 </div>
-
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/app/js/bootstrap-datepicker.js"></script>
+@Scripts.Render("~/bundles/viewjob")
+<script type="text/javascript">
+        $(document).ready(function () {
+            getjobdetails();
+        });
+</script>

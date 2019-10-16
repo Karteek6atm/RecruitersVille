@@ -68,6 +68,7 @@ namespace RecruiterBAL
                                         {
                                             CompanyJobId = x.Field<string>("CompanyJobId"),
                                             CompanyName = x.Field<string>("CompanyName"),
+                                            CompanyLogo = x.Field<string>("CompanyLogoPath"),
                                             IndustryName = x.Field<string>("IndustryName"),
                                             JobDuration = x.Field<int>("JobDuration"),
                                             MaxExp = x.Field<int>("MaxExp"),

@@ -85,7 +85,8 @@ namespace RecruiterDAL
                 while (reader.Read())
                 {
                     objresponse.CompanyJobId = (string)reader["CompanyJobId"];
-                    objresponse.CompanyName = (string)reader["CompanyName"];
+                    objresponse.CompanyName = (string)reader["CompanyName"]; 
+                    objresponse.CompanyLogo = (string)reader["CompanyLogoPath"];
                     objresponse.IndustryName = (string)reader["IndustryName"];
                     objresponse.JobDescription = (string)reader["JobDescription"];
                     objresponse.JobDuration = (int)reader["JobDuration"];

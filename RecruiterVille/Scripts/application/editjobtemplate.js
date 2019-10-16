@@ -36,25 +36,29 @@
                 $("#textjobdescription").val(data.JobDescription);
                 $("#selectskills").val(data.SkillIds);
 
-                var jobtypeidsoptions = $('#selectjobtype option');
-                var jobtypeids = data.JobTypeIds.split(',');
+                if (data.JobTypeIds != null) {
+                    var jobtypeidsoptions = $('#selectjobtype option');
+                    var jobtypeids = data.JobTypeIds.split(',');
 
-                for (var i = 0; i < jobtypeidsoptions.length; i++) {
-                    var selectedvalue = jobtypeidsoptions[i].value;
+                    for (var i = 0; i < jobtypeidsoptions.length; i++) {
+                        var selectedvalue = jobtypeidsoptions[i].value;
 
-                    if ($.inArray(selectedvalue, jobtypeids) > -1) {
-                        $(jobtypeidsoptions[i]).attr('selected', true);
+                        if ($.inArray(selectedvalue, jobtypeids) > -1) {
+                            $(jobtypeidsoptions[i]).attr('selected', true);
+                        }
                     }
                 }
 
-                var subindustriesoptions = $('#selectsubindustries option');
-                var subindustryids = data.SubIndustryIds.split(',');
+                if (data.SubIndustryIds != null) {
+                    var subindustriesoptions = $('#selectsubindustries option');
+                    var subindustryids = data.SubIndustryIds.split(',');
 
-                for (var i = 0; i < subindustriesoptions.length; i++) {
-                    var selectedvalue = subindustriesoptions[i].value;
+                    for (var i = 0; i < subindustriesoptions.length; i++) {
+                        var selectedvalue = subindustriesoptions[i].value;
 
-                    if ($.inArray(selectedvalue, subindustryids) > -1) {
-                        $(subindustriesoptions[i]).attr('selected', true);
+                        if ($.inArray(selectedvalue, subindustryids) > -1) {
+                            $(subindustriesoptions[i]).attr('selected', true);
+                        }
                     }
                 }
 
@@ -106,21 +110,21 @@ function validateminpayrate() {
     var textmaxpayrate = $("#textmaxpayrate");
     var isvalid = true;
 
-    if (validatetextbox(textminpayrate) == false) {
-        isvalid = false;
-    }
-    else {
-        if (textmaxpayrate.val() != "") {
-            var minrate = parseInt(textminpayrate.val());
-            var maxrate = parseInt(textmaxpayrate.val());
+    //if (validatetextbox(textminpayrate) == false) {
+    //    isvalid = false;
+    //}
+    //else {
+    if (textmaxpayrate.val() != "") {
+        var minrate = parseInt(textminpayrate.val());
+        var maxrate = parseInt(textmaxpayrate.val());
 
-            if (minrate > maxrate) {
-                isvalid = false;
-                $(textminpayrate).closest('.form-group').addClass("has-error");
-                $(textmaxpayrate).closest('.form-group').addClass("has-error");
-            }
+        if (minrate > maxrate) {
+            isvalid = false;
+            $(textminpayrate).closest('.form-group').addClass("has-error");
+            $(textmaxpayrate).closest('.form-group').addClass("has-error");
         }
     }
+    //}
 }
 
 function validatemaxpayrate() {
@@ -128,21 +132,21 @@ function validatemaxpayrate() {
     var textmaxpayrate = $("#textmaxpayrate");
     var isvalid = true;
 
-    if (validatetextbox(textmaxpayrate) == false) {
-        isvalid = false;
-    }
-    else {
-        if (textminpayrate.val() != "") {
-            var minrate = parseInt(textminpayrate.val());
-            var maxrate = parseInt(textmaxpayrate.val());
+    //if (validatetextbox(textmaxpayrate) == false) {
+    //    isvalid = false;
+    //}
+    //else {
+    if (textminpayrate.val() != "") {
+        var minrate = parseInt(textminpayrate.val());
+        var maxrate = parseInt(textmaxpayrate.val());
 
-            if (minrate > maxrate) {
-                isvalid = false;
-                $(textminpayrate).closest('.form-group').addClass("has-error");
-                $(textmaxpayrate).closest('.form-group').addClass("has-error");
-            }
+        if (minrate > maxrate) {
+            isvalid = false;
+            $(textminpayrate).closest('.form-group').addClass("has-error");
+            $(textmaxpayrate).closest('.form-group').addClass("has-error");
         }
     }
+    //}
 }
 
 function validateminexp() {
@@ -150,21 +154,21 @@ function validateminexp() {
     var textmaxexp = $("#textmaxexp");
     var isvalid = true;
 
-    if (validatetextbox(textminexp) == false) {
-        isvalid = false;
-    }
-    else {
-        if (textmaxexp.val() != "") {
-            var minexp = parseInt(textminexp.val());
-            var maxexp = parseInt(textmaxexp.val());
+    //if (validatetextbox(textminexp) == false) {
+    //    isvalid = false;
+    //}
+    //else {
+    if (textmaxexp.val() != "") {
+        var minexp = parseInt(textminexp.val());
+        var maxexp = parseInt(textmaxexp.val());
 
-            if (minexp > maxexp) {
-                isvalid = false;
-                $(textminexp).closest('.form-group').addClass("has-error");
-                $(textmaxexp).closest('.form-group').addClass("has-error");
-            }
+        if (minexp > maxexp) {
+            isvalid = false;
+            $(textminexp).closest('.form-group').addClass("has-error");
+            $(textmaxexp).closest('.form-group').addClass("has-error");
         }
     }
+    //}
 }
 
 function validatemaxexp() {
@@ -172,21 +176,21 @@ function validatemaxexp() {
     var textmaxexp = $("#textmaxexp");
     var isvalid = true;
 
-    if (validatetextbox(textmaxexp) == false) {
-        isvalid = false;
-    }
-    else {
-        if (textminexp.val() != "") {
-            var minexp = parseInt(textminexp.val());
-            var maxexp = parseInt(textmaxexp.val());
+    //if (validatetextbox(textmaxexp) == false) {
+    //    isvalid = false;
+    //}
+    //else {
+    if (textminexp.val() != "") {
+        var minexp = parseInt(textminexp.val());
+        var maxexp = parseInt(textmaxexp.val());
 
-            if (minexp > maxexp) {
-                isvalid = false;
-                $(textminexp).closest('.form-group').addClass("has-error");
-                $(textmaxexp).closest('.form-group').addClass("has-error");
-            }
+        if (minexp > maxexp) {
+            isvalid = false;
+            $(textminexp).closest('.form-group').addClass("has-error");
+            $(textmaxexp).closest('.form-group').addClass("has-error");
         }
     }
+    //}
 }
 
 function updatejobtemplatedetails() {
@@ -229,54 +233,54 @@ function updatejobtemplatedetails() {
     if (validatetextbox(textjobtitle) == false) {
         isvalid = false;
     }
-    if (validatedropdown(selectpaycurrency) == false) {
-        isvalid = false;
-    }
+    //if (validatedropdown(selectpaycurrency) == false) {
+    //    isvalid = false;
+    //}
     if (validateminpayrate(textminpayrate) == false) {
         isvalid = false;
     }
     if (validatemaxpayrate(textmaxpayrate) == false) {
         isvalid = false;
     }
-    if (validatedropdown(selectpaytype) == false) {
-        isvalid = false;
-    }
-    if (jobtype == "") {
-        $(selectjobtype).closest('.form-group').addClass("has-error");
-        $(selectjobtype).closest('.form-group').removeClass("has-success");
-        isvalid = false;
-    }
-    else {
-        $(selectjobtype).closest('.form-group').removeClass("has-error");
-        $(selectjobtype).closest('.form-group').addClass("has-success");
-    }
-    if (validatetextbox(textduartion) == false) {
-        isvalid = false;
-    }
+    //if (validatedropdown(selectpaytype) == false) {
+    //    isvalid = false;
+    //}
+    //if (jobtype == "") {
+    //    $(selectjobtype).closest('.form-group').addClass("has-error");
+    //    $(selectjobtype).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selectjobtype).closest('.form-group').removeClass("has-error");
+    //    $(selectjobtype).closest('.form-group').addClass("has-success");
+    //}
+    //if (validatetextbox(textduartion) == false) {
+    //    isvalid = false;
+    //}
     if (validateminexp(textminexp) == false) {
         isvalid = false;
     }
     if (validatemaxexp(textmaxexp) == false) {
         isvalid = false;
     }
-    if (validatedropdown(selectduration) == false) {
-        isvalid = false;
-    }
-    if (validatedropdown(selecttravelrequirements) == false) {
-        isvalid = false;
-    }
-    if (validatedropdown(selectindustry) == false) {
-        isvalid = false;
-    }
-    if (subindustries == "") {
-        $(selectsubindustries).closest('.form-group').addClass("has-error");
-        $(selectsubindustries).closest('.form-group').removeClass("has-success");
-        isvalid = false;
-    }
-    else {
-        $(selectsubindustries).closest('.form-group').removeClass("has-error");
-        $(selectsubindustries).closest('.form-group').addClass("has-success");
-    }
+    //if (validatedropdown(selectduration) == false) {
+    //    isvalid = false;
+    //}
+    //if (validatedropdown(selecttravelrequirements) == false) {
+    //    isvalid = false;
+    //}
+    //if (validatedropdown(selectindustry) == false) {
+    //    isvalid = false;
+    //}
+    //if (subindustries == "") {
+    //    $(selectsubindustries).closest('.form-group').addClass("has-error");
+    //    $(selectsubindustries).closest('.form-group').removeClass("has-success");
+    //    isvalid = false;
+    //}
+    //else {
+    //    $(selectsubindustries).closest('.form-group').removeClass("has-error");
+    //    $(selectsubindustries).closest('.form-group').addClass("has-success");
+    //}
     //if (skills == "") {
     //    $(selectskills).closest('.form-group').addClass("has-error");
     //    $(selectskills).closest('.form-group').removeClass("has-success");
@@ -286,27 +290,27 @@ function updatejobtemplatedetails() {
     //    $(selectskills).closest('.form-group').removeClass("has-error");
     //    $(selectskills).closest('.form-group').addClass("has-success");
     //}
-    if (selectapplicationmethod.val() != 0) {
-        if (selectapplicationmethod.val() == 1) {
-            if (validateemailid(texttoemail) == false) {
-                isvalid = false;
-            }
-            if (validateemailid(textccemail) == false) {
-                isvalid = false;
-            }
-        }
-        else {
-            if (validatetextbox(texturl) == false) {
-                isvalid = false;
-            }
-        }
-    }
+    //if (selectapplicationmethod.val() != 0) {
+    //    if (selectapplicationmethod.val() == 1) {
+    //        if (validateemailid(texttoemail) == false) {
+    //            isvalid = false;
+    //        }
+    //        if (validateemailid(textccemail) == false) {
+    //            isvalid = false;
+    //        }
+    //    }
+    //    else {
+    //        if (validatetextbox(texturl) == false) {
+    //            isvalid = false;
+    //        }
+    //    }
+    //}
     if (validatetextbox(textjobdescription) == false) {
         isvalid = false;
     }
-    if (validatetextbox(selectskills) == false) {
-        isvalid = false;
-    }
+    //if (validatetextbox(selectskills) == false) {
+    //    isvalid = false;
+    //}
 
     if (isvalid) {
         showloading();

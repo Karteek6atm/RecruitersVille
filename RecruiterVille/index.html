@@ -94,10 +94,10 @@
                         <div class="form-group searchbar text-center clearfix">
                             <ul class="sea clearfix">
                                 <li id="search-inputfield">
-                                    <input type="text" class="searchinput" placeholder="Find Job Here">
+                                    <input type="text" id="textsearch" class="searchinput" placeholder="Seach jobs by Skills">
                                 </li>
-                                <li>
-                                    <button type="submit" class="searchbtn "><i class="glyphicon glyphicon-search "></i></button>
+                                <li> 
+                                    <a href="javascript:void(0)" class="searchbtn " id="asearch"><i class="glyphicon glyphicon-search "></i></a>
                                 </li>
                             </ul>
 
@@ -423,7 +423,8 @@
 <script src="js/jquery.validate.min.js"></script>
 <!-- custom script -->
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
- 
+
+    <script src="Scripts/application/index.js"></script>
 
 <!-- Owl Carousel Assets -->
 <script src="js/owl.carousel.js"></script>
@@ -525,7 +526,15 @@
         $(".next-button-slick").click(function () {
             $(".videoslider").slick('slickNext');
         });
-        
+
+        $("#asearch").click(function () {
+            var search = $("#textsearch").val().trim();
+            if (search != "") {
+                search = Base64.encode(search);
+                window.location = '/jobs/' + search;
+            }
+        });
+         
         //navbar menu hides when click in mobile
        $(document).ready(function () {
           $(".navbar-nav li a").click(function(event) {

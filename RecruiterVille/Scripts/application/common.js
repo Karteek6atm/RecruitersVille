@@ -192,11 +192,12 @@ function validateimage(obj) {
     $(obj).closest('.form-group').removeClass("has-error");
     var fileextensions = ['jpeg', 'jpg', 'png', 'bmp'];
 
-    if ($(obj).val().trim() == "") {
-        $(obj).closest('.form-group').addClass("has-error");
-        return false;
-    }
-    else if ($.inArray($(obj).val().trim().split('.').pop().toLowerCase(), fileextensions) == -1) {
+    //if ($(obj).val().trim() == "") {
+    //    $(obj).closest('.form-group').addClass("has-error");
+    //    return false;
+    //}
+    //else
+    if ($.inArray($(obj).val().trim().split('.').pop().toLowerCase(), fileextensions) == -1) {
         $(obj).closest('.form-group').addClass("has-error");
         return false;
     }
