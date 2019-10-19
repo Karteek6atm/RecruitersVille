@@ -12,11 +12,20 @@
 
     string experience = "";
     string pay = "";
+    string location = "";
     string companylogo = "/images/logo-sample.png";
 
-    if (jobdetails.MinPayRate > 0 || jobdetails.MaxPayRate > 0)
+    if (jobdetails.MinPayRate > 0 && jobdetails.MaxPayRate > 0)
     {
         pay = "<span><i class='fa fa-money'></i> " + jobdetails.PayCurrencySign + " " + jobdetails.MinPayRate + " - " + jobdetails.MaxPayRate + " </span>";
+    }
+    else if (jobdetails.MinPayRate > 0)
+    {
+        pay = "<span><i class='fa fa-money'></i> " + jobdetails.PayCurrencySign + " " + jobdetails.MinPayRate + " </span>";
+    }
+    else if (jobdetails.MaxPayRate > 0)
+    {
+        pay = "<span><i class='fa fa-money'></i> " + jobdetails.PayCurrencySign + " " + jobdetails.MaxPayRate + " </span>";
     }
 
     if (jobdetails.MinExp > 0 && jobdetails.MaxExp > 0)
@@ -36,6 +45,13 @@
     {
         companylogo = jobdetails.CompanyLogo;
     }
+
+    if (jobdetails.JobLocation != "")
+    {
+        location = "<span><i class='fa fa-map-marker'></i> " + jobdetails.JobLocation + "</span>";
+    }
+
+
 @*<section class="searchBanner inner-search">
     <div class="container">
         <div class="row">
@@ -137,7 +153,7 @@
                                 <h1> @jobdetails.JobTitle </h1>
                                 <h3>@jobdetails.CompanyName</h3>
                                 <p>@jobdetails.TechnologyNames</p>
-                                <div class="location-price docto-locatio"> <i class="fa fa-map-marker"></i> @jobdetails.JobLocation</div>
+                                <div class="location-price docto-locatio" id="divlocation">@location </div>
                                 <div class="location-price">
                                     <div id="divexp">@experience</div>
                                    <div id="divpay">@pay</div> 
@@ -186,5 +202,9 @@
     var container2 = document.createElement('div');
     container2.innerHTML = $('#divpay').html();
     $('#divpay').html(container2.innerText);
+
+    var container3 = document.createElement('div');
+    container3.innerHTML = $('#divlocation').html();
+    $('#divlocation').html(container3.innerText);
      
 </script>

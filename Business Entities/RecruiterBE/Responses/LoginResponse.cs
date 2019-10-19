@@ -33,6 +33,8 @@ namespace RecruiterBE.Responses
         public int StatusId { get; set; }
         public string StatusMessage { get; set; }
         public string VerificationCode { get; set; }
+        public string EmailId { get; set; }
+        public string FullName { get; set; }
         public int RegistrationId { get; set; }
     }
 
@@ -43,13 +45,14 @@ namespace RecruiterBE.Responses
         public string FullName { get; set; }
         public string EmailId { get; set; }
     }
-
+    
     public class ForgotPasswordResponse
     {
         public int StatusId { get; set; }
         public string StatusMessage { get; set; }
         public string VerificationCode { get; set; }
         public string FullName { get; set; }
+        public string EmailId { get; set; }
         public int RequestId { get; set; }
     }
 }

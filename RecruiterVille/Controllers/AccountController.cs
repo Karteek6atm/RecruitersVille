@@ -164,6 +164,27 @@ namespace RecruiterVille.Controllers
         }
 
         [HttpPost]
+        public ActionResult ResendUserRegistrationDetails(UserRegistrationVerifyModal objuserregistration)
+        {
+            RegistrationResponse objregistrationresponse = new RegistrationResponse();
+            try
+            {
+                objregistrationresponse = _LoginBal.ResendUserRegistrationDetails(objuserregistration.registrationid);
+            }
+            catch (Exception ex)
+            {
+                objregistrationresponse.StatusId = 0;
+                objregistrationresponse.StatusMessage = "Oops!! unable to process your request";
+            }
+            return Json(new
+            {
+                StatusId = objregistrationresponse.StatusId,
+                RegistrationId = objregistrationresponse.RegistrationId,
+                StatusMessage = objregistrationresponse.StatusMessage
+            });
+        }
+
+        [HttpPost]
         public ActionResult VerifyUserRegistration(UserRegistrationVerifyModal objuserregistration)
         {
             VerificationResponse objsaveresponse = new VerificationResponse();
@@ -194,6 +215,27 @@ namespace RecruiterVille.Controllers
                 objrequest.emailid = objrequestmodal.emailid;
 
                 objforgotpasswordresponse = _LoginBal.UserForgotPasswordRequest(objrequest);
+            }
+            catch (Exception ex)
+            {
+                objforgotpasswordresponse.StatusId = 0;
+                objforgotpasswordresponse.StatusMessage = "Oops!! unable to process your request";
+            }
+            return Json(new
+            {
+                StatusId = objforgotpasswordresponse.StatusId,
+                RequestId = objforgotpasswordresponse.RequestId,
+                StatusMessage = objforgotpasswordresponse.StatusMessage
+            });
+        }
+
+        [HttpGet]
+        public ActionResult ResendUserForgotPasswordRequest(int requestid)
+        {
+            ForgotPasswordResponse objforgotpasswordresponse = new ForgotPasswordResponse();
+            try
+            {
+                objforgotpasswordresponse = _LoginBal.ResendUserForgotPasswordRequest(requestid);
             }
             catch (Exception ex)
             {

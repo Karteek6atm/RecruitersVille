@@ -138,6 +138,45 @@ function Register() {
     }
 }
 
+function ResendVerificationCode() {
+    hideallalerts();
+
+    if (registrationid > 0) {
+        showloading();
+
+        var input = [];
+        input = {
+            registrationid: registrationid
+        };
+        
+        $.ajax({
+            type: "POST",
+            data: (input),
+            url: "/account/resenduserregistrationdetails",
+            dataType: "json",
+            success: function (data) {
+                if (data.StatusId == 1) {
+                    showinfoalert(data.StatusMessage);
+                    $("#textverificationcode").val('');
+                    $("#textverificationcode").closest('.form-group').removeClass("has-success");
+                    $("#textverificationcode").closest('.form-group').removeClass("has-error");
+                }
+                else {
+                    showwarningalert(data.StatusMessage);
+                }
+                hideloading();
+            },
+            error: function (xhr) {
+                hideloading();
+                showerroralert(xhr.responseText);
+            }
+        });
+    }
+    else {
+        return false;
+    }
+}
+
 function validateverificationcode(obj) {
     $(obj).closest('.form-group').removeClass("has-success");
     $(obj).closest('.form-group').removeClass("has-error");

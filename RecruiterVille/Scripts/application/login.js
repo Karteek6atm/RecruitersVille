@@ -64,6 +64,7 @@ function OpenForgotPassword() {
 
 function OpenLogin() {
     $('#divforgotpwd').css("display", "none");
+    $('#divresetpassword').css("display", "none");
     $('#divlogin').css("display", "block");
 }
 
@@ -152,6 +153,45 @@ function ForgotPassword() {
                     requestid = data.RequestId;
                     $('#divforgotpwd').css("display", "none");
                     $('#divresetpassword').css("display", "block");
+                    $("#verificationcode").val('');
+                    $("#textforgotnewpassword").val('');
+                    $("#textforgotconfirmpassword").val('');
+                    $("#verificationcode").closest('.form-group').removeClass("has-success");
+                    $("#verificationcode").closest('.form-group').removeClass("has-error");
+                    $("#textforgotnewpassword").closest('.form-group').removeClass("has-success");
+                    $("#textforgotnewpassword").closest('.form-group').removeClass("has-error");
+                    $("#textforgotconfirmpassword").closest('.form-group').removeClass("has-success");
+                    $("#textforgotconfirmpassword").closest('.form-group').removeClass("has-error");
+                }
+                else {
+                    showwarningalert(data.StatusMessage);
+                }
+                hideloading();
+            },
+            error: function (xhr) {
+                hideloading();
+                showerroralert(xhr.responseText);
+            }
+        });
+    }
+    else {
+        return false;
+    }
+}
+
+function ResendVerificationCode() {
+    hideallalerts();
+
+    if (requestid > 0) {
+        showloading();
+
+        $.ajax({
+            type: "GET",
+            url: "/account/resenduserforgotpasswordrequest/" + requestid,
+            dataType: "json",
+            success: function (data) {
+                if (data.StatusId == 1) {
+                    showinfoalert(data.StatusMessage);
                     $("#verificationcode").val('');
                     $("#textforgotnewpassword").val('');
                     $("#textforgotconfirmpassword").val('');

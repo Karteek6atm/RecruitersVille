@@ -106,6 +106,39 @@ namespace RecruiterDAL
             return objRegistrationResponse;
         }
 
+        public RegistrationResponse ResendUserRegistrationDetails(int registrationid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@RegistrationId", SqlDbType.Int) { Value = registrationid }
+                                        };
+            SqlDataReader reader = null;
+            RegistrationResponse objRegistrationResponse = new RegistrationResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_ResendUserRegistrationDetails", sqlparams);
+
+                while (reader.Read())
+                {
+                    objRegistrationResponse.StatusId = (int)reader["StatusId"];
+                    objRegistrationResponse.StatusMessage = (string)reader["StatusMessage"];
+                    objRegistrationResponse.VerificationCode = (string)reader["VerificationCode"];
+                    objRegistrationResponse.EmailId = (string)reader["EmailId"];
+                    objRegistrationResponse.FullName = (string)reader["FullName"];
+                    objRegistrationResponse.RegistrationId = (int)reader["RegistrationId"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objRegistrationResponse;
+        }
+
         public VerificationResponse VerifyUserRegistration(int registrationid, string verificationcode)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@RegistrationId", SqlDbType.Int) { Value = registrationid },
@@ -157,6 +190,39 @@ namespace RecruiterDAL
                     objForgotPasswordResponse.VerificationCode = (string)reader["VerificationCode"];
                     objForgotPasswordResponse.RequestId = (int)reader["RequestId"];
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objForgotPasswordResponse;
+        }
+
+        public ForgotPasswordResponse ResendUserForgotPasswordRequest(int requestid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@RequestId", SqlDbType.Int) { Value = requestid }
+                                        };
+            SqlDataReader reader = null;
+            ForgotPasswordResponse objForgotPasswordResponse = new ForgotPasswordResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_ResendUserForgotPasswordRequest", sqlparams);
+
+                while (reader.Read())
+                {
+                    objForgotPasswordResponse.StatusId = (int)reader["StatusId"];
+                    objForgotPasswordResponse.StatusMessage = (string)reader["StatusMessage"];
+                    objForgotPasswordResponse.FullName = (string)reader["FullName"];
+                    objForgotPasswordResponse.VerificationCode = (string)reader["VerificationCode"];
+                    objForgotPasswordResponse.EmailId = (string)reader["EmailId"];
+                    objForgotPasswordResponse.RequestId = (int)reader["RequestId"];
+                }                
             }
             catch (Exception ex)
             {
