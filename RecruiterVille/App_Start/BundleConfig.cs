@@ -118,6 +118,9 @@ namespace RecruiterVille
                       "~/app/js/fSelect.js",
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/profile.js"));
+            bundles.Add(new ScriptBundle("~/bundles/profileView").Include(
+                    "~/Scripts/application/common.js",
+                    "~/Scripts/application/ProfileView.js"));
 
             //User Section
             bundles.Add(new StyleBundle("~/content/users").Include(

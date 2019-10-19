@@ -20,7 +20,7 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                Users <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewuser()">Profile List</a>
+                Name <a href="/profile/list" class="btn btn-primary pull-right" onclick="GotoProfileList()">Profile List</a>
             </div>
 
             <input type="hidden" id="hiddenselecteduserid" value="" />
@@ -28,25 +28,26 @@
                 <table class="new-tble scrol-tble">
                     <tbody>
                         <tr>
-                            <td>Name</td>
+                            <td>Email</td>
                             <td> <label>Naresh Enjapuri</label></td>
                         </tr>
                         <tr>
-                            <td>Sallery</td>
+                            <td>Contact</td>
                             <td> <label>Naresh Enjapuri</label></td>
                         </tr>
                         <tr>
-                            <td>Company</td>
+                            <td>Experience</td>
                             <td> <label>Naresh Enjapuri</label></td>
                         </tr>
                         <tr>
-                            <td>Some</td>
+                            <td>Industry</td>
                             <td> <label>Naresh Enjapuri</label></td>
                         </tr>
                         <tr>
-
-                            <td colspan="2"><h6>Desiription</h6> <label>Naresh Enjapuri</label></td>
+                            <td>Skills</td>
+                            <td> <label>Naresh Enjapuri</label></td>
                         </tr>
+                       
                     </tbody>
                 </table>
 
@@ -55,5 +56,7 @@
 
     </div><!--/.panel-->
 </div>
+
+@Scripts.Render("~/bundles/editjob")
 
 
