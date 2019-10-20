@@ -303,6 +303,7 @@
     <Content Include="images\location-search.png" />
     <Content Include="images\login-bg.jpg" />
     <Content Include="images\logo-sample.png" />
+    <Content Include="images\logo.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\mail-footer.png" />
     <Content Include="images\mobile.jpg" />
