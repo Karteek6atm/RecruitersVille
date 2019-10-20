@@ -12,6 +12,10 @@ namespace RecruiterBE.Responses
         public CompanyProfileResponse CompanyProfile { get; set; }
         public ProfessionalProfileResponse ProfessionalProfile { get; set; }
     }
+    public class ProfileView
+    {
+        public ProfileViewResponse PersonalProfile { get; set; } 
+    }
 
     public class ProfileMastersResponse
     {
@@ -37,7 +41,36 @@ namespace RecruiterBE.Responses
         public string Country { get; set; }
         public string Zipcode { get; set; }
     }
-    
+
+
+    public class ProfileViewResponse
+    {
+        public int UserId { get; set; }
+        public string FullName { get; set; }
+        public string EmailId { get; set; }
+        public string AlternateEmailId { get; set; }
+        public string Location { get; set; }
+        public int CountryId { get; set; }
+        public int IndustryId { get; set; }
+        public string IndustryName { get; set; }
+        public string ContactNumber { get; set; }
+        public string AlternateMobileNumber { get; set; }
+        public int QualificationId { get; set; }
+        public string QualificationName { get; set; }
+        public string AboutMe { get; set; }
+        public string Resume { get; set; }
+        public string Skills { get; set; }
+        public string ProfilePicPath { get; set; }
+        public string Street { get; set; }
+        public string Landmark { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+        public string Zipcode { get; set; }
+        public string Experience { get; set; }
+
+    }
+
     public class CompanyProfileResponse
     {
         public int CompanyId { get; set; }

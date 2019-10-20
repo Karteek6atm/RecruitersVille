@@ -21,6 +21,8 @@ namespace RecruiterVille.Areas.User.Controllers
         #region Members
 
         ResumeBal _ResumeBal = new ResumeBal();
+        ProfileBal _ProfileBal = new ProfileBal();
+
         ManageSessions objManageSessions = new ManageSessions();
 
         #endregion
@@ -214,7 +216,24 @@ namespace RecruiterVille.Areas.User.Controllers
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public JsonResult GetProfileViewDetails(ProfileViewRequest request)
+        {
+            ProfileView objresponse = new ProfileView();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                { 
 
+                    objresponse = _ProfileBal.GetProfileViewDetails(request.strProfileId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
         [HttpPost]
         public JsonResult InsertAndUpdateProfileDetails(ProfileSaveRequest objrequest)
         {
