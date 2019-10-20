@@ -46,12 +46,13 @@ namespace RecruiterVille.Controllers
 
                     if (string.IsNullOrEmpty(companylogo))
                     {
-                        companylogo = "/images/logo.jpg";
+                        companylogo = "/images/logo-icon.png";
                     }
 
-                    objresponse.CompanyLogo = ConfigurationManager.AppSettings["WebsiteUrl"].ToString() + companylogo;
+                    //objresponse.CompanyLogo = ConfigurationManager.AppSettings["WebsiteUrl"].ToString() + companylogo;
 
                     ViewBag.Response = objresponse;
+                    ViewBag.JobLogo = ConfigurationManager.AppSettings["WebsiteUrl"].ToString() + companylogo;
                     ViewBag.JobUrl = ConfigurationManager.AppSettings["WebsiteUrl"].ToString() + "/jobview/" + param1;
                     return View();
                 }
