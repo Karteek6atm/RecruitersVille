@@ -84,7 +84,7 @@ function searchJobs() {
                             location = '<i class="fa fa-map-marker"></i> ' + data[i].JobLocation + '';
                         }
                         
-                        $(li).append('<div class="doctor-img clearfix"><img src="' + companylogo + '" alt="" title="" width="270" height="259"><input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></div>' +
+                        $(li).append('<div class="doctor-img clearfix"><img src="' + companylogo + '" alt="" title="" ><input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></div>' +
                                     '<div class="doctor-list-con">' +
                                     '<h1><a target="_blank" href="/jobview/' + data[i].JobId + '">' + data[i].JobTitle + '</a></h1>' +
                                     '<h3>' + data[i].CompanyName + '</h3>' +
