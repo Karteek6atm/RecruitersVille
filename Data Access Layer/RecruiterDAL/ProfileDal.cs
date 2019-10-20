@@ -68,6 +68,29 @@ namespace RecruiterDAL
             return dsData;
         }
 
+        public DataSet GetProfileViewDetails(int profileId)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@ProfileId", SqlDbType.Int) { Value = profileId } 
+                                        };
+            DataSet dsData = new DataSet();
+
+            try
+            {
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetProfileDetailsById", sqlparams);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return dsData;
+        }
+
+
         public SaveResponse UpdateUserPersonalDetails(ProfileRequest objrequest)
         {
             SqlParameter[] sqlparams = { new SqlParameter("@UserLoginId", SqlDbType.Int) { Value = objrequest.UserLoginId },

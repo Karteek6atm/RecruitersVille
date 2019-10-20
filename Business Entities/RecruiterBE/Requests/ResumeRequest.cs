@@ -16,7 +16,10 @@ namespace RecruiterBE.Requests
         public int ProfileId { get; set; }
         public string strProfileId { get; set; }
     }
-
+    public class ProfileViewRequest
+    {
+        public string strProfileId { get; set; }
+    }
     public class ResumeListRequest
     {
         public int CompanyId { get; set; }

@@ -181,6 +181,54 @@ namespace RecruiterBAL
             return objProfileResponse;
         }
 
+        public ProfileView GetProfileViewDetails(string strProfileId)
+        {
+            ProfileView objProfileResponse = new ProfileView();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int profileId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strProfileId));
+
+                dsData = _ProfileDal.GetProfileViewDetails(profileId);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        if (dsData.Tables[0].Rows.Count > 0)
+                        {
+                            DataRow dr = dsData.Tables[0].Rows[0];
+                            ProfileViewResponse objPersonalProfileResponse = new ProfileViewResponse();
+                            objPersonalProfileResponse.FullName = Convert.ToString(dr["FirstName"]) + " " + Convert.ToString(dr["LastName"]);
+                            objPersonalProfileResponse.EmailId = Convert.ToString(dr["EmailId"]);
+                            objPersonalProfileResponse.AlternateEmailId = Convert.ToString(dr["AlternateEmailId"]);
+                            objPersonalProfileResponse.ContactNumber = Convert.ToString(dr["MobileNumber"]);
+                            objPersonalProfileResponse.AlternateMobileNumber = Convert.ToString(dr["AlternateMobileNumber"]);
+                            objPersonalProfileResponse.QualificationId = Convert.ToInt32(dr["QualificationId"]);
+                            objPersonalProfileResponse.QualificationName = Convert.ToString(dr["QualificationName"]);
+                            objPersonalProfileResponse.Experience = Convert.ToString(dr["ExpYears"]) + " Years " + Convert.ToString(dr["ExpMonths"]) + " Months.";
+                            objPersonalProfileResponse.Location = Convert.ToString(dr["Location"]);
+                            objPersonalProfileResponse.CountryId = Convert.ToInt32(dr["CountryId"]);
+                            objPersonalProfileResponse.Country = Convert.ToString(dr["CountryName"]);
+                            objPersonalProfileResponse.IndustryId = Convert.ToInt32(dr["IndustryId"]);
+                            objPersonalProfileResponse.IndustryName = Convert.ToString(dr["IndustryName"]);
+                            objPersonalProfileResponse.AboutMe = Convert.ToString(dr["Description"]);
+                            objPersonalProfileResponse.Resume = Convert.ToString(dr["Resume"]);
+                            objPersonalProfileResponse.Skills = Convert.ToString(dr["Skills"]);
+
+                            objProfileResponse.PersonalProfile = objPersonalProfileResponse;
+                        }
+                    }                     
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objProfileResponse;
+        }
+
         public SaveResponse UpdateUserPersonalDetails(ProfileRequest objrequest)
         {
             SaveResponse objresponse = new SaveResponse();

@@ -295,6 +295,7 @@
     <Content Include="images\drop.png" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\favicon3.ico" />
+    <Content Include="images\fevicon.png" />
     <Content Include="images\flight.png" />
     <Content Include="images\img-3.jpg" />
     <Content Include="images\img-4.jpg" />
@@ -416,6 +417,7 @@
     <Content Include="Areas\SuperUser\Views\User\ProfilesList.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\AdminJobsList.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\Index.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\viewprofile.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

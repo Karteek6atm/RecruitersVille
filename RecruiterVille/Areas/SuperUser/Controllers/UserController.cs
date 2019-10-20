@@ -15,6 +15,7 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
         #region Members
         SuperUserBal _SuperUserBal = new SuperUserBal();
         #endregion
+
         #region Views
         public ActionResult Index()
         {
@@ -136,6 +137,30 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
                         Session.Abandon();
                         return Redirect("/login");
                     }
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult viewprofile(string param1)
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.RoleId = response.RoleId;
+                    ViewBag.CompanyName = response.CompanyName;
+                    ViewBag.ProfileId = param1;
+                    return View();
                 }
                 else
                 {
