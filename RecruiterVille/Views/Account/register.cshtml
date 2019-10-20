@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Recruiter Ville - Signup</title>
+    <title>RecruitersVille - Signup</title>
     @Styles.Render("~/content/register")
 </head>
 <body class="log-bg">
@@ -65,7 +65,8 @@
                             <div class="form-group">
                                 <input class="form-control" placeholder="Verification code" maxlength="6" name="verificationcode" type="password" id="textverificationcode" onblur="validateverificationcode(this)">
                             </div>
-                            <a href="javascript:void(0)" class="btn btn-primary" onclick="VerifyAccount()">Verify EmailId</a>
+                            <h5><a href="javascript:void(0)" class="btn btn-primary" onclick="VerifyAccount()">Verify EmailId</a></h5>
+                            <p>Didn't receive code?? <a href="javascript:void(0)" onclick="ResendVerificationCode()">Resend Verification Code</a></p>
                         </fieldset>
                     </div>
                 </div>

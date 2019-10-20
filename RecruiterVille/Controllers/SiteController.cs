@@ -105,6 +105,22 @@ namespace RecruiterVille.Controllers
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult ApplyJob(ApplyJobRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objrequest.JobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobId));
+                objresponse = objSiteBal.ApplyJob(objrequest);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
         #endregion
     }
 }

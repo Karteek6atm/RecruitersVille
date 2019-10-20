@@ -11,6 +11,8 @@ body {
    
 }
 
+.mandatory{color:red;}
+
 /* **************Spacing ********************/
 .mspace{margin-top:50px;margin-bottom:70px;}
 .mspace2{margin-top:60px;margin-bottom:30px;}

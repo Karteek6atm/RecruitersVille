@@ -48,6 +48,26 @@ namespace RecruiterBAL
             return objresponse;
         }
 
+        public RegistrationResponse ResendUserRegistrationDetails(int registrationid)
+        {
+            RegistrationResponse objresponse = new RegistrationResponse();
+            try
+            {
+                objresponse = _LoginDal.ResendUserRegistrationDetails(registrationid);
+
+                if (objresponse.StatusId == 1)
+                {
+                    SendEmail.SendRegistrationEmail(objresponse.EmailId, objresponse.VerificationCode, objresponse.FullName);
+                    objresponse.VerificationCode = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
         public VerificationResponse VerifyUserRegistration(int registrationid, string verificationcode)
         {
             VerificationResponse objresponse = new VerificationResponse();
@@ -77,6 +97,26 @@ namespace RecruiterBAL
                 if (objresponse.StatusId == 1)
                 {
                     SendEmail.SendForgotPasswordEmail(objrequest.emailid, objresponse.VerificationCode, objresponse.FullName);
+                    objresponse.VerificationCode = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
+
+        public ForgotPasswordResponse ResendUserForgotPasswordRequest(int requestid)
+        {
+            ForgotPasswordResponse objresponse = new ForgotPasswordResponse();
+            try
+            {
+                objresponse = _LoginDal.ResendUserForgotPasswordRequest(requestid);
+
+                if (objresponse.StatusId == 1)
+                {
+                    SendEmail.SendForgotPasswordEmail(objresponse.EmailId, objresponse.VerificationCode, objresponse.FullName);
                     objresponse.VerificationCode = string.Empty;
                 }
             }
