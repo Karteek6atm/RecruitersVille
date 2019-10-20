@@ -1057,3 +1057,12 @@ p.back-link {
 .scrol-tble #adeleteuser , #adeletevendor   {color:#f9243f;}
 .scrol-tble td:last-child i{padding-right:5px;}
 .swich a { color: #fff; font-weight: bold; position: relative; top: 18px;}
+.panel-heading .btn {    margin: 0px 2px; border:0;}
+.lin{background:#1183b9;}
+.lin:hover{background:#1196d5;}
+.tw{background:#0db4e9}
+.tw:hover{background:#0baadd}
+.fb{background:#45629c;}
+.fb{background:#5776b4 !important;}
+.ji{background:#444444}
+.ji:hover{background:#4e4e4e}
