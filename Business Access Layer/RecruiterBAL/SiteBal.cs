@@ -107,7 +107,21 @@ namespace RecruiterBAL
             }
             return objSearchJobViewResponse;
         }
-        
+
+        public SaveResponse ApplyJob(ApplyJobRequest request)
+        {
+            SaveResponse objSaveResponse = new SaveResponse();
+            try
+            {
+                objSaveResponse = _SiteDal.ApplyJob(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objSaveResponse;
+        }
+
         #endregion
     }
 }

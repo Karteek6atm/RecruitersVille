@@ -340,6 +340,7 @@
     <Content Include="Scripts\application\editjob.js" />
     <Content Include="Scripts\application\editjobtemplate.js" />
     <Content Include="Scripts\application\editprofile.js" />
+    <Content Include="Scripts\application\index.js" />
     <Content Include="Scripts\application\jobs.js" />
     <Content Include="Scripts\application\jobtemplates.js" />
     <Content Include="Scripts\application\jobview.js" />
@@ -358,6 +359,8 @@
     <Content Include="Scripts\application\SuperUserProfileList.js" />
     <Content Include="Scripts\application\users.js" />
     <Content Include="Scripts\application\vendors.js" />
+    <Content Include="Scripts\application\viewjob.js" />
+    <Content Include="Scripts\application\viewjobtemplate.js" />
     <Content Include="Scripts\application\viewprofile.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
