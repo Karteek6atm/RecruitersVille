@@ -54,7 +54,7 @@ function searchJobs() {
                         var experience = '';
                         var pay = '';
                         var location = '';
-                        var companylogo = '/images/logo-sample.png';
+                        var companylogo = '/images/logo.jpg';
 
                         if (data[i].MinPayRate > 0 && data[i].MaxPayRate > 0) {
                             pay = '<i class="fa fa-money"></i> ' + data[i].PayCurrencySign + ' ' + data[i].MinPayRate + ' - ' + data[i].MaxPayRate + ' </span>';
