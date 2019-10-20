@@ -138,6 +138,9 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Newtonsoft.Jso
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Owin.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterBAL.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterBE.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.Model.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.OutputFormatter.Json.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.ResumeProcessor.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Net.Http.Formatting.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Helpers.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.dll
@@ -158,6 +161,10 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.W
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.AI.WindowsServer.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.ApplicationInsights.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Newtonsoft.Json.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.Model.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.OutputFormatter.Json.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.ResumeProcessor.pdb
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Helpers.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Mvc.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Optimization.xml
@@ -166,7 +173,6 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Web
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.Deployment.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.WebPages.Razor.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Antlr3.Runtime.pdb
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Newtonsoft.Json.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Net.Http.Formatting.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\System.Web.Http.WebHost.xml
@@ -188,9 +194,3 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterDAL.p
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.Model.dll
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.OutputFormatter.Json.dll
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.ResumeProcessor.dll
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.Model.pdb
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.OutputFormatter.Json.pdb
-D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\Sharpenter.ResumeParser.ResumeProcessor.pdb
