@@ -12,6 +12,7 @@ using RecruiterBE.Requests;
 using RecruiterVille.CommonClasses;
 using RecruiterBAL;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace RecruiterVille.Controllers
 {
@@ -41,7 +42,17 @@ namespace RecruiterVille.Controllers
                     SearchJobViewResponse objresponse = new SearchJobViewResponse();
                     int jobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(param1));
                     objresponse = objSiteBal.SearchJobView(jobId);
+                    string companylogo = objresponse.CompanyLogo;
+
+                    if (string.IsNullOrEmpty(companylogo))
+                    {
+                        companylogo = "/images/logo.jpg";
+                    }
+
+                    objresponse.CompanyLogo = ConfigurationManager.AppSettings["WebsiteUrl"].ToString() + companylogo;
+
                     ViewBag.Response = objresponse;
+                    ViewBag.JobUrl = ConfigurationManager.AppSettings["WebsiteUrl"].ToString() + "/jobview/" + param1;
                     return View();
                 }
                 else

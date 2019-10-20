@@ -28,7 +28,10 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                Users <a href="/job/myjobs" class="btn btn-primary pull-right">Jobs List</a>
+                Job View <a href="/job/myjobs" class="btn btn-primary pull-right">Jobs List</a>
+                <a href="javascript:void(0)" onclick="shareonfacebook()" class="btn btn-success pull-right">Share on FaceBook</a>
+                <a href="javascript:void(0)" onclick="shareontwitter()" class="btn btn-danger pull-right">Share on Twitter</a>
+                <a href="javascript:void(0)" onclick="shareonlinkedin()" class="btn btn-info pull-right">Share on LinkedIn</a>
             </div>
 
             <input type="hidden" id="hiddenselectedjobid" value="@ViewBag.JobId" />

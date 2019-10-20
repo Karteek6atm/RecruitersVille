@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using RecruiterBE.Responses;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>RecruitersVille  </title>
+    
+    @if (ViewBag.Response != null)
+    {
+        SearchJobViewResponse jobdetails = ViewBag.Response;
+        <meta property="og:url" content="@ViewBag.JobUrl" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="@jobdetails.JobTitle" />
+        <meta property="og:description" content="@jobdetails.JobDescription" />
+        <meta property="og:image" content="@jobdetails.CompanyLogo" />
+        <meta property="fb:app_id" content="472213130043391" />
+    }
 
     @Styles.Render("~/content/sitelayout")
 
@@ -18,7 +31,7 @@
 
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
-   
+
 </head>
 <body>
 
@@ -60,7 +73,7 @@
                 <ul class="nav navbar-nav navbar-right topmenu">
                     <li class="active"><a href="/index.html"> Home</a></li>
                     <li><a href="/about.html"> About Us    </a></li>
-                    <li id="apackages" ><a href="/packages"> Price</a></li>
+                    <li id="apackages"><a href="/packages"> Price</a></li>
                     <li id="ajobs"><a href="/jobs"> Careers</a></li>
                     <li id="acontactus"><a href="/contactus"> Contact</a></li>
                 </ul>
@@ -70,7 +83,7 @@
     <!-- #Ends Navigation  -->
 
     <div>
-       @RenderBody()
+        @RenderBody()
     </div>
 
     <section class="footer">
