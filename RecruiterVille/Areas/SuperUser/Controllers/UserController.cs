@@ -148,7 +148,7 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
                 return View();
             }
         }
-        public ActionResult viewprofile(string param1)
+        public ActionResult profileview(string param1)
         {
             try
             {
@@ -160,6 +160,32 @@ namespace RecruiterVille.Areas.SuperUser.Controllers
                     ViewBag.RoleId = response.RoleId;
                     ViewBag.CompanyName = response.CompanyName;
                     ViewBag.ProfileId = param1;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        public ActionResult AdminJobview(string param1)
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    ViewBag.RoleId = response.RoleId;
+                    ViewBag.CompanyName = response.CompanyName;
+                    ViewBag.JobId = param1;
                     return View();
                 }
                 else

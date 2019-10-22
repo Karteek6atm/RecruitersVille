@@ -46,7 +46,7 @@
                                     '<td>' + data[i].CreatedBy + '<input type="hidden" id="hiddenCreatedById" value="' + data[i].CreatedById + '" /></td>' +
                                      '<td>' + data[i].ActiveStatus + '<input type="hidden" id="hfActiveStatusId" value="' + data[i].ActiveStatusId + '" /></td>' +
                                     '<td> ' + Actions + ' <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)"><i class="fa fa-trash-o"></i> Renew</a> &nbsp; <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)"><i class="fa fa-trash-o"></i> Upgrade</a> &nbsp; <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)"><i class="fa fa-trash-o"></i> Degrade</a>' +
-                                    ' &nbsp; <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)"><i class="fa fa-trash-o"></i> Assign Emails</a></td>');
+                                    ' &nbsp; <a href="javascript:void(0)" id="adeleteuser" onclick="deleteuser(this)"><i class="fa fa-trash-o"></i> Assign Emails</a>&nbsp;<a href="/SuperUser/user/profileview/' + data[i].EnProfileId + '" id="aviewprofile"><i class="fa fa-eye"></i> View</a></td>');
 
                         $('#tbodyProfilesList').append(tr);
                     }

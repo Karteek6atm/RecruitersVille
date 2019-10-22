@@ -420,7 +420,8 @@
     <Content Include="Areas\SuperUser\Views\User\ProfilesList.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\AdminJobsList.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\Index.cshtml" />
-    <Content Include="Areas\SuperUser\Views\User\viewprofile.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\profileview.cshtml" />
+    <Content Include="Areas\SuperUser\Views\User\AdminJobview.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

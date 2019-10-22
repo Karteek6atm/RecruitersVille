@@ -60,8 +60,8 @@ namespace RecruiterVille.Areas.SuperUser
 
             context.MapRoute(
                 "SuperUser_default",
-                "SuperUser/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                "SuperUser/{controller}/{action}/{param1}",
+                new { action = "Index", param1 = UrlParameter.Optional }
             );
         }
     }
