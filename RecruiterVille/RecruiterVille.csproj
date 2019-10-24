@@ -240,6 +240,7 @@
     <Content Include="app\css\bootstrap-theme.min.css" />
     <Content Include="app\css\bootstrap.css" />
     <Content Include="app\css\bootstrap.min.css" />
+    <Content Include="app\css\datatables.min.css" />
     <Content Include="app\css\datepicker.css" />
     <Content Include="app\css\datepicker3.css" />
     <Content Include="app\css\font-awesome.min.css" />
@@ -247,12 +248,18 @@
     <Content Include="app\css\styles-super.css" />
     <Content Include="app\css\styles.css" />
     <Content Include="app\images\login-bg.jpg" />
+    <Content Include="app\images\sort_asc.png" />
+    <Content Include="app\images\sort_asc_disabled.png" />
+    <Content Include="app\images\sort_both.png" />
+    <Content Include="app\images\sort_desc.png" />
+    <Content Include="app\images\sort_desc_disabled.png" />
     <Content Include="app\js\bootstrap-datepicker.js" />
     <Content Include="app\js\bootstrap.js" />
     <Content Include="app\js\bootstrap.min.js" />
     <Content Include="app\js\chart-data.js" />
     <Content Include="app\js\chart.min.js" />
     <Content Include="app\js\custom.js" />
+    <Content Include="app\js\datatables.min.js" />
     <Content Include="app\js\easypiechart-data.js" />
     <Content Include="app\js\easypiechart.js" />
     <Content Include="app\js\fSelect.js" />
