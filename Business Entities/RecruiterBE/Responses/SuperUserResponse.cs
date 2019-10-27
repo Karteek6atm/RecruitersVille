@@ -45,6 +45,8 @@ namespace RecruiterBE.Responses
     public class SuperUserProfiles
     {
         public int ProfileId { get; set; }
+        public string EnProfileId { get; set; }
+
         public int CompanyId { get; set; }
         public string CompanyName { get; set; }
         public string FirstName { get; set; }

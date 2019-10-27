@@ -102,6 +102,7 @@ namespace RecruiterBAL
                                         Select(x => new SuperUserProfiles
                                         {
                                             ProfileId = x.Field<int>("ProfileId"),
+                                            EnProfileId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("ProfileId"))),
                                             CompanyId = x.Field<int>("CompanyId"),
                                             CompanyName = x.Field<string>("CompanyName"),
                                             FirstName = x.Field<string>("FirstName"),

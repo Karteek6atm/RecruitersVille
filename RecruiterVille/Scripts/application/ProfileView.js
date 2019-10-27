@@ -15,7 +15,7 @@ function getProfileDetails() {
         dataType: "json",
         success: function (data) {
             if (data != null) {
-                $("#ProfileName").html(data.PersonalProfile.FullName + ' <a href="/profile/list" class="btn btn-primary pull-right">Profile List</a>');
+                $("#ProfileName").html(data.PersonalProfile.FullName + '');
                 $("#Email").html(data.PersonalProfile.EmailId);
                 $("#AlterNateEmail").html(data.PersonalProfile.AlternateEmailId);
                 if (data.PersonalProfile.AlternateMobileNumber != "")

@@ -54,7 +54,7 @@
                                     '<td>' + data[i].TechnologyNames + '</td>' +
                                     '<td><input type="hidden" id="hiddenjobstatusid" value="' + data[i].JobStatusId + '" />' + data[i].JobStatusName + '</td>' +
                                     '<td>' + SatusChange +
-                                    ' &nbsp; <a href="/job/viewjob/' + data[i].JobId + '" id="aviewjob"><i class="fa fa-eye"></i> View</a></td>');
+                                    ' &nbsp; <a href="/SuperUser/user/AdminJobview/' + data[i].JobId + '" id="aviewjob"><i class="fa fa-eye"></i> View</a></td>');
 
                         $('#tbodyJobsList').append(tr);
                     }
