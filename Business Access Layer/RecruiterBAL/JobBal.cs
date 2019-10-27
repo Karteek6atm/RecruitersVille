@@ -343,6 +343,45 @@ namespace RecruiterBAL
             return objresponse;
         }
 
+        public List<JobApplicationsResponse> GetJobApplications(string strjobid)
+        {
+            List<JobApplicationsResponse> objJobResponse = new List<JobApplicationsResponse>();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int jobid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strjobid));
+
+                dsData = _JobDal.GetJobApplications(jobid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        objJobResponse = dsData.Tables[0].AsEnumerable().
+                                        Select(x => new JobApplicationsResponse
+                                        {
+                                            ApplicationDate = x.Field<string>("ApplicationDate"),
+                                            ApplicationId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("ApplicationId"))),
+                                            ApplicationStatus = x.Field<string>("ApplicationStatus"),
+                                            ApplicationStatusId = x.Field<int>("ApplicationStatusId"),
+                                            ContactNumber = x.Field<string>("ContactNumber"),
+                                            EmailId = x.Field<string>("EmailId"),
+                                            FirstName = x.Field<string>("FirstName"),
+                                            LastName = x.Field<string>("LastName"),
+                                            ProfileId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("ProfileId"))),
+                                            ResumePath = x.Field<string>("ResumePath")
+                                        }).ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objJobResponse;
+        }
+
         #endregion
     }
 }

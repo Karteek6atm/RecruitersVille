@@ -11,3 +11,4 @@ D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.xml
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache

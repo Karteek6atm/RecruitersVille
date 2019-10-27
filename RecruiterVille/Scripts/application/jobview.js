@@ -102,3 +102,19 @@ function openapplyjobmodal() {
 
     $('#modalapplyjob').modal();
 }
+
+function shareonfacebook() {
+    var joburl = weburl + 'jobview/' + $('#hiddenjobid').val();
+    window.open('http://www.facebook.com/sharer.php?u=' + $.trim(joburl), 'sharer', 'toolbar=0, status=0, width=626, height=436'); return false;
+}
+
+function shareontwitter() {
+    var joburl = weburl + 'jobview/' + $('#hiddenjobid').val();
+    var jobtitle = $('#labeljobtitle').html();
+    window.open('http://twitter.com/share?text=' + $.trim(jobtitle) + '&url=' + $.trim(joburl), 'sharer', 'toolbar=0, status=0, width=626, height=436,name="twitter:image"'); return false;
+}
+
+function shareonlinkedin() {
+    var joburl = weburl + 'jobview/' + $('#hiddenjobid').val();
+    window.open('https://www.linkedin.com/cws/share?url=' + $.trim(joburl), 'sharer', 'toolbar=0, status=0, width=626, height=436'); return false;
+}
