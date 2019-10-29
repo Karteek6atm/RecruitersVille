@@ -479,6 +479,28 @@ namespace RecruiterDAL
             return objresponse;
         }
 
+        public DataSet GetJobApplications(int jobid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@JobId", SqlDbType.Int) { Value = jobid }
+                                        };
+            DataSet dsData = new DataSet();
+
+            try
+            {
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetJobApplications", sqlparams);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return dsData;
+        }
+
         #endregion
     }
 }

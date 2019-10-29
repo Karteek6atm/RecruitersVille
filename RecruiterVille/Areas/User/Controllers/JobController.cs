@@ -455,6 +455,21 @@ namespace RecruiterVille.Areas.User.Controllers
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult GetJobApplications(JobDetailsRequest request)
+        {
+            List<JobApplicationsResponse> objresponse = new List<JobApplicationsResponse>();
+            try
+            {
+                objresponse = _JobBal.GetJobApplications(request.strJobId);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
         #endregion
     }
 }

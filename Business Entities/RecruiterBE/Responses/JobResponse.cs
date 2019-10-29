@@ -29,7 +29,21 @@ namespace RecruiterBE.Responses
         public int JobStatusId { get; set; }
         public string JobStatusName { get; set; }
     }
-    
+
+    public class JobApplicationsResponse
+    {
+        public string ApplicationId { get; set; }
+        public string ProfileId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailId { get; set; }
+        public string ContactNumber { get; set; }
+        public string ResumePath { get; set; }
+        public int ApplicationStatusId { get; set; }
+        public string ApplicationStatus { get; set; }
+        public string ApplicationDate { get; set; }
+    }
+
     public class JobTemplateResponse
     {
         public string JobTemplateId { get; set; }
