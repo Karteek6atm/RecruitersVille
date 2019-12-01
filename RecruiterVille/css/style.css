@@ -170,11 +170,11 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   outl
 /* ---------------------------------- */
 /*            login navigation         */
 /* ---------------------------------- */
-.s-icon{color: #0089cb;background: #fff;font-size: 12px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px; text-align: center;}
-.s-icon2{color: #ffffff;font-size: 11px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px;background-color: #82c244;transition: all 0.1 ease;text-align: center;}
-.s-icon:hover{background-color: #82c244;transition: all 0.1 ease;}
-.navbar-inverse .navbar-nav>li>a{  padding: 4px 8px;margin:10px 0;border-radius: 30px;transition: all 0.3s ease-out;color: #595959;font-size: 17px;font-weight: 400; }
-.account-btn:hover{background-color: #82c244 !important;color:#fff !important;}
+.s-icon{padding: 5px;color: #0089cb;background: #fff;font-size: 12px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px; text-align: center;}
+.s-icon2{color: #ffffff;font-size: 11px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px; transition: all 0.1 ease;text-align: center;}
+.s-icon:hover{ transition: all 0.1 ease;}
+.navbar-inverse .navbar-nav>li>a{  padding:0px 5px;margin:10px 0;border-radius: 30px;transition: all 0.3s ease-out;color: #595959;font-size: 15px;font-weight: 400; }
+.account-btn:hover{ color:#fff !important;}
 .left-devider{  margin:0 0px 0 10px;}
 .navbar-inverse{z-index: 99999; background: #0089cb; border: 0;}
 .navbar-inverse .navbar-brand img{padding-top: 5px;}
@@ -1906,14 +1906,14 @@ left:-39px;
     min-height: 420px;
 }
 .pjo{background:url(../images/post-job.jpg) no-repeat !important}
-.fwr{background:url(../images/works-your.jpg) no-repeat !important; min-height: 450px !important;}
+.fwr{background:url(../images/works-your.jpg) no-repeat !important; min-height: 420px !important;}
 .vison-mins .col-lg-offset-6 {
     padding: 0 0 0 20px;
 }
 .product-wrap h5 {
     color: #131212;
     font-size: 32px;
-        padding-top: 70px;
+        padding-top:20px;
 }
 .product-wrap p  {
     line-height: 31px;
