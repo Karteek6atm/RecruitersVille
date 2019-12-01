@@ -43,6 +43,34 @@ namespace RecruiterDAL
             return dsData;
         }
 
+        public WebDashboardCount GetWebDashboardCount()
+        {
+            SqlDataReader reader = null;
+            WebDashboardCount response = new WebDashboardCount();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_GetWebDashboardCount");
+
+                while (reader.Read())
+                {
+                    response.Companies = (long)reader["Companies"];
+                    response.Jobs = (long)reader["Jobs"];
+                    response.Profiles = (long)reader["Profiles"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return response;
+        }
+        
         public DataSet SearchJobs(SearchJobRequest request)
         {
             SqlParameter[] sqlparams = {

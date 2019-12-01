@@ -27,7 +27,7 @@ namespace RecruiterBAL
             try
             {
                 DataSet dsData = new DataSet();
-                
+
                 int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
 
                 dsData = _VendorDal.GetMastersForVendors(companyid);
@@ -61,7 +61,7 @@ namespace RecruiterBAL
             try
             {
                 DataSet dsData = new DataSet();
-                
+
                 int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
 
                 dsData = _VendorDal.GetVendorsList(companyid);
@@ -141,6 +141,61 @@ namespace RecruiterBAL
                 CommonMethods.ErrorMessage(ex.Message);
             }
             return objresponse;
+        }
+
+        public SaveResponse InsertVendorUploads(int userLoginId, int companyId, string vendorFilePath, DataTable dtVendorUploads)
+        {
+            SaveResponse objVendorResponse = new SaveResponse();
+            VendorUploadSaveResponse objVendorUploadResponse = new VendorUploadSaveResponse();
+
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                dsData = _VendorDal.InsertVendorUploads(userLoginId, companyId, vendorFilePath, dtVendorUploads);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        if (dsData.Tables[0].Rows.Count > 0)
+                        {
+                            DataRow dr = dsData.Tables[0].Rows[0];
+
+                            objVendorResponse.StatusId = Convert.ToInt32(dr["StatusId"]);
+                            objVendorResponse.StatusMessage = Convert.ToString(dr["StatusMessage"]);
+
+                            objVendorUploadResponse.StatusId = Convert.ToInt32(dr["StatusId"]);
+                            objVendorUploadResponse.StatusMessage = Convert.ToString(dr["StatusMessage"]);
+                            objVendorUploadResponse.AdminName = Convert.ToString(dr["AdminName"]);
+                            objVendorUploadResponse.CompanyName = Convert.ToString(dr["CompanyName"]);
+                        }
+                        
+                        if (objVendorResponse.StatusId == 1)
+                        {
+                            if (dsData.Tables.Count > 1)
+                            {
+                                var vendors = dsData.Tables[1].AsEnumerable().
+                                       Select(x => new UploadedVendors
+                                       {
+                                           VendorName = x.Field<string>("VendorName"),
+                                           EmailId = x.Field<string>("EmailId")
+                                       }).ToList();
+
+                                //foreach (UploadedVendors vendor in vendors)
+                                //{
+                                //    SendEmail.SendUserCreationEmail(vendor.EmailId, vendor.VendorName, objVendorUploadResponse.AdminName, objVendorUploadResponse.CompanyName);
+                                //}
+                            }
+                        }                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objVendorResponse;
         }
 
         #endregion

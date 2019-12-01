@@ -207,6 +207,25 @@ function validateimage(obj) {
     }
 }
 
+function validateexcelfileformat(obj) {
+    $(obj).closest('.form-group').removeClass("has-success");
+    $(obj).closest('.form-group').removeClass("has-error");
+    var fileextensions = ['xls', 'xlsx', 'csv'];
+
+    if ($(obj).val().trim() == "") {
+        $(obj).closest('.form-group').addClass("has-error");
+        return false;
+    }
+    else if ($.inArray($(obj).val().trim().split('.').pop().toLowerCase(), fileextensions) == -1) {
+        $(obj).closest('.form-group').addClass("has-error");
+        return false;
+    }
+    else {
+        $(obj).closest('.form-group').addClass("has-success");
+        return true;
+    }
+}
+
 function validatedocument(obj) {
     $(obj).closest('.form-group').removeClass("has-success");
     $(obj).closest('.form-group').removeClass("has-error");

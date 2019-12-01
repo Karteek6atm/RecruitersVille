@@ -281,6 +281,20 @@ namespace RecruiterBE
 
         #region Send Email
 
+        //public static bool IsValidEmailId(string emailaddress)
+        //{
+        //    try
+        //    {
+        //        MailAddress m = new MailAddress(emailaddress);
+
+        //        return true;
+        //    }
+        //    catch (FormatException)
+        //    {
+        //        return false;
+        //    }
+        //}
+
         public static void SendEmail(string toEmailIds, string subject, string body)
         {
             try
@@ -505,7 +519,20 @@ namespace RecruiterBE
                 return true;
             }
         }
-        
+
+        public static bool IsPhoneNumber(string number)
+        {
+            if (number.Length == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            //return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+        }
+
         public static void SendMultipleEmail(string toEmailIds, string subject, string body)
         {
             try

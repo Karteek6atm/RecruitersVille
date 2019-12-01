@@ -94,6 +94,20 @@ namespace RecruiterBAL
             return objJobResponse;
         }
 
+        public WebDashboardCount GetWebDashboardCount()
+        {
+            WebDashboardCount objWebDashboardCount = new WebDashboardCount();
+            try
+            {
+                objWebDashboardCount = _SiteDal.GetWebDashboardCount();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objWebDashboardCount;
+        }
+
         public SearchJobViewResponse SearchJobView(int jobId)
         {
             SearchJobViewResponse objSearchJobViewResponse = new SearchJobViewResponse();

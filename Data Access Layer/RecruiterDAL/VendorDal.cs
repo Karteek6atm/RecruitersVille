@@ -186,6 +186,32 @@ namespace RecruiterDAL
             return objSaveResponse;
         }
 
+        public DataSet InsertVendorUploads(int userLoginId, int companyId, string vendorFilePath, DataTable dtVendorUploads)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@UserLoginId", SqlDbType.Int) { Value = userLoginId },
+                                            new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyId },
+                                            new SqlParameter("@VendorFilePath", SqlDbType.VarChar, -1) { Value = vendorFilePath },
+                                            new SqlParameter("@VendorUploads", SqlDbType.Structured) { Value = dtVendorUploads }
+                                        };
+
+            DataSet ds = new DataSet();
+
+            try
+            {
+                ds = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_InsertVendorUploads", sqlparams);                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return ds;
+        }
+
         #endregion
     }
 }

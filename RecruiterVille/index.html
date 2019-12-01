@@ -112,7 +112,7 @@
                                     <span class="fa fa-check"></span>
                                 </div>
                                 <div class="cmp-detail">
-                                    <h3>674.058</h3>
+                                    <h3 id="resumecount">16125</h3>
                                     <span>All Resume</span>
                                 </div>
                             </div>
@@ -124,8 +124,8 @@
                                     <span class="fa fa-check"></span>
                                 </div>
                                 <div class="cmp-detail">
-                                    <h3>674.058</h3>
-                                    <span>Total  Companies</span>
+                                    <h3 id="companycount">526</h3>
+                                    <span>Total Companies</span>
                                 </div>
                             </div>
                         </div>
@@ -136,8 +136,8 @@
                                     <span class="fa fa-check"></span>
                                 </div>
                                 <div class="cmp-detail">
-                                    <h3>674.058</h3>
-                                    <span>All Employees</span>
+                                    <h3 id="jobcount">1289</h3>
+                                    <span>Total Jobs</span>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,22 @@
     </div>
     <!-- #Ends Search Slider Carousel -->
  
+        <div class="container">
+            <div class="row ">
+                
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <h2 class="mb-sm word-rotator-title text-center">
+                        Latest Jobs
+                    </h2>
+                    <div class="right-side-doctors-list clearfix">
+                        <ul id="uljobs" class="flex-wrap">
 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
     <div class="container">
@@ -423,11 +438,19 @@
 <script src="js/jquery.validate.min.js"></script>
 <!-- custom script -->
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-
-    <script src="Scripts/application/index.js"></script>
+    
+    <script src="Scripts/application/common.js" type="text/javascript"></script>
+    <script src="Scripts/application/index.js" type="text/javascript"></script>
 
 <!-- Owl Carousel Assets -->
 <script src="js/owl.carousel.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            getcount();
+            getjobs();
+        })
+    </script>
+
     <script>
    $('.owl-carousel').owlCarousel({
     loop:true,

@@ -197,7 +197,7 @@ function savevendordetails() {
     var textvendorlandmark = $("#textvendorlandmark");
     var textdescription = $("#textdescription");
     var selecttechnologies = $("#selecttechnologies");
-    
+
     var isvalid = true;
     var isemployer = false;
     //var technologies = getmultiselectedvalues(selecttechnologies);
@@ -250,7 +250,7 @@ function savevendordetails() {
             Zipcode: textvendorzipcode.val().trim(),
             Technologies: selecttechnologies.val().trim()
         };
-        
+
         $.ajax({
             type: "POST",
             data: (input),
@@ -311,5 +311,166 @@ function deletevendorconfirm() {
                 showerroralert(xhr.responseText);
             }
         });
+    }
+}
+
+var importedvendors = [];
+
+function uploadvendorsfile() {
+    var filevendorfile = $('#filevendorfile');
+    importedvendors = [];
+
+    if (validateexcelfileformat(filevendorfile) == false) {
+        return false;
+    }
+    else {
+        var formdata = new FormData();
+        var file = document.getElementById('filevendorfile').files[0]
+        if (formdata) {
+            $('#tbodyimportedvendors tr').remove();
+            formdata.append("file", file);
+            $.ajax({
+                url: "/recruiter/uploadvendors",
+                type: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#hiddenvendorfile').val(data[0].FilePath);
+                        
+                        for (var i = 0; i < data.length; i++) {
+                            var tr = $('<tr />');
+
+                            var isvalidrecord = 'No';
+                            var isemployer = false;
+
+                            if (data[i].IsValid) {
+                                isvalidrecord = 'Yes';
+                            }
+                            if (data[i].IsEmployer.trim() == "yes" || data[i].IsEmployer.trim() == "Yes") {
+                                isemployer = true;
+                            }
+
+                            $(tr).append('<td><span id="sno">' + data[i].Sno + '</span></td>' +
+                                        '<td><span id="isvalid" style="display:none;">' + data[i].IsValid + '</span>' + isvalidrecord + '</td>' +
+                                        '<td><span id="vendorname">' + data[i].VendorName + '</span></td>' +
+                                        '<td><span id="emailid">' + data[i].EmailId + '</span></td>' +
+                                        '<td><span id="contactnumber">' + data[i].ContactNumber + '</span></td>' +
+                                        '<td><span id="isemployer"style="display:none;">' + isemployer + '</span>' + data[i].IsEmployer + '</td>' +
+                                        '<td><span id="technologies">' + data[i].Technologies + '</span></td>' +
+                                        '<td><span id="street">' + data[i].Street + '</span></td>' +
+                                        '<td><span id="landmark">' + data[i].Landmark + '</span></td>' +
+                                        '<td><span id="city">' + data[i].City + '</span></td>' +
+                                        '<td><span id="state">' + data[i].State + '</span></td>' +
+                                        '<td><span id="country">' + data[i].Country + '</span></td>' +
+                                        '<td><span id="zipcode">' + data[i].Zipcode + '</span></td>' +
+                                        '<td><span id="comments">' + data[i].Comments + '</span></td>');
+                            $('#tbodyimportedvendors').append(tr);
+
+                            importedvendors.push({
+                                Sno : data[i].Sno,
+                                VendorName : data[i].VendorName,
+                                EmailId : data[i].EmailId,
+                                ContactNumber : data[i].ContactNumber,
+                                IsEmployer : isemployer,
+                                Technologies : data[i].Technologies,
+                                Street : data[i].Street,
+                                Landmark : data[i].Landmark,
+                                City : data[i].City,
+                                State : data[i].State,
+                                Country : data[i].Country,
+                                Zipcode : data[i].Zipcode,
+                                IsValid: data[i].IsValid,
+                                Comments : data[i].Comments
+                            });
+                        }
+
+                        $('#tableimportedvendors').DataTable();
+
+                        $('#divimporteddata').css("display", "block");
+                        $('#btnuploadnewfile').css("display", "inline-block");
+                        $('#btnuploadproceed').css("display", "inline-block");
+                        $('#divimportfile').css("display", "none");
+                        $('#btnuploadfile').css("display", "none");
+                    }
+                    else {
+                        var tr = $('<tr />');
+                        $(tr).append('<td colspan="14">No data found.</td>');
+                        $('#tbodyvendors').append(tr);
+                    }
+                },
+                error: function (xhr) {
+                    hideloading();
+                    showerroralert(xhr.responseText);
+                }
+            });
+        }
+    }
+}
+
+function openimportpopup() {
+    $('#hiddenvendorfile').val('');
+    $('#filevendorfile').val('');
+
+    $('#divimporteddata').css("display", "none");
+    $('#btnuploadnewfile').css("display", "none");
+    $('#btnuploadproceed').css("display", "none");
+    $('#divimportfile').css("display", "block");
+    $('#btnuploadfile').css("display", "inline-block");
+
+    $('#modalimportvendors').modal();
+}
+
+function uploadnewfile() {
+    $('#hiddenvendorfile').val('');
+    $('#filevendorfile').val('');
+
+    $('#divimporteddata').css("display", "none");
+    $('#btnuploadnewfile').css("display", "none");
+    $('#btnuploadproceed').css("display", "none");
+    $('#divimportfile').css("display", "block");
+    $('#btnuploadfile').css("display", "inline-block");
+}
+
+function proceeduploadvendorsfile() {
+    hideallalerts();
+    var vendorfile = $("#hiddenvendorfile").val();
+
+    if (vendorfile != "" && importedvendors.length > 0) {
+        showloading();
+
+        var input = [];
+        input = {
+            FilePath: vendorfile,
+            ImportedVendors: importedvendors
+        };
+
+        $.ajax({
+            type: "POST",
+            data: (input),
+            url: "/recruiter/insertvendoruploads",
+            dataType: "json",
+            success: function (data) {
+                if (data.StatusId == 1) {
+                    showsuccessalert(data.StatusMessage);
+                    $("#hiddenvendorfile").val('');
+                    $('#closemodalimportvendors').click();
+                    getvendorslist();
+                }
+                else {
+                    showwarningalert(data.StatusMessage);
+                }
+                hideloading();
+            },
+            error: function (xhr) {
+                hideloading();
+                showerroralert(xhr.responseText);
+            }
+        });
+    }
+    else {
+        return false;
     }
 }

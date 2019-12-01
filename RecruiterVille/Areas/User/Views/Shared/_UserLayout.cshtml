@@ -58,7 +58,10 @@
                     @if (response.RoleId == 1)
                     {
                         @*<li><a href="/user/permissions"><em class="fa fa-cog">&nbsp;</em> Roles & Permissions</a></li>*@
-                        <li><a href="/user/users"><em class="fa fa-bar-chart">&nbsp;</em> Users</a></li>
+                        if (response.PackageId == 4)
+                        {
+                            <li><a href="/user/users"><em class="fa fa-bar-chart">&nbsp;</em> Users</a></li>
+                        }
                         <li><a href="/user/vendors"><em class="fa fa-clone">&nbsp;</em> Vendors</a></li>
                     }
                     <li><a href="/job/jobtemplates"><em class="fa fa-briefcase">&nbsp;</em> Job Templates</a></li>

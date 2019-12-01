@@ -19,10 +19,10 @@ namespace RecruiterVille.Controllers
     {
         #region Members
 
-        LoginBal _LoginBal = new LoginBal();        
-        PackagesBal _PackagesBal = new PackagesBal();        
+        LoginBal _LoginBal = new LoginBal();
+        PackagesBal _PackagesBal = new PackagesBal();
         ManageSessions objManageSessions = new ManageSessions();
-        
+
         #endregion
 
         #region Views 
@@ -44,6 +44,11 @@ namespace RecruiterVille.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult error()
+        {
+            return View();
         }
 
         public ActionResult register(string param1)
@@ -286,7 +291,7 @@ namespace RecruiterVille.Controllers
             }
             catch (Exception ex)
             {
-               
+
             }
             return Json(objPackagesList);
         }
