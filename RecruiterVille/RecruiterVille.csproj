@@ -378,6 +378,7 @@
     <Content Include="Scripts\application\SuperUserProfileList.js" />
     <Content Include="Scripts\application\users.js" />
     <Content Include="Scripts\application\vendors.js" />
+    <Content Include="Scripts\application\vendoruploads.js" />
     <Content Include="Scripts\application\viewjob.js" />
     <Content Include="Scripts\application\viewjobtemplate.js" />
     <Content Include="Scripts\application\viewprofile.js" />
@@ -441,6 +442,7 @@
     <Content Include="Areas\SuperUser\Views\User\Index.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\profileview.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\AdminJobview.cshtml" />
+    <Content Include="Areas\User\Views\Recruiter\vendoruploads.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

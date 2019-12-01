@@ -174,6 +174,28 @@ namespace RecruiterVille.Areas.User.Controllers
             }
         }
 
+        public ActionResult vendoruploads()
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         #endregion
 
         #region Actions 
@@ -794,6 +816,25 @@ namespace RecruiterVille.Areas.User.Controllers
                     }
 
                     objresponse = _VendorBal.InsertVendorUploads(userLoginId, companyId, vendorFilePath, dtVendorUploads);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetVendorUploadsList()
+        {
+            List<ImportedVendorsResponse> objresponse = new List<ImportedVendorsResponse>();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objresponse = _VendorBal.GetVendorUploadsList(response.CompanyId);
                 }
             }
             catch (Exception ex)

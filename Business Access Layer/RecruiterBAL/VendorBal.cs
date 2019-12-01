@@ -198,6 +198,42 @@ namespace RecruiterBAL
             return objVendorResponse;
         }
 
+        public List<ImportedVendorsResponse> GetVendorUploadsList(string strcompanyid)
+        {
+            List<ImportedVendorsResponse> objVendorResponse = new List<ImportedVendorsResponse>();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
+
+                dsData = _VendorDal.GetVendorUploadsList(companyid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        objVendorResponse = dsData.Tables[0].AsEnumerable().
+                                        Select(x => new ImportedVendorsResponse
+                                        {
+                                            FilePath = x.Field<string>("FilePath"),
+                                            InvalidRecords = x.Field<int>("InvalidRecords"),
+                                            TotalRecords = x.Field<int>("TotalRecords"),
+                                            ValidRecords = x.Field<int>("ValidRecords"),
+                                            UploadedBy = x.Field<string>("UploadedBy"),
+                                            UploadedDate = x.Field<string>("UploadedDate"),
+                                            VendorUploadId = x.Field<int>("VendorUploadId")
+                                        }).ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objVendorResponse;
+        }
+
         #endregion
     }
 }

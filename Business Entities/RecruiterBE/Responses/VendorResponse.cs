@@ -67,4 +67,15 @@ namespace RecruiterBE.Responses
         public string VendorName { get; set; }
         public string EmailId { get; set; }
     }
+
+    public class ImportedVendorsResponse
+    {
+        public int VendorUploadId { get; set; }
+        public string FilePath { get; set; }
+        public int TotalRecords { get; set; }
+        public int ValidRecords { get; set; }
+        public int InvalidRecords { get; set; }
+        public string UploadedBy { get; set; }
+        public string UploadedDate { get; set; }
+    }
 }

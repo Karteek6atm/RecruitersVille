@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/images/fevicon.png" sizes="16x16" type="text/png">
     @Styles.Render("~/content/login")
 
-    
+
 </head>
 <body class="log-bg">
     <div class="container">
@@ -22,23 +22,34 @@
                     </div>
                 </div>
                 <div class="login-panel panel panel-default login" id="divlogin">
-               
+
                     <div class="panel-body">
                         <h4>Log in </h4>
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="EmailId" id="textemailid" name="email" type="text" onblur="validateemailid(this)">
+                                    <input class="form-control" value="@ViewBag.EmailId" placeholder="EmailId" id="textemailid" name="email" type="text" onblur="validateemailid(this)">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" id="textpassword" name="password" type="password" onblur="validatetextbox(this)">
+                                    <input class="form-control" value="@ViewBag.Password" placeholder="Password" id="textpassword" name="password" type="password" onblur="validatetextbox(this)">
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" id="checkremember" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
-                                <a href="javascript:void(0)" class="btn btn-primary" onclick="UserLogin()">Login</a>
+                                @if (ViewBag.EmailId != "" && ViewBag.Password != "")
+                                {
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" checked="checked" type="checkbox" id="checkremember" value="Remember Me">Remember Me
+                                        </label>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" id="checkremember" value="Remember Me">Remember Me
+                                        </label>
+                                    </div>
+                                }
+                                <a href="javascript:void(0)" id="btnlogin" class="btn btn-primary" onclick="UserLogin()">Login</a>
                                 <h5><a href="javascript:void(0)" onclick="OpenForgotPassword()">Forgot your password?</a></h5>
                                 <p>Don't you have an account ?? <a href="/register">Sign up</a></p>
                             </fieldset>
@@ -46,7 +57,7 @@
                     </div>
                 </div>
                 <div class="login-panel panel panel-default login" id="divforgotpwd" style="display:none;">
-                 
+
                     <div class="panel-body">
                         <h4>Forgot Password</h4>
                         <fieldset>
@@ -59,7 +70,7 @@
                     </div>
                 </div>
                 <div class="login-panel panel panel-default login" id="divresetpassword" style="display:none;">
-                 
+
                     <div class="panel-body">
                         <h4>Reset Password</h4>
                         <fieldset>
@@ -82,5 +93,24 @@
         </div><!-- /.row -->
     </div>
     @Scripts.Render("~/bundles/login")
+    <script type="text/javascript">
+        (function ($) {
+            var textemailid = document.getElementById("textemailid");
+            var textpassword = document.getElementById("textpassword");
+
+            textemailid.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("btnlogin").click();
+                }
+            });
+            textpassword.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("btnlogin").click();
+                }
+            });
+        })(jQuery);
+    </script>
 </body>
 </html>

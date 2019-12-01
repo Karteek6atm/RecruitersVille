@@ -212,6 +212,28 @@ namespace RecruiterDAL
             return ds;
         }
 
+        public DataSet GetVendorUploadsList(int companyid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
+                                        };
+            DataSet dsData = new DataSet();
+
+            try
+            {
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetVendorUploadsList", sqlparams);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return dsData;
+        }
+
         #endregion
     }
 }
