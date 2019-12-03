@@ -170,7 +170,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   outl
 /* ---------------------------------- */
 /*            login navigation         */
 /* ---------------------------------- */
-.s-icon{padding: 5px;color: #0089cb;background: #fff;font-size: 12px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px; text-align: center;}
+.s-icon{color: #0089cb;background: #fff;font-size: 12px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px; text-align: center;}
 .s-icon2{color: #ffffff;font-size: 11px;font-weight: 400;width: 24px;height: 24px;border-radius: 50%;line-height: 24px; transition: all 0.1 ease;text-align: center;}
 .s-icon:hover{ transition: all 0.1 ease;}
 .navbar-inverse .navbar-nav>li>a{  padding:0px 5px;margin:10px 0;border-radius: 30px;transition: all 0.3s ease-out;color: #595959;font-size: 15px;font-weight: 400; }
