@@ -375,6 +375,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="terms-conditions.html" />
     <Content Include="UploadedFiles\ErrorLogs\ErrorMessages.txt" />
     <Content Include="app\widgets.html" />
     <Content Include="Areas\User\Views\web.config" />
