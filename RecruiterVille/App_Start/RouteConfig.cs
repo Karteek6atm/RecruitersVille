@@ -25,7 +25,18 @@ namespace RecruiterVille
                }
            );
 
-           routes.MapRoute(
+            routes.MapRoute(
+               name: "error",
+               url: "error/{param1}",
+               defaults: new
+               {
+                   controller = "account",
+                   action = "error",
+                   param1 = UrlParameter.Optional
+               }
+           );
+
+            routes.MapRoute(
                name: "register",
                url: "register/{param1}",
                defaults: new

@@ -53,4 +53,29 @@ namespace RecruiterBE.Responses
         public string AdminName { get; set; }
         public string CompanyName { get; set; }
     }
+
+    public class VendorUploadSaveResponse
+    {
+        public int StatusId { get; set; }
+        public string StatusMessage { get; set; }
+        public string AdminName { get; set; }
+        public string CompanyName { get; set; }
+    }
+
+    public class UploadedVendors
+    {
+        public string VendorName { get; set; }
+        public string EmailId { get; set; }
+    }
+
+    public class ImportedVendorsResponse
+    {
+        public int VendorUploadId { get; set; }
+        public string FilePath { get; set; }
+        public int TotalRecords { get; set; }
+        public int ValidRecords { get; set; }
+        public int InvalidRecords { get; set; }
+        public string UploadedBy { get; set; }
+        public string UploadedDate { get; set; }
+    }
 }

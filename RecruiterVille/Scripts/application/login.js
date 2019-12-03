@@ -2,7 +2,7 @@
     hideallalerts();
     var textemailid = $("#textemailid");
     var textpassword = $("#textpassword");
-    var checkremember = $("#checkremember");
+    var checkremember = $("#checkremember")[0].checked;
 
     var isvalid = true;
 
@@ -20,7 +20,7 @@
         logindetails = {
             username: textemailid.val().trim(),
             password: textpassword.val().trim(),
-            isremember: checkremember.checked,
+            isremember: checkremember,
             isfromlogin: true
         };
 

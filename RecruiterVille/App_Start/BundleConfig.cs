@@ -140,6 +140,11 @@ namespace RecruiterVille
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/vendors.js"));
 
+            //Vendor Upload Section
+            bundles.Add(new ScriptBundle("~/bundles/vendoruploads").Include(
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/vendoruploads.js"));
+
             //myjobs Section
             bundles.Add(new StyleBundle("~/content/myjobs").Include(
                       "~/app/css/fSelect.css"));

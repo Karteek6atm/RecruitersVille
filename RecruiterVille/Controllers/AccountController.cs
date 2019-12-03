@@ -19,10 +19,10 @@ namespace RecruiterVille.Controllers
     {
         #region Members
 
-        LoginBal _LoginBal = new LoginBal();        
-        PackagesBal _PackagesBal = new PackagesBal();        
+        LoginBal _LoginBal = new LoginBal();
+        PackagesBal _PackagesBal = new PackagesBal();
         ManageSessions objManageSessions = new ManageSessions();
-        
+
         #endregion
 
         #region Views 
@@ -33,6 +33,20 @@ namespace RecruiterVille.Controllers
             {
                 if (Session["UserLogin"] == null)
                 {
+                    string emailid = string.Empty;
+                    string password = string.Empty;
+
+                    if (Request.Cookies["EmailId"] != null)
+                    {
+                        emailid = Request.Cookies["EmailId"].Value;
+                    }
+                    if (Request.Cookies["Password"] != null)
+                    {
+                        password = Request.Cookies["Password"].Value;
+                    }
+                    
+                    ViewBag.EmailId = emailid;
+                    ViewBag.Password = password;
                     return View();
                 }
                 else
@@ -44,6 +58,11 @@ namespace RecruiterVille.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult error()
+        {
+            return View();
         }
 
         public ActionResult register(string param1)
@@ -107,15 +126,15 @@ namespace RecruiterVille.Controllers
                     {
                         if (objuserlogin.isremember)
                         {
-                            HttpCookie cookie = new HttpCookie("Login");
-                            cookie.Values.Add("EmailId", objuserlogin.username);
-                            cookie.Values.Add("Password", objuserlogin.password);
-                            cookie.Expires = DateTime.Now.AddDays(15);
-                            Response.Cookies.Add(cookie);
+                            Response.Cookies["EmailId"].Value = objuserlogin.username;
+                            Response.Cookies["Password"].Value = objuserlogin.password;
+                            Response.Cookies["EmailId"].Expires = DateTime.Now.AddDays(15);
+                            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(15);
                         }
                         else
                         {
-                            Response.Cookies["Login"].Expires = DateTime.Now.AddDays(-1);
+                            Response.Cookies["EmailId"].Expires = DateTime.Now.AddDays(-1);
+                            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
                         }
                     }
                 }
@@ -286,7 +305,7 @@ namespace RecruiterVille.Controllers
             }
             catch (Exception ex)
             {
-               
+
             }
             return Json(objPackagesList);
         }

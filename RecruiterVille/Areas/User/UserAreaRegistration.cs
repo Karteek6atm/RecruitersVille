@@ -202,6 +202,17 @@ namespace RecruiterVille.Areas.User
             );
 
             context.MapRoute(
+                name: "vendoruploads",
+                url: "user/vendoruploads/{param1}",
+                defaults: new
+                {
+                    controller = "recruiter",
+                    action = "vendoruploads",
+                    param1 = UrlParameter.Optional
+                }
+            );
+
+            context.MapRoute(
                 "User_default",
                 "User/{controller}/{action}/{param1}",
                 new { controller = "company", action = "dashboard", param1 = UrlParameter.Optional }

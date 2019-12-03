@@ -11,6 +11,13 @@ namespace RecruiterBE.Responses
 
     }
 
+    public class WebDashboardCount
+    {
+        public long Profiles { get; set; }
+        public long Companies { get; set; }
+        public long Jobs { get; set; }
+    }
+
     public class SearchJobsListResponse
     {
         public int SNo { get; set; }

@@ -25,4 +25,28 @@ namespace RecruiterBE.Requests
         public string Zipcode { get; set; }
         public string Technologies { get; set; }
     }
+
+    public class VendorUploadSaveRequest
+    {
+        public string FilePath { get; set; }
+        public List<ImportedVendorsRequest> ImportedVendors { get; set; }
+    }
+
+    public class ImportedVendorsRequest
+    {
+        public int Sno { get; set; }
+        public string VendorName { get; set; }
+        public string EmailId { get; set; }
+        public string ContactNumber { get; set; }
+        public bool IsEmployer { get; set; }
+        public string Technologies { get; set; }
+        public string Street { get; set; }
+        public string Landmark { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+        public string Zipcode { get; set; }
+        public string IsValid { get; set; }
+        public string Comments { get; set; }
+    }
 }

@@ -194,3 +194,5 @@ E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\RecruiterVille\bin\R
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\RecruiterVille\obj\Debug\RecruiterVille.dll
 E:\works\Personal Works\Recruitersville\RecruitersVille_Dev\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\DocumentFormat.OpenXml.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\DocumentFormat.OpenXml.xml
