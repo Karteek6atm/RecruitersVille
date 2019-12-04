@@ -24,9 +24,6 @@
     });
 }
 
-var pagenumber = 1;
-var pagesize = 10;
-
 function searchJobs() {
     showloading();
     var skills = $('#textskills');
@@ -36,8 +33,8 @@ function searchJobs() {
     input = {
         Skills: skills.val().trim(),
         Location: location.val().trim(),
-        PageNumber: pagenumber,
-        PageSize: pagesize
+        PageNumber: 1,
+        PageSize: 100
     }
 
     $.ajax({
