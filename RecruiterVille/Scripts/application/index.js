@@ -124,9 +124,6 @@
 //    output.innerHTML = Base64.decode($str);
 //}
 
-var pagenumber = 1;
-var pagesize = 6;
-
 function getjobs() {
     showloading();
 
@@ -134,8 +131,8 @@ function getjobs() {
     input = {
         Skills: "",
         Location: "",
-        PageNumber: pagenumber,
-        PageSize: pagesize
+        PageNumber: 1,
+        PageSize: 6
     }
 
     $.ajax({
