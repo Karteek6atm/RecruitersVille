@@ -772,6 +772,17 @@ a.label:hover, a.label:focus {
   padding: 10px 0 0 0;
   margin: 10px 10px 20px 10px; }
 .modal-title{float:left}
+.gmail .checkbox{display:inline}
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 768px) {
   .sidebar {
     display: block;
