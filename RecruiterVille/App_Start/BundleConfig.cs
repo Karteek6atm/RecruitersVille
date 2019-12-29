@@ -217,6 +217,11 @@ namespace RecruiterVille
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/myprofiles.js"));
 
+            //Profile Upload Section
+            bundles.Add(new ScriptBundle("~/bundles/profileuploads").Include(
+                      "~/Scripts/application/common.js",
+                      "~/Scripts/application/profileuploads.js"));
+            
             //editprofile Section
             bundles.Add(new StyleBundle("~/content/editprofile").Include(
                       "~/app/css/fSelect.css"));

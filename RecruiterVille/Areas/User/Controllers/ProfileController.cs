@@ -11,6 +11,8 @@ using System.Data;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace RecruiterVille.Areas.User.Controllers
 {
@@ -136,6 +138,28 @@ namespace RecruiterVille.Areas.User.Controllers
             }
         }
 
+        public ActionResult profileuploads()
+        {
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    ViewBag.LoginId = response.UserLoginId;
+                    ViewBag.CompanyId = response.CompanyId;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         [HttpPost]
         public JsonResult UploadResume(HttpPostedFileBase file)
         {
@@ -216,6 +240,7 @@ namespace RecruiterVille.Areas.User.Controllers
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public JsonResult GetProfileViewDetails(ProfileViewRequest request)
         {
@@ -234,6 +259,7 @@ namespace RecruiterVille.Areas.User.Controllers
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public JsonResult InsertAndUpdateProfileDetails(ProfileSaveRequest objrequest)
         {
@@ -312,6 +338,275 @@ namespace RecruiterVille.Areas.User.Controllers
                 {
                     request.ProfileId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(request.strProfileId));
                     objresponse = _ResumeBal.GetProfileDetailsById(request.ProfileId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult UploadProfiles(HttpPostedFileBase file)
+        {
+            List<ProfileUploadResponse> objresponse = new List<ProfileUploadResponse>();
+
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        var originalFilename = Path.GetFileNameWithoutExtension(file.FileName);
+                        var fileextension = Path.GetExtension(file.FileName);
+                        string strFileName = DateTime.Now.ToString("MM-dd-yyyy_HHmmss");
+                        string filepath = ConfigurationManager.AppSettings["ProfileUploads"].ToString() + originalFilename + "_" + strFileName + fileextension;
+
+                        var path = Server.MapPath(filepath);
+                        file.SaveAs(path);
+
+                        LoginResponse response = (LoginResponse)Session["UserLogin"];
+                        int userloginid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+
+                        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(path, false))
+                        {
+                            //Read the first Sheet from Excel file.
+                            Sheet sheet = doc.WorkbookPart.Workbook.Sheets.GetFirstChild<Sheet>();
+                            //Get the Worksheet instance.
+                            Worksheet worksheet = (doc.WorkbookPart.GetPartById(sheet.Id.Value) as WorksheetPart).Worksheet;
+                            //Fetch all the rows present in the Worksheet.
+                            IEnumerable<Row> rows = worksheet.GetFirstChild<SheetData>().Descendants<Row>();
+                            //Loop through the Worksheet rows.
+
+                            uint snoindex = 0;
+                            uint firstnameindex = 0;
+                            uint lastnameindex = 0;
+                            uint emailidindex = 0;
+                            uint contactnumberindex = 0;
+                            uint experienceindex = 0;
+                            uint locationindex = 0;
+                            uint skillsindex = 0;
+                            uint aboutprofileindex = 0;
+
+                            foreach (Row row in rows)
+                            {
+                                //Use the first row to add columns to DataTable.
+                                if (row.RowIndex.Value == 1)
+                                {
+                                    uint index = 1;
+
+                                    foreach (Cell cell in row.Descendants<Cell>())
+                                    {
+                                        string value = objManageSessions.GetValue(doc, cell);
+                                                    
+
+                                        if (value.Replace(" ", string.Empty).ToLower() == "sno")
+                                        {
+                                            snoindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "firstname")
+                                        {
+                                            firstnameindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "lastname")
+                                        {
+                                            lastnameindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "emailid")
+                                        {
+                                            emailidindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "contactnumber")
+                                        {
+                                            contactnumberindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "experience")
+                                        {
+                                            experienceindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "location")
+                                        {
+                                            locationindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "skills")
+                                        {
+                                            skillsindex = index;
+                                        }
+                                        else if (value.Replace(" ", string.Empty).ToLower() == "aboutprofile")
+                                        {
+                                            aboutprofileindex = index;
+                                        }
+
+                                        index++;
+                                    }
+                                }
+                                else
+                                {
+                                    ProfileUploadResponse upload = new ProfileUploadResponse();
+
+                                    int i = 0;
+                                    bool isValid = true;
+                                    string comments = string.Empty;
+                                    uint index = 1;
+
+                                    foreach (Cell cell in row.Descendants<Cell>())
+                                    {
+                                        string value = objManageSessions.GetValue(doc, cell);
+
+                                        if (snoindex == index)
+                                        {
+                                            upload.Sno = value;
+                                        }
+                                        else if (firstnameindex == index)
+                                        {
+                                            upload.FirstName = value;
+                                            if (string.IsNullOrEmpty(value))
+                                            {
+                                                isValid = false;
+                                                comments = (string.IsNullOrEmpty(comments)) ? "First name should not be empty" : comments + ", First name should not be empty";
+                                            }
+                                        }
+                                        else if (lastnameindex == index)
+                                        {
+                                            upload.LastName = value;
+                                            if (string.IsNullOrEmpty(value))
+                                            {
+                                                isValid = false;
+                                                comments = (string.IsNullOrEmpty(comments)) ? "Last name should not be empty" : comments + ", Last name should not be empty";
+                                            }
+                                        }
+                                        else if (emailidindex == index)
+                                        {
+                                            upload.EmailId = value;
+                                            if (string.IsNullOrEmpty(value))
+                                            {
+                                                isValid = false;
+                                                comments = (string.IsNullOrEmpty(comments)) ? "EmailId should not be empty" : comments + ", EmailId should not be empty";
+                                            }
+                                            else if (!CommonMethods.IsValidEmailId(value))
+                                            {
+                                                isValid = false;
+                                                comments = (string.IsNullOrEmpty(comments)) ? "Invalid emailid" : comments + ", Invalid emailid";
+                                            }
+                                        }
+                                        else if (contactnumberindex == index)
+                                        {
+                                            upload.ContactNumber = value;
+                                            if (string.IsNullOrEmpty(value))
+                                            {
+                                                isValid = false;
+                                                comments = (string.IsNullOrEmpty(comments)) ? "Contact number should not be empty" : comments + ", Contact number should not be empty";
+                                            }
+                                            else if (!CommonMethods.IsPhoneNumber(value))
+                                            {
+                                                isValid = false;
+                                                comments = (string.IsNullOrEmpty(comments)) ? "Invalid contact number" : comments + ", Invalid contact number";
+                                            }
+                                        }
+                                        else if (experienceindex == index)
+                                        {
+                                            upload.Experience = value;
+                                        }
+                                        else if (locationindex == index)
+                                        {
+                                            upload.Location = value;
+                                        }
+                                        else if (skillsindex == index)
+                                        {
+                                            upload.Skills = value;
+                                        }
+                                        else if (aboutprofileindex == index)
+                                        {
+                                            upload.AboutProfile = value;
+                                        }
+                                        i++;
+                                        index++;
+                                    }
+                                    upload.IsValid = isValid;
+                                    upload.Comments = comments;
+                                    upload.FilePath = filepath;
+
+                                    objresponse.Add(upload);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult InsertProfileUploads(ProfileUploadSaveRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    int userLoginId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.UserLoginId));
+                    int companyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+                    string profileFilePath = objrequest.FilePath;
+
+                    DataTable dtProfileUploads = new DataTable();
+
+                    dtProfileUploads.Columns.Add("Sno", typeof(int));
+                    dtProfileUploads.Columns.Add("FirstName", typeof(string));
+                    dtProfileUploads.Columns.Add("LastName", typeof(string));
+                    dtProfileUploads.Columns.Add("EmailId", typeof(string));
+                    dtProfileUploads.Columns.Add("ContactNumber", typeof(string));
+                    dtProfileUploads.Columns.Add("Location", typeof(string));
+                    dtProfileUploads.Columns.Add("Experience", typeof(string));
+                    dtProfileUploads.Columns.Add("Skills", typeof(string));
+                    dtProfileUploads.Columns.Add("AboutProfile", typeof(string));
+                    dtProfileUploads.Columns.Add("IsValid", typeof(bool));
+                    dtProfileUploads.Columns.Add("Comments", typeof(string));
+                    
+                    foreach (ImportedProfilesRequest profile in objrequest.ImportedProfiles)
+                    {
+                        DataRow dr = dtProfileUploads.NewRow();
+
+                        dr["Sno"] = profile.Sno;
+                        dr["FirstName"] = profile.FirstName;
+                        dr["LastName"] = profile.LastName;
+                        dr["EmailId"] = profile.EmailId;
+                        dr["ContactNumber"] = profile.ContactNumber;
+                        dr["Location"] = profile.Location;
+                        dr["Experience"] = profile.Experience;
+                        dr["Skills"] = profile.Skills;
+                        dr["AboutProfile"] = profile.AboutProfile;
+                        dr["IsValid"] = profile.IsValid;
+                        dr["Comments"] = profile.Comments;
+
+                        dtProfileUploads.Rows.Add(dr);
+                    }
+
+                    objresponse = _ProfileBal.InsertProfileUploads(userLoginId, companyId, profileFilePath, dtProfileUploads);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetProfileUploadsList()
+        {
+            List<ImportedProfilesResponse> objresponse = new List<ImportedProfilesResponse>();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    objresponse = _ProfileBal.GetProfileUploadsList(response.CompanyId);
                 }
             }
             catch (Exception ex)

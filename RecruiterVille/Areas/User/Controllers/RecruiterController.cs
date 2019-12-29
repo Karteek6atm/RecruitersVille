@@ -588,7 +588,7 @@ namespace RecruiterVille.Areas.User.Controllers
 
                                     foreach (Cell cell in row.Descendants<Cell>())
                                     {
-                                        string value = GetValue(doc, cell);
+                                        string value = objManageSessions.GetValue(doc, cell);
 
                                         if (value.Replace(" ", string.Empty).ToLower() == "sno")
                                         {
@@ -653,7 +653,7 @@ namespace RecruiterVille.Areas.User.Controllers
 
                                     foreach (Cell cell in row.Descendants<Cell>())
                                     {
-                                        string value = GetValue(doc, cell);
+                                        string value = objManageSessions.GetValue(doc, cell);
 
                                         if (snoindex == index)
                                         {
@@ -662,11 +662,11 @@ namespace RecruiterVille.Areas.User.Controllers
                                         else if (nameindex == index)
                                         {
                                             upload.VendorName = value;
-                                            if (string.IsNullOrEmpty(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "Vendor name should not be empty" : comments + ", Vendor name should not be empty";
-                                            }
+                                            //if (string.IsNullOrEmpty(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "Vendor name should not be empty" : comments + ", Vendor name should not be empty";
+                                            //}
                                         }
                                         else if (emailidindex == index)
                                         {
@@ -685,16 +685,16 @@ namespace RecruiterVille.Areas.User.Controllers
                                         else if (contactnumberindex == index)
                                         {
                                             upload.ContactNumber = value;
-                                            if (string.IsNullOrEmpty(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "Contact number should not be empty" : comments + ", Contact number should not be empty";
-                                            }
-                                            else if (!CommonMethods.IsPhoneNumber(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "Invalid contact number" : comments + ", Invalid contact number";
-                                            }
+                                            //if (string.IsNullOrEmpty(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "Contact number should not be empty" : comments + ", Contact number should not be empty";
+                                            //}
+                                            //else if (!CommonMethods.IsPhoneNumber(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "Invalid contact number" : comments + ", Invalid contact number";
+                                            //}
                                         }
                                         else if (isemployerindex == index)
                                         {
@@ -747,20 +747,6 @@ namespace RecruiterVille.Areas.User.Controllers
 
             }
             return Json(objresponse, JsonRequestBehavior.AllowGet);
-        }
-
-        private string GetValue(SpreadsheetDocument doc, Cell cell)
-        {
-            string value = string.Empty;
-            if (cell.CellValue != null)
-            {
-                value = cell.CellValue.InnerText;
-                if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
-                {
-                    return doc.WorkbookPart.SharedStringTablePart.SharedStringTable.ChildElements.GetItem(int.Parse(value)).InnerText;
-                }
-            }
-            return value;
         }
 
         [HttpPost]

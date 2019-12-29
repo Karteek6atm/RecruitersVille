@@ -202,15 +202,15 @@ function savevendordetails() {
     var isemployer = false;
     //var technologies = getmultiselectedvalues(selecttechnologies);
 
-    if (validatetextbox(textvendorname) == false) {
-        isvalid = false;
-    }
+    //if (validatetextbox(textvendorname) == false) {
+    //    isvalid = false;
+    //}
     if (validateemailid(textvendoremailid) == false) {
         isvalid = false;
     }
-    if (validatephonenumber(textvendorcontact) == false) {
-        isvalid = false;
-    }
+    //if (validatephonenumber(textvendorcontact) == false) {
+    //    isvalid = false;
+    //}
     //if (validatetextbox(hiddenvendorlogo) == false) {
     //    isvalid = false;
     //}
@@ -398,7 +398,7 @@ function uploadvendorsfile() {
                     else {
                         var tr = $('<tr />');
                         $(tr).append('<td colspan="14">No data found.</td>');
-                        $('#tbodyvendors').append(tr);
+                        $('#tbodyimportedvendors').append(tr);
                     }
                 },
                 error: function (xhr) {

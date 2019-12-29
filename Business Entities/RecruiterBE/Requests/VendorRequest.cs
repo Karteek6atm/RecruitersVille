@@ -49,4 +49,25 @@ namespace RecruiterBE.Requests
         public string IsValid { get; set; }
         public string Comments { get; set; }
     }
+
+    public class ProfileUploadSaveRequest
+    {
+        public string FilePath { get; set; }
+        public List<ImportedProfilesRequest> ImportedProfiles { get; set; }
+    }
+
+    public class ImportedProfilesRequest
+    {
+        public string Sno { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailId { get; set; }
+        public string ContactNumber { get; set; }
+        public string Location { get; set; }
+        public string Experience { get; set; }
+        public string Skills { get; set; }
+        public string AboutProfile { get; set; }
+        public bool IsValid { get; set; }
+        public string Comments { get; set; }
+    }
 }

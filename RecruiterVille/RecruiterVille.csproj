@@ -371,6 +371,7 @@
     <Content Include="Scripts\application\newtemplate.js" />
     <Content Include="Scripts\application\packages.js" />
     <Content Include="Scripts\application\profile.js" />
+    <Content Include="Scripts\application\profileuploads.js" />
     <Content Include="Scripts\application\ProfileView.js" />
     <Content Include="Scripts\application\register.js" />
     <Content Include="Scripts\application\SuperUserCompaniesList.js" />
@@ -444,6 +445,7 @@
     <Content Include="Areas\SuperUser\Views\User\profileview.cshtml" />
     <Content Include="Areas\SuperUser\Views\User\AdminJobview.cshtml" />
     <Content Include="Areas\User\Views\Recruiter\vendoruploads.cshtml" />
+    <Content Include="Areas\User\Views\Profile\profileuploads.cshtml" />
     <None Include="Properties\PublishProfiles\RecruitersVille.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -482,6 +484,7 @@
     <Content Include="Views\Site\jobview.cshtml" />
     <Content Include="UploadedFiles\VendorUploads\vendorsamplesheet.xlsx" />
     <Content Include="Views\Account\error.cshtml" />
+    <Content Include="UploadedFiles\ProfileUploads\profilesamplesheet.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

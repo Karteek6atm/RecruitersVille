@@ -6,6 +6,7 @@
 
 @Styles.Render("~/content/myprofiles")
 <link href="/app/css/bootstrap-table.css" rel="stylesheet" />
+<link href="/app/css/datatables.min.css" rel="stylesheet" />
 @if (ViewBag.Masters != null)
 {
     ProfileCreationMastersResponse objProfileMastersResponse = ViewBag.Masters;
@@ -44,7 +45,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Profiles <a href="/profile/new" class="btn btn-primary pull-right">Add New Profile</a></div>
+                    <div class="panel-heading">
+                        Profiles
+                        <a href="/profile/new" class="btn btn-primary pull-right">Add New Profile</a>
+                        <a href="javascript:void(0)" class="btn btn-success pull-right" onclick="openimportpopup()"><i class="fas fa-file-import"></i> Import Profiles</a>
+                        <a href="/profile/uploads" class="btn btn-warning pull-right"><i class="fas fa-file-import"></i> Uploaded Profiles</a>
+                    </div>
                     <input type="hidden" id="hiddenselectedprofileid" value="" />
                     <div class="panel-body">
                         <div class="row">
@@ -148,8 +154,63 @@
             </div><!--/.panel-->
         </div>
     </div><!--/.row-->
-
+    <div class="modal fade" id="modalimportprofiles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Import Profiles </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closemodalimportprofiles">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="divimportfile">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="hidden" id="hiddenprofilefile" value="" />
+                                <input class="form-control" placeholder="" id="fileprofilefile" name="profilefile" type="file" onchange="validateexcelfileformat(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <a href="~/UploadedFiles/ProfileUploads/profilesamplesheet.xlsx" target="_blank" id="adownloadsample" class="btn btn-default"><i class="fa fa-download"></i> Download Sample Excel Sheet </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="divimporteddata" style="display:none;">
+                        <div class="col-lg-12 col-md-12">
+                            <table id="tableimportedprofiles" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Sno</th>
+                                        <th>Isvalid</th>
+                                        <th>First name</th>
+                                        <th>Last name</th>
+                                        <th>EmailId</th>
+                                        <th>Contact number</th>
+                                        <th>Experience</th>
+                                        <th>Location</th>
+                                        <th>Skills</th>
+                                        <th>About Profile</th>
+                                        <th>Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyimportedprofiles"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="uploadprofilesfile()" id="btnuploadfile">Proceed</button>
+                    <button type="button" class="btn btn-success" style="display:none;" id="btnuploadnewfile" onclick="uploadnewfile()">Upload New File</button>
+                    <button type="button" class="btn btn-primary" style="display:none;" id="btnuploadproceed" onclick="proceeduploadprofilesfile()">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/app/js/datatables.min.js"></script>
     @Scripts.Render("~/bundles/myprofiles")
     <script type="text/javascript">
         $(document).ready(function () {

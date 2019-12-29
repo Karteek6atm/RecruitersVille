@@ -97,3 +97,154 @@
 function changeprofilestatus(obj) {
 
 }
+
+var importedprofiles = [];
+
+function uploadprofilesfile() {
+    var fileprofilefile = $('#fileprofilefile');
+    importedprofiles = [];
+
+    if (validateexcelfileformat(fileprofilefile) == false) {
+        return false;
+    }
+    else {
+        var formdata = new FormData();
+        var file = document.getElementById('fileprofilefile').files[0]
+        if (formdata) {
+            $('#tbodyimportedprofiles tr').remove();
+            formdata.append("file", file);
+            $.ajax({
+                url: "/profile/uploadprofiles",
+                type: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#hiddenprofilefile').val(data[0].FilePath);
+
+                        for (var i = 0; i < data.length; i++) {
+                            var tr = $('<tr />');
+
+                            var isvalidrecord = 'No';
+
+                            if (data[i].IsValid) {
+                                isvalidrecord = 'Yes';
+                            }
+
+                            $(tr).append('<td><span id="sno">' + data[i].Sno + '</span></td>' +
+                                        '<td><span id="isvalid" style="display:none;">' + data[i].IsValid + '</span>' + isvalidrecord + '</td>' +
+                                        '<td><span id="firstname">' + data[i].FirstName + '</span></td>' +
+                                        '<td><span id="lastname">' + data[i].LastName + '</span></td>' +
+                                        '<td><span id="emailid">' + data[i].EmailId + '</span></td>' +
+                                        '<td><span id="contactnumber">' + data[i].ContactNumber + '</span></td>' +
+                                        '<td><span id="experience">' + data[i].Experience + '</span></td>' +
+                                        '<td><span id="location">' + data[i].Location + '</span></td>' +
+                                        '<td><span id="skills">' + data[i].Skills + '</span></td>' +
+                                        '<td><span id="aboutprofile">' + data[i].AboutProfile + '</span></td>' +
+                                        '<td><span id="comments">' + data[i].Comments + '</span></td>');
+                            $('#tbodyimportedprofiles').append(tr);
+                            
+                            importedprofiles.push({
+                                Sno: data[i].Sno,
+                                FirstName: data[i].FirstName,
+                                LastName: data[i].LastName,
+                                EmailId: data[i].EmailId,
+                                ContactNumber: data[i].ContactNumber,
+                                Location: data[i].Location,
+                                Experience: data[i].Experience,
+                                Skills: data[i].Skills,
+                                AboutProfile: data[i].AboutProfile,
+                                IsValid: data[i].IsValid,
+                                Comments: data[i].Comments
+                            });
+                        }
+
+                        $('#tableimportedprofiles').DataTable();
+
+                        $('#divimporteddata').css("display", "block");
+                        $('#btnuploadnewfile').css("display", "inline-block");
+                        $('#btnuploadproceed').css("display", "inline-block");
+                        $('#divimportfile').css("display", "none");
+                        $('#btnuploadfile').css("display", "none");
+                    }
+                    else {
+                        var tr = $('<tr />');
+                        $(tr).append('<td colspan="11">No data found.</td>');
+                        $('#tbodyimportedprofiles').append(tr);
+                    }
+                },
+                error: function (xhr) {
+                    hideloading();
+                    showerroralert(xhr.responseText);
+                }
+            });
+        }
+    }
+}
+
+function openimportpopup() {
+    $('#hiddenprofilefile').val('');
+    $('#fileprofilefile').val('');
+
+    $('#divimporteddata').css("display", "none");
+    $('#btnuploadnewfile').css("display", "none");
+    $('#btnuploadproceed').css("display", "none");
+    $('#divimportfile').css("display", "block");
+    $('#btnuploadfile').css("display", "inline-block");
+
+    $('#modalimportprofiles').modal();
+}
+
+function uploadnewfile() {
+    $('#hiddenprofilefile').val('');
+    $('#fileprofilefile').val('');
+
+    $('#divimporteddata').css("display", "none");
+    $('#btnuploadnewfile').css("display", "none");
+    $('#btnuploadproceed').css("display", "none");
+    $('#divimportfile').css("display", "block");
+    $('#btnuploadfile').css("display", "inline-block");
+}
+
+function proceeduploadprofilesfile() {
+    hideallalerts();
+    var profilefile = $("#hiddenprofilefile").val();
+
+    if (profilefile != "" && importedprofiles.length > 0) {
+        showloading();
+
+        var input = [];
+        input = {
+            FilePath: profilefile,
+            ImportedProfiles: importedprofiles
+        };
+
+        $.ajax({
+            type: "POST",
+            data: (input),
+            url: "/profile/insertprofileuploads",
+            dataType: "json",
+            success: function (data) {
+                if (data.StatusId == 1) {
+                    showsuccessalert(data.StatusMessage);
+                    $("#hiddenprofilefile").val('');
+                    $('#closemodalimportprofiles').click();
+                    getprofileslist();
+                }
+                else {
+                    showwarningalert(data.StatusMessage);
+                }
+                hideloading();
+            },
+            error: function (xhr) {
+                hideloading();
+                showerroralert(xhr.responseText);
+            }
+        });
+    }
+    else {
+        return false;
+    }
+}

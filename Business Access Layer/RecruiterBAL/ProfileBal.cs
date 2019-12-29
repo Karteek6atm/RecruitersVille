@@ -288,6 +288,57 @@ namespace RecruiterBAL
             return objresponse;
         }
 
+        public SaveResponse InsertProfileUploads(int userLoginId, int companyId, string profileFilePath, DataTable dtProfileUploads)
+        {
+            SaveResponse objSaveResponse = new SaveResponse();
+
+            try
+            {
+                objSaveResponse = _ProfileDal.InsertProfileUploads(userLoginId, companyId, profileFilePath, dtProfileUploads);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objSaveResponse;
+        }
+
+        public List<ImportedProfilesResponse> GetProfileUploadsList(string strcompanyid)
+        {
+            List<ImportedProfilesResponse> objResponse = new List<ImportedProfilesResponse>();
+            try
+            {
+                DataSet dsData = new DataSet();
+
+                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
+
+                dsData = _ProfileDal.GetProfileUploadsList(companyid);
+
+                if (dsData != null)
+                {
+                    if (dsData.Tables.Count > 0)
+                    {
+                        objResponse = dsData.Tables[0].AsEnumerable().
+                                        Select(x => new ImportedProfilesResponse
+                                        {
+                                            FilePath = x.Field<string>("FilePath"),
+                                            InvalidRecords = x.Field<int>("InvalidRecords"),
+                                            TotalRecords = x.Field<int>("TotalRecords"),
+                                            ValidRecords = x.Field<int>("ValidRecords"),
+                                            UploadedBy = x.Field<string>("UploadedBy"),
+                                            UploadedDate = x.Field<string>("UploadedDate"),
+                                            ProfileUploadId = x.Field<int>("ProfileUploadId")
+                                        }).ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objResponse;
+        }
+
         #endregion
     }
 }

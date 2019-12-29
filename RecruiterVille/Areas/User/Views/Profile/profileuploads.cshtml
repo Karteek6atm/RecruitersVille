@@ -1,0 +1,92 @@
+﻿@using RecruiterBE.Responses;
+
+@{
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+<link href="/app/css/bootstrap-table.css" rel="stylesheet" />
+<link href="/app/css/datatables.min.css" rel="stylesheet" />
+
+<div class="row">
+    <ol class="breadcrumb">
+        <li>
+            <a href="javascript:void(0)">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li>
+            <a href="/profile/list">
+                Profiles List
+            </a>
+        </li>
+        <li class="active">Imported Profile Files</li>
+    </ol>
+</div><!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <input type="hidden" id="hiddenloginid" value="@ViewBag.LoginId" />
+        <input type="hidden" id="hiddencompanyid" value="@ViewBag.CompanyId" />
+    </div>
+</div><!--/.row-->
+
+<div class="panel">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="divalertinfo" class="alert bg-info" role="alert" style="display:none;"><em class="fa fa-lg fa-info-circle">&nbsp;</em> <span id="spanalertinfo">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Imported Profile Files
+                    <a href="/profile/list" class="btn btn-warning pull-right"> Back to Profiles List</a>
+                </div>
+                <div class="panel-body">
+                    <table class="new-tble scrol-tble display" id="tableimportedvendors">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Action
+                                </th>
+                                <th>
+                                    File Path
+                                </th>
+                                <th>
+                                    Total Records
+                                </th>
+                                <th>
+                                    Valid Records
+                                </th>
+                                <th>
+                                    Invalid Records
+                                </th>
+                                <th>
+                                    Uploaded By
+                                </th>
+                                <th>
+                                    Uploaded Date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyprofileuploads"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div><!--/.panel-->
+    </div>
+</div><!--/.row-->
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/app/js/datatables.min.js"></script>
+@Scripts.Render("~/bundles/profileuploads")
+<script type="text/javascript">
+    (function ($) {
+        getuploadedprofileslist();
+    })(jQuery);
+</script>

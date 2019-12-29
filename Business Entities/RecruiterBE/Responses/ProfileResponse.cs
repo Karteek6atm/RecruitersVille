@@ -98,4 +98,15 @@ namespace RecruiterBE.Responses
         public string FunctionalAreas { get; set; }
         public string TechnologyIds { get; set; }
     }
+
+    public class ImportedProfilesResponse
+    {
+        public int ProfileUploadId { get; set; }
+        public string FilePath { get; set; }
+        public int TotalRecords { get; set; }
+        public int ValidRecords { get; set; }
+        public int InvalidRecords { get; set; }
+        public string UploadedBy { get; set; }
+        public string UploadedDate { get; set; }
+    }
 }

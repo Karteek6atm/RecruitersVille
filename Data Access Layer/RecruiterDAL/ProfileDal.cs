@@ -238,6 +238,61 @@ namespace RecruiterDAL
             return objSaveResponse;
         }
 
+        public SaveResponse InsertProfileUploads(int userLoginId, int companyId, string profileFilePath, DataTable dtProfileUploads)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@UserLoginId", SqlDbType.Int) { Value = userLoginId },
+                                            new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyId },
+                                            new SqlParameter("@ProfileFilePath", SqlDbType.VarChar, -1) { Value = profileFilePath },
+                                            new SqlParameter("@ProfileUploads", SqlDbType.Structured) { Value = dtProfileUploads }
+                                        };
+
+            SqlDataReader reader = null;
+            SaveResponse objSaveResponse = new SaveResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_InsertProfileUploads", sqlparams);
+
+                while (reader.Read())
+                {
+                    objSaveResponse.StatusId = (int)reader["StatusId"];
+                    objSaveResponse.StatusMessage = (string)reader["StatusMessage"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objSaveResponse;
+        }
+
+        public DataSet GetProfileUploadsList(int companyid)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
+                                        };
+            DataSet dsData = new DataSet();
+
+            try
+            {
+                dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetProfileUploadsList", sqlparams);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return dsData;
+        }
+
         #endregion
     }
 }
