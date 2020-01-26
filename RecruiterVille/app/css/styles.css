@@ -773,7 +773,9 @@ a.label:hover, a.label:focus {
   margin: 10px 10px 20px 10px; }
 .modal-title{float:left}
 .gmail .checkbox{display:inline}
-
+#tableimportedprofiles{white-space: nowrap;
+    overflow: auto;
+    display: block;}
 
 
 
