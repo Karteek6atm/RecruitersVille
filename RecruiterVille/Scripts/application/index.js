@@ -110,20 +110,6 @@
     }
 }
 
-//var encode = document.getElementById('encode'),
-//    decode = document.getElementById('decode'),
-//    output = document.getElementById('output'),
-//    input = document.getElementById('input');
-
-//encode.onclick = function () {
-//    output.innerHTML = Base64.encode(input.value);
-//}
-
-//decode.onclick = function () {
-//    var $str = output.innerHTML;
-//    output.innerHTML = Base64.decode($str);
-//}
-
 function getjobs() {
     showloading();
 
@@ -236,4 +222,109 @@ function getcount() {
             showerroralert(xhr.responseText);
         }
     });
+}
+
+function openuploadresume() {
+    $('#textfirstname').val('');
+    $('#textlastname').val('');
+    $('#textemailid').val('');
+    $('#textcontact').val('');
+    $('#hiddenresumefile').val('');
+    $('#fileresume').val('')
+    $('#textfirstname').closest('.form-group').removeClass("has-error");
+    $('#textfirstname').closest('.form-group').removeClass("has-success");
+    $('#textlastname').closest('.form-group').removeClass("has-error");
+    $('#textlastname').closest('.form-group').removeClass("has-success");
+    $('#textemailid').closest('.form-group').removeClass("has-error");
+    $('#textemailid').closest('.form-group').removeClass("has-success");
+    $('#textcontact').closest('.form-group').removeClass("has-error");
+    $('#textcontact').closest('.form-group').removeClass("has-success");
+
+    $('#modaluploadresume').modal();
+}
+
+function uploadresume() {
+    var fileresume = $('#fileresume');
+
+    if (validatedocument(fileresume) == false) {
+        return false;
+    }
+    else {
+        var formdata = new FormData();
+        var file = document.getElementById('fileresume').files[0]
+        if (formdata) {
+            formdata.append("file", file);
+            $.ajax({
+                url: "/profile/uploadresume",
+                type: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    $('#hiddenresumefile').val(data.resumepath);
+                }
+            });
+        }
+    }
+}
+
+function submitresume() {
+    var isvalid = true;
+    var textfirstname = $('#textfirstname');
+    var textlastname = $('#textlastname');
+    var textemailid = $('#textemailid');
+    var textcontact = $('#textcontact');
+    var hiddenresumefile = $("#hiddenresumefile");
+
+    if (validatetextbox(textfirstname) == false) {
+        isvalid = false;
+    }
+    if (validateemailid(textemailid) == false) {
+        isvalid = false;
+    }
+    if (validatephonenumber(textcontact) == false) {
+        isvalid = false;
+    }
+    if (validatetextbox(hiddenresumefile) == false) {
+        isvalid = false;
+        alert("Please upload resume");
+    }
+
+    if (isvalid) {
+        showloading();
+
+        var input = [];
+        input = {
+            FirstName: textfirstname.val().trim(),
+            LastName: textlastname.val().trim(),
+            EmailId: textemailid.val().trim(),
+            ContactNumber: textcontact.val().trim(),
+            ResumePath: hiddenresumefile.val()
+        };
+
+        $.ajax({
+            type: "POST",
+            data: (input),
+            url: "/site/submitresume",
+            dataType: "json",
+            success: function (data) {
+                if (data.StatusId == 1) {
+                    showsuccessalert(data.StatusMessage);
+                }
+                else {
+                    showwarningalert(data.StatusMessage);
+                }
+                hideloading();
+                $('#closemodaluploadresume').click();
+            },
+            error: function (xhr) {
+                hideloading();
+                showerroralert(xhr.responseText);
+                $('#closemodaluploadresume').click();
+            }
+        });
+    }
+    else {
+        return false;
+    }
 }

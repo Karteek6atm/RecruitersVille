@@ -180,6 +180,40 @@ namespace RecruiterDAL
             return objresponse;
         }
 
+        public SaveResponse SubmitResume(SubmitResumeRequest request)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@FirstName", SqlDbType.VarChar, 100) { Value = request.FirstName },
+                                            new SqlParameter("@LastName", SqlDbType.VarChar, 100) { Value = request.LastName },
+                                            new SqlParameter("@EmailId", SqlDbType.VarChar, 100) { Value = request.EmailId },
+                                            new SqlParameter("@ContactNumber", SqlDbType.VarChar, 20) { Value = request.ContactNumber },
+                                            new SqlParameter("@ResumePath", SqlDbType.VarChar, 1000) { Value = request.ResumePath }
+                                        };
+
+            SqlDataReader reader = null;
+            SaveResponse objresponse = new SaveResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_SubmitResume", sqlparams);
+
+                while (reader.Read())
+                {
+                    objresponse.StatusId = (int)reader["StatusId"];
+                    objresponse.StatusMessage = (string)reader["StatusMessage"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objresponse;
+        }
+
         #endregion
     }
 }
