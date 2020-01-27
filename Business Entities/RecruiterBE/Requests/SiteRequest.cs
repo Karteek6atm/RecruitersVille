@@ -28,4 +28,13 @@ namespace RecruiterBE.Requests
         public string ContactNumber { get; set; }
         public string ResumePath { get; set; }
     }
+
+    public class SubmitResumeRequest
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailId { get; set; }
+        public string ContactNumber { get; set; }
+        public string ResumePath { get; set; }
+    }
 }

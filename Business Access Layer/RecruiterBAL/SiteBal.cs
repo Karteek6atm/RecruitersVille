@@ -136,6 +136,20 @@ namespace RecruiterBAL
             return objSaveResponse;
         }
 
+        public SaveResponse SubmitResume(SubmitResumeRequest request)
+        {
+            SaveResponse objSaveResponse = new SaveResponse();
+            try
+            {
+                objSaveResponse = _SiteDal.SubmitResume(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return objSaveResponse;
+        }
+
         #endregion
     }
 }

@@ -133,6 +133,21 @@ namespace RecruiterVille.Controllers
             return Json(objresponse, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult SubmitResume(SubmitResumeRequest objrequest)
+        {
+            SaveResponse objresponse = new SaveResponse();
+            try
+            {
+                objresponse = objSiteBal.SubmitResume(objrequest);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet]
         public JsonResult GetWebDashboardCount()
         {

@@ -91,6 +91,7 @@ function openapplyjobmodal() {
     $('#textemailid').val('');
     $('#textcontact').val('');
     $('#hiddenresumefile').val('');
+    $('#fileresume').val('')
     $('#textfirstname').closest('.form-group').removeClass("has-error");
     $('#textfirstname').closest('.form-group').removeClass("has-success");
     $('#textlastname').closest('.form-group').removeClass("has-error");
