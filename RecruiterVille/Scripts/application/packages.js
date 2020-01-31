@@ -70,6 +70,16 @@ function GetPackages() {
                                         '</div>' +
                                     '</div>';
                     }
+                    else if (packagedetails.PackageName == "Entreprise") {
+                        divpackage = '<div class="col-md-3 col-sm-6">' +
+                                        '<div class="plan">' +
+                                                '<h3>' + packagedetails.PackageName + '<span>' + price + '</span></h3>' +
+                                                '<a class="btn btn-lg btn-primary" href="/contactus">Get a Quote</a>' +
+                                                '<input type="hidden" id="hiddenpackageid" value="' + packagedetails.PackageId + '" />' +
+                                                '<ul>' + features + '</ul>' +
+                                        '</div>' +
+                                    '</div>';
+                    }
                     else {
                         divpackage = '<div class="col-md-3 col-sm-6">' +
                                         '<div class="plan">' +
