@@ -186,6 +186,8 @@ function getjobs() {
                                    '</div>');
 
                     $('#uljobs').append(li);
+
+                    $('#divjobssection').css("display", "none");
                 }
             }
             else {
@@ -195,6 +197,8 @@ function getjobs() {
                                '</div>');
 
                 $('#uljobs').append(li);
+
+                $('#divjobssection').css("display", "none");
             }
             hideloading();
         },

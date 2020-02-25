@@ -774,26 +774,7 @@ a.label:hover, a.label:focus {
 .modal-title{float:left}
 .gmail .checkbox{display:inline}
 #tableimportedprofiles{white-space: nowrap;    overflow: auto;    display: block;}
-.jobits figure img {float:left; width:90px; border-radius:4px; margin-right:10px}
-.jobits p{text-align:left !important; color:#333 !important} 
-.jobits h2{margin:0 0 9px;}
-.jobits ul li{float:left; list-style-type:none; padding:0px 30px 10px 0px; }
-.jobits ul{padding:0;}
-.jobits ul li i {margin-right:7px}
-.jobDesi p {text-align:left !important; color:#444444 !important}
-.jobits .col-lg-3 { padding:0; }
-.jobDesi ul h6 {font-weight:bold}
-.pr{padding-right:0;}
-.pl{padding-left:0}
-.joli li{ padding:15px; font-size:16px; list-style:none; background:#fff; }
-.joli li + li { border-top:1px solid #ccc;  }
-.joli{ border-right:1px solid #ccc; height:800px; overflow:auto; background:#fff;}
-.jobvu{border:1px solid #ccc; float: left;margin: 0;}
-.jbtns{border-left:1px solid #ccc;}
-.sfb{background:#3b5998; color:#fff; }
-.nmb{padding:15px;width:100%; font-size:15px; }
-.twit{background:#55acee;}
-.lkn{background:#007bb6;}
+
 
 
 

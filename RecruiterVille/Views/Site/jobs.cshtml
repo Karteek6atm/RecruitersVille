@@ -5,9 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/app/css/styles.css">
 
 <section class="searchBanner inner-search">
     <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="divalertsuccess" class="alert bg-success" role="alert" style="display:none;"><em class="fa fa-lg fa-check-circle">&nbsp;</em> <span id="spanalertsuccess">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertwarning" class="alert bg-warning" role="alert" style="display:none;"><em class="fa fa-lg fa-warning">&nbsp;</em> <span id="spanalertwarning">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+                <div id="divalertdanger" class="alert bg-danger" role="alert" style="display:none;"><em class="fa fa-lg fa-times-circle">&nbsp;</em> <span id="spanalertdanger">Welcome to the admin dashboard panel bootstrap template</span> <a href="javascript:void(0)" onclick="closemessage(this)" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="searces">
@@ -38,8 +46,72 @@
 
 
 <section class="list-job">
-    <div class="container">
-        <div class="row">
+    <div class="container" style="width:100%;">
+        <div class="row" style="display:block">
+            <div class="col-lg-12">
+                <div class="jobvu" style="width:100%;">
+                    <div class="col-lg-4 pr pl">
+                        <ul class="list-group joli" id="uljobs">
+                            @*<li><i class="fa fa-suitcase"></i> Cras justo odio</li>
+                    <li><i class="fa fa-suitcase"></i> Dapibus ac facilisis in</li>
+                    <li><i class="fa fa-suitcase"></i> Morbi leo risus</li>
+                    <li><i class="fa fa-suitcase"></i> Porta ac consectetur ac</li>
+                    <li><i class="fa fa-suitcase"></i> Vestibulum at eros</li>
+                    <li><i class="fa fa-suitcase"></i> Cras justo odio</li>
+                    <li><i class="fa fa-suitcase"></i> Dapibus ac facilisis in</li>
+                    <li><i class="fa fa-suitcase"></i> Morbi leo risus</li>
+                    <li><i class="fa fa-suitcase"></i> Porta ac consectetur ac</li>
+                    <li><i class="fa fa-suitcase"></i> Vestibulum at eros</li>
+                    <li><i class="fa fa-suitcase"></i> Cras justo odio</li>
+                    <li><i class="fa fa-suitcase"></i> Dapibus ac facilisis in</li>
+                    <li><i class="fa fa-suitcase"></i> Morbi leo risus</li>
+                    <li><i class="fa fa-suitcase"></i> Porta ac consectetur ac</li>
+                    <li><i class="fa fa-suitcase"></i> Vestibulum at eros</li>*@
+                        </ul>
+                    </div>
+                    <div id="divjobview" class="col-lg-8 pr pl">
+                        <div class="col-lg-9 pl pr">
+                            <div class="panel" id="divjobpanel">
+                                <input type="hidden" id="hiddenjobid" />
+                                <div class="panel-body">
+                                    <div class="jobits">
+                                        <figure>
+                                            <img id="imgjoblogo" src="~/images/img-3.jpg" />
+                                            <figcaption>
+                                                <h2 id="jobtitle">Software Quality Engineer 2</h2>
+                                                <p id="companyname">Dell International Services India Private Limited4.1(1353 Reviews)</p>
+                                            </figcaption>
+                                        </figure>
+                                        <ul class="clearfix">
+                                            <li id="experience"> <i class="fa fa-suitcase"></i> 2 - 5 years</li>
+                                            <li id="package"> <i class="fa fa-money"></i> 7 Lac</li>
+                                            <li id="location"> <i class="fa fa-map-marker"></i> Warangal</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="jobDesi">
+                                        <h3> Job description </h3>
+                                        <div id="jobdescription">
+                                            
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 pl pr">
+                            <ul class="list-group joli jbtns" id="divjobbuttons">
+                                <li onclick="openapplyjobmodal()"> <div class="btn btn-default nmb"> <i class="fa fa-paper-plane-o"></i> Apply </div> </li>
+                                <li onclick="shareonfacebook()"> <div class="btn sfb nmb"> Share on   <i class="fa fa-facebook" aria-hidden="true"></i></div> </li>
+                                <li onclick="shareontwitter()"> <div class="btn nmb twit"> Share on   <i class="fa fa-twitter" aria-hidden="true"></i></div></li>
+                                <li onclick="shareonlinkedin()"> <div class="btn nmb lkn"> Share on   <i class="fa fa-linkedin" aria-hidden="true"></i></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="row">*@
             @*<div class="col-lg-3 col-xs-12">
                 <div class="left-side">*@
 
@@ -97,9 +169,9 @@
             @*</div>
 
                 </div>*@
-            <div class="col-lg-12 col-md-12 col-xs-12">
+            @*<div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="right-side-doctors-list clearfix">
-                    <ul id="uljobs" class="flex-wrap">
+                    <ul id="uljobs" class="flex-wrap">*@
 
 
 
@@ -117,13 +189,63 @@
                                 </div>
                             </li>*@
 
-                    </ul>
+                    @*</ul>
+                </div>
+            </div>*@
+        @*</div>*@
+
+    </div>
+    <div class="modal fade" id="modalapplyjob" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index:999999;">
+        <div class="modal-dialog" style="width:800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Apply Job </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closemodalapplyjob">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>First name <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textfirstname" name="firstname" type="text" onblur="validatetextbox(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Last name </label>
+                                <input class="form-control" placeholder="" id="textlastname" name="lastname" type="text" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>EmailId <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textemailid" name="emailid" type="text" onblur="validateemailid(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Contact number <span class="mandatory">*</span></label>
+                                <input class="form-control" placeholder="" id="textcontact" maxlength="10" name="contact" type="text" onblur="validatephonenumber(this)" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Resume <span class="mandatory">*</span></label>
+                                <input type="hidden" id="hiddenresumefile" value="" />
+                                <input type="file" id="fileresume" onchange="uploadresume()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="applyjob()">Save</button>
                 </div>
             </div>
         </div>
-
     </div>
-
 </section>
 
 @Scripts.Render("~/bundles/jobs")

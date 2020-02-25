@@ -102,7 +102,7 @@ namespace RecruiterVille.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetJobDetailsByIdForEdit(JobDetailsRequest objrequest)
+        public JsonResult SearchJobView(JobDetailsRequest objrequest)
         {
             SearchJobViewResponse objresponse = new SearchJobViewResponse();
             try

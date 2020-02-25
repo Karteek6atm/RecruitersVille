@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Karteek\Publish\RV_29_Dec_2019</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Karteek\Publish\RV_31_Jan_2020</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="about.html">
@@ -61,7 +61,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2019 23:44:12</publishTime>
     </File>
     <File Include="app/css/styles.css">
-      <publishTime>12/29/2019 20:24:22</publishTime>
+      <publishTime>01/30/2020 21:54:47</publishTime>
     </File>
     <File Include="app/elements.html">
       <publishTime>07/19/2017 11:29:14</publishTime>
@@ -223,7 +223,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/19/2019 16:08:32</publishTime>
     </File>
     <File Include="Areas/User/Views/Job/myjobs.cshtml">
-      <publishTime>12/29/2019 20:24:22</publishTime>
+      <publishTime>01/30/2020 21:54:47</publishTime>
     </File>
     <File Include="Areas/User/Views/Job/newjob.cshtml">
       <publishTime>10/06/2019 21:45:05</publishTime>
@@ -367,16 +367,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/27/2012 22:30:52</publishTime>
     </File>
     <File Include="bin/RecruiterBAL.dll">
-      <publishTime>12/29/2019 21:07:43</publishTime>
+      <publishTime>01/31/2020 23:32:48</publishTime>
     </File>
     <File Include="bin/RecruiterBE.dll">
-      <publishTime>12/29/2019 21:07:41</publishTime>
+      <publishTime>01/31/2020 23:32:47</publishTime>
     </File>
     <File Include="bin/RecruiterDAL.dll">
-      <publishTime>12/29/2019 21:07:42</publishTime>
+      <publishTime>01/31/2020 23:32:48</publishTime>
     </File>
     <File Include="bin/RecruiterVille.dll">
-      <publishTime>12/29/2019 21:07:48</publishTime>
+      <publishTime>01/31/2020 23:32:52</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/19/2015 05:49:46</publishTime>
@@ -631,7 +631,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/03/2019 22:27:47</publishTime>
     </File>
     <File Include="index.html">
-      <publishTime>12/03/2019 23:29:45</publishTime>
+      <publishTime>01/26/2020 21:47:44</publishTime>
     </File>
     <File Include="job-list.html">
       <publishTime>07/03/2019 22:27:47</publishTime>
@@ -709,7 +709,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/08/2019 22:29:33</publishTime>
     </File>
     <File Include="Scripts/application/index.js">
-      <publishTime>12/03/2019 23:21:46</publishTime>
+      <publishTime>01/26/2020 22:11:10</publishTime>
     </File>
     <File Include="Scripts/application/jobs.js">
       <publishTime>12/03/2019 23:22:07</publishTime>
@@ -718,7 +718,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/06/2019 23:50:48</publishTime>
     </File>
     <File Include="Scripts/application/jobview.js">
-      <publishTime>10/27/2019 22:59:02</publishTime>
+      <publishTime>01/26/2020 22:11:17</publishTime>
     </File>
     <File Include="Scripts/application/login.js">
       <publishTime>12/01/2019 18:20:35</publishTime>
@@ -739,7 +739,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/06/2019 23:47:50</publishTime>
     </File>
     <File Include="Scripts/application/packages.js">
-      <publishTime>03/01/2019 23:04:55</publishTime>
+      <publishTime>01/26/2020 22:21:33</publishTime>
     </File>
     <File Include="Scripts/application/profile.js">
       <publishTime>05/11/2019 23:25:04</publishTime>

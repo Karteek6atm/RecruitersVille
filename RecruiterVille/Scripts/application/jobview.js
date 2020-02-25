@@ -41,12 +41,12 @@
             success: function (data) {
                 if (data.StatusId == 1) {
                     showsuccessalert(data.StatusMessage);
+                    $('#closemodalapplyjob').click();
                 }
                 else {
                     showwarningalert(data.StatusMessage);
                 }
                 hideloading();
-                $('#closemodalapplyjob').click();
             },
             error: function (xhr) {
                 hideloading();

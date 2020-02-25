@@ -248,7 +248,7 @@ namespace RecruiterVille.Areas.User.Controllers
             try
             {
                 if (Session["UserLogin"] != null)
-                { 
+                {
 
                     objresponse = _ProfileBal.GetProfileViewDetails(request.strProfileId);
                 }
@@ -399,7 +399,7 @@ namespace RecruiterVille.Areas.User.Controllers
                                     foreach (Cell cell in row.Descendants<Cell>())
                                     {
                                         string value = objManageSessions.GetValue(doc, cell);
-                                                    
+
 
                                         if (value.Replace(" ", string.Empty).ToLower() == "sno")
                                         {
@@ -461,20 +461,20 @@ namespace RecruiterVille.Areas.User.Controllers
                                         else if (firstnameindex == index)
                                         {
                                             upload.FirstName = value;
-                                            if (string.IsNullOrEmpty(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "First name should not be empty" : comments + ", First name should not be empty";
-                                            }
+                                            //if (string.IsNullOrEmpty(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "First name should not be empty" : comments + ", First name should not be empty";
+                                            //}
                                         }
                                         else if (lastnameindex == index)
                                         {
                                             upload.LastName = value;
-                                            if (string.IsNullOrEmpty(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "Last name should not be empty" : comments + ", Last name should not be empty";
-                                            }
+                                            //if (string.IsNullOrEmpty(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "Last name should not be empty" : comments + ", Last name should not be empty";
+                                            //}
                                         }
                                         else if (emailidindex == index)
                                         {
@@ -493,16 +493,16 @@ namespace RecruiterVille.Areas.User.Controllers
                                         else if (contactnumberindex == index)
                                         {
                                             upload.ContactNumber = value;
-                                            if (string.IsNullOrEmpty(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "Contact number should not be empty" : comments + ", Contact number should not be empty";
-                                            }
-                                            else if (!CommonMethods.IsPhoneNumber(value))
-                                            {
-                                                isValid = false;
-                                                comments = (string.IsNullOrEmpty(comments)) ? "Invalid contact number" : comments + ", Invalid contact number";
-                                            }
+                                            //if (string.IsNullOrEmpty(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "Contact number should not be empty" : comments + ", Contact number should not be empty";
+                                            //}
+                                            //else if (!CommonMethods.IsPhoneNumber(value))
+                                            //{
+                                            //    isValid = false;
+                                            //    comments = (string.IsNullOrEmpty(comments)) ? "Invalid contact number" : comments + ", Invalid contact number";
+                                            //}
                                         }
                                         else if (experienceindex == index)
                                         {
@@ -567,22 +567,22 @@ namespace RecruiterVille.Areas.User.Controllers
                     dtProfileUploads.Columns.Add("AboutProfile", typeof(string));
                     dtProfileUploads.Columns.Add("IsValid", typeof(bool));
                     dtProfileUploads.Columns.Add("Comments", typeof(string));
-                    
+
                     foreach (ImportedProfilesRequest profile in objrequest.ImportedProfiles)
                     {
                         DataRow dr = dtProfileUploads.NewRow();
 
-                        dr["Sno"] = profile.Sno;
-                        dr["FirstName"] = profile.FirstName;
-                        dr["LastName"] = profile.LastName;
-                        dr["EmailId"] = profile.EmailId;
-                        dr["ContactNumber"] = profile.ContactNumber;
-                        dr["Location"] = profile.Location;
-                        dr["Experience"] = profile.Experience;
-                        dr["Skills"] = profile.Skills;
-                        dr["AboutProfile"] = profile.AboutProfile;
+                        dr["Sno"] = string.IsNullOrEmpty(profile.Sno) ? 0 : Convert.ToInt32(profile.Sno);
+                        dr["FirstName"] = string.IsNullOrEmpty(profile.FirstName) ? string.Empty : profile.FirstName;
+                        dr["LastName"] = string.IsNullOrEmpty(profile.LastName) ? string.Empty : profile.LastName;
+                        dr["EmailId"] = string.IsNullOrEmpty(profile.EmailId) ? string.Empty : profile.EmailId;
+                        dr["ContactNumber"] = string.IsNullOrEmpty(profile.ContactNumber) ? string.Empty : profile.ContactNumber;
+                        dr["Location"] = string.IsNullOrEmpty(profile.Location) ? string.Empty : profile.Location;
+                        dr["Experience"] = string.IsNullOrEmpty(profile.Experience) ? string.Empty : profile.Experience;
+                        dr["Skills"] = string.IsNullOrEmpty(profile.Skills) ? string.Empty : profile.Skills;
+                        dr["AboutProfile"] = string.IsNullOrEmpty(profile.AboutProfile) ? string.Empty : profile.AboutProfile;
                         dr["IsValid"] = profile.IsValid;
-                        dr["Comments"] = profile.Comments;
+                        dr["Comments"] = string.IsNullOrEmpty(profile.Comments) ? string.Empty : profile.Comments;
 
                         dtProfileUploads.Rows.Add(dr);
                     }
