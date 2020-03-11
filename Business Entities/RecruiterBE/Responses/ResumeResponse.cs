@@ -20,6 +20,8 @@ namespace RecruiterBE.Responses
         public string Industry { get; set; }
         public string Resume { get; set; }
         public string Skills { get; set; }
+        public long Sno { get; set; }
+        public int TotalRecords { get; set; }
     }
 
     public class ProfileCreationMastersResponse

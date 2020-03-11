@@ -339,6 +339,7 @@
     <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\datatable.js" />
     <Content Include="js\jquery.bxslider.min.js" />
     <Content Include="js\jquery.classyloader.min.js" />
     <Content Include="js\jquery.js" />

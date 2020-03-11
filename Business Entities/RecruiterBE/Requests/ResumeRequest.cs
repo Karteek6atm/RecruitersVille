@@ -29,6 +29,10 @@ namespace RecruiterBE.Requests
         public int MaxExperience { get; set; }
         public string Location { get; set; }
         public string Skills { get; set; }
+        public int Pagenumber { get; set; }
+        public int Pagesize { get; set; }
+        public string SortColumn { get; set; }
+        public string SortOrderBy { get; set; }
     }
 
     public class ProfileSaveRequest

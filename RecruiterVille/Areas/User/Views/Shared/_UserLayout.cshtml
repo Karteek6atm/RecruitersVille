@@ -53,20 +53,20 @@
                 </div>
                 <div class="divider"></div>
                 <ul class="nav menu">
-                    <li class="active"><a href="/user/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+                    <li id="limenudashboard" class="active"><a href="/user/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
                     <li><a href="/user/profile"><em class="fa fa-calendar">&nbsp;</em> Profile</a></li>
                     @if (response.RoleId == 1)
                     {
                         @*<li><a href="/user/permissions"><em class="fa fa-cog">&nbsp;</em> Roles & Permissions</a></li>*@
                         if (response.PackageId == 4)
                         {
-                            <li><a href="/user/users"><em class="fa fa-bar-chart">&nbsp;</em> Users</a></li>
+                            <li id="limenuusers"><a href="/user/users"><em class="fa fa-bar-chart">&nbsp;</em> Users</a></li>
                         }
-                        <li><a href="/user/vendors"><em class="fa fa-clone">&nbsp;</em> Vendors</a></li>
+                        <li id="limenuvendors"><a href="/user/vendors"><em class="fa fa-clone">&nbsp;</em> Vendors</a></li>
                     }
-                    <li><a href="/job/jobtemplates"><em class="fa fa-briefcase">&nbsp;</em> Job Templates</a></li>
-                    <li><a href="/job/myjobs"><em class="fa fa-briefcase">&nbsp;</em> Jobs</a></li>
-                    <li><a href="/profile/list"><em class="fa fa-user">&nbsp;</em> Profiles & Resumes</a></li>
+                    <li id="limenujobtemplates"><a href="/job/jobtemplates"><em class="fa fa-briefcase">&nbsp;</em> Job Templates</a></li>
+                    <li id="limenujobs"><a href="/job/myjobs"><em class="fa fa-briefcase">&nbsp;</em> Jobs</a></li>
+                    <li id="limenuprofiles"><a href="/profile/list"><em class="fa fa-user">&nbsp;</em> Profiles & Resumes</a></li>
                     <li><a href="/account/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
                 </ul>
             </div>

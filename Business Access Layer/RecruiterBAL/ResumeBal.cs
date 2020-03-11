@@ -98,9 +98,10 @@ namespace RecruiterBAL
                         objJobResponse = dsData.Tables[0].AsEnumerable().
                                         Select(x => new ResumeResponse
                                         {
+                                            Sno = x.Field<long>("Sno"),
+                                            ExpYears = x.Field<int>("ExpYears"),
                                             EmailId = x.Field<string>("EmailId"),
                                             ExpMonths = x.Field<int>("ExpMonths"),
-                                            ExpYears = x.Field<int>("ExpYears"),
                                             FirstName = x.Field<string>("FirstName"),
                                             Industry = x.Field<string>("Industry"),
                                             LastName = x.Field<string>("LastName"),
@@ -109,7 +110,8 @@ namespace RecruiterBAL
                                             ProfileId = CommonMethods.URLKeyEncrypt(Convert.ToString(x.Field<int>("ProfileId"))),
                                             Qualification = x.Field<string>("Qualification"),
                                             Resume = x.Field<string>("Resume"),
-                                            Skills = x.Field<string>("Skills")
+                                            Skills = x.Field<string>("Skills"),
+                                            TotalRecords = x.Field<int>("TotalRecords")
                                         }).ToList();
                     }
                 }

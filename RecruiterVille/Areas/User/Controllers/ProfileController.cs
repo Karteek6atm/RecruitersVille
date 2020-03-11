@@ -230,6 +230,8 @@ namespace RecruiterVille.Areas.User.Controllers
                     request.QualificationIds = string.IsNullOrEmpty(request.QualificationIds) ? string.Empty : request.QualificationIds;
                     request.Location = string.IsNullOrEmpty(request.Location) ? string.Empty : request.Location;
                     request.Skills = string.IsNullOrEmpty(request.Skills) ? string.Empty : request.Skills;
+                    request.SortColumn = string.IsNullOrEmpty(request.SortColumn) ? string.Empty : request.SortColumn;
+                    request.SortOrderBy = string.IsNullOrEmpty(request.SortOrderBy) ? string.Empty : request.SortOrderBy;
 
                     objresponse = _ResumeBal.GetProfilesList(request);
                 }
