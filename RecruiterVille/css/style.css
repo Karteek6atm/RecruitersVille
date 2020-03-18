@@ -1973,8 +1973,8 @@ border: 1px dashed #ccc;}
 .jobvu{border:1px solid #ccc; float: left;margin: 0;}
 .jbtns{border-left:1px dashed #ccc;}
 .sfb{background:#3b5998; color:#fff; }
-.nmb{padding:15px;width:100%; font-size:15px; background:#4a90e2; color:#fff; text-transform:uppercase; font-weight:600 }
-.nmb:hover{background:#4a90e2;color:#fff;}
+.nmb{padding:15px;width:100%; font-size:15px; background:#F80; color:#fff; text-transform:uppercase; font-weight:600 }
+.nmb:hover{background:#F80;color:#fff;}
 .nmb i{padding-right:7px;}
 .twit{background:#55acee;}
 .lkn{background:#007bb6;}
