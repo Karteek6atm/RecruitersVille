@@ -53,7 +53,11 @@ namespace RecruiterDAL
                                             new SqlParameter("@MinExperience", SqlDbType.Int) { Value = request.MinExperience },
                                             new SqlParameter("@MaxExperience", SqlDbType.Int) { Value = request.MaxExperience },
                                             new SqlParameter("@Location", SqlDbType.VarChar, 100) { Value = request.Location },
-                                            new SqlParameter("@Skills", SqlDbType.VarChar, -1) { Value = request.Skills }
+                                            new SqlParameter("@Skills", SqlDbType.VarChar, -1) { Value = request.Skills },
+                                            new SqlParameter("@Pagenumber", SqlDbType.Int) { Value = request.Pagenumber },
+                                            new SqlParameter("@Pagesize", SqlDbType.Int) { Value = request.Pagesize },
+                                            new SqlParameter("@SortColumn", SqlDbType.VarChar, 100) { Value = request.SortColumn },
+                                            new SqlParameter("@SortOrderBy", SqlDbType.VarChar, 100) { Value = request.SortOrderBy }
                                         };
         
                     DataSet dsData = new DataSet();
