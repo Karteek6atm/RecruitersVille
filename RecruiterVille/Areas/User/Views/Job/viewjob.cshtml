@@ -139,6 +139,8 @@
 @Scripts.Render("~/bundles/viewjob")
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#ulsidemenu li").removeClass("active");
+        $("#limenujobs").addClass("active");
         getjobdetails();
     });
 </script>

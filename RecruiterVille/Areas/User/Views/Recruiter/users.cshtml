@@ -209,6 +209,8 @@
     @Scripts.Render("~/bundles/users")
     <script type="text/javascript">
         (function ($) {
+            $("#ulsidemenu li").removeClass("active");
+            $("#limenuusers").addClass("active");
             getuserslist();
         })(jQuery);
     </script>

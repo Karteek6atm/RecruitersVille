@@ -122,7 +122,9 @@
 <script src="/app/js/bootstrap-datepicker.js"></script>
 @Scripts.Render("~/bundles/viewjob")
 <script type="text/javascript">
-        $(document).ready(function () {
+    $(document).ready(function () {
+        $("#ulsidemenu li").removeClass("active");
+        $("#lijobs").addClass("active");
             getjobdetails();
         });
 </script>

@@ -285,6 +285,8 @@
     @Scripts.Render("~/bundles/vendors")
     <script type="text/javascript">
         (function ($) {
+            $("#ulsidemenu li").removeClass("active");
+            $("#limenuvendors").addClass("active");
             $('.multiple-select').fSelect();
             getvendorslist();
         })(jQuery);

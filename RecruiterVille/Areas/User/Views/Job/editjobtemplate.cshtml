@@ -270,6 +270,8 @@
     @Scripts.Render("~/bundles/editjobtemplate")
     <script type="text/javascript">
         $(document).ready(function () {
+            $("#ulsidemenu li").removeClass("active");
+            $("#limenujobtemplates").addClass("active");
             getjobtemplatedetails();
         });
     </script>

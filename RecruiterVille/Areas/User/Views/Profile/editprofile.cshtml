@@ -193,6 +193,8 @@
     @Scripts.Render("~/bundles/editprofile")
     <script type="text/javascript">
         $(document).ready(function () {
+            $("#ulsidemenu li").removeClass("active");
+            $("#limenuprofiles").addClass("active");
             $('.datepicker').datepicker();
             getprofiledetails();
         });

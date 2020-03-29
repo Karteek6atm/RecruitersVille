@@ -87,6 +87,8 @@
 @Scripts.Render("~/bundles/vendoruploads")
 <script type="text/javascript">
     (function ($) {
+        $("#ulsidemenu li").removeClass("active");
+        $("#limenuvendors").addClass("active");
         getuploadedvendorslist();
     })(jQuery);
 </script>

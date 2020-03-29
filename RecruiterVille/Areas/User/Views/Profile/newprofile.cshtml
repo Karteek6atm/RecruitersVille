@@ -192,6 +192,8 @@
     @Scripts.Render("~/bundles/newprofile")
     <script type="text/javascript">
         $(document).ready(function () {
+            $("#ulsidemenu li").removeClass("active");
+            $("#limenuprofiles").addClass("active");
             $('.multiple-select').fSelect();
             $('.datepicker').datepicker();
             //addnewexperience();

@@ -343,6 +343,8 @@
     @Scripts.Render("~/bundles/profile")
     <script type="text/javascript">
         (function ($) {
+            $("#ulsidemenu li").removeClass("active");
+            $("#limenuprofile").addClass("active");
             $('#textprofessionalworkstartedate').datepicker();
             getprofiledetails();
         })(jQuery);

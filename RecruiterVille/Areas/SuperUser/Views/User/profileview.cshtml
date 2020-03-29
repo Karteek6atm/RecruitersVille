@@ -85,6 +85,8 @@
 @Scripts.Render("~/bundles/profileView")
 <script>
     $(document).ready(function () {
+        $("#ulsidemenu li").removeClass("active");
+        $("#liprofiles").addClass("active");
         getProfileDetails();
     });
 </script>

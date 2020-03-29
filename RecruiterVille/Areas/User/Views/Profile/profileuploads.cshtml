@@ -87,6 +87,8 @@
 @Scripts.Render("~/bundles/profileuploads")
 <script type="text/javascript">
     (function ($) {
+        $("#ulsidemenu li").removeClass("active");
+        $("#limenuprofiles").addClass("active");
         getuploadedprofileslist();
     })(jQuery);
 </script>
