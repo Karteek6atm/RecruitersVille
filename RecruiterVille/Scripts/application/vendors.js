@@ -2,8 +2,23 @@
     showloading();
     $('#tbodyvendors tr').remove();
 
+    var input = [];
+    input = {
+        VendorName: $("input[name='VendorName']").val().trim(),
+        EmailId: $("input[name='EmailId']").val().trim(),
+        ContactNumber: $("input[name='ContactNumber']").val().trim(),
+        IsEmployer: $("input[name='IsEmployer']").val().trim(),
+        Technologies: $("input[name='Technologies']").val().trim(),
+        Address: $("input[name='Address']").val().trim(),
+        Pagenumber: pageno,
+        Pagesize: pagesize,
+        SortColumn: sortcolumn,
+        SortOrderBy: sortorderby
+    };
+
     $.ajax({
-        type: "GET",
+        type: "POST",
+        data: (input),
         url: "/recruiter/getvendorslist",
         dataType: "json",
         success: function (data) {
@@ -11,6 +26,8 @@
 
             if (data != null) {
                 if (data.length > 0) {
+                    totalrecords = data[0].TotalRecords;
+
                     for (var i = 0; i < data.length; i++) {
                         var tr = $('<tr />');
                         var address = (data[i].Street == "") ? "" : data[i].Street;
@@ -20,13 +37,11 @@
                         address = (address == "") ? data[i].Country : address + ((data[i].Country == "") ? "" : ", " + data[i].Country);
                         address = (address == "") ? data[i].Zipcode : address + ((data[i].Zipcode == "") ? "" : " - " + data[i].Zipcode);
 
-                        var isemployer = (data[i].IsEmployer) ? "Yes" : "No";
-
-                        $(tr).append('<td>' + (i + 1) + '<input type="hidden" id="hiddenvendorid" value="' + data[i].VendorId + '" /></td>' +
+                        $(tr).append('<td>' + data[i].Sno + '<input type="hidden" id="hiddenvendorid" value="' + data[i].VendorId + '" /></td>' +
                                     '<td>' + data[i].VendorName + '</td>' +
                                     '<td>' + data[i].EmailId + '</td>' +
                                     '<td>' + data[i].ContactNumber + '</td>' +
-                                    '<td>' + isemployer + '</td>' +
+                                    '<td>' + data[i].IsEmployer + '</td>' +
                                     '<td>' + data[i].TechnologyNames + '</td>' +
                                     '<td>' + address + '</td>' +
                                     '<td><a href="javascript:void(0)" id="aeditvendor" onclick="editvendor(this)"><i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="adeletevendor" onclick="deletevendor(this)"><i class="fa fa-trash-o"></i> Delete</a></td>');
@@ -43,10 +58,12 @@
             }
 
             if (!ishavingvendors) {
+                totalrecords = 0;
                 var tr = $('<tr />');
                 $(tr).append('<td colspan="8">No vendors found in your company.</td>');
                 $('#tbodyvendors').append(tr);
             }
+            setuppaginglinks("#tablevendors", tableload, pageno, pagesize, totalrecords);
 
             hideloading();
         },

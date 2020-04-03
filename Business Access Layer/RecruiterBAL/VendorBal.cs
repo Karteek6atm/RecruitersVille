@@ -55,16 +55,14 @@ namespace RecruiterBAL
             return objVendorMasterResponse;
         }
 
-        public List<VendorResponse> GetVendorsList(string strcompanyid)
+        public List<VendorResponse> GetVendorsList(VendorListRequest request)
         {
             List<VendorResponse> objVendorResponse = new List<VendorResponse>();
             try
             {
                 DataSet dsData = new DataSet();
-
-                int companyid = Convert.ToInt32(CommonMethods.URLKeyDecrypt(strcompanyid));
-
-                dsData = _VendorDal.GetVendorsList(companyid);
+                
+                dsData = _VendorDal.GetVendorsList(request);
 
                 if (dsData != null)
                 {
@@ -76,7 +74,7 @@ namespace RecruiterBAL
                                             City = x.Field<string>("City"),
                                             ContactNumber = x.Field<string>("ContactNumber"),
                                             Country = x.Field<string>("Country"),
-                                            IsEmployer = x.Field<bool>("IsEmployer"),
+                                            IsEmployer = x.Field<string>("IsEmployer"),
                                             VendorName = x.Field<string>("VendorName"),
                                             EmailId = x.Field<string>("EmailId"),
                                             VendorId = x.Field<int>("VendorId"),
@@ -85,6 +83,8 @@ namespace RecruiterBAL
                                             Street = x.Field<string>("Street"),
                                             TechnologyNames = x.Field<string>("TechnologyNames"),
                                             Zipcode = x.Field<string>("Zipcode"),
+                                            Sno = x.Field<long>("Sno"),
+                                            TotalRecords = x.Field<int>("TotalRecords"),
                                         }).ToList();
                     }
                 }

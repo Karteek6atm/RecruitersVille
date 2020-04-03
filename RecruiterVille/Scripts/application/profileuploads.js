@@ -34,7 +34,7 @@
 
             if (!ishavingprofiles) {
                 var tr = $('<tr />');
-                $(tr).append('<td colspan="7">No uploaded profiles found.</td>');
+                $(tr).append('<td colspan="7">No uploaded resumes found.</td>');
                 $('#tbodyprofileuploads').append(tr);
             }
 

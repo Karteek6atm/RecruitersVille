@@ -56,6 +56,21 @@ namespace RecruiterBE.Requests
         public List<ImportedProfilesRequest> ImportedProfiles { get; set; }
     }
 
+    public class VendorListRequest
+    {
+        public int CompanyId { get; set; }
+        public string VendorName { get; set; }
+        public string EmailId { get; set; }
+        public string ContactNumber { get; set; }
+        public string IsEmployer { get; set; }
+        public string Technologies { get; set; }
+        public string Address { get; set; }
+        public int Pagenumber { get; set; }
+        public int Pagesize { get; set; }
+        public string SortColumn { get; set; }
+        public string SortOrderBy { get; set; }
+    }
+
     public class ImportedProfilesRequest
     {
         public string Sno { get; set; }

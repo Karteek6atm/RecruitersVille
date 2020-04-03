@@ -38,8 +38,6 @@
 
             if (data != null) {
                 if (data.length > 0) {
-                    var datatable = [];
-
                     totalrecords = data[0].TotalRecords;
 
                     for (var i = 0; i < data.length; i++) {
@@ -90,7 +88,7 @@
             if (!ishavingprofiles) {
                 totalrecords = 0;
                 var tr = $('<tr />');
-                $(tr).append('<td colspan="9">No profiles found.</td>');
+                $(tr).append('<td colspan="9">No resumes found.</td>');
                 $('#tbodyprofiles').append(tr);
             }
             setuppaginglinks("#tableprofiles", tableload, pageno, pagesize, totalrecords);

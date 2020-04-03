@@ -22,12 +22,22 @@ namespace RecruiterDAL
 
         #region Methods
 
-        public DataSet GetVendorsList(int companyid)
+        public DataSet GetVendorsList(VendorListRequest request)
         {
-            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = companyid }
+            SqlParameter[] sqlparams = { new SqlParameter("@CompanyId", SqlDbType.Int) { Value = request.CompanyId },
+                                            new SqlParameter("@VendorName", SqlDbType.VarChar, -1) { Value = request.VendorName },
+                                            new SqlParameter("@EmailId", SqlDbType.VarChar, -1) { Value = request.EmailId },
+                                            new SqlParameter("@ContactNumber", SqlDbType.VarChar, -1) { Value = request.ContactNumber },
+                                            new SqlParameter("@IsEmployer", SqlDbType.VarChar, -1) { Value = request.IsEmployer },
+                                            new SqlParameter("@Technologies", SqlDbType.VarChar, -1) { Value = request.Technologies },
+                                            new SqlParameter("@Address", SqlDbType.VarChar, -1) { Value = request.Address },
+                                            new SqlParameter("@Pagenumber", SqlDbType.Int) { Value = request.Pagenumber },
+                                            new SqlParameter("@Pagesize", SqlDbType.Int) { Value = request.Pagesize },
+                                            new SqlParameter("@SortColumn", SqlDbType.VarChar, 100) { Value = request.SortColumn },
+                                            new SqlParameter("@SortOrderBy", SqlDbType.VarChar, 100) { Value = request.SortOrderBy }
                                         };
             DataSet dsData = new DataSet();
-
+            
             try
             {
                 dsData = SqlHelper.ExecuteDataset(con, CommandType.StoredProcedure, "USP_GetVendorsList", sqlparams);

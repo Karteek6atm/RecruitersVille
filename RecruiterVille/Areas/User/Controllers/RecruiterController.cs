@@ -456,8 +456,8 @@ namespace RecruiterVille.Areas.User.Controllers
 
         #region Vendors 
 
-        [HttpGet]
-        public JsonResult GetVendorsList()
+        [HttpPost]
+        public JsonResult GetVendorsList(VendorListRequest request)
         {
             List<VendorResponse> objresponse = new List<VendorResponse>();
             try
@@ -465,7 +465,18 @@ namespace RecruiterVille.Areas.User.Controllers
                 if (Session["UserLogin"] != null)
                 {
                     LoginResponse response = (LoginResponse)Session["UserLogin"];
-                    objresponse = _VendorBal.GetVendorsList(response.CompanyId);
+                    request.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+
+                    request.Address = string.IsNullOrEmpty(request.Address) ? string.Empty : request.Address;
+                    request.ContactNumber = string.IsNullOrEmpty(request.ContactNumber) ? string.Empty : request.ContactNumber;
+                    request.EmailId = string.IsNullOrEmpty(request.EmailId) ? string.Empty : request.EmailId;
+                    request.IsEmployer = string.IsNullOrEmpty(request.IsEmployer) ? string.Empty : request.IsEmployer;
+                    request.Technologies = string.IsNullOrEmpty(request.Technologies) ? string.Empty : request.Technologies;
+                    request.VendorName = string.IsNullOrEmpty(request.VendorName) ? string.Empty : request.VendorName;
+                    request.SortColumn = string.IsNullOrEmpty(request.SortColumn) ? string.Empty : request.SortColumn;
+                    request.SortOrderBy = string.IsNullOrEmpty(request.SortOrderBy) ? string.Empty : request.SortOrderBy;
+
+                    objresponse = _VendorBal.GetVendorsList(request);
                 }
             }
             catch (Exception ex)

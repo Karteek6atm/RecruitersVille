@@ -12,7 +12,7 @@ namespace RecruiterBE.Responses
         public string VendorName { get; set; }
         public string EmailId { get; set; }
         public string ContactNumber { get; set; }
-        public bool IsEmployer { get; set; }
+        public string IsEmployer { get; set; }
         public string Street { get; set; }
         public string Landmark { get; set; }
         public string City { get; set; }
@@ -20,6 +20,8 @@ namespace RecruiterBE.Responses
         public string Country { get; set; }
         public string Zipcode { get; set; }
         public string TechnologyNames { get; set; }
+        public long Sno { get; set; }
+        public int TotalRecords { get; set; }
     }
     
     public class VendorDetailsResponse

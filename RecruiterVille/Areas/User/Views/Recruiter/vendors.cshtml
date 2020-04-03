@@ -42,38 +42,76 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Vendors 
+                    <div class="panel-heading">
+                        Vendors
                         <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="addnewvendor()">Add New Vendor</a>
                         <a href="javascript:void(0)" class="btn btn-success pull-right" onclick="openimportpopup()"><i class="fas fa-file-import"></i> Import Vendors</a>
                         <a href="/user/vendoruploads" class="btn btn-warning pull-right"><i class="fas fa-file-import"></i> Uploaded Vendors</a>
                     </div>
                     <input type="hidden" id="hiddenselectedvendorid" value="" />
                     <div class="panel-body">
-                        <table class="new-tble scrol-tble">
+                        <table class="new-tble scrol-tble" id="tablevendors">
                             <thead>
+                                <tr class="fixnvig">
+                                    <th class="hasinput" colspan="9">
+                                        <div class="row">
+                                            <div class="col-lg-6"><div id="displaypagenumbers" class="pgenumd"></div></div>
+                                            <div class="col-lg-6 pull-right">
+                                                <div class="tablesetpaging" id="tablecustum"></div>
+                                                <div id="paginglinks" class="pageclicks"></div>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
                                 <tr>
                                     <th>
+
+                                    </th>
+                                    <th class="hasinput">
+                                        <input type="text" class="form-control" name="VendorName" placeholder="Vendor name" />
+                                    </th>
+                                    <th class="hasinput">
+                                        <input type="text" class="form-control" name="EmailId" placeholder="EmailId" />
+                                    </th>
+                                    <th class="hasinput">
+                                        <input type="text" class="form-control" name="ContactNumber" placeholder="Contact Number" />
+                                    </th>
+                                    <th class="hasinput">
+                                        <input type="text" class="form-control" name="IsEmployer" placeholder="Is Employer" />
+                                    </th>
+                                    <th class="hasinput">
+                                        <input type="text" class="form-control" name="Technologies" placeholder="Technologies" />
+                                    </th>
+                                    <th class="hasinput">
+                                        <input type="text" class="form-control" name="Address" placeholder="Address" />
+                                    </th>
+                                    <th>
+
+                                    </th>
+                                </tr>
+                                <tr id="bindtr">
+                                    <th data-sort="false">
                                         S.No.
                                     </th>
-                                    <th>
+                                    <th data-sort="true" sort-name="VendorName">
                                         Vendor name
                                     </th>
-                                    <th>
+                                    <th data-sort="true" sort-name="EmailId">
                                         EmailId
                                     </th>
-                                    <th>
+                                    <th data-sort="true" sort-name="ContactNumber">
                                         Contact Number
                                     </th>
-                                    <th>
+                                    <th data-sort="true" sort-name="IsEmployer">
                                         Is Employer
                                     </th>
-                                    <th>
+                                    <th data-sort="false">
                                         Technologies
                                     </th>
-                                    <th>
+                                    <th data-sort="false">
                                         Address
                                     </th>
-                                    <th>
+                                    <th data-sort="false">
                                         Actions
                                     </th>
                                 </tr>
@@ -119,7 +157,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Technologies (seperate with comma)</label>
-                                <input class="form-control" placeholder="" id="selecttechnologies" name="technologies" type="text" />
+                                <input class="form-control" placeholder="" id="selecttechnologies" name="vendortechnologies" type="text" />
                                 @*<select class="form-control multiple-select" id="selecttechnologies" multiple name="technologies">
                                         @foreach (TechnologiesResponse technology in Technologies)
                                         {
@@ -202,7 +240,7 @@
         </div>
     </div>
     <div class="modal fade" id="modalimportvendors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" >
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Import Vendors </h5>
@@ -223,7 +261,7 @@
                                 <a href="~/UploadedFiles/VendorUploads/vendorsamplesheet.xlsx" target="_blank" id="adownloadsample" class="btn btn-default"><i class="fa fa-download"></i> Download Sample Excel Sheet </a>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div class="row" id="divimporteddata" style="display:none;">
                         <div class="col-lg-12 col-md-12">
                             <table id="tableimportedvendors" class="display" style="width:100%">
@@ -245,9 +283,7 @@
                                         <th>Comments</th>
                                     </tr>
                                 </thead>
-                                <tbody id="tbodyimportedvendors">
-
-                                </tbody>
+                                <tbody id="tbodyimportedvendors"></tbody>
                             </table>
                         </div>
                     </div>
@@ -281,14 +317,31 @@
         </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="/app/js/datatables.min.js"></script>
+    <script src="/js/datatable.js"></script>
     @Scripts.Render("~/bundles/vendors")
+    <script type="text/javascript">
+        var tableload = null;
+        var pageno = 1;
+        var pagesize = 10;
+        var totalrecords = 0;
+        var sortcolumn = "";
+        var sortorderby = "";
+        $(document).ready(function () {
+            sortcolumn = "VendorName";
+            sortorderby = "asc";
+            tableload = function () {
+                getvendorslist();
+            }
+            tableload();
+            tabledata("#tablevendors", tableload);
+        });
+    </script>
     <script type="text/javascript">
         (function ($) {
             $("#ulsidemenu li").removeClass("active");
             $("#limenuvendors").addClass("active");
             $('.multiple-select').fSelect();
-            getvendorslist();
+
         })(jQuery);
     </script>
 }

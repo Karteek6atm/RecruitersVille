@@ -268,7 +268,7 @@ namespace RecruiterVille
                       "~/Scripts/application/common.js",
                       "~/Scripts/application/SuperUserJobsList.js"));
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
