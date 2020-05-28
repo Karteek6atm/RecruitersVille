@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecruiterVille.Areas.User.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -55,6 +56,7 @@ namespace RecruiterVille.Models
     public class ResumeUploadModal
     {
         public string resumepath { get; set; }
+        public DocumentViewModal keywords { get; set; }
     }
 
     public class FileUploadModal

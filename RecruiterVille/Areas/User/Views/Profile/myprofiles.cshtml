@@ -75,8 +75,8 @@
                                         }
                                     </select>
                                 </div>
-                            </div> 
-                            <div class="col-md-2">  
+                            </div>
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Min Experience </label>
                                     <input class="form-control" placeholder="" maxlength="2" id="textminexp" type="number" />
@@ -120,34 +120,34 @@
                                             </th>
                                         </tr>
                                         @*<tr>
-                                            <th>
-                                                
-                                            </th>
-                                            <th class="hasinput">
-                                                <input type="text" class="form-control" name="FullName" placeholder="Full Name" />
-                                            </th>
-                                            <th class="hasinput">
-                                                <input type="text" class="form-control" name="EmailId" placeholder="EmailId" />
-                                            </th>
-                                            <th class="hasinput">
-                                                <input type="text" class="form-control" name="ContactNumber" placeholder="Contact Number" />
-                                            </th>
-                                            <th class="hasinput">
-                                                <input type="text" class="form-control" name="Experience" placeholder="Experience" />
-                                            </th>
-                                            <th class="hasinput">
-                                                <input type="text" class="form-control" name="Industry" placeholder="Industry" />
-                                            </th>
-                                            <th class="hasinput">
-                                                <input type="text" class="form-control" name="Skills" placeholder="Skills" />
-                                            </th>
-                                            <th>
-                                                
-                                            </th>
-                                            <th>
-                                               
-                                            </th>
-                                        </tr>*@
+                                                <th>
+
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" name="FullName" placeholder="Full Name" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" name="EmailId" placeholder="EmailId" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" name="ContactNumber" placeholder="Contact Number" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" name="Experience" placeholder="Experience" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" name="Industry" placeholder="Industry" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" name="Skills" placeholder="Skills" />
+                                                </th>
+                                                <th>
+
+                                                </th>
+                                                <th>
+
+                                                </th>
+                                            </tr>*@
                                         <tr id="bindtr">
                                             <th data-sort="false">S.No. </th>
                                             <th data-sort="true" sort-name="FullName">Full Name</th>
@@ -233,24 +233,25 @@
     </div>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/js/datatable.js"></script>
+    <script src="/app/js/datatables.min.js"></script>
     @Scripts.Render("~/bundles/myprofiles")
 
     <script type="text/javascript">
-    var tableload = null;
-    var pageno = 1;
-    var pagesize = 10;
-    var totalrecords = 0;
-    var sortcolumn = "";
-    var sortorderby = "";
-    $(document).ready(function () {
-        sortcolumn = "FullName";
-        sortorderby = "asc";
-        tableload = function () {
-            getprofileslist();
-        }
-        tableload();
-        tabledata("#tableprofiles", tableload);
-    });
+        var tableload = null;
+        var pageno = 1;
+        var pagesize = 10;
+        var totalrecords = 0;
+        var sortcolumn = "";
+        var sortorderby = "";
+        $(document).ready(function () {
+            sortcolumn = "FullName";
+            sortorderby = "asc";
+            tableload = function () {
+                getprofileslist();
+            }
+            tableload();
+            tabledata("#tableprofiles", tableload);
+        });
     </script>
     <script type="text/javascript">
         $(document).ready(function () {

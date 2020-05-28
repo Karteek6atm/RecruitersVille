@@ -105,6 +105,60 @@ function uploadresume() {
                 contentType: false,
                 success: function (data) {
                     $('#hiddenresumefile').val(data.resumepath);
+
+                    if (data.keywords != null) {
+                        var profile = data.keywords;
+
+                        if (profile.Personal != null) {
+                            var personal = profile.Personal;
+                            if (personal.length > 0) {
+                                for (var i = 0; i < personal.length; i++) {
+                                    if (personal[i] != "") {
+                                        $('#textfirstname').val(personal[i]);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (profile.Email != null) {
+                            var email = profile.Email;
+                            if (email.length > 0) {
+                                for (var i = 0; i < email.length; i++) {
+                                    if (email[i] != "") {
+                                        $('#textemailid').val(email[i]);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (profile.Skill != null) {
+                            var skill = profile.Skill;
+                            var skills = "";
+                            if (skill.length > 0) {
+                                for (var i = 0; i < skill.length; i++) {
+                                    if (skill[i] != "") {
+                                        skills = (skills == "") ? skill[i] : skills + "," + skill[i];
+                                    }
+                                }
+                                $('#selectskills').val(skills);
+                            }
+                        }
+
+                        if (profile.ExperienceSummary != null) {
+                            var summary = profile.ExperienceSummary;
+                            var description = "";
+                            if (summary.length > 0) {
+                                for (var i = 0; i < summary.length; i++) {
+                                    if (summary[i] != "") {
+                                        description = (description == "") ? summary[i] : description + "," + summary[i];
+                                    }
+                                }
+                                $('#textdescription').val(skills);
+                            }
+                        }
+                    }
                 }
             });
         }

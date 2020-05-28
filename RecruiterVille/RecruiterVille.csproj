@@ -44,8 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DocumentFormat.OpenXml, Version=2.9.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocumentFormat.OpenXml.2.9.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -231,6 +231,7 @@
     <Compile Include="Areas\User\Controllers\JobController.cs" />
     <Compile Include="Areas\User\Controllers\ProfileController.cs" />
     <Compile Include="Areas\User\Controllers\RecruiterController.cs" />
+    <Compile Include="Areas\User\Models\DocumentViewModal.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="CommonClasses\ManageSessions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -282,6 +283,9 @@
     <Content Include="app\js\respond.min.js" />
     <Content Include="app\charts.html" />
     <Content Include="app\elements.html" />
+    <Content Include="App_Data\KeywordDictionary.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="contact-us.html" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -488,9 +492,7 @@
     <Content Include="UploadedFiles\ProfileUploads\profilesamplesheet.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\SuperUser\Models\" />
-    <Folder Include="Areas\User\Models\" />
     <Folder Include="UploadedFiles\CompanyLogos\" />
     <Folder Include="UploadedFiles\Resumes\" />
     <Folder Include="UploadedFiles\UserImages\" />
@@ -508,6 +510,10 @@
     <ProjectReference Include="..\Business Entities\RecruiterBE\RecruiterBE.csproj">
       <Project>{6379988d-e4f5-495b-bfac-1c957d446a43}</Project>
       <Name>RecruiterBE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DocumentParser\DocumentParser.csproj">
+      <Project>{36F87518-2EB9-490E-B814-EE3923BE7D9F}</Project>
+      <Name>DocumentParser</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

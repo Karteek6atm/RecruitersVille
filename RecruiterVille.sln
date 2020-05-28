@@ -8,6 +8,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Main Project", "1. Main Project", "{5FC03B11-58A7-4B3A-807D-9D21A74535A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business Access Layer", "2. Business Access Layer", "{D66A72B1-B8A8-4D6F-9592-E147DDFF7622}"
+	ProjectSection(SolutionItems) = preProject
+		RecruiterVille\Web.config = RecruiterVille\Web.config
+		RecruiterVille\Web.Debug.config = RecruiterVille\Web.Debug.config
+		RecruiterVille\Web.Release.config = RecruiterVille\Web.Release.config
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Access Layer", "3. Data Access Layer", "{3603B841-8C88-4DD7-BCDB-DC1F79DBD855}"
 EndProject
@@ -18,6 +23,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruiterDAL", "Data Access Layer\RecruiterDAL\RecruiterDAL.csproj", "{BAD9929C-A123-455C-96C2-A13CA91171CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruiterBE", "Business Entities\RecruiterBE\RecruiterBE.csproj", "{6379988D-E4F5-495B-BFAC-1C957D446A43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Resume Parser", "5. Resume Parser", "{A5E724A5-DB32-4746-9706-8568AE390331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentParser", "DocumentParser\DocumentParser.csproj", "{36F87518-2EB9-490E-B814-EE3923BE7D9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +50,10 @@ Global
 		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6379988D-E4F5-495B-BFAC-1C957D446A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F87518-2EB9-490E-B814-EE3923BE7D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F87518-2EB9-490E-B814-EE3923BE7D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F87518-2EB9-490E-B814-EE3923BE7D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F87518-2EB9-490E-B814-EE3923BE7D9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +63,6 @@ Global
 		{38C01CC4-F8A3-4117-BCD0-9C0D10787A79} = {D66A72B1-B8A8-4D6F-9592-E147DDFF7622}
 		{BAD9929C-A123-455C-96C2-A13CA91171CF} = {3603B841-8C88-4DD7-BCDB-DC1F79DBD855}
 		{6379988D-E4F5-495B-BFAC-1C957D446A43} = {47AC7306-40F1-4BB5-88BA-DF4BDB563E61}
+		{36F87518-2EB9-490E-B814-EE3923BE7D9F} = {A5E724A5-DB32-4746-9706-8568AE390331}
 	EndGlobalSection
 EndGlobal

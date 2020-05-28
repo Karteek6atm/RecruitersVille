@@ -12,7 +12,11 @@ using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentParser.src.parser;
+using Newtonsoft.Json;
+using RecruiterVille.Areas.User.Models;
 
 namespace RecruiterVille.Areas.User.Controllers
 {
@@ -177,31 +181,23 @@ namespace RecruiterVille.Areas.User.Controllers
                     objresponse.resumepath = filepath;
                     file.SaveAs(path);
 
-                    //filepath = Path.GetDirectoryName(path);
+                    filepath = Path.GetDirectoryName(path);
 
-                    ////var outputFolder = Path.Combine(Directory.GetCurrentDirectory(), "Output");
-                    ////if (Directory.Exists(outputFolder))
-                    ////{
-                    ////    Directory.Delete(outputFolder, true);
-                    ////}
+                    var fileName = Path.GetFileName(file.FileName);
 
-                    ////Directory.CreateDirectory(outputFolder);
+                    const string mimeType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
-                    //var processor = new ResumeProcessor(new JsonOutputFormatter());
+                    if (string.Equals(fileextension, ".docx") && file.ContentType.Equals(mimeType))
+                    {
 
-                    ////var files = Directory.GetFiles("Resumes").Select(Path.GetFullPath);
-                    ////foreach (var file1 in files)
-                    ////{
-                    //    var output = processor.Process(filepath);
+                        var appDataPath = Server.MapPath("~/App_Data");
 
-                    //    Console.WriteLine(output);
+                        var dictionaryPath = Path.Combine(appDataPath, "KeywordDictionary.xml");
 
-                    //    //var outputFileName = filepath.Substring(filepath.LastIndexOf(Path.DirectorySeparatorChar) + 1) + ".txt";
-                    //    //using (var writer = new StreamWriter(Path.Combine(outputFolder, outputFileName)))
-                    //    //{
-                    //    //    writer.Write(output);
-                    //    //}
-                    ////}
+                        var modelData = Engine.Parse(path, dictionaryPath);
+
+                        objresponse.keywords = JsonConvert.DeserializeObject<DocumentViewModal>(modelData);
+                    }
                 }
             }
             catch (Exception ex)

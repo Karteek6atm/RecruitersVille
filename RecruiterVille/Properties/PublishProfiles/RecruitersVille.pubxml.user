@@ -256,7 +256,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2020 21:54:37</publishTime>
     </File>
     <File Include="Areas/User/Views/Recruiter/permissions.cshtml">
-      <publishTime>03/02/2019 22:10:19</publishTime>
+      <publishTime>02/03/2019 22:10:19</publishTime>
     </File>
     <File Include="Areas/User/Views/Recruiter/profile.cshtml">
       <publishTime>03/26/2020 21:55:09</publishTime>
@@ -268,7 +268,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2020 21:55:38</publishTime>
     </File>
     <File Include="Areas/User/Views/Recruiter/vendors.cshtml">
-      <publishTime>03/29/2020 21:51:55</publishTime>
+      <publishTime>04/07/2020 21:37:22</publishTime>
     </File>
     <File Include="Areas/User/Views/Recruiter/vendoruploads.cshtml">
       <publishTime>03/26/2020 21:55:57</publishTime>
@@ -769,7 +769,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/03/2019 22:47:27</publishTime>
     </File>
     <File Include="Scripts/application/vendors.js">
-      <publishTime>03/29/2020 21:51:57</publishTime>
+      <publishTime>03/29/2020 22:06:21</publishTime>
     </File>
     <File Include="Scripts/application/vendoruploads.js">
       <publishTime>12/01/2019 17:58:05</publishTime>
@@ -844,16 +844,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2019 17:02:48</publishTime>
     </File>
     <File Include="Views/Account/contactus.cshtml">
-      <publishTime>12/01/2019 17:24:05</publishTime>
+      <publishTime>01/12/2019 17:24:05</publishTime>
     </File>
     <File Include="Views/Account/error.cshtml">
       <publishTime>11/11/2019 23:48:06</publishTime>
     </File>
     <File Include="Views/Account/login.cshtml">
-      <publishTime>12/01/2019 18:28:26</publishTime>
+      <publishTime>01/12/2019 18:28:26</publishTime>
     </File>
     <File Include="Views/Account/packages.cshtml">
-      <publishTime>12/01/2019 17:24:05</publishTime>
+      <publishTime>01/12/2019 17:24:05</publishTime>
     </File>
     <File Include="Views/Account/register.cshtml">
       <publishTime>10/20/2019 20:19:05</publishTime>
@@ -865,13 +865,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/18/2019 20:16:30</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/01/2019 17:24:05</publishTime>
+      <publishTime>01/12/2019 17:24:05</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>01/18/2019 20:16:30</publishTime>
     </File>
     <File Include="Views/Site/jobs.cshtml">
-      <publishTime>03/24/2020 21:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Site/jobview.cshtml">
       <publishTime>02/25/2020 21:48:30</publishTime>
@@ -883,7 +883,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2019 23:29:45</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/26/2020 21:33:51</publishTime>
+      <publishTime>04/10/2020 13:51:28</publishTime>
     </File>
   </ItemGroup>
 </Project>

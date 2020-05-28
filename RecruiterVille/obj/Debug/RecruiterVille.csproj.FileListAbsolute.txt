@@ -198,3 +198,6 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\RecruiterDAL.p
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.csprojResolveAssemblyReference.cache
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.dll
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\RecruiterVille.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\resources\KeywordDictionary.xml
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\DocumentParser.exe
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\DocumentParser.pdb
