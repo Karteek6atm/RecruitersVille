@@ -98,7 +98,7 @@ namespace RecruiterBE
                     "You are invited as an user by " + adminname + " from company " + companyname + ".<br/><br/>" +
                     "Below are your login details :<br/>Username : " + toemailid + "<br/>Password : " + password + "<br/><br/>" +
                     "You can change your password after login into your account using below link : <br/>"+
-                    "<a href='http://recruitersville.com/login'>http://recruitersville.com/login</a>" +
+                    "<a href='https://www.recruitersville.com/login'>https://www.recruitersville.com/login</a>" +
                     "<br/><br/>Thank you<br/>Recruiters Ville Team";
 
                 CommonMethods.SendEmail(toemailid, subject, body);

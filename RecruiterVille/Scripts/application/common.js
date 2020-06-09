@@ -1,5 +1,5 @@
 ﻿var weburl = "http://localhost:50963/";
-//var weburl = "http://recruitersville.com/";
+//var weburl = "https://www.recruitersville.com/";
 
 function closemessage(obj) {
     $(obj).closest('.alert').hide();

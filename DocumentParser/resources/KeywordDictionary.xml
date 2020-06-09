@@ -4,13 +4,14 @@
     <Word>personal statement</Word>
     <Word>career objective</Word>
   </Objective>
-  <ExperienceSummary>    
+  <ExperienceSummary>
     <Word>summary</Word>
     <Word>profile</Word>
     <Word>experience</Word>
     <Word>experience summary</Word>
     <Word>experience details</Word>
-    <Word>professional experience</Word>    
+    <Word>professional experience</Word>
+    <Word>professional summary</Word>
   </ExperienceSummary>
   <ProjectExperience>
     <Word>project</Word>
@@ -50,7 +51,9 @@
     <Word>key skills</Word>
     <Word>technical skills</Word>
     <Word>programming</Word>
-    <Word>technical background</Word>    
+    <Word>technical background</Word>
+    <Word>technology</Word>
+    <Word>tools</Word>
   </Skill>
   <Personal>
     <Word>personal information</Word>

@@ -309,10 +309,11 @@ function shareonfacebook() {
 function shareontwitter() {
     var joburl = weburl + 'jobview/' + $('#hiddenjobid').val();
     var jobtitle = $('#jobtitle').html();
-    window.open('https://twitter.com/share?text=' + $.trim(jobtitle) + '&url=' + $.trim(joburl), 'sharer', 'toolbar=0, status=0, width=626, height=436,name="twitter:image"'); return false;
+    window.open('https://twitter.com/intent/tweet?text=' + $.trim(jobtitle) + '&url=' + $.trim(joburl) + '&via=' + weburl, 'sharer', 'toolbar=0, status=0, width=626, height=436,name="twitter:image"'); return false;
 }
 
 function shareonlinkedin() {
     var joburl = weburl + 'jobview/' + $('#hiddenjobid').val();
-    window.open('https://www.linkedin.com/cws/share?url=' + $.trim(joburl), 'sharer', 'toolbar=0, status=0, width=626, height=436'); return false;
+    var jobtitle = $('#jobtitle').html();
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + $.trim(joburl) + '&title=' + jobtitle + '&source=' + weburl, 'sharer', 'toolbar=0, status=0, width=626, height=436'); return false;
 }

@@ -422,33 +422,57 @@ namespace RecruiterBE
             }
         }
 
-        public static async void SendMailFromGodaddy(string toEmailIds, string subject, string body)
+        public static async void SendMailFromGodaddy_New(string toEmailIds, string subject, string body)
         {
-            string emailFrom = ConfigurationSettings.AppSettings["FromMailId"].ToString();
-            string password = ConfigurationSettings.AppSettings["FromMailPassword"].ToString();
-            //Create the msg object to be sent
-            MailMessage msg = new MailMessage();
-            //Add your email address to the recipients
-            msg.To.Add(toEmailIds);
-            //Configure the address we are sending the mail from
-            msg.From = new MailAddress(emailFrom);
-            msg.Subject = subject;
-            msg.Body = body;
-            msg.IsBodyHtml = true;
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(ConfigurationSettings.AppSettings["FromMailId"].ToString());
+
+            message.To.Add(new MailAddress(toEmailIds));
+
+            message.Subject = subject;
+            message.Body = body;
+            message.IsBodyHtml = true;
 
             SmtpClient client = new SmtpClient();
-            client.Host = "relay-hosting.secureserver.net";
-            client.Credentials = new System.Net.NetworkCredential(emailFrom, password);
-            client.EnableSsl = false;
-            client.Port = 25;
-            client.SendCompleted += new SendCompletedEventHandler(smtpClient_SendCompleted);
+
             try
             {
-                await client.SendMailAsync(msg);
+                client.Send(message);
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public static async void SendMailFromGodaddy(string toEmailIds, string subject, string body)
+        {
+            string emailFrom = ConfigurationSettings.AppSettings["FromMailId"].ToString();
+            string password = ConfigurationSettings.AppSettings["FromMailPassword"].ToString();
+            string emailTo = toEmailIds;
+
+            using (MailMessage mail = new MailMessage(emailFrom, emailTo))
+            {
+                mail.Subject = subject;
+                mail.Body = body;
+
+                mail.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "relay-hosting.secureserver.net";
+                smtp.EnableSsl = true;
+                NetworkCredential NetworkCred = new NetworkCredential(emailFrom, password);
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = NetworkCred;
+                smtp.Port = 25;
+                smtp.SendCompleted += new SendCompletedEventHandler(smtpClient_SendCompleted);
+                try
+                {
+                    await smtp.SendMailAsync(mail);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
 
