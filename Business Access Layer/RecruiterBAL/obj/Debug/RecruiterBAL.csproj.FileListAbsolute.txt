@@ -22,3 +22,6 @@ D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBA
 D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\obj\Debug\RecruiterBAL.csprojResolveAssemblyReference.cache
 D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\obj\Debug\RecruiterBAL.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\obj\Debug\RecruiterBAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\HtmlAgilityPack.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\HtmlAgilityPack.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Business Access Layer\RecruiterBAL\bin\Debug\HtmlAgilityPack.xml

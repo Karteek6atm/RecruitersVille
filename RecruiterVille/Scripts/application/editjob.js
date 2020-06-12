@@ -77,6 +77,7 @@
 
                 $('.multiple-select').fSelect();
                 $('.datepicker').datepicker();
+                $('.jqte-test').jqte();
             }
             else {
                 showwarningalert(data.StatusMessage);

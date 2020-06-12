@@ -2,6 +2,7 @@
 using RecruiterBE;
 using RecruiterBE.Requests;
 using RecruiterBE.Responses;
+using RecruiterVille.Areas.User.Models;
 using RecruiterVille.CommonClasses;
 using RecruiterVille.Models;
 using System;
@@ -240,9 +241,11 @@ namespace RecruiterVille.Areas.User.Controllers
         #region Actions
 
         [HttpPost]
-        public JsonResult InsertAndUpdateJobDetails(JobRequest objrequest)
+        [ValidateInput(false)]
+        public JsonResult InsertAndUpdateJobDetails(JobRequestModal objrequest)
         {
             JobSaveResponse objresponse = new JobSaveResponse();
+            JobRequest jobrequest = new JobRequest();
             try
             {
                 if (Session["UserLogin"] != null)
@@ -258,7 +261,43 @@ namespace RecruiterVille.Areas.User.Controllers
                     {
                         objrequest.JobId = 0;
                     }
-                    objresponse = _JobBal.InsertAndUpdateJobDetails(objrequest);
+
+                    jobrequest.ApplicationCcEmailId = objrequest.ApplicationCcEmailId;
+                    jobrequest.ApplicationMethodType = objrequest.ApplicationMethodType;
+                    jobrequest.ApplicationToEmailId = objrequest.ApplicationToEmailId;
+                    jobrequest.ApplicationURL = objrequest.ApplicationURL;
+                    jobrequest.CompanyId = objrequest.CompanyId;
+                    jobrequest.CompanyJobId = objrequest.CompanyJobId;
+                    jobrequest.IndustryId = objrequest.IndustryId;
+                    jobrequest.IsJobTemplate = objrequest.IsJobTemplate;
+                    jobrequest.IsWFHAvailable = objrequest.IsWFHAvailable;
+                    jobrequest.JobDescription = objrequest.JobDescription;
+                    jobrequest.JobDuration = objrequest.JobDuration;
+                    jobrequest.JobDurationType = objrequest.JobDurationType;
+                    jobrequest.JobId = objrequest.JobId;
+                    jobrequest.JobLocation = objrequest.JobLocation;
+                    jobrequest.JobStatus = objrequest.JobStatus;
+                    jobrequest.JobTemplateId = objrequest.JobTemplateId;
+                    jobrequest.JobTitle = objrequest.JobTitle;
+                    jobrequest.JobTypeIds = objrequest.JobTypeIds;
+                    jobrequest.MaxExp = objrequest.MaxExp;
+                    jobrequest.MaxPayRate = objrequest.MaxPayRate;
+                    jobrequest.MinExp = objrequest.MinExp;
+                    jobrequest.MinPayRate = objrequest.MinPayRate;
+                    jobrequest.PayCurrency = objrequest.PayCurrency;
+                    jobrequest.PayType = objrequest.PayType;
+                    jobrequest.PostFromDate = objrequest.PostFromDate;
+                    jobrequest.PostToDate = objrequest.PostToDate;
+                    jobrequest.SkillIds = objrequest.SkillIds;
+                    jobrequest.strJobId = objrequest.strJobId;
+                    jobrequest.strJobTemplateId = objrequest.strJobTemplateId;
+                    jobrequest.SubIndustryIds = objrequest.SubIndustryIds;
+                    jobrequest.TemplateName = objrequest.TemplateName;
+                    jobrequest.TravelAllowances = objrequest.TravelAllowances;
+                    jobrequest.TravelAllowanceType = objrequest.TravelAllowanceType;
+                    jobrequest.UserLoginId = objrequest.UserLoginId;
+
+                    objresponse = _JobBal.InsertAndUpdateJobDetails(jobrequest);
                 }
             }
             catch (Exception ex)

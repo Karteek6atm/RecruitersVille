@@ -1,4 +1,5 @@
 ﻿@using RecruiterBE.Responses;
+@using RecruiterBE;
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
         <meta property="og:url" content="@ViewBag.JobUrl" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="@jobdetails.JobTitle" />
-        <meta property="og:description" content="@jobdetails.JobDescription" />
+        <meta property="og:description" content="@CommonMethods.ConvertHtmlToPlainText(jobdetails.JobDescription)" />
         <meta property="og:image" content="@ViewBag.JobLogo" />
         <meta property="fb:app_id" content="472213130043391" />
     }

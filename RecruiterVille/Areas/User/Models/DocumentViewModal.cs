@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace RecruiterVille.Areas.User.Models
 {
@@ -88,5 +89,45 @@ namespace RecruiterVille.Areas.User.Models
         /// The Email.
         /// </value>
         public IList<string> Email { get; set; }
+    }
+
+    public class JobRequestModal
+    {
+        public int UserLoginId { get; set; }
+        public int CompanyId { get; set; }
+        public int JobId { get; set; }
+        public string strJobId { get; set; }
+        public int JobTemplateId { get; set; }
+        public string strJobTemplateId { get; set; }
+        public string CompanyJobId { get; set; }
+        public string JobTitle { get; set; }
+        public string JobLocation { get; set; }
+        public bool IsJobTemplate { get; set; }
+        public string TemplateName { get; set; }
+        public int PayType { get; set; }
+        public int PayCurrency { get; set; }
+        public int MinPayRate { get; set; }
+        public int MaxPayRate { get; set; }
+        public int JobDurationType { get; set; }
+        public int JobDuration { get; set; }
+        public int MinExp { get; set; }
+        public int MaxExp { get; set; }
+        public int TravelAllowanceType { get; set; }
+        public int TravelAllowances { get; set; }
+        public bool IsWFHAvailable { get; set; }
+
+        [AllowHtml]
+        public string JobDescription { get; set; }
+        public int ApplicationMethodType { get; set; }
+        public string PostFromDate { get; set; }
+        public string PostToDate { get; set; }
+        public int IndustryId { get; set; }
+        public string ApplicationToEmailId { get; set; }
+        public string ApplicationCcEmailId { get; set; }
+        public string ApplicationURL { get; set; }
+        public string SkillIds { get; set; }
+        public string SubIndustryIds { get; set; }
+        public string JobTypeIds { get; set; }
+        public int JobStatus { get; set; }
     }
 }

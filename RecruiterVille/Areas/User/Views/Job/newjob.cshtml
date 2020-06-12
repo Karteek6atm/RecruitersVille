@@ -7,6 +7,14 @@
 @Styles.Render("~/content/newjob")
 <link href="/app/css/bootstrap-table.css" rel="stylesheet" />
 <link href="/app/css/datepicker.css" rel="stylesheet" />
+<link href="/css/jquery-te-1.4.0.css" rel="stylesheet" />
+<style>
+    .panel p {
+        text-align: left;
+        color: #000;
+    }
+</style>
+@*<link href="/css/demo-jquery-te-1.4.0.css" rel="stylesheet" />*@
 
 @if (ViewBag.Masters != null)
 {
@@ -267,7 +275,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Job Description <span class="mandatory">*</span></label>
-                                    <textarea rows="10" class="form-control" placeholder="" id="textjobdescription" onblur="validatetextbox(this)"></textarea>
+                                    <textarea rows="10" class="form-control jqte-test" placeholder="" id="textjobdescription" onblur="validatetextbox(this)"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -286,6 +294,7 @@
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/app/js/bootstrap-datepicker.js"></script>
+    <script src = "/js/jquery-te-1.4.0.min.js"></script>
     @Scripts.Render("~/bundles/newjob")
     <script type="text/javascript">
         $(document).ready(function () {
@@ -293,6 +302,7 @@
             $("#limenujobs").addClass("active");
             $('.multiple-select').fSelect();
             $('.datepicker').datepicker();
+            $('.jqte-test').jqte();
         });
     </script>
 }

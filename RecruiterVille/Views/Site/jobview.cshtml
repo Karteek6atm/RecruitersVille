@@ -88,7 +88,7 @@
                                     </a>
                                     <div class="about-doctor">
                                         <strong>Job Description</strong>:
-                                        <p class="">@jobdetails.JobDescription</p>
+                                        <p class="" id="divdescription">@jobdetails.JobDescription</p>
                                     </div>
                                 </div>
                             </li>
@@ -168,5 +168,9 @@
     var container3 = document.createElement('div');
     container3.innerHTML = $('#divlocation').html();
     $('#divlocation').html(container3.innerText);
+
+    var container4 = document.createElement('div');
+    container4.innerHTML = $('#divdescription').html();
+    $('#divdescription').html(container4.innerText);
 
 </script>

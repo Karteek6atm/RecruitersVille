@@ -36,6 +36,9 @@
                         }
 
                         $(tr).append('<td>' + (i + 1) + '<input type="hidden" id="hiddenjobid" value="' + data[i].JobId + '" /></td>' +
+                                    '<td><a href="/job/editjob/' + data[i].JobId + '" id="aeditjob"> <i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="achangejobstatus" onclick="changejobstatus(this)"><i class="fa fa-trash-o"></i> Change Status</a>' +
+                                    ' &nbsp; <a href="/job/viewjob/' + data[i].JobId + '" id="aviewjob"><i class="fa fa-eye"></i> View</a>'+
+                                    ' &nbsp; <a javascript:void(0)" id="asharejob" onclick="sharejobthroughemail(this)"><i class="fa fa-envelope"></i> Email</a></td>' +
                                     '<td>' + data[i].JobTitle + '</td>' +
                                     '<td>' + data[i].CompanyJobId + '</td>' +
                                     '<td>' + pay + '</td>' +
@@ -43,9 +46,7 @@
                                     '<td>' + experience + '</td>' +
                                     '<td>' + data[i].IndustryName + '</td>' +
                                     '<td>' + data[i].TechnologyNames + '</td>' +
-                                    '<td><input type="hidden" id="hiddenjobstatusid" value="' + data[i].JobStatusId + '" />' + data[i].JobStatusName + '</td>' +
-                                    '<td><a href="/job/editjob/' + data[i].JobId + '" id="aeditjob"> <i class="fa fa-pencil"></i> Edit</a> &nbsp; <a href="javascript:void(0)" id="achangejobstatus" onclick="changejobstatus(this)"><i class="fa fa-trash-o"></i> Change Status</a>' +
-                                    ' &nbsp; <a href="/job/viewjob/' + data[i].JobId + '" id="aviewjob"><i class="fa fa-eye"></i> View</a></td>');
+                                    '<td><input type="hidden" id="hiddenjobstatusid" value="' + data[i].JobStatusId + '" />' + data[i].JobStatusName + '</td>');
 
                         $('#tbodyjobs').append(tr);
                     }
@@ -73,6 +74,10 @@
     });
 }
 
+function sharejobthroughemail(obj) {
+
+}
+
 function changejobstatus(obj) {
     var jobid = $(obj).closest('tr').find('#hiddenjobid').val();
     var jobstatusid = parseInt($(obj).closest('tr').find('#hiddenjobstatusid').val());
@@ -84,16 +89,16 @@ function changejobstatus(obj) {
     $('#selectjobstatus').find("option:gt(0)").remove();
 
     if (jobstatusid == 0) {
-        var options = '<option value="1">Publish</option>'+
-                '<option value="2">Close</option>'+
-                '<option value="3">Hold</option>'+
+        var options = '<option value="1">Publish</option>' +
+                '<option value="2">Close</option>' +
+                '<option value="3">Hold</option>' +
                 '<option value="4">Delete</option>';
 
         $("#selectjobstatus").append(options);
     }
     else if (jobstatusid == 1) {
-        var options = '<option value="2">Close</option>'+
-                '<option value="3">Hold</option>'+
+        var options = '<option value="2">Close</option>' +
+                '<option value="3">Hold</option>' +
                 '<option value="4">Delete</option>';
 
         $("#selectjobstatus").append(options);
@@ -104,8 +109,8 @@ function changejobstatus(obj) {
         $("#selectjobstatus").append(options);
     }
     else if (jobstatusid == 3) {
-        var options = '<option value="1">Publish</option>'+
-                '<option value="2">Close</option>'+
+        var options = '<option value="1">Publish</option>' +
+                '<option value="2">Close</option>' +
                 '<option value="4">Delete</option>';
 
         $("#selectjobstatus").append(options);

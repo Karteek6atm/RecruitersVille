@@ -201,3 +201,6 @@ D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\obj\Debug\Recruite
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\resources\KeywordDictionary.xml
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\DocumentParser.exe
 D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\DocumentParser.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\HtmlAgilityPack.dll
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\HtmlAgilityPack.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\RecruiterVille\bin\HtmlAgilityPack.xml

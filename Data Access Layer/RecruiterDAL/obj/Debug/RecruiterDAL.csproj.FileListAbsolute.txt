@@ -18,3 +18,6 @@ D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bi
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.csprojResolveAssemblyReference.cache
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.dll
+D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.pdb
+D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.xml

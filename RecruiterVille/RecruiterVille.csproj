@@ -292,6 +292,8 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\demo-jquery-te-1.4.0.css" />
+    <Content Include="css\jquery-te-1.4.0.css" />
     <Content Include="css\jquery.bxslider.css" />
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\owl.carousel.css" />
@@ -344,6 +346,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\datatable.js" />
+    <Content Include="js\jquery-te-1.4.0.min.js" />
     <Content Include="js\jquery.bxslider.min.js" />
     <Content Include="js\jquery.classyloader.min.js" />
     <Content Include="js\jquery.js" />
