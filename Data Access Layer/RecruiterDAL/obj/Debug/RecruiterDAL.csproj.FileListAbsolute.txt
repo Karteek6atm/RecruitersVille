@@ -21,3 +21,16 @@ D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\ob
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.pdb
 D:\Karteek\Projects\New folder\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.xml
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\RecruiterDAL.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\RecruiterDAL.pdb
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\Newtonsoft.Json.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\RecruiterBE.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\RecruiterBE.pdb
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\Newtonsoft.Json.xml
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.pdb
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\bin\Debug\HtmlAgilityPack.xml
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.csprojResolveAssemblyReference.cache
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Data Access Layer\RecruiterDAL\obj\Debug\RecruiterDAL.pdb

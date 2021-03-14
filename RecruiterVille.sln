@@ -8,11 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Main Project", "1. Main Project", "{5FC03B11-58A7-4B3A-807D-9D21A74535A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business Access Layer", "2. Business Access Layer", "{D66A72B1-B8A8-4D6F-9592-E147DDFF7622}"
-	ProjectSection(SolutionItems) = preProject
-		RecruiterVille\Web.config = RecruiterVille\Web.config
-		RecruiterVille\Web.Debug.config = RecruiterVille\Web.Debug.config
-		RecruiterVille\Web.Release.config = RecruiterVille\Web.Release.config
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Access Layer", "3. Data Access Layer", "{3603B841-8C88-4DD7-BCDB-DC1F79DBD855}"
 EndProject

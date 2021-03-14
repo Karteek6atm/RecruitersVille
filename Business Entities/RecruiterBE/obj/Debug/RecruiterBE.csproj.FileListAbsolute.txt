@@ -15,3 +15,13 @@ D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\obj
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\HtmlAgilityPack.dll
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\HtmlAgilityPack.pdb
 D:\Karteek\Projects\New folder\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\HtmlAgilityPack.xml
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\RecruiterBE.pdb
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\HtmlAgilityPack.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\HtmlAgilityPack.pdb
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\HtmlAgilityPack.xml
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\bin\Debug\Newtonsoft.Json.xml
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.csprojResolveAssemblyReference.cache
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.dll
+C:\Karteek\My Folder\RecruitersVille_Latest\RecruitersVille\Business Entities\RecruiterBE\obj\Debug\RecruiterBE.pdb

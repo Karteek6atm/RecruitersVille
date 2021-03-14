@@ -501,6 +501,44 @@ namespace RecruiterDAL
             return dsData;
         }
 
+        public JobSendEmailResponse GetEmailIdsToSendJobEmail(JobEmailSendRequest objrequest)
+        {
+            SqlParameter[] sqlparams = { new SqlParameter("@JobId", SqlDbType.Int) { Value = objrequest.JobId },
+                                        new SqlParameter("@CompanyId", SqlDbType.Int) { Value = objrequest.CompanyId },
+                                        new SqlParameter("@IsToCandidate", SqlDbType.Bit) { Value = objrequest.IsToCandidate },
+                                        new SqlParameter("@IsToMatch", SqlDbType.Bit) { Value = objrequest.IsToMatched },
+                                        new SqlParameter("@EmailIds", SqlDbType.VarChar, -1) { Value = objrequest.EmailIds }
+                                        };
+
+            SqlDataReader reader = null;
+            JobSendEmailResponse objresponse = new JobSendEmailResponse();
+
+            try
+            {
+                reader = SqlHelper.ExecuteReader(con, CommandType.StoredProcedure, "USP_GetEmailIdsToSendJobEmail", sqlparams);
+
+                while (reader.Read())
+                {
+                    objresponse.EmailIds = (string)reader["EmailIds"];
+                    objresponse.JobDescription = (string)reader["JobDescription"];
+                    objresponse.JobLocation = (string)reader["JobLocation"];
+                    objresponse.JobTitle = (string)reader["JobTitle"];
+                    objresponse.MaxExp = (int)reader["MaxExp"];
+                    objresponse.MinExp = (int)reader["MinExp"];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return objresponse;
+        }
+        
         #endregion
     }
 }

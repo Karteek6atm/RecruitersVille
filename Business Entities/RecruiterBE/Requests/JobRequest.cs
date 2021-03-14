@@ -62,4 +62,14 @@ namespace RecruiterBE.Requests
         public int JobTemplateId { get; set; }
         public string strJobTemplateId { get; set; }
     }
+    
+    public class JobEmailSendRequest
+    {
+        public int JobId { get; set; }
+        public int CompanyId { get; set; }
+        public string strJobId { get; set; }
+        public bool IsToCandidate { get; set; }
+        public bool IsToMatched { get; set; }
+        public string EmailIds { get; set; }
+    }
 }

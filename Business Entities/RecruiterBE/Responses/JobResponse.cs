@@ -146,4 +146,14 @@ namespace RecruiterBE.Responses
         public string SubIndustryNames { get; set; }
         public string TechnologyNames { get; set; }
     }
+
+    public class JobSendEmailResponse
+    {
+        public string EmailIds { get; set; }
+        public string JobTitle { get; set; }
+        public string JobLocation { get; set; }
+        public string JobDescription { get; set; }
+        public int MinExp { get; set; }
+        public int MaxExp { get; set; }
+    }
 }

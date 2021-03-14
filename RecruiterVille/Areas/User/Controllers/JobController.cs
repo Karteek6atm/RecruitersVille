@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -501,6 +502,43 @@ namespace RecruiterVille.Areas.User.Controllers
             try
             {
                 objresponse = _JobBal.GetJobApplications(request.strJobId);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(objresponse, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> SendJobEmail(JobEmailSendRequest objrequest)
+        {
+            JobSendEmailResponse objresponse = new JobSendEmailResponse();
+            try
+            {
+                if (Session["UserLogin"] != null)
+                {
+                    LoginResponse response = (LoginResponse)Session["UserLogin"];
+                    //JobEmailSendRequest request = new JobEmailSendRequest();
+
+                    objrequest.JobId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(objrequest.strJobId));
+                    objrequest.CompanyId = Convert.ToInt32(CommonMethods.URLKeyDecrypt(response.CompanyId));
+                    objresponse = _JobBal.GetEmailIdsToSendJobEmail(objrequest);
+
+                    if (!string.IsNullOrEmpty(objresponse.EmailIds))
+                    {
+                        string[] emailids = objrequest.EmailIds.Split(',', ';');
+
+                        if (objrequest.IsToCandidate)
+                        {
+                            SendEmail.SendJobEmailToCandidates(emailids, objrequest.strJobId, response.CompanyName, objresponse);
+                        }
+                        else
+                        {
+                            SendEmail.SendJobEmailTovendors(emailids, objrequest.strJobId, response.CompanyName, objresponse);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

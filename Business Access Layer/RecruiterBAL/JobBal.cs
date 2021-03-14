@@ -381,6 +381,20 @@ namespace RecruiterBAL
             }
             return objJobResponse;
         }
+        
+        public JobSendEmailResponse GetEmailIdsToSendJobEmail(JobEmailSendRequest objrequest)
+        {
+            JobSendEmailResponse objresponse = new JobSendEmailResponse();
+            try
+            {
+                objresponse = _JobDal.GetEmailIdsToSendJobEmail(objrequest);
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.ErrorMessage(ex.Message);
+            }
+            return objresponse;
+        }
 
         #endregion
     }

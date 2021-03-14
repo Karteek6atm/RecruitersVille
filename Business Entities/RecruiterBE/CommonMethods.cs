@@ -341,7 +341,7 @@ namespace RecruiterBE
             }
             catch (Exception Ex)
             {
-                throw Ex;
+                //throw Ex;
             }
         }
 
@@ -510,58 +510,31 @@ namespace RecruiterBE
                 }
             }
         }
-
-        public static async void SendMailFromGodaddy_New(string toEmailIds, string subject, string body)
-        {
-            MailMessage message = new MailMessage();
-            message.From = new MailAddress(ConfigurationSettings.AppSettings["FromMailId"].ToString());
-
-            message.To.Add(new MailAddress(toEmailIds));
-
-            message.Subject = subject;
-            message.Body = body;
-            message.IsBodyHtml = true;
-
-            SmtpClient client = new SmtpClient();
-
-            try
-            {
-                client.Send(message);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+        
         public static async void SendMailFromGodaddy(string toEmailIds, string subject, string body)
         {
             string emailFrom = ConfigurationSettings.AppSettings["FromMailId"].ToString();
             string password = ConfigurationSettings.AppSettings["FromMailPassword"].ToString();
             string emailTo = toEmailIds;
-
-            using (MailMessage mail = new MailMessage(emailFrom, emailTo))
+            
+            try
             {
-                mail.Subject = subject;
-                mail.Body = body;
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(emailFrom);
 
-                mail.IsBodyHtml = true;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "relay-hosting.secureserver.net";
-                smtp.EnableSsl = true;
-                NetworkCredential NetworkCred = new NetworkCredential(emailFrom, password);
-                smtp.UseDefaultCredentials = true;
-                smtp.Credentials = NetworkCred;
-                smtp.Port = 25;
-                smtp.SendCompleted += new SendCompletedEventHandler(smtpClient_SendCompleted);
-                try
-                {
-                    await smtp.SendMailAsync(mail);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                message.To.Add(new MailAddress(emailTo));
+
+                message.Subject = subject;
+                message.Body = body;
+                message.IsBodyHtml = true;
+
+                SmtpClient client = new SmtpClient();
+
+                await client.SendMailAsync(message);
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage("Exception while sending emails : " + ex.Message);
             }
         }
 
@@ -569,38 +542,37 @@ namespace RecruiterBE
         {
             string emailFrom = ConfigurationSettings.AppSettings["FromMailId"].ToString();
             string password = ConfigurationSettings.AppSettings["FromMailPassword"].ToString();
-            //Create the msg object to be sent
-            MailMessage msg = new MailMessage();
-            //Add your email address to the recipients
-            msg.To.Add(toEmailIds);
-            //Configure the address we are sending the mail from
-            msg.From = new MailAddress(emailFrom);
-            msg.Subject = subject;
-            msg.Body = body;
-            msg.IsBodyHtml = true;
+            string emailTo = toEmailIds;
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(emailFrom);
+
+            message.To.Add(new MailAddress(emailTo));
+
+            message.Subject = subject;
+            message.Body = body;
+            message.IsBodyHtml = true;
+
             if (attachments.Length > 0)
             {
                 foreach (string attachment in attachments)
                 {
-                    msg.Attachments.Add(new Attachment(HttpContext.Current.Server.MapPath(attachment)));
+                    message.Attachments.Add(new Attachment(HttpContext.Current.Server.MapPath(attachment)));
                 }
             }
             if (cc.Length > 0)
             {
                 foreach (string c in cc)
                 {
-                    msg.CC.Add(new MailAddress(c));
+                    message.CC.Add(new MailAddress(c));
                 }
             }
+
             SmtpClient client = new SmtpClient();
-            client.Host = "relay-hosting.secureserver.net";
-            client.Credentials = new System.Net.NetworkCredential(emailFrom, password);
-            client.EnableSsl = false;
-            client.Port = 25;
-            client.SendCompleted += new SendCompletedEventHandler(smtpClient_SendCompleted);
+            
             try
             {
-                await client.SendMailAsync(msg);
+                await client.SendMailAsync(message);
             }
             catch (Exception ex)
             {
